@@ -12,7 +12,7 @@
 	text-decoration:none;
 	color:black;
 	padding:15px;
-	margin:20px;
+	/*margin:20px;*/
 	border:1px solid white;
 	background-color:white;
 }
@@ -52,7 +52,7 @@ line-height: 1.4;
 }
 
 .glyphicon{
-margin-right: 10px;
+/*margin-right: 10px;*/
 color: yellow;
 
 }
@@ -65,7 +65,7 @@ color: purple;
     border-color: #57068c;
 }
 .glyphicon {
-    margin-right: 10px;
+    /*margin-right: 10px;*/
     color: #57068c;
 }
 
