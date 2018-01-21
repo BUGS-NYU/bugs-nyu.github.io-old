@@ -136,6 +136,13 @@ img.side{
     margin-right: auto;
 }
 
+img.logo{
+    width: 15%;
+    max-width: 120px;
+    min-width: 80px;
+    margin-right:2%;
+}
+
 hr {
     display: block;
     margin-top: 0.5em;
