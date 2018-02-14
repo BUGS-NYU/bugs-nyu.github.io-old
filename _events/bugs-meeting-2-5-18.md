@@ -1,7 +1,7 @@
 ---
 layout: event
 title: "BUGS Meeting"
-event_date: 2018-2-4
+event_date: 2018-2-5
 ---
 
 We will be having our first general meeting next Monday, February 5 in Courant room 512 at 7pm.
