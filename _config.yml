@@ -5,7 +5,7 @@ title: BUGS NYU
 email:
 description: ...
 baseurl: "/test_site" # the subpath of your site, e.g. /blog
-url: "bugs-nyu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://bugs-nyu.github.io/test_site" # the base hostname & protocol for your site, e.g. http://example.com
 
 plugins: [jekyll-paginate]
 
