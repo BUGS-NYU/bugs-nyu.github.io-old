@@ -12,7 +12,7 @@ layout: default
 $(document).ready(function() {
 
     $('#calendar').fullCalendar({
-        events:'/calendar/data/'
+        events:'{{ site.url }}/calendar/data/'
     })
 
 });
