@@ -1,0 +1,73 @@
+// Base Styles
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// NOTE
+// html is set to 62.5% so that all the REM measurements throughout Skeleton
+// are based on 10px sizing. So basically 1.5rem = 15px :)
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5em; // currently ems cause chrome bug misinterpreting rems on body element
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: $font-family;
+  color: $font-color;
+  background-color: rgb(126, 79, 186);
+  background-image: url('../img/morebugs-purple.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100%;
+  overflow: auto;
+}
+
+// Links
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a {
+  color: $link-color;
+  &:hover {
+    color: darken($link-color, 5%);
+  }
+}
+
+// Misc
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid $light-grey;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 20%;
+  text-align: center;
+}
+
+.header-content {
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position:absolute;
+  top:50%;
+  left: 50%;
+}
+
+.default-wrapper {
+  float: right;
+  background-color: rgb(212, 212, 212);
+  // margin-left: 200px;
+  min-height: 100%;
+  width: 80%;
+}
+
+@media only screen and (max-width: 768px) {
+.default-wrapper {
+        width: 100%;
+    }
+}
