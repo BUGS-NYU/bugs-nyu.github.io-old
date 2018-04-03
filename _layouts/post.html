@@ -4,9 +4,10 @@
     <header>
       {% include navbutton.html %}
     </header>
-
     <div class="container">
+		<h3>{{ page.title }}</h3>
       {{ content }}
+		{{ page.date | date: "%B %e, %Y" }}
     </div>
   </div>
 
