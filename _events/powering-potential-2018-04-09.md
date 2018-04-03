@@ -4,7 +4,7 @@ title: "Powering Potential speaker"
 event_date: 2018-04-09
 ---
 
-# NYU BUGS Speaker
+# [NYU BUGS Speaker](https://orgsync.com/170073/events/2357076/occurrences/5627360)
 
 ## WHO
 
