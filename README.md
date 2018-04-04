@@ -1,4 +1,4 @@
-# bugs-nyu.github.io
+# [bugs-nyu.github.io](https://bugs-nyu.github.io/)
 ------
 
 # Jekyll
