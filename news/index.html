@@ -15,12 +15,12 @@ permalink: /news/
     {% for post in paginator.posts %}
     <span class="six columns">
       <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
-      <p class="author">
-        <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
-      </p>
       <div class="summary">
         {{ post.summary }}
       </div>
+	  <p class="author">
+        <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
+      </p>
     </span>
     {% endfor %}
   </div>
