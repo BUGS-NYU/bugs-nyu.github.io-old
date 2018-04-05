@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Rise of Open Code Development in the Scientific Community"
+summary: "Open source software is rising as an essential tool for scientific communities."
 date: 2018-04-05
 ---
 ### Simons Foundation 
