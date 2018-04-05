@@ -23,4 +23,4 @@ The internet is changing the scientific landscape by fostering international, in
 
 In this lecture, Kelle Cruz will briefly provide the backstory of how these shifts have come about, describe some of the most impactful open source projects, and discuss efforts currently underway aimed at ensuring these community-led projects are sustainable and receive support. She will conclude with a discussion of the implications of these shifts for science education and academic science.
 
-[Event Page](https://www.simonsfoundation.org/event/collaborations-in-the-extreme-the-rise-of-open-code-development-in-the-scientific-community/)
+## [Event Page](https://www.simonsfoundation.org/event/collaborations-in-the-extreme-the-rise-of-open-code-development-in-the-scientific-community/)
