@@ -1,5 +1,21 @@
 # [bugs-nyu.github.io](https://bugs-nyu.github.io/)
 ------
+# Planned Features
+- Display all student contributors
+- Add Calendar for events
+  - General meetings
+  - Project meetings
+- Add more project details
+  - Display To Do's
+  - Display student contributors
+  - IRC/Discord
+- Add IRC Client
+  - Link to Discord
+  - Info on how to setup your own client
+- Add Blog/News
+  - General Post about bugs
+  - Interesting Open Source projects outside of Bugs
+  - Interesting tech news
 
 # Jekyll
 
@@ -30,20 +46,3 @@ Some mock ups of the site Design
 ![Calendar](/assets/img/Calendar.png)
 ### Project Details Page
 ![Project Details Page](/assets/img/Project_Details.png)
-
-# Planned Features
-- Display all student contributors
-- Add Calendar for events
-  - General meetings
-  - Project meetings
-- Add more project details
-  - Display To Do's
-  - Display student contributors
-  - IRC/Discord
-- Add IRC Client
-  - Link to Discord
-  - Info on how to setup your own client
-- Add Blog/News
-  - General Post about bugs
-  - Interesting Open Source projects outside of Bugs
-  - Interesting tech news
