@@ -14,5 +14,5 @@ event_date: 2018-04-12
 
 ### 7:15pm, Thursday April 12th 2018
 
-### Place TBA
+### Courant room 201
 
