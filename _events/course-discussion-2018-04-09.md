@@ -4,7 +4,7 @@ title: "Course Discussion"
 event_date: 2018-04-12
 ---
 
-# [Course Discussion]()
+# [RSVP on the Event Page](https://orgsync.com/170073/events/2367672/occurrences/5650600)
 
 ## WHAT
 
@@ -12,7 +12,7 @@ Come chat with eboard members of NYU's BUGS Open Source club, Women in Computer 
 
 ## WHEN & WHERE
 
-### Thursday April 12th 2018
+### 7pm, Thursday April 12th 2018
 
-### Time and Place TBA
+### Place TBA
 
