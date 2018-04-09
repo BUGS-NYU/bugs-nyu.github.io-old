@@ -12,7 +12,7 @@ event_date: 2018-04-12
 
 ## WHEN & WHERE
 
-### 7pm, Thursday April 12th 2018
+### 7:15pm, Thursday April 12th 2018
 
 ### Place TBA
 
