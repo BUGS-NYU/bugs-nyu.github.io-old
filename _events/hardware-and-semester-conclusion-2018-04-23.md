@@ -12,6 +12,6 @@ We will also be giving a summary of our club's semester, the directions we hope 
 
 ### Where & When
 
-7pm on Monday, April 23rd 2018
+7:15pm on Monday, April 23rd 2018
 
 Courant room 512
