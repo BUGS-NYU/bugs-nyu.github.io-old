@@ -4,7 +4,7 @@ themeColor: #7cbaff
 title: BUGS NYU
 email:
 description: ...
-baseurl: "https://joannakl.github.io/bugs-nyu.github.io/" # the subpath of your site, e.g. /blog
+baseurl: "https://bugs-nyu.github.io" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 plugins: [jekyll-paginate]
