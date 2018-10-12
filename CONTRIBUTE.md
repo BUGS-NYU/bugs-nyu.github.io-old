@@ -12,6 +12,8 @@ __No prior experience contributing to open source projects?__
 No problem. Here are some resources to get you started:
 
 - [Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+- [How To Contribute to Open Source: Getting Started with Git ](https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git) 
+- [How to Create a Pull Request on GitHub](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) 
 
 
 ## How to fix an issues
