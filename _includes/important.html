@@ -1,6 +1,8 @@
 <div id="important">
 	<h6 style="text-align: center;">Thank you for making our first year possible!</h6>
 <p>
+	{% for event in site.events limit:1 %}
+	  Latest event: <a href = "{{event.url}}">{{event.title}}</a> on {{event.event_date}}
+	{% endfor %}
 </p>
-
 </div>
