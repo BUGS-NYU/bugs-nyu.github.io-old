@@ -37,12 +37,3 @@ https://jekyllrb.com/docs/windows/#installation
 To start a development server run `jekyll serve` in the project source folder. The the server will run at `http://localhost:4000`
 
 Check out the [Jekyll Docs](https://jekyllrb.com/docs/) for a in-depth guide on Jekyll.
-
-# Design
-Some mock ups of the site Design
-### Home Page
-![Home Page](/assets/img/Home_Page.png)
-### Calendar Page
-![Calendar](/assets/img/Calendar.png)
-### Project Details Page
-![Project Details Page](/assets/img/Project_Details.png)
