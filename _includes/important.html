@@ -8,21 +8,22 @@
 		{% if event_date >= today %}
 			{% if final_title == "0" %}
 				{% assign final_title = event.title %}
+				{% assign final_location = event.location %}
 				{% assign final_date = event.event_date %}
 				{% assign final_date_compare = event_date_compare %}
 			{% elsif event_date < final_date_compare %}
 				{% assign final_title = event.title %}
+				{% assign final_location = event.location %}
 				{% assign final_date = event.event_date %}
 				{% assign final_date_compare = event_date_compare %}
 			{% endif %}
 		{% endif %}
 	{% endfor %}
 
-	{{ final_title }}
-
-	{% for event in site.events limit:1 %}
-	  Latest event: <a href = "{{event.url}}">{{event.title}}</a> on {{event.event_date}}
-	{% endfor %}
-
+	{% if final_title != "0" %}
+		Upcoming: {{ event.title }} on {{ event.event_date }} at {{ event.location }}
+	{% else %}
+		No events upcoming, keep being awesome!
+	{% endif %}
 </p>
 </div>
