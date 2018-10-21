@@ -24,7 +24,7 @@ time: "Event Time"
 location: "Event Location"
 ---
 ```
-4. Then include the entire event description using markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help
+4. Then include the entire event description in markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help
 5. Make a pull request to the original repository
 
 ## For adding markdown News posts
@@ -39,7 +39,7 @@ title: "Your Post Title"
 date: 2017-12-31
 ---
 ```
-4. Then include the entire news post description using markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help
+4. Then include the entire news post description in markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help
 5. Make a pull request to the original repository
 
 ## For larger Contributions
@@ -49,8 +49,8 @@ date: 2017-12-31
   * In your forked repository, go into the Settings > to the GitHub Pages section > and change Source from "None" to "master branch" like so: ![contribute1](assets/img/contribute1.png)
   * Go to the file "_config.yml" ![contribute2](assets/img/contribute2.png) and change baseurl and url to your GitHub Pages settings like so: ![contribute3](assets/img/contribute3.png)
 3. Make any changes you want
-4. When you are ready to make a pull request, you should make a new branch and revert the "_config.yml" file to its original form
-5. Make a pull request from your new branch, while keeping your master branch live on your GitHub Pages for reviewers to study before merging your pull request. Please also include a link to the live master branch on your GitHub Pages in your pull request
+4. When you are ready to make a pull request, you should make a new branch and revert the "_config.yml" file to its original form in this new branch
+5. Make a pull request from your new branch, while keeping your master branch live on your GitHub Pages for reviewers to study before merging your pull request. In your pull request description, please include a link to the live master branch on your GitHub Pages
 
 # What to Contribute
 ## Ongoing Needs
