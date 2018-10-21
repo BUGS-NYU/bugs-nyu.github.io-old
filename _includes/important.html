@@ -1,10 +1,11 @@
 <div id="important">
 <p>
 	{% assign final_url = "" %}
-	{% assign final_title = "" %}
+	{% assign final_title = "hello" %}
 	{% assign final_date = "now" | date: "%Y-%m-%d" %}
 	{% for event in site.events limit:1 %}
 	  Latest event: <a href = "{{event.url}}">{{event.title}}</a> on {{event.event_date}}
 	{% endfor %}
+	{{ final_title }}
 </p>
 </div>
