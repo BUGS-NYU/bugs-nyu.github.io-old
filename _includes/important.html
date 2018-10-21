@@ -21,7 +21,7 @@
 	{% endfor %}
 
 	{% if final_title != "0" %}
-		Upcoming: {{ final_title }} on {{ final_date | date: "%B %e, %Y" }} at {{ final_location }}
+		Upcoming: {{ final_title }} on {{ final_date | date: "%B %e, %Y" }} in {{ final_location }}
 	{% else %}
 		No events upcoming, keep being awesome!
 	{% endif %}
