@@ -1,7 +1,7 @@
 <div id="important">
 <p>
 	{% assign final_title = "0" %}
-	{% assign today = "now" | date: "%s" %} <!-- The easiest way to compare dates numerically is to convert the date to a hard unix timestamp -->
+	{% assign today = "now" | date: "%Y-%m-%d" | date: "%s" %} <!-- The easiest way to compare dates numerically is to convert the date to a hard unix timestamp -->
 
 	{% for event in site.events %}
 		{% assign event_date = event.event_date | date: "%s" %} <!-- Unix timestamp for comparing dates -->
