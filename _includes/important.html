@@ -1,6 +1,8 @@
 <div id="important">
 <p>
 	{% assign final_url = "" %}
+	{% assign final_title = "" %}
+	{% assign final_date = "" %}
 	{% for temp_event in site.events %}
 		{% if temp_event future: 1 %}
 			{% if final_url.size == 0 %}
