@@ -3,7 +3,11 @@
 	{% assign final_url = "" %}
 	{% assign final_title = "" %}
 	{% assign final_date = "now" | date: "%Y-%m-%d" %}
-	{% for temp_event in site.events %}
+</p>
+</div>
+
+<!--
+{% for temp_event in site.events %}
 		{% if temp_event future: 1 %}
 			{% if final_url.size == 0 %}
 				{% final_url = temp_event.url %}
@@ -12,10 +16,6 @@
 			{% endif %}
 		{% endif %}
 	{% endfor %}
-</p>
-</div>
-
-<!--
 
 {% elsif temp_event.date < final_date %}
 	{% final_url = temp_event.url %}
