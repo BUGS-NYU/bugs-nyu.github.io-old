@@ -8,7 +8,7 @@
 		{% assign event_date = event.event_date | date: "%s" %}
 		{% if event_date >= final_date %}
 			{% if final_url == "0" %}
-				{% assign final_url = event.url %}
+				{% final_title = "yes" %}
 				{{ 7 }}
 			{% endif %}
 		{% endif %}
