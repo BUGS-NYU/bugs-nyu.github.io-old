@@ -4,10 +4,8 @@
 	{% assign final_title = "2" %}
 	{% assign final_date = "now" | date: "%Y-%m-%d" %}
 
-	{% for temp_event in site.events %}
-		{% if temp_event future: 1 %}
-			{{ 4 }}
-		{% endif %}
+	{% for temp_event in site.events future:1 %}
+		{{ 4 }}
 	{% endfor %}
 
 	{% for event in site.events limit:1 %}
