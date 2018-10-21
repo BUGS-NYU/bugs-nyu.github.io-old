@@ -8,8 +8,10 @@
 		{% assign event_date = event.event_date | date: "%s" %}
 		{% if event_date >= final_date %}
 			{% if final_url == "0" %}
+				{% assign final_url = event.url %}
 				{% assign final_title = event.title %}
-				{{ 7 }}
+				{% assign final_date = event.event_date %}
+				{{ 8 }}
 			{% endif %}
 		{% endif %}
 	{% endfor %}
