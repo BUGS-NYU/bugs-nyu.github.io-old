@@ -9,10 +9,6 @@
 				{% final_url = temp_event.url %}
 				{% assign final_title = temp_event.title %}
 				{% assign final_date = temp_event.date %}
-			{% elsif temp_event.date < final_date %}
-				{% final_url = temp_event.url %}
-				{% final_title = temp_event.title %}
-				{% final_date = temp_event.date %}
 			{% endif %}
 		{% endif %}
 	{% endfor %}
