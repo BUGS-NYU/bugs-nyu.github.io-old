@@ -12,10 +12,20 @@
 			{% endif %}
 		{% endif %}
 	{% endfor %}
-	{% if final_url.size > 0 %}
+</p>
+</div>
+
+<!--
+
+{% elsif temp_event.date < final_date %}
+	{% final_url = temp_event.url %}
+	{% final_title = temp_event.title %}
+	{% final_date = temp_event.date %}
+
+{% if final_url.size > 0 %}
 		Upcoming: <a href = "{{final_url}}">{{final_title}}</a> on {{fina_date}}
 	{% else %}
 		No events upcoming, keep being awesome!
 	{% endif %}
-</p>
-</div>
+-->
+
