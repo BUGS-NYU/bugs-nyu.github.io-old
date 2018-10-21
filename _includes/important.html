@@ -1,13 +1,13 @@
 <div id="important">
 <p>
-	{% assign final_url = "" %}
-	{% assign final_title = "" %}
+	{% assign final_url = "0" %}
+	{% assign final_title = "0" %}
 	{% assign final_date = "now" | date: "%s" %}
 
 	{% for event in site.events %}
 		{% assign event_date = event.event_date | date: "%s" %}
 		{% if event_date >= final_date %}
-			{% if final_url.size = 0 %}
+			{% if final_url == "0" %}
 				{% final_url = temp_event.url %}
 				{% final_title = temp_event.title %}
 				{% final_date = temp_event.date %}
