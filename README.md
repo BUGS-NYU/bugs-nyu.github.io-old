@@ -13,7 +13,7 @@
 ## For adding markdown Events
 1. Fork this repository
 2. Make a new markdown (filename ending with .md) document in the "_events" folder of your fork
-3. Follow [the template event](bugs-nyu.github.io/_events/template_event.md) by including this at the top with the correct information:
+3. Follow [the template event](_events/template_event.md) by including this at the top with the correct information:
 
   ```
   ---
@@ -30,7 +30,7 @@ location: "Event Location"
 ## For adding markdown News posts
 1. Fork this repository
 2. Make a new markdown (filename ending with .md) document in the "_posts" folder of your fork
-3. Follow [the template event](bugs-nyu.github.io/_posts/template_post.md) by including this at the top with the correct information:
+3. Follow [the template event](_posts/template_post.md) by including this at the top with the correct information:
 
   ```
   ---
