@@ -9,14 +9,14 @@
 			{% if final_title == "0" %} <!-- Make variable assignments for first future event encountered -->
 				{% assign final_title = event.title %}
 				{% assign final_date = event.event_date %}
-				{% assign final_location = event.event_time %}
-				{% assign final_time = event.location %}
+				{% assign final_location = event.location %}
+				{% assign final_time = event.time %}
 				{% assign final_date_compare = event_date_compare %} <!-- Unix timestamp for comparing dates -->
 			{% elsif event_date < final_date_compare %} <!-- If there is a sooner future event, aka the next upcoming event, reassign all relevant variables -->
 				{% assign final_title = event.title %}
 				{% assign final_date = event.event_date %}
 				{% assign final_location = event.location %}
-				{% assign final_time = event.location %}
+				{% assign final_time = event.time %}
 				{% assign final_date_compare = event_date_compare %}
 			{% endif %}
 		{% endif %}
