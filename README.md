@@ -30,7 +30,7 @@ location: "Event Location"
 ## For adding markdown News posts
 1. Fork this repository
 2. Make a new markdown (filename ending with .md) document in the "_posts" folder of your fork
-3. Follow [the template event](_posts/template_post.md) by including this at the top with the correct information:
+3. Follow [the template post](_posts/template_post.md) by including this at the top with the correct information:
 
   ```
   ---
