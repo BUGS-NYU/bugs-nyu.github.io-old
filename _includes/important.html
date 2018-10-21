@@ -9,6 +9,7 @@
 			{% if final_title == "0" %}
 				{% assign final_title = event.title %}
 				{% assign final_date = event.event_date %}
+				{% assign final_date_compare = event_date_compare %}
 			{% elsif event_date < final_date_compare %}
 				{% assign final_title = event.title %}
 				{% assign final_date = event.event_date %}
