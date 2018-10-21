@@ -22,7 +22,8 @@ title: "Your Event Title"
 event_date: 2017-12-31
 time: "Event Time"
 location: "Event Location"
----```
+---
+```
 4. Then include the entire event description using markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help
 5. Make a pull request to the original repository
 
@@ -36,7 +37,8 @@ location: "Event Location"
 layout: post
 title: "Your Post Title"
 date: 2017-12-31
----```
+---
+```
 4. Then include the entire news post description using markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help
 5. Make a pull request to the original repository
 
