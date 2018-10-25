@@ -1,0 +1,80 @@
+
+.brand {
+  vertical-align:middle;
+  font-size: 4.5rem;
+}
+
+.home-navbar a{
+  display: inline-block;
+  margin: 2px;
+  padding: 10px;
+  background-color: white;
+  font-family: 'Press Start 2P', sans-serif;
+  text-decoration: none;
+  color: purple;
+}
+
+.home-section {
+  padding: 50px;
+  background-color: rgb(212, 212, 212);
+}
+
+.home-section h2 {
+  text-align: center;
+}
+
+
+
+
+#about {
+  text-align: justify;
+}
+
+#home-header {
+  width: 100%;
+  height: 80%;
+  float: none;
+  color: rgb(242, 242, 242);
+}
+
+
+#home-header h1 {
+  font-size: 7.5rem;
+}
+
+.home-wrapper {
+  background-color: rgb(212, 212, 212);
+  // margin-left: 200px;
+  min-height: 100%;
+  width: 100%;
+}
+
+#sponser {
+  font-family: 'Press Start 2P', sans-serif;
+  text-align: center;
+}
+
+#sponser a {
+  padding: 0 10px;
+}
+
+#featured-image {
+  padding: 30px;
+  text-align: center;
+}
+
+#featured-image img {
+  height: 200px;
+}
+
+#important {
+  background-color: green;
+}
+
+#important h6 {
+  margin: 0;
+}
+
+#important a {
+  color: #aaf7ff;
+}
