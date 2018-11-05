@@ -9,5 +9,3 @@ location: "Warren Weaver Hall, Room 517"
 ### ACM x BUGS Course Description
 
 Confused about what CS classes to take next semester? Join ACM and BUGS for unbiased opinions to help you plan your course schedule! Food will be served!
-
-November 8, 7:15pm at WWH 517
