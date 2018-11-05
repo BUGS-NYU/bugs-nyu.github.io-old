@@ -8,7 +8,7 @@ permalink: /calendar/data/
 {% for event in site.events %}
     {
         "title":"{{event.title}}",
-        "start": "{{event.event_date}}",
+        "start": "{{event.date}}",
         "allDay":true,
         "url":"{{ site.baseurl }}{{event.url}}"
     }
