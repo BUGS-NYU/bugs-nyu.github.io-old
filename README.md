@@ -24,7 +24,7 @@ time: "Event Time"
 location: "Event Location"
 ---
 ```
-4. Then include the entire event description in markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help
+4. Then include the entire event description in markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help. No need to write your title, date, time, or location, they're automatically added to the event page for you
 5. Make a pull request to the original repository
 
 ## For adding markdown News posts
@@ -39,7 +39,7 @@ title: "Your Post Title"
 date: 2017-12-31
 ---
 ```
-4. Then include the entire news post description in markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help
+4. Then include the entire news post description in markdown using [this guide](https://guides.github.com/features/mastering-markdown/) for help. No need to write your title or date, they're automatically added to the news post page for you. Add a time and location if applicable
 5. Make a pull request to the original repository
 
 ## For larger Contributions
