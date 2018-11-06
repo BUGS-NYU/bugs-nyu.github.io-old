@@ -68,7 +68,7 @@ If you have questions, post follow-up comments/questions below the
 issue that you are trying to resolve.
 
 ### Viewing and Testing Your Changes
-
+<!--  Maybe this should instead have a jekyll tutorial? Viewing your changes from the gh-pages account is kinda wonky -->
 Before you attempt the pull request, you should make sure that the modifications work and actually fix the issue (without breaking the other parts of the website).
 
 You can view the BUGS website code that is hosted in your own fork on GitHub.
