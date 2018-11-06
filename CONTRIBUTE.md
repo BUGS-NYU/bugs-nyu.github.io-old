@@ -2,22 +2,29 @@
 
 The club website is in constant need of changes, issue fixes and new contributions.
 
-If you __find a problem__ on the website, submit an issue.
-
-If you have __ideas for changing/improving the website__, create an issue and describe your ideas.
-
-If you want to fix some of the existing issues, follow the fork, modify, make a pull request routine (details below).
+- If you __find a problem__ on the website, submit an issue.
+- If you have __ideas for changing/improving the website__, create an issue and describe your ideas.
+- If you want to fix some of the existing issues, fork the repository and make a pull request
 
 __No prior experience contributing to open source projects?__
 No problem. Here are some resources to get you started:
 
-- [Git Basics][git-basics]
-- [How To Contribute to Open Source: Getting Started with Git][getting-started]
+- [Git Basics][git-basics] - Basics of Git
+- [Getting started with Git][getting-started] - Guide on installing and starting to use Git
+- [Git Cheatsheet][git-cheats] - Github's Git cheat sheet
+- [How to Contribute][open-source-guide] - This guide by Alaina Kafkes describes how to contribute to projects on Github; if you're completely lost, or just need a refresher on the basics, this is a good place to start
 - [How to Create a Pull Request on GitHub][create-pull-req]
+- [Markdown Cheatsheet][md-cheats] - Markdown is the standard for writing documents, issues, and pull requests. This cheatsheet has basically all the important syntax for it
+- [Markdown Compiler][dillinger] - Compiles Markdown to a number of formats, so you can preview the docs you write
 
+[md-cheats]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[dillinger]: https://dillinger.io/
+[git-cheats]: https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
+[open-source-guide]: https://medium.com/clarifai-champions/99-pr-oblems-a-beginners-guide-to-open-source-abc1b867385a
 [git-basics]: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics
 [getting-started]: https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git
 [create-pull-req]: https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
+[git-desktop-guide]: https://help.github.com/desktop/guides/getting-started-with-github-desktop/
 
 ## How to fix an issue
 
@@ -86,7 +93,7 @@ If it seems that your changes fix the issue and do not break anything else, you 
 
 ### Making the Pull request
 
-__!!! Rever the temporary change in the `_config.yml` file.__
+__!!! Revert the temporary change in the `_config.yml` file.__
 The `baseurl` should be set to `https://bugs-nyu.github.io`
 
 - On your local machine download the latest code for the website using:
