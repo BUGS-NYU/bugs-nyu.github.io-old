@@ -11,17 +11,21 @@ If you want to fix some of the existing issues, follow the fork, modify, make a 
 __No prior experience contributing to open source projects?__
 No problem. Here are some resources to get you started:
 
-- [Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
-- [How To Contribute to Open Source: Getting Started with Git ](https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git) 
-- [How to Create a Pull Request on GitHub](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) 
+- [Git Basics][git-basics]
+- [How To Contribute to Open Source: Getting Started with Git][getting-started]
+- [How to Create a Pull Request on GitHub][create-pull-req]
 
+[git-basics]: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics
+[getting-started]: https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git
+[create-pull-req]: https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
 
-## How to fix an issues
+## How to fix an issue
 
 ### Prerequisites:
-- git is installed on your own computer (you can just install [GitHub Desktop](https://desktop.github.com/) if you have never done this before)
+- git is installed on your own computer (you can just install [GitHub Desktop][git-desktop] if you have never done this before)
 - you have a [GitHub account](https://github.com/)
 
+[git-desktop]: https://desktop.github.com/
 
 ### Claim an Issue
 
@@ -34,7 +38,7 @@ Let us know that you are working on the issue by posting a comment below the iss
 - Find the website project repository on GitHub: [https://github.com/BUGS-NYU/bugs-nyu.github.io](https://github.com/BUGS-NYU/bugs-nyu.github.io)
 and __fork__ it into your own account (there is a fork icon, ![fork icon](assets/img/fork_icon.png), in the upper right corner of the page). A _fork_ is a complete copy of the project in your own account.
 
-- Use the following instruction to __clone__ the repository to your own machine:
+- Use the following instruction to __clone__ the repository to your own computer:
 
   `$ git clone  https://github.com/YOUR-USER-NAME/bugs-nyu.github.io.git`
 
@@ -58,7 +62,7 @@ issue that you are trying to resolve.
 
 ### Viewing and Testing Your Changes
 
-Before you attempt the pull request, you should make sure that the modifications work and actually fix the issue (without braking the other parts of the website).
+Before you attempt the pull request, you should make sure that the modifications work and actually fix the issue (without breaking the other parts of the website).
 
 You can view the BUGS website code that is hosted in your own fork on GitHub.
 
@@ -104,5 +108,3 @@ The `baseurl` should be set to `https://bugs-nyu.github.io`
   - Verify where you are merging from and where you are merging to (it should be master branch of your fork into the master branch of the actual BUGS website repository). Look through the list of your commits to double check that the changes you are attempting to merge are the correct ones.
   - Click Create pull request once everything seems correct.
   - In the message indicate the number of issue the pull request is solving and briefly tell us what you did.
-
- 
