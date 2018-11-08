@@ -6,33 +6,105 @@ The club website is in constant need of changes, issue fixes and new contributio
 - If you have __ideas for changing/improving the website__, create an issue and describe your ideas.
 - If you want to fix some of the existing issues, fork the repository and make a pull request
 
-__No prior experience contributing to open source projects?__
-No problem. Here are some resources to get you started:
+## What to Contribute
+All contributions, documentation improvements, and ideas are welcome; if you're new to open source, we recommend looking at the [Github "Issues" tab][issues] or trying one of the following:
 
-- [Git Basics][git-basics] - Basics of Git
-- [Getting started with Git][getting-started] - Guide on installing and starting to use Git
-- [Git Cheatsheet][git-cheats] - Github's Git cheat sheet
+### Ongoing Needs
+- Make markdown files for upcoming BUGS events, including:
+  - General club meetings
+  - Small group project meetings
+- Make markdown files for news stories related to open source, including:
+  - General news about BUGS
+  - Interesting open source projects outside of BUGS
+  - Interesting tech news related to open source
+  - Etc
+
+### Planned Features
+- Display all student contributors
+- Add more project details
+  - Display To Do's
+  - Display student contributors
+  - IRC/Discord
+- Add IRC Client
+  - Link to Discord
+  - Info on how to setup your own client
+
+[gh-issues]: https://github.com/BUGS-NYU/bugs-nyu.github.io/issues
+
+## How to Contribute
+Once you've decided on an issue to fix or an improvement to add, you'll need to learn how to work with Github, Jekyll, and the website's general file setup.
+
+### Git and Github
+You'll first need to [create a Github account][sign-up-gh] and [download Git][git-desktop]. If you're new to either of these two systems, here's a few good resources to get you started:
+
 - [How to Contribute][open-source-guide] - This guide by Alaina Kafkes describes how to contribute to projects on Github; if you're completely lost, or just need a refresher on the basics, this is a good place to start
-- [How to Create a Pull Request on GitHub][create-pull-req]
-- [Markdown Cheatsheet][md-cheats] - Markdown is the standard for writing documents, issues, and pull requests. This cheatsheet has basically all the important syntax for it
-- [Markdown Compiler][dillinger] - Compiles Markdown to a number of formats, so you can preview the docs you write
+- [Git Basics][git-basics] - A more technical look at the basics of Git itself
+- [Git Cheatsheet][git-cheats] - Github's Git cheat sheet
+- [How to Create a Pull Request on GitHub][create-pull-req] - A guide specifically for creating pull requests on Github. We recommend learning a little more about Git before reading this, because it can't help with troubleshooting Git problems
+- [Matthew Brett's Git Guide][curious-git] - A beginner's guide to Git, how it works, and how to use it. It's written like a story, so skimming might be appropriate depending on your comfort level
+- [The Git Parable][git-parable] - A beginner's guide to Git on a more technical level. It's also written like a story, so skimming might be appropriate
 
-[md-cheats]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-[dillinger]: https://dillinger.io/
 [git-cheats]: https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
 [open-source-guide]: https://medium.com/clarifai-champions/99-pr-oblems-a-beginners-guide-to-open-source-abc1b867385a
 [git-basics]: https://git-scm.com/book/en/v2/Getting-Started-Git-Basics
-[getting-started]: https://www.digitalocean.com/community/tutorials/how-to-contribute-to-open-source-getting-started-with-git
 [create-pull-req]: https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
 [git-desktop-guide]: https://help.github.com/desktop/guides/getting-started-with-github-desktop/
+[curious-git]: https://matthew-brett.github.io/curious-git/curious_intro.html
+[git-parable]: http://practical-neuroimaging.github.io/git_parable.html
 
-## How to fix an issue
+In general, you'll need to first fork the repository to your own account, then clone it to your own computer with
 
-### Prerequisites:
-- git is installed on your own computer (you can just install [GitHub Desktop][git-desktop] if you have never done this before)
-- you have a [GitHub account](https://github.com/)
+```shell
+# You want Terminal/Powershell to be viewing whatever folder you want to hold the project folder
+# i.e. if you want the bugs-nyu.io project folder to be on you desktop, you should
+# change your working directory to Desktop in Terminal
+# For more information, visit http://www.linfo.org/cd.html
+git clone https://github.com/YOUR-USER-NAME/bugs-nyu.github.io.git
+```
 
-[git-desktop]: https://desktop.github.com/
+Next you'll want to set up your local `master` branch to track your forked repository. You can do this with:
+
+```shell
+git branch set-url --push origin https://github.com/YOUR-USER-NAME/bugs-nyu.github.io.git
+git branch -u origin/master
+```
+
+**NOTE:** You should replace `YOUR-USER-NAME` with *your* username.
+
+Now, whenever you type `git push` you'll push to your own forked repository, and when you type `git pull` you'll pull from BUGS's main repository.
+
+### Setting up Jekyll
+To view the website, you'll need to get Jekyll up and running. This is a radically different process depending on your operating system.
+
+#### Windows
+If you're running windows take a look at this guide: https://jekyllrb.com/docs/windows/#installation
+
+#### Linux and MacOS
+We'd recommend using a [package manager][install-ruby] to install ruby, and then using the command
+
+```shell
+gem install Jekyll
+```
+
+[install-ruby]: https://www.ruby-lang.org/en/documentation/installation/#package-management-systems
+
+#### MacOS-Specific Issues
+Since Mac has a built-in version of ruby, you can't install Jekyll in its library folder without being a system admin and having root access. To get around this, we recommend using [homebrew][install-homebrew]. If you have hombrew installed, type the following commands in.
+
+```shell
+brew install rbenv
+rbenv init
+# Follow the instructions printed after this step to set it up correctly
+rbenv install 2.5.3
+rbenv global 2.5.3
+# Restart your terminal after this command
+gem install jekyll
+```
+
+More detailed instructions can be found [here][install-rbenv].
+
+[install-homebrew]: https://brew.sh/
+[install-rbenv]: https://github.com/rbenv/rbenv#homebrew-on-macos
 
 ### Claim an Issue
 
@@ -40,7 +112,7 @@ Let us know that you are working on the issue by posting a comment below the iss
 
 (If you do not have any activity for a while after claiming the issue, we will assume that you abandoned it so other people can work on it.)
 
-### General Steps for Forking and Cloning
+<!-- ### General Steps for Forking and Cloning
 
 - Find the website project repository on GitHub: [https://github.com/BUGS-NYU/bugs-nyu.github.io](https://github.com/BUGS-NYU/bugs-nyu.github.io)
 and __fork__ it into your own account (there is a fork icon, ![fork icon](assets/img/fork_icon.png), in the upper right corner of the page). A _fork_ is a complete copy of the project in your own account.
@@ -59,59 +131,40 @@ and __fork__ it into your own account (there is a fork icon, ![fork icon](assets
 
   - add the remote repository pointing to the original BUGS website repository:
 
-    `git remote add website https://github.com/BUGS-NYU/bugs-nyu.github.io.git`
+    `git remote add website https://github.com/BUGS-NYU/bugs-nyu.github.io.git` -->
 
-### Editing the Code
+### Making and Viewing Changes
+Now that you have Git, Jekyll, and the website code all downloaded and installed, you can start directly editing website code on your own computer. To view these edits, use the command
 
-Make the required changes in the code on your computer.
-If you have questions, post follow-up comments/questions below the
-issue that you are trying to resolve.
+```shell
+jekyll serve
+```
 
-### Viewing and Testing Your Changes
-<!--  Maybe this should instead have a jekyll tutorial? Viewing your changes from the gh-pages account is kinda wonky -->
-Before you attempt the pull request, you should make sure that the modifications work and actually fix the issue (without breaking the other parts of the website).
+and open you preferred web browser to the url `localhost:4000`. Whenever you make an edit to a file, just refresh the page, and you should be able to see the result of your edits.
 
-You can view the BUGS website code that is hosted in your own fork on GitHub.
+### Using Jekyll
+Quite a few `.html` files use Jekyll to compile the final page. Here's a few guides so the syntax makes sense:
 
-To do so, you will need to make a __temporary__ change in the `_config.yml` file:
-- set the value of baseurl to `https://YOUR-USER-NAME.github.io/bugs-nyu.github.io/`
+- [Jekyll Docs](https://jekyllrb.com/docs/) for a in-depth guide on Jekyll
+- [Liquid Docs](https://shopify.github.io/liquid/) for a guide on the syntax used by Jekyll
+- [Liquid Cheatsheet #1](https://www.shopify.com/partners/shopify-cheat-sheet)
+- [Liquid Cheatsheet #2](https://devhints.io/jekyll)
+- [Liquid Examples](https://gist.github.com/JJediny/a466eed62cee30ad45e2)
 
-Commit and push all the changes you made on your own computer to the fork on GitHub:
+### Committing Along the Way
+It's generally considered good practice to commit your changes after you've reached a "checkpoint" - a place where you like to save all of the edits you've made up to that point. To do this, use the following commands:
 
-- `git add LIST-OF-FILES-WITH-CHANGES`
-- `git commit -m "MESSAGE-STATING-WHAT-YOU-DID"`
-- `git push origin master`
-
-Finally, activate the website in your own fork:
-- Go to your own fork of the project at https://github.com/YOUR-USER-NAME/bugs-nyu.github.io
-- Go to Settings and scroll down to GitHub Pages section.
-- Under Source change None to __master branch__ and click Save.
-
-After a few seconds, you should be able to refresh the Settings page and see the link to your own version of the BUGS website highlighted in green (you will need to scroll down to the GitHub Pages section).
-
-If it seems that your changes fix the issue and do not break anything else, you are ready to make the pull request.
+```shell
+git add LIST-OF-FILES-WITH-CHANGES
+git commit -m "MESSAGE-STATING-WHAT-YOU-DID"
+git push origin master
+```
 
 ### Making the Pull request
+Once you're ready to submit your changes for review, you can make a pull request:
 
-__!!! Revert the temporary change in the `_config.yml` file.__
-The `baseurl` should be set to `https://bugs-nyu.github.io`
-
-- On your local machine download the latest code for the website using:
-
-  `git pull website master`
-
-  If this causes some merge conflicts (i.e. the files that you were changing were modified by other people as well), then resolve the merge conflicts (in most cases this means manually editing the files and deciding which changes should stay where).
-
-- Commit the changes to your own fork on GitHub:
-
-  - `git add LIST-OF-FILES-WITH-CHANGES`
-  - `git commit -m "MESSAGE-STATING-WHAT-YOU-DID"`
-  - `git push origin master`
-
-- Make the actual pull request:
-
-  - Go to your fork on GitHub and switch to the Pull Requests tab.
-  - Use the big green button that says New pull request.
-  - Verify where you are merging from and where you are merging to (it should be master branch of your fork into the master branch of the actual BUGS website repository). Look through the list of your commits to double check that the changes you are attempting to merge are the correct ones.
-  - Click Create pull request once everything seems correct.
-  - In the message indicate the number of issue the pull request is solving and briefly tell us what you did.
+- Go to your fork on GitHub and switch to the Pull Requests tab.
+- Use the big green button that says New pull request.
+- Verify where you are merging from and where you are merging to (it should be master branch of your fork into the master branch of the actual BUGS website repository). Look through the list of your commits to double check that the changes you are attempting to merge are the correct ones.
+- Click Create pull request once everything seems correct.
+- In the message indicate the number of issue the pull request is solving and briefly tell us what you did.
