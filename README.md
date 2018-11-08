@@ -98,8 +98,3 @@ https://jekyllrb.com/docs/windows/#installation
 To start a development server run `jekyll serve` in the project source folder. The the server will run at `http://localhost:4000`
 
 Resources for Jekyll syntax and usage:
-- [Jekyll Docs](https://jekyllrb.com/docs/) for a in-depth guide on Jekyll
-- [Liquid Docs](https://shopify.github.io/liquid/) for a guide on the syntax used by Jekyll
-- [Liquid Cheatsheet #1](https://www.shopify.com/partners/shopify-cheat-sheet)
-- [Liquid Cheatsheet #2](https://devhints.io/jekyll)
-- [Liquid Examples](https://gist.github.com/JJediny/a466eed62cee30ad45e2)
