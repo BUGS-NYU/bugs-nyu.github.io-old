@@ -22,6 +22,7 @@ time: "Event Time"
 location: "Event Location"
 ---
 ```
+
 4. Then include the entire event description in markdown using [this guide][md-guide] for help
 5. Make a pull request to the original repository
 
@@ -37,7 +38,10 @@ title: "Your Post Title"
 date: 2017-12-31
 ---
 ```
-4. Then include the entire news post description in markdown using [this guide][md-guide] for help
+
+4. Then include the entire news post description in markdown using [this guide][md-guide] for help.
+No need to write your title or date, they're automatically added to the news post page for you. Add a time and location if applicable
+
 5. Make a pull request to the original repository
 
 [md-guide]: https://guides.github.com/features/mastering-markdown/
@@ -97,7 +101,8 @@ https://jekyllrb.com/docs/windows/#installation
 ### Using Jekyll
 To start a development server run `jekyll serve` in the project source folder. The the server will run at `http://localhost:4000`
 
-Resources for Jekyll syntax and usage:
+Resources for Jekyll syntax and usage:  
+
 - [Jekyll Docs](https://jekyllrb.com/docs/) for a in-depth guide on Jekyll
 - [Liquid Docs](https://shopify.github.io/liquid/) for a guide on the syntax used by Jekyll
 - [Liquid Cheatsheet #1](https://www.shopify.com/partners/shopify-cheat-sheet)
