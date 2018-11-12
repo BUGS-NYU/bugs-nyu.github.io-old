@@ -2,6 +2,8 @@
 layout: default
 permalink: /projects/
 ---
+
+
 <div class="header">
 	<div class="header-content">
 		<h1 class="brand">Projects_</h1>
@@ -13,66 +15,8 @@ permalink: /projects/
 	</div>
 	<br/>
 
-	<div>
-		<div>
-			<a href="mailto:bradley.brecher@nyu.edu" target="_blank"><h3 class="featurette-heading">RCOS Collaboration</h3></a>
-			<p><b>Mentor:</b> Bradley Brecher<br>
-				The team is looking for more members. To get involved, contact him at <a href="mailto:bradley.brecher@nyu.edu" target="_blank">bradley.brecher@nyu.edu</a></p>
-			<p>This semester BUGS is collaborating with the Rensselaer Polytechnic Institute near Albany, New York. BUGS is bringing one of their open source projects called YACS (Yet Another Course Scheduler) to NYU. Currently the NYU team is working on converting the Albert data to “YACS form”.  Along with that there is work to be done on frontend and backend so YACS can be adopted for NYU.</p>
-		</div>
-	</div>
+	{% for proj in site.projects %}
+		{{ proj.content | markdownify }}
+	{% endfor %}
 
-	<div>
-		<div>
-			<a href="https://github.com/BUGS-NYU/Unity" target="_blank">
-			  <h3 class="featurette-heading">Soccer Physics Unity Game</h3>
-			</a>
-			<p><b>Mentor:</b> EJ Kim<br>
-				EJ’s team meets twice a week. Contact EJ at <a href="mailto:ejk483@nyu.edu" target="_blank">ejk483@nyu.edu</a> to get connected.</p>
-			  <p>EJ and his team are recreating the classic 2D Soccer Physics game using Unity. In this game, players are controlled by a single button and the oly rule that applies is physics!</p>
-			  <p>So far, EJ has taught his team the basics of Unity. Currently, EJ’s team is working together in smaller groups (Game play, UI, Player Control), to lay the foundation of the game. In the future, EJ hopes to customize the classic game with quirky features!</p>
-		</div>
-		<div class="four columns">
-			<a href="https://github.com/BUGS-NYU/AlexaWithRaspberryPi" target="_blank">
-			  <!--<img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/img/#">--></a>
-		</div>
-	</div>
-
-	<div>
-		<div>
-			<a href="https://github.com/BUGS-NYU/2DGame" target="_blank">
-			<h3 class="featurette-heading">2DGame</h3></a>
-			<p><b>Mentor:</b> Adeola Uthman<br>
-				Contact Adeola via email at <a href="mailto:au535@nyu.edu" target="_blank">au535@nyu.edu</a> to get connected.</p>
-			<p>Adeola's team is creating an infinite runner game about a squirrel in the forest.
-			This game will be similar to Temple Run and Canabalt.</p>
-		</div>
-		<div class="four columns">
-			<a href="https://github.com/BUGS-NYU/2DGame" target="_blank">
-			<!--<img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/img/#">--></a>
-		</div>
-	</div>
-
-	<div>
-		<div class="four columns">
-			<a href="https://github.com/BUGS-NYU/eCommerceWebApp" target="_blank">
-			  <!--<img class="featurette-image img-responsive center-block" src="{{ site.baseurl }}/assets/img/#">--></a>
-		</div>
-		<div>
-			<a href="https://github.com/BUGS-NYU/eCommerceWebApp" target="_blank"><h3 class="featurette-heading">E-Commerce Website Framework </h3></a>
-			<p><b>Mentor:</b> Harshita Rao<br>
-				Her project is mostly virtual; however, she meets once a week to help mentees and answer their questions! Contact her at <a href="mailto:hj997@nyu.edu" target="_blank">hj997@nyu.edu</a> to get connected.</p>
-			<p>Harshita and her team are building a completely open source ecommerce website like Amazon, Ebay etc. from scratch. Harshita’s team used HTML, CSS, and Bootstrap to create the existing landing page last semester. This semester her team is using SQL to build the back end.</p>
-		</div>
-	</div>
-
-	<div>
-		<div>
-			<a href="https://github.com/BUGS-NYU/bugs-nyu.github.io" target="_blank"><h3 class="featurette-heading">BUGS Website</h3></a>
-			<p><b>Mentor:</b> BUGS Eboard<br>
-				This project is entirely virtual and all contributions can be made as pull requests on GitHub. Contact the eboard for questions.</p>
-			<p>The BUGS website is an open source project and we appreciate any help on the planned upgrades listed on the README TODO, the listed issues, or any other contribution you have. Please make your contribution through the form of a pull request. If you are making a significant change, make sure your fork is hosted live through your GitHub account so we can review it's functionality before approving the pull request.</p>
-		</div>
-	</div>
-
-    </div>
+</div>
