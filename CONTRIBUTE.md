@@ -142,7 +142,7 @@ jekyll serve
 
 and open you preferred web browser to the url `localhost:4000`. Whenever you make an edit to a file, just refresh the page, and you should be able to see the result of your edits.
 
-### Using Jekyll
+### Working with Jekyll
 Quite a few `.html` files use Jekyll to compile the final page. Here's a few guides so the syntax makes sense:
 
 - [Jekyll Docs](https://jekyllrb.com/docs/) for a in-depth guide on Jekyll
