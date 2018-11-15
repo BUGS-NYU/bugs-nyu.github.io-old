@@ -13,13 +13,8 @@ permalink: /about/
 	       <h3>Eboard Members</h3>
     </div>
 
-    {% for member in site.eboard %}
-    <div class="col-lg-4">
-      	<img class="img-circle" src="{{ site.baseurl }}/assets/img/{{member.img_path}}" alt="Generic placeholder image" width="80" height="80">
-		<h4>{{member.name}}</h4>
-		<h4>{{member.position}}</h4>
-      	{{member.content | markdownify}}
-    </div>
+    {% for member in site.contributors %}
+        {% include contributor.html member = member %}
     {% endfor %}
 
     <div class = "col-lg-4">
