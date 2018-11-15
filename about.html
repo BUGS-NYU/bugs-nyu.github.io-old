@@ -9,9 +9,11 @@ permalink: /about/
 </div>
 
 <div class="container">
+
     <div class="col-lg-4">
 	       <h3>Eboard Members</h3>
     </div>
+    
     {% assign eboard = site.contributors | where: "type","eboard" | sort:'meta_order' %}
     {% for person in eboard %}
         {% include contributor.html contributor = person %}
