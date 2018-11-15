@@ -10,47 +10,24 @@ permalink: /about/
 
 <div class="container">
     <div class="col-lg-4">
-	<h3>Eboard Members</h3>
-      	<img class="img-circle" src="{{ site.baseurl }}/assets/img/ana.jpg" alt="Generic placeholder image" width="80" height="80">
-		<h4>Ananditha Raghunath</h4>
-		<h4>>President</h4>
-      	<p>Senior studying Math and CS at Courant. Having started to code only after she arrived at NYU, she's is excited to mentor new members that may not know how to make their ideas translate into tangible code based projects!</p>
+	       <h3>Eboard Members</h3>
     </div>
 
-	<div class="col-lg-4">
-		<img class="img-circle" src="{{ site.baseurl }}/assets/img/julie.jpg" alt="Generic placeholder image" width="80" height="80">
-		<h4>Julie Cestaro</h4>
-		<h4>> Director of Communications</h4>
-    	<p>Senior from Connecticut majoring in Computer Science and minoring in Business Studies and Math. You may also find her on campus doing work for CAS Student Council.</p>
-	</div>
-	<div class="col-lg-4">
-		<img class="img-circle" src="{{ site.baseurl }}/assets/img/george.JPG" alt="Generic placeholder image" width="80" height="80">
-		<h4>George Ma</h4>
-		<h4>Treasurer</h4>
-    	<p>Junior from Singapore majoring in Computer Science and Business. He likes reading, writing, coding, and gaming.</p>
-	</div>
-	<div class="col-lg-4">
-		<img class="img-circle" src="{{ site.baseurl }}/assets/img/brad.jpg" alt="Generic placeholder image" width="80" height="80">
-		<h4>Bradley Brecher</h4>
-		<h4>> Director of Outreach</h4>
-    	<p>Senior from Woodmere, New York studying Computer Science. Outside of BUGS, you can find him coaching hockey at a local high school.</p>
-	</div>
-	<div class="col-lg-4">
-		<h4>Veena Arvind</h4>
-		<img class="img-circle" src="{{ site.baseurl }}/assets/img/veena.jpg" alt="Generic placeholder image" width="80" height="80">
-		<h4>>Director of Community Development</h4>
-    	<p>Sophomore studying Computer Science in CAS. She loves to talk about code with other people. In her free time, Veena goes to the gym, makes jewelry, and plays card games.</p>
-	</div>
-	<div class="col-lg-4">
-		<img class="img-circle" src="{{ site.baseurl }}/assets/img/ami.jpg" alt="Generic placeholder image" width="80" height="80">
-		<h4>Ami Nachiappan</h4>
-		<h4>> Secretary</h4>
-    	<p>Sophomore from California studying Computer Science and Economics. In her free time, she loves spending time with family, running, and of course, coding!</p>
-	</div>
-	<div class = "col-lg-4">
+    {% for member in site.eboard %}
+    <div class="col-lg-4">
+      	<img class="img-circle" src="{{ site.baseurl }}/assets/img/{{member.img_path}}" alt="Generic placeholder image" width="80" height="80">
+		<h4>{{member.name}}</h4>
+		<h4>{{member.position}}</h4>
+      	{{member.content | markdownify}}
+    </div>
+    {% endfor %}
+
+    <div class = "col-lg-4">
 		<h3>Founding Members</h3>
+    </div>
+	<div class = "col-lg-4">
 			<div class="col-lg-4">
-      	<img class="img-circle" src="{{ site.baseurl }}/assets/img/nadira.jpg" alt="Generic placeholder image" width="60" height="60">
+      	<img class="img-circle" alt="Generic placeholder image" width="60" height="60">
       	<h4>Nadira Dewji</h4>
       	<p> Alumni who studied Computer Science in CAS. Originally from Tanzania, Nadira loves travelling, scuba diving and wildlife. She's excited about open source principles and making impactful contributions.</p>
     </div>
