@@ -1,6 +1,9 @@
+{% assign prsn = include.contributor %} <!-- fren? -->
 <div class="col-lg-4">
-	<img class="img-circle" src="{{ site.baseurl }}/assets/img/{{include.member.img_path}}" alt="Generic placeholder image" width="80" height="80">
-	<h4>{{include.member.name}}</h4>
-	<h4>{{include.member.position}}</h4>
-	{{include.member.content | markdownify}}
+	<img class="img-circle" src="{{ site.baseurl }}/assets/img/{{prsn.img_path}}" alt="Generic placeholder image" width="80" height="80">
+	<h4>{{prsn.name}}</h4>
+	{% if prsn.position %}
+	<h4>{{prsn.position}}</h4>
+	{% endif %}
+	{{prsn.content | markdownify}}
 </div>
