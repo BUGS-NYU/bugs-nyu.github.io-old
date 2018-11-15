@@ -74,7 +74,9 @@ git branch -u origin/master
 Now, whenever you type `git push` you'll push to your own forked repository, and when you type `git pull` you'll pull from BUGS's main repository.
 
 ### Setting up Jekyll
-To view the website, you'll need to get Jekyll up and running. This is a radically different process depending on your operating system.
+To view the website locally, you'll need to get Jekyll up and running. This is a radically different process depending on your operating system.
+
+This step isn't _always_ necessary; if you don't want to do this you can view the site from github pages via your own fork.
 
 #### Windows
 If you're running windows take a look at this guide: https://jekyllrb.com/docs/windows/#installation
@@ -142,7 +144,7 @@ jekyll serve
 
 and open you preferred web browser to the url `localhost:4000`. Whenever you make an edit to a file, just refresh the page, and you should be able to see the result of your edits.
 
-### Working with Jekyll
+#### Working with Jekyll
 Quite a few `.html` files use Jekyll to compile the final page. Here's a few guides so the syntax makes sense:
 
 - [Jekyll Docs](https://jekyllrb.com/docs/) for a in-depth guide on Jekyll
@@ -150,6 +152,13 @@ Quite a few `.html` files use Jekyll to compile the final page. Here's a few gui
 - [Liquid Cheatsheet #1](https://www.shopify.com/partners/shopify-cheat-sheet)
 - [Liquid Cheatsheet #2](https://devhints.io/jekyll)
 - [Liquid Examples](https://gist.github.com/JJediny/a466eed62cee30ad45e2)
+
+#### Without Jekyll
+If you didn't install Jekyll, no worries; you can push your changes to your account's fork and view them from github pages. First, you want to set up github pages on your fork - more instructions on how to do that in [this github tutorial][gh-pages-tutorial]. To push (after you've committed your most recent changes), write `git push origin master` in terminal, and then go to `https://YOUR-USER-NAME.github.io/bugs-nyu.github.io` to view your version of the website.
+
+[gh-pages-tutorial]: https://guides.github.com/features/pages/
+
+
 
 ### Committing Along the Way
 It's generally considered good practice to commit your changes after you've reached a "checkpoint" - a place where you like to save all of the edits you've made up to that point. To do this, use the following commands:
