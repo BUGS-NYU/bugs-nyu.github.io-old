@@ -19,7 +19,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
-
+  eboard:
+    output: true
+    permalink: /about/:path/
 
 # Build settings
 markdown: kramdown
