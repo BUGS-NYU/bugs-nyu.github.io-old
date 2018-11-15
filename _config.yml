@@ -23,11 +23,11 @@ collections:
     output: true
     permalink: /about/:path/
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+# defaults:
+#   - scope:
+#       path: ""
+#     values:
+#       layout: "default"
 # - scope:
 #     path: ""
 #     type: "posts"
