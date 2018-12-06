@@ -1,7 +1,8 @@
 {% assign prsn = include.contributor %} <!-- fren? -->
 <div class="col-lg-4 contributor">
 	<div class="profile-img">
-		<img class="img-circle" src="{{ site.baseurl }}/assets/img/{{prsn.img_path}}" alt="Generic placeholder image">
+		<img class="img-circle" src="{{ site.baseurl }}/assets/img/{{prsn.img_path}}"
+			onerror="this.src='{{ site.baseurl }}/assets/img/profile_onerror.jpg'" alt="Generic placeholder image">
 	</div>
 	<div class="profile-text">
 		<div class="content">
