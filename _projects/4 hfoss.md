@@ -3,10 +3,9 @@ name: HFOSS
 ---
 ### [Humanitarian Free and Open Source Software (HFOSS) Project][profklukowska]
 **Mentor:** Joanna Klukowska  
-The team is looking for more members. To get involved, contact him at [bradley.brecher@nyu.edu][bradley]
+To join this team, first join the [Slack workspace].
 
-This semester BUGS is collaborating with the Rensselaer Polytechnic Institute near Albany, New York. BUGS is bringing one of their open source projects called YACS (Yet Another Course Scheduler) to NYU. Currently the NYU team is working on converting the Albert data to “YACS form”.  Along with that there is work to be done on frontend and backend so YACS can be adopted for NYU.
-
+The goal of this project is to explore several open source projects that are humanitarian in nature and figure out how to make contributions to those projects.
 
 
 Mentor: Joanna Klukowska
