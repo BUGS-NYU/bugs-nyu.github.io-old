@@ -3,9 +3,15 @@ name: HFOSS
 ---
 ### [Humanitarian Free and Open Source Software (HFOSS) Project][slack-workspace]
 **Mentor:** Joanna Klukowska  
+<<<<<<< HEAD
 To join this team, check out the [Slack workspace][slack-workspace].
 
 The goal of this project is to explore several open source projects that are humanitarian in nature and figure out how to make contributions to those projects. Fore more information, check out the [Slack workspace][slack-workspace] or the project's [Github account][hfoss-account].
+=======
+To join this team, first join the [Slack workspace].
+
+The goal of this project is to explore several open source projects that are humanitarian in nature and figure out how to make contributions to those projects.
+>>>>>>> 1b3211c181a114fd41829c2fd0053ec2cbfd24fd
 
 
 Mentor: Joanna Klukowska
