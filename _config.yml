@@ -25,3 +25,26 @@ collections:
 
 # Build settings
 markdown: kramdown
+
+defaults:
+  -
+    scope:
+      type: "pages"
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      type: "events"
+    values:
+      layout: "event"
+  -
+    scope:
+      type: "projects"
+    values:
+      layout: "project"
