@@ -1,55 +1,56 @@
+
 .contributor {
-	margin: 20px;
-	width: 100%;
-	height: 200px;
-	// background: $light-grey;
-	.profile-img {//The div that holds the image
+	$img-height: 150px;
+	$small: 10px;
 
-		width: 200px;//Sizing all of them to 200px
-		height: 200px;
+	margin: $small;//space in between contributors
 
-		float: left;//The profile image should be on the left side
-		margin-right: 20px;// There should be some space between the image and text
+	//Below stuff will eventually be desktop specific
+	height: $img-height;//want it to be 200px tall
+
+	.profile-img-container {//The div that holds the image
+
 		overflow: hidden;//The image shouldn't go outside the 200px region
 
-		img.img-circle {//The image
-			position: relative;//Positioning
-			left: 50%;
-			top: 100px;
+		//Below stuff will eventually be desktop specific
+		width: $img-height;//Sizing all of them to 200px by 200px
+		height: 100%;
+		float: left;//The profile image should be on the left side
+		margin-right: $small;// There should be some space between the image and text
 
-			-webkit-transform:translate(-50%, -100px);// Transform IDK what this really does past that it moves the object after it's positioned
-			-moz-transform:translate(-50%, -100px);
-			-ms-transform:translate(-50%, -100px);
-			-o-transform:translate(-50%, -100px);
-			transform:translate(-50%, -100px);
+		img.profile-img {//The image
+			clip-path: circle($img-height/2 at center $img-height/2);// Cut the image into a circle
 
-			clip-path: circle(100px at center 100px);// Cut the image into a circle
+			//Using a SASS mixin, which is defined in _sass/base/_mixins.scss
+			@include transform(translateX(-50%)); // Move the image 50% of its width to the right
 
-			// From W3 Schools:
-			display: block;// 	Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width
+			//Below stuff will eventually be desktop specific
+			position: relative;//Position it
+			left: 50%;//50% of the parent div's width to the left
 
-			min-height: 200px;// We want the images to be kinda standard sizes
-			min-width: 200px;
-			max-height: 250px;
+			min-height: $img-height;// We want the images to be kinda standard sizes
+			min-width: $img-height;
+			max-height: $img-height*1.25;
 
-			width: auto !important;// Images should be as big as possible within constraints
-			height: auto !important;//!important overrides existing bootstrap styling
 		}
-
-
 	}
-
 	.profile-text {//Div that holds the profile text
-
-		height: 100%; // Make the div take up the full vertical space
-		padding: 20px; // Make sure the text stays in a 20px inset region
-
-		.content { // Text-specific stuff
-			h4,h5 {// Headers here are really just bolded text
-				margin-top: 0 !important;
-				margin-bottom: 0 !important;
+		padding: $small; // Make sure the text stays in a 20px inset region
+		.profile-content { // Text-specific stuff
+			.profile-title {// Headers here are really just bolded text
+				* {
+					line-height: 1;
+					margin-top: 0 !important;
+					margin-bottom: 0 !important;
+				}
+				margin-bottom: $small/2;
 			}
+
 		}
 	}
-
 }
+//Eventually this needs to be flexible enough for large and small devices
+//These might help?
+//https://github.com/eduardoboucas/include-media/blob/master/src/_config.scss
+//https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+//https://www.w3schools.com/css/css3_mediaqueries_ex.asp
