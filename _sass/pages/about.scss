@@ -1,56 +1,57 @@
+@mixin --img-circle-specific($img-size) {
+	@include square($img-size); // Reshape the image to a square
+	// Cut the image into a circle
+	> img.profile-img { clip-path: circle($img-size/2 at center $img-size/2); }
+}
 
-.contributor {
-	$img-height: 150px;
-	$small: 10px;
-
-	margin: $small;//space in between contributors
-
-	//Below stuff will eventually be desktop specific
-	height: $img-height;//want it to be 200px tall
-
-	.profile-img-container {//The div that holds the image
-
-		overflow: hidden;//The image shouldn't go outside the 200px region
-
-		//Below stuff will eventually be desktop specific
-		width: $img-height;//Sizing all of them to 200px by 200px
-		height: 100%;
-		float: left;//The profile image should be on the left side
-		margin-right: $small;// There should be some space between the image and text
-
-		img.profile-img {//The image
-			clip-path: circle($img-height/2 at center $img-height/2);// Cut the image into a circle
-
-			//Using a SASS mixin, which is defined in _sass/base/_mixins.scss
+@mixin --img-circle-static {
+	@include dynamic-extend('img-circle') {//img-circle is made with a div surrounding an img
+		overflow: hidden;
+		> img {
+			@include square(100%,'min');
+			max-height: 125%;
 			@include transform(translateX(-50%)); // Move the image 50% of its width to the right
-
-			//Below stuff will eventually be desktop specific
 			position: relative;//Position it
-			left: 50%;//50% of the parent div's width to the left
-
-			min-height: $img-height;// We want the images to be kinda standard sizes
-			min-width: $img-height;
-			max-height: $img-height*1.25;
-
-		}
-	}
-	.profile-text {//Div that holds the profile text
-		padding: $small; // Make sure the text stays in a 20px inset region
-		.profile-content { // Text-specific stuff
-			.profile-title {// Headers here are really just bolded text
-				* {
-					line-height: 1;
-					margin-top: 0 !important;
-					margin-bottom: 0 !important;
-				}
-				margin-bottom: $small/2;
-			}
-
+			left: 50%;//50% of the parent div's width from the left
 		}
 	}
 }
-//Eventually this needs to be flexible enough for large and small devices
-//These might help?
-//https://github.com/eduardoboucas/include-media/blob/master/src/_config.scss
-//https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
-//https://www.w3schools.com/css/css3_mediaqueries_ex.asp
+
+@mixin img-circle($img-size) {// img-circle
+	@include --img-circle-specific($img-size);
+	@include --img-circle-static;
+}
+
+@mixin --profile-specific($img-size, $margin-size, $bottom: false) {
+	margin: $margin-size;//space in between contributors
+	.profile-img-container {
+		@if $bottom { margin-bottom: $margin-size; } // Text is below image
+		@else { margin-right: $margin-size; float: left; } //Else Text is to right of image, and image should be to left
+	}
+	.profile-text {
+		padding: $margin-size;
+		// Headers here are really just bolded text
+		.profile-title { margin-bottom: $margin-size/2; }
+	}
+}
+
+@mixin profile($img-size, $margin-size, $bottom: true) {
+	@include --profile-specific($img-size, $margin-size, $bottom);
+	@include dynamic-extend('profile') { //General features of a profile
+		float: left;
+		.profile-img-container { @include img-circle($img-size); }
+		.profile-text .profile-title > * { // Headers here are really just bolded text
+			line-height: 1; margin-top: 0 !important; margin-bottom: 0 !important;
+		}
+	}
+}
+
+.contributor {
+	@include profile($img-size: 150px, $margin-size: 5px);
+
+	@media only screen and (min-width: 1200px) { // When the screen is desktop and big
+		@include --profile-specific($img-size: 200px, $margin-size: 20px);
+		.profile-img-container
+		{ @include --img-circle-specific($img-size: 200px); }
+	}
+}
