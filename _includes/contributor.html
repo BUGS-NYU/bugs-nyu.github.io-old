@@ -5,14 +5,12 @@
 			onerror="this.src='{{ site.baseurl }}/assets/img/profile_onerror.jpg'" alt="Generic placeholder image">
 	</div>
 	<div class="profile-text">
-		<div class="profile-content">
-			<div class="profile-title">
-				<h4>{{prsn.name}}</h4>
-				{% if prsn.position %}
-				<h5>{{prsn.position}}</h5>
-				{% endif %}
-			</div>
-				{{prsn.content | markdownify}}
+		<div class="profile-title">
+			<h4>{{prsn.name}}</h4>
+			{% if prsn.position %}
+			<h5>{{prsn.position}}</h5>
+			{% endif %}
 		</div>
+			{{prsn.content | markdownify}}
 	</div>
 </div>
