@@ -4,8 +4,16 @@
     <header>
       {% include navbutton.html %}
     </header>
+    {% if page.title%}
+    <div class="header">
+      <div class="header-content">
+        <h1 class="brand">{{page.title}}_</h1>
+      </div>
+    </div>
+    {% endif %}
 
     {{ content }}
+
   </div>
 
   <div style="clear: both;"></div>

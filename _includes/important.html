@@ -1,33 +1,28 @@
+<!-- Set the value for today to today's date -->
+{% assign today = "now" | date: "%Y-%m-%d" | date: "%s" %}
+
+{% for event in site.events %}
+	<!-- variable date holds date of current event in seconds -->
+	{% assign date = event.date | date: "%s" %}
+
+	<!-- If the event's in the past, ignore it -->
+	{% if date < today %}{% continue %}{% endif %}
+
+	<!-- The code inside this 'unless' block only executes if the expression is false -->
+	{% unless date > final_date %}<!-- This evaluates to false if final_date isn't assigned yet -->
+		<!-- Assigns final_event and final_date to keep track of the
+			date of the most imminent future event -->
+		{% assign final_event = event %}
+		{% assign final_date = date %}
+	{% endunless %}
+{% endfor %}
+
 <div id="important">
-<p>
-	{% assign final_title = "0" %}
-	{% assign today = "now" | date: "%Y-%m-%d" | date: "%s" %} <!-- The easiest way to compare dates numerically is to convert the date to a hard unix timestamp -->
-
-	{% for event in site.events %}
-		{% assign event_date = event.event_date | date: "%s" %} <!-- Unix timestamp for comparing dates -->
-		{% if event_date >= today %} <!-- Filter out past events -->
-			{% if final_title == "0" %} <!-- Make variable assignments for first future event encountered -->
-				{% assign final_title = event.title %}
-				{% assign final_date = event.event_date %}
-				{% assign final_location = event.location %}
-				{% assign final_time = event.time %}
-				{% assign final_date_compare = event_date_compare %} <!-- Unix timestamp for comparing dates -->
-			{% elsif event_date < final_date_compare %} <!-- If there is a sooner future event, aka the next upcoming event, reassign all relevant variables -->
-				{% assign final_title = event.title %}
-				{% assign final_date = event.event_date %}
-				{% assign final_location = event.location %}
-				{% assign final_time = event.time %}
-				{% assign final_date_compare = event_date_compare %}
-			{% endif %}
+	<p>
+		{% if final_event %}
+			{% include important-format.html event = final_event %}
+		{% else %}
+			No events upcoming, keep being awesome!
 		{% endif %}
-	{% endfor %}
-
-	{% if final_title != "0" %}
-		Upcoming: {{ final_title }} on {{ final_date | date: "%B %e, %Y" }} in {{ final_location }} at {{ final_time }} <!-- Try to have all variables complete in event MD files so it looks nice :) -->
-	{% else %}
-		No events upcoming, keep being awesome!
-	{% endif %}
-
-	<!-- Not sure how to make the event URL a variable because it's a special case not written in the event MD files -->
-</p>
+	</p>
 </div>
