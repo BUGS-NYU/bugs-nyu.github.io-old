@@ -3,6 +3,7 @@
 @import "base/normalize";
 @import "base/variables";
 @import "base/functions";
+@import "base/mixins";
 @import "base/base-styles";
 @import "base/utils";
 @import "base/typography";
@@ -23,3 +24,4 @@
 @import "pages/calendar";
 @import "pages/news";
 @import "pages/projects";
+@import "pages/about";

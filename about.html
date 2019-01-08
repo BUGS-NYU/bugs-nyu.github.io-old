@@ -9,37 +9,31 @@ permalink: /about/
 </div>
 
 <div class="container">
+
     <div class="col-lg-4">
 	       <h3>Eboard Members</h3>
     </div>
-
-    {% for member in site.eboard %}
-    <div class="col-lg-4">
-      	<img class="img-circle" src="{{ site.baseurl }}/assets/img/{{member.img_path}}" alt="Generic placeholder image" width="80" height="80">
-		<h4>{{member.name}}</h4>
-		<h4>{{member.position}}</h4>
-      	{{member.content | markdownify}}
-    </div>
+    
+    {% assign eboard = site.contributors | where: "type","eboard" | sort:'meta_order' %}
+    {% for person in eboard %}
+        {% include contributor.html contributor = person %}
     {% endfor %}
 
     <div class = "col-lg-4">
 		<h3>Founding Members</h3>
     </div>
-	<div class = "col-lg-4">
-			<div class="col-lg-4">
-      	<img class="img-circle" alt="Generic placeholder image" width="60" height="60">
-      	<h4>Nadira Dewji</h4>
-      	<p> Alumni who studied Computer Science in CAS. Originally from Tanzania, Nadira loves travelling, scuba diving and wildlife. She's excited about open source principles and making impactful contributions.</p>
+
+    {% assign founders = site.contributors | where: "type","founder" | sort:'meta_order' %}
+    {% for person in founders %}
+        {% include contributor.html contributor = person %}
+    {% endfor %}
+
+    <div class = "col-lg-4">
+		<h3>Faculty Mentor</h3>
     </div>
-    <div class="col-lg-4">
-      	<img class="img-circle" src="{{ site.baseurl }}/assets/img/david.jpg" alt="Generic placeholder image" width="60" height="60">
-		<h4>David Klein</h4>
-      	<p>Alumni California who studied Biology with three minors, and loves both carbon based life and silicon based life to equal extents.</p>
-    </div>
-	</div>
-  <div class="col-lg-4">
-      <h4>Joanna Klukowska</h4>
-  <h4>> Faculty Mentor</h4>
-      <p>Clinical Assistant Professor of Computer Science at the Courant Institute of Mathematical Sciences at New York University.</p>
-  </div>
+
+    {% assign mentors = site.contributors | where:"type","mentor" %}
+    {% for person in mentors %}
+        {% include contributor.html contributor = person %}
+    {% endfor %}
 </div>
