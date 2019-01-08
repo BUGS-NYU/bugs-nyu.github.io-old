@@ -1,0 +1,77 @@
+//Transform mixin to for compatibility
+@mixin transform($transforms) {//mixin takes a transformation as an arg
+    -moz-transform: $transforms;// and makes it a bunch of transformations that
+    -o-transform: $transforms;// work for different browsers
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+// This sets the width and height of an object to be a square
+@mixin square($size,$bound: null) { // bound is 'min' or 'max' or whatever precedes 'width' and 'height'
+	@if $bound { $bound: $bound+ '-' } // If we should bound the size, then bound it
+	@else { $bound: ''; }
+	#{$bound+'width'}: $size;
+	#{$bound+'height'}: $size;
+}
+
+// Bounds the object by a dimension i.e. height or width
+@mixin boundDim( $dimension, $min: null, $max: null ) {
+	@if $min { #{'min-'+$dimension}: $min; } // If there's a min, then apply it
+	@if $max { #{'max-'+$dimension}: $max; } // If there's a max, then apply it
+	@if not $min and not $max {
+		@error "Need to specify at least one dimension to bound '"+$dimension+"'";
+	}
+}
+
+//Below code is adapted from the website
+//https://alistapart.com/article/dry-ing-out-your-sass-mixins
+//It models the toolkit from https://github.com/at-import/toolkit
+//Going to add it as a dependency later for now this is enough
+
+// Toolkit License:
+// 
+// Copyright (C) 2011-2014 by Sam Richard
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+$Private-Toolkit-Placeholders: ();
+
+@mixin dynamic-extend($id) {
+
+    // Get the placeholder ID from a map (it's a key:value system like a python dictionary)
+    $placeholder-id: map-get($Private-Toolkit-Placeholders, $id);
+
+    // If the ID wasn't in the map, then add it
+    @if $placeholder-id == null {
+
+        // Get a unique id to represent the given id as a scss placeholder
+        $placeholder-id: unique-id();
+
+        //Add the unique id to the map as key, value = id, unique-id
+        $Private-Toolkit-Placeholders: map-merge($Private-Toolkit-Placeholders, ($id: $placeholder-id)) !global;
+
+        // Add the extendable stuff to the root labeled using the placeholder, with the content provided
+        @at-root %#{$placeholder-id} {
+            @content;//Content block after mixin
+        }
+    }
+    // Extends the class established by the placeholder
+    @extend %#{$placeholder-id};
+}
