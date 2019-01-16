@@ -1,7 +1,7 @@
 highlighter: rouge
 themeColor: #7cbaff
 
-title: BUGS NYU
+title: BUGS - NYU
 email:
 description: ...
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -17,23 +17,11 @@ collections:
     output: true
     permalink: /calendar/:path/
   projects:
-    output: true
-    permalink: /projects/:path/
+    output: false
+    # permalink: /projects/:path/
   contributors:
-    output: true
-    permalink: /about/:path/
-
-# defaults:
-#   - scope:
-#       path: ""
-#     values:
-#       layout: "default"
-# - scope:
-#     path: ""
-#     type: "posts"
-#   values:
-#     layout: "post"
-
+    output: false
+    # permalink: /about/:path/
 
 # Build settings
 markdown: kramdown
@@ -55,8 +43,3 @@ defaults:
       type: "events"
     values:
       layout: "event"
-  -
-    scope:
-      type: "projects"
-    values:
-      layout: "project"
