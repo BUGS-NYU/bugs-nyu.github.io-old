@@ -1,16 +1,8 @@
-{% include header.html %}
-
-  <div class="default-wrapper">
-    <header>
-      {% include navbutton.html %}
-    </header>
-    <div class="container">
-		<h2>{{ page.title }}</h2>
-      {{ content }}
-		{{ page.date | date: "%B %e, %Y" }}
-    </div>
-  </div>
-
-  <div style="clear: both;"></div>
-
-{% include footer.html %}
+---
+layout: base
+---
+<div class="container">
+    <h2>{{ page.title }}</h2>
+  {{ content }}
+    {{ page.date | date: "%B %e, %Y" }}
+</div>
