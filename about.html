@@ -1,6 +1,5 @@
 ---
 title: About
-layout: default
 permalink: /about/
 ---
 <div class="container">
@@ -8,7 +7,7 @@ permalink: /about/
     <div class="col-lg-4">
 	       <h3>Eboard Members</h3>
     </div>
-    
+
     {% assign eboard = site.contributors | where: "type","eboard" | sort:'meta_order' %}
     {% for person in eboard %}
         {% include contributor.html contributor = person %}
