@@ -1,5 +1,6 @@
-
-# HackRPI 
+---
+title: HackRPI
+---
 HackRPI is back for spring 2019 with another exciting hackathon!
 
 If you
@@ -29,4 +30,4 @@ pre-register by going to https://hackrpi.com and clicking on
 “Preregister now!”. Once registration opens, those who preregistered
 will be sent an email letting them know. If you have any additional
 questions regarding registration or HackRPI in general, head on over to
-https://hackrpi.com or email us at team@hackrpi.com.
+https://hackrpi.com or email us at [team@hackrpi.com](mailto:team@hackrpi.com).
