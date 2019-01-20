@@ -13,14 +13,12 @@ paginate_path: "/news/page:num/"
 
 future: true
 
-collections:
+collections: # ~ sign in yaml means null
+  projects: ~
+  contributors: ~
   events:
     output: true
     permalink: /calendar/:path/
-  projects:
-    output: false # permalink: /projects/:path/
-  contributors:
-    output: false # permalink: /about/:path/
 
 defaults:
   -
