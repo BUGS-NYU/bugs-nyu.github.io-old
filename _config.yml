@@ -1,6 +1,7 @@
 title: BUGS - NYU
 description: ...
 url: "https://bugs-nyu.github.io"
+repository_url: https://github.com/BUGS-NYU/
 markdown: kramdown
 plugins: [jekyll-paginate]
 
@@ -9,6 +10,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 
 paginate: 6
 paginate_path: "/news/page:num/"
+
+# -- Collection settings --
 
 collections: # ~ sign in yaml means null
   projects: ~
