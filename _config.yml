@@ -2,6 +2,7 @@ title: BUGS - NYU
 email: bugscommunicationsteam@gmail.com
 description: ...
 url: "https://bugs-nyu.github.io"
+repository_url: https://github.com/BUGS-NYU/
 markdown: kramdown
 plugins: [jekyll-paginate]
 
@@ -13,6 +14,7 @@ paginate_path: "/news/page:num/"
 
 future: true
 
+# -- Collection settings --
 collections: # ~ sign in yaml means null
   projects: ~
   contributors: ~
