@@ -1,13 +1,11 @@
-highlighter: rouge
-themeColor: #7cbaff
-
 title: BUGS - NYU
-email:
 description: ...
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-
+url: "https://bugs-nyu.github.io"
+markdown: kramdown
 plugins: [jekyll-paginate]
+
+# Edit this if you'd like to check out the site on your own fork
+baseurl: "" # the subpath of your site, e.g. /blog
 
 paginate: 6
 paginate_path: "/news/page:num/"
@@ -17,20 +15,14 @@ collections:
     output: true
     permalink: /calendar/:path/
   projects:
-    output: false
-    # permalink: /projects/:path/
+    output: false # permalink: /projects/:path/
   contributors:
-    output: false
-    # permalink: /about/:path/
-
-# Build settings
-markdown: kramdown
+    output: false # permalink: /about/:path/
 
 defaults:
   -
     scope:
       type: "pages"
-      path: "" # an empty string here means all files in the project
     values:
       layout: "default"
   -
