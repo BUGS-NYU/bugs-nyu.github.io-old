@@ -1,6 +1,5 @@
 ---
 title: Projects
-layout: default
 permalink: /projects/
 ---
 <div class="container">
@@ -10,7 +9,7 @@ permalink: /projects/
 	<br/>
 
 	{% for proj in site.projects %}
-		{{ proj.content | markdownify }}
+		{{ proj.content }}
 	{% endfor %}
 
 </div>

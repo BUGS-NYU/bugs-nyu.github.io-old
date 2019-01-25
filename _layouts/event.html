@@ -1,24 +1,15 @@
-{% include header.html %}
+---
+layout: base
+---
+<div class="container">
+    <div class="row">
+      <h2>{{ page.title }}</h2>
+    </div>
 
-<div class="default-wrapper">
-  <header>
-    {% include navbutton.html %}
-  </header>
-
-  <div class="container">
-  <div class="row">
-    <h2>{{ page.title }}</h2>
-  </div>
-
-  <div class="row">
-    {{ content }}
-	  {{ page.event_date | date: "%B %e, %Y" }} at {{ page.time }}
-	<br>
-	  {{ page.location }}
-  </div>
-  </div>
-
+    <div class="row">
+      {{ content }}
+        {{ page.event_date | date: "%B %e, %Y" }} at {{ page.time }}
+      <br>
+        {{ page.location }}
+    </div>
 </div>
-
-<div style="clear: both;"></div>
-{% include footer.html %}
