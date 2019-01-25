@@ -1,12 +1,6 @@
 
 /* Base files. */
-@import "base/normalize";
-@import "base/variables";
-@import "base/functions";
-@import "base/mixins";
-@import "base/base-styles";
-@import "base/utils";
-@import "base/typography";
+@import "base/base";
 
 /* Modules */
 @import "modules/grid";
