@@ -1,5 +1,8 @@
+/*  Functions, global variables, etc. */
+/* No actual CSS styling should be included here */
+@import "lib/lib";
 
-/* Base files. */
+/* Global public namespaces and default tag styles */
 @import "base/base";
 
 /* Modules */
@@ -13,9 +16,5 @@
 @import "modules/media-queries";
 @import "modules/navigation";
 
-/* Pages */
-@import "pages/home";
-@import "pages/calendar";
-@import "pages/news";
-@import "pages/projects";
-@import "pages/about";
+/* Styles specific to certain pages, scope-limited using classes */
+@import "pages/pages";
