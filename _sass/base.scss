@@ -6,15 +6,7 @@
 @import "base/base";
 
 /* Modules */
-@import "modules/grid";
-@import "modules/buttons";
-@import "modules/forms";
-@import "modules/lists";
-@import "modules/code";
-@import "modules/tables";
-@import "modules/spacing";
-@import "modules/media-queries";
-@import "modules/navigation";
+@import "modules/modules";
 
 /* Styles specific to certain pages, scope-limited using classes */
 @import "pages/pages";

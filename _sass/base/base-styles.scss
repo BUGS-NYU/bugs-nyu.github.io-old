@@ -14,8 +14,8 @@ body {
   font-weight: 400;
   font-family: $font-family;
   color: $font-color;
-  background-color: rgb(126, 79, 186);
-  background-image: url('../img/morebugs-purple.png');
+  background-color: $body-background-color;
+  background-image: url('/assets/img/morebugs-purple.png');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -40,10 +40,10 @@ hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
-  border-top: 1px solid $light-grey;
+  border-top: 1px solid $horizontal-row-border-color;
 }
 
-.header {
+.header { // Used in _layouts/default and index.html
   position: relative;
   width: 100%;
   min-height: 20%;
@@ -60,7 +60,7 @@ hr {
 
 .default-wrapper {
   float: right;
-  background-color: rgb(212, 212, 212);
+  background-color: $default-wrapper;
   // margin-left: 200px;
   min-height: 100%;
   width: 80%;
