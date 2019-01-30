@@ -3,33 +3,33 @@ title: News
 permalink: /news/
 ---
 <div class="container">
-<div class="row">
-  <div id="feed">
-    <!-- This loops through the paginated posts -->
-    {% for post in paginator.posts %}
-    <span class="six columns">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
-      <p class="author">
-        <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
-      </p>
-      <div class="summary">
-        {{ post.summary }}
-      </div>
-    </span>
-    {% endfor %}
+  <div class="row">
+    <div class="feed">
+      <!-- This loops through the paginated posts -->
+      {% for post in paginator.posts %}
+      <span class="">
+        <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+        <p class="author">
+          <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
+        </p>
+        <div class="summary">
+          {{ post.summary }}
+        </div>
+      </span>
+      {% endfor %}
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <!-- Pagination links -->
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-    {% endif %}
-    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% endif %}
+  <div class="row">
+    <!-- Pagination links -->
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+      {% endif %}
+      <span class="page-number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+      {% endif %}
+    </div>
   </div>
-</div>
 </div>
