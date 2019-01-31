@@ -12,6 +12,8 @@ plugins: [jekyll-paginate]
 paginate: 6
 paginate_path: "/news/page:num/"
 
+future: true
+
 collections:
   events:
     output: true
