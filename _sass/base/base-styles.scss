@@ -4,8 +4,8 @@
 // html is set to 62.5% so that all the REM measurements throughout Skeleton
 // are based on 10px sizing. So basically 1.5rem = 15px :)
 
-html body {
-    height: 100%;
+html, body {
+    // height: 100%;
 }
 
 html { // Prevent overscrolling? https://stackoverflow.com/questions/12046315/prevent-overscrolling-of-web-page
@@ -29,7 +29,7 @@ body {
 
 .default-wrapper { // Wraps around content
   background-color: $default-wrapper;
-  min-height: 100%;
+  // min-height: 100%;
 }
 
 // Links
