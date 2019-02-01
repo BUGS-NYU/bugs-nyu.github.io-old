@@ -2,13 +2,11 @@
 <body>
 
   <div class="row">
+    <div class="col-xs-12 col-lg-9 offset-lg-3 default-wrapper">
+      {% include navbutton.html %}
 
-  </div>
-  <div class="default-wrapper">
-    {% include navbutton.html %}
-
-	{{ content }}
-
+  	   {{ content }}
+    </div>
   </div>
 
 {% include footer.html %}
