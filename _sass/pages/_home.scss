@@ -1,3 +1,31 @@
+#about {
+  text-align: justify;
+  margin-top: 10px;
+}
+
+#home-header {
+  width: 100%;
+  height: 80%;
+
+  h1 {
+    font-size: 7.5rem;
+  }
+}
+
+.header { // Used in _layouts/default and index.html
+  position: relative;
+  width: 100%;
+  min-height: 20%;
+  text-align: center;
+}
+
+.header-content {
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position:absolute;
+  top:50%;
+  left: 50%;
+}
 
 .brand {
   vertical-align:middle;
@@ -14,64 +42,29 @@
   color: purple;
 }
 
-.home-section {
-  padding: 50px;
-  background-color: rgb(212, 212, 212);
-}
-
-.home-section h2 {
-  text-align: center;
-}
-
-#about {
-  text-align: justify;
-}
-
-#home-header {
-  width: 100%;
-  height: 80%;
-  float: none;
-  color: rgb(242, 242, 242);
-}
-
-
-#home-header h1 {
-  font-size: 7.5rem;
-}
-
-.home-wrapper {
-  background-color: rgb(212, 212, 212);
-  // margin-left: 200px;
-  min-height: 100%;
-  width: 100%;
-}
-
-#sponser {
+#sponsor {
   font-family: $large-header-font;
   text-align: center;
-}
 
-#sponser a {
-  padding: 0 10px;
+  a {
+    padding: 0 10px;
+  }
 }
 
 #featured-image {
   padding: 30px;
   text-align: center;
-}
 
-#featured-image img {
-  height: 200px;
+  img {
+    height: 200px;
+  }
 }
 
 #important {
   background-color: green;
-}
+  color: $important-text-color;
 
-#important h6 {
-  margin: 0;
-}
-
-#important a {
-  color: #aaf7ff;
+  // a {
+  //   color: #aaf7ff;
+  // }
 }

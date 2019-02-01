@@ -28,23 +28,28 @@
 .dropdown-content a {
     color: black;
     padding: 12px 30px;
-    // padding-left: 20px;
     text-decoration: none;
     display: block;
+
+    &:hover {/* Change color of dropdown links on hover */
+      background-color: $dropdown-content-a-hover-background-color
+    }
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: $dropdown-content-a-hover-background-color}
+.dropdown:hover {
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
+  /* Show the dropdown menu on hover */
+  .dropdown-content {
+      display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropbtn {
+    width: 0 auto;
+  }
+
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  width: 0 auto;
-}
 
 #logo {
   display: inline;
@@ -57,7 +62,6 @@
   font-family: $large-header-font;
   color: white;
   font-size: 30px;
-
 }
 
 .pagination {
