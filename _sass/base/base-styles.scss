@@ -4,23 +4,32 @@
 // html is set to 62.5% so that all the REM measurements throughout Skeleton
 // are based on 10px sizing. So basically 1.5rem = 15px :)
 
-html {
+html body {
+    height: 100%;
+}
+
+html { // Prevent overscrolling? https://stackoverflow.com/questions/12046315/prevent-overscrolling-of-web-page
   font-size: 62.5%;
 }
 
+@mixin fixed-background($background, $position: center center) {
+  background: $background;
+  background-position: $position;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 body {
-  font-size: 1.5em; // currently ems cause chrome bug misinterpreting rems on body element
-  line-height: 1.6;
+  font-size: 1.6rem; // currently ems cause chrome bug misinterpreting rems on body element
   font-weight: 400;
   font-family: $font-family;
   color: $font-color;
-  background-color: $body-background-color;
-  background-image: url('/assets/img/morebugs-purple.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  @include fixed-background(url('/assets/img/morebugs-purple.png') no-repeat);
+}
+
+.default-wrapper { // Wraps around content
+  background-color: $default-wrapper;
   min-height: 100%;
-  overflow: auto;
 }
 
 // Links
@@ -36,38 +45,9 @@ a {
 // Misc
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
-  border-width: 0;
-  border-top: 1px solid $horizontal-row-border-color;
-}
-
-.header { // Used in _layouts/default and index.html
-  position: relative;
-  width: 100%;
-  min-height: 20%;
-  text-align: center;
-}
-
-.header-content {
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  position:absolute;
-  top:50%;
-  left: 50%;
-}
-
-.default-wrapper {
-  float: right;
-  background-color: $default-wrapper;
-  // margin-left: 200px;
-  min-height: 100%;
-  width: 80%;
-}
-
-@media only screen and (max-width: 768px) {
-.default-wrapper {
-        width: 100%;
-    }
-}
+// hr {
+//   margin-top: 3rem;
+//   margin-bottom: 3.5rem;
+//   border-width: 0;
+//   border-top: 1px solid $horizontal-row-border-color;
+// }
