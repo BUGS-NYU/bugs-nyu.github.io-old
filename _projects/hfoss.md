@@ -11,4 +11,4 @@ Meeting Times: Wednesdays 12:30-1:30pm, CIWW Room 905
 
 [profklukowska]: https://hfoss-project.slack.com/team/UCUBBL5RS
 [hfoss-account]: https://github.com/nyu-hfoss-project
-[slack-workspace]: hfoss-project.slack.com
+[slack-workspace]: https://hfoss-project.slack.com
