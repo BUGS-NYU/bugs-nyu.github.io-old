@@ -3,8 +3,7 @@ name: Feature request
 about: Suggest an idea for this project
 title: "[FEATURE] "
 labels: enhancement
-assignees: A1Liu
-
+# assignees: A1Liu
 ---
 
 **Is your feature request related to a problem? Please describe.**
