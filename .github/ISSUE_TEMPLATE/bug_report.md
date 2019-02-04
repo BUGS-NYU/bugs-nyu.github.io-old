@@ -3,8 +3,7 @@ name: Bug report
 about: Create a report to help us improve
 title: "[BUG] "
 labels: bug, help wanted
-assignees: A1Liu
-
+# assignees: A1Liu
 ---
 
 **Describe the bug**
