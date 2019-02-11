@@ -4,8 +4,9 @@ permalink: /about/
 ---
 <div class="container">
 
-    <div class="">
+    <div style="clear: both">
 	       <h3>Eboard Members</h3>
+    </br>
     </div>
 
     {% assign eboard = site.contributors | where: "type","eboard" | sort:'meta_order' %}
@@ -13,8 +14,9 @@ permalink: /about/
         {% include contributor.html contributor = person %}
     {% endfor %}
 
-    <div class="">
+    <div style="clear: both">
 		<h3>Founding Members</h3>
+    </br>
     </div>
 
     {% assign founders = site.contributors | where: "type","founder" | sort:'meta_order' %}
@@ -22,8 +24,9 @@ permalink: /about/
         {% include contributor.html contributor = person %}
     {% endfor %}
 
-    <div class="">
+    <div style="clear:both" > 
 		<h3>Faculty Mentor</h3>
+    </br>
     </div>
 
     {% assign mentors = site.contributors | where:"type","mentor" %}
