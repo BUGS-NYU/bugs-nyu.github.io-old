@@ -24,10 +24,6 @@ All contributions, documentation improvements, and ideas are welcome; if you're 
 - Add more project details
   - Display To Do's
   - Display student contributors
-  - IRC/Discord
-- Add IRC Client
-  - Link to Discord
-  - Info on how to setup your own client
 
 [gh-issues]: https://github.com/BUGS-NYU/bugs-nyu.github.io/issues
 
