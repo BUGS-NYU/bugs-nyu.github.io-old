@@ -2,7 +2,7 @@ highlighter: rouge
 themeColor: #7cbaff
 
 title: BUGS - NYU
-email:
+email: bugscommunicationsteam@gmail.com
 description: ...
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
