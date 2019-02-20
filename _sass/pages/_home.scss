@@ -61,10 +61,10 @@
 }
 
 #important {
-  background-color: green;
+  background-color: $important-background-color;
   color: $important-text-color;
 
-  // a {
-  //   color: #aaf7ff;
-  // }
+  a {
+    color: $important-link-color;
+  }
 }
