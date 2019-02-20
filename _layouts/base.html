@@ -1,13 +1,21 @@
 {% include head.html %}
 <body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-lg-9 offset-lg-3 content-wrapper page-wrapper">
+        <div class="row">
+          <div class="col">
+            {% include navbutton.html %}
+          </div>
+        </div>
 
-  <div class="row">
-    <div class="col-xs-12 col-lg-9 offset-lg-3 default-wrapper">
-      {% include navbutton.html %}
-
-  	   {{ content }}
+        <div class="row">
+          <div class="col">
+            {{ content }}
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
+    </div>
 {% include footer.html %}
 </body>

@@ -3,13 +3,17 @@ layout: base
 ---
 <div class="container">
     <div class="row">
-      <h2>{{ page.title }}</h2>
+      <div class="col">
+        <h2>{{ page.title }}</h2>
+      </div>
     </div>
 
     <div class="row">
+      <div class="col">
       {{ content }}
-        {{ page.event_date | date: "%B %e, %Y" }} at {{ page.time }}
+      {{ page.event_date | date: "%B %e, %Y" }} at {{ page.time }}
       <br>
-        {{ page.location }}
+      {{ page.location }}
+      </div>
     </div>
 </div>
