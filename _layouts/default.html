@@ -1,13 +1,19 @@
 ---
 layout: base
 ---
-{% if page.title%}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+    {% if page.title %}
+      <div class="header">
+        <div class="header-content">
+          <h1 class="brand">{{ page.title }}_</h1>
+        </div>
+      </div>
+    {% endif %}
 
-<div class="header">
-  <div class="header-content">
-    <h1 class="brand">{{page.title}}_</h1>
+      {{ content }}
+    </div>
   </div>
 </div>
-{% endif %}
 
-{{ content }}

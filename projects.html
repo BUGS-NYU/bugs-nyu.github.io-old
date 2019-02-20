@@ -2,14 +2,11 @@
 title: Projects
 permalink: /projects/
 ---
-<div class="container">
-	<div id="repos">
-		<a class="" href="https://github.com/BUGS-NYU/" role="button" target="_blank">GitHub&raquo;</a>
-	</div>
-	<br/>
-
-	{% for proj in site.projects %}
-		{{ proj.content }}
-	{% endfor %}
-
+<div id="repos">
+	<a class="" href="https://github.com/BUGS-NYU/" role="button" target="_blank">GitHub&raquo;</a>
 </div>
+<br/>
+
+{% for proj in site.projects %}
+	{{ proj.content }}
+{% endfor %}
