@@ -1,0 +1,44 @@
+#main-nav-wrapper { // dropdown
+
+  margin-top: 10px;
+
+  > #main-nav-button { // class="dropbtn"
+
+    background: none;
+    border: none;
+    padding: 0px;
+
+    &:focus {
+      outline: 0;
+    }
+
+    > #main-nav-logo { // id="logo"
+      float: left;
+      margin-right: 10px;
+      width: 40px;
+      length: 40px;
+    }
+
+    > #main-nav-text { // id="brand"
+      float: left;
+      font-family: $large-header-font;
+      color: white;
+      font-size: 30px;
+      margin-top: 2px;
+      margin-bottom: 0px;
+    }
+  }
+
+  > #main-nav-content {
+
+    border: none;
+
+    a {
+      color: black;
+      padding: 12px 30px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+    }
+  }
+}
