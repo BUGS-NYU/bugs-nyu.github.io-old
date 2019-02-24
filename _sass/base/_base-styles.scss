@@ -22,7 +22,7 @@ body {
   font-weight: 400;
   font-family: $font-family;
   color: $font-color;
-  @include fixed-background(url('/assets/img/morebugs-purple.png') no-repeat);
+  @include fixed-background(url($baseurl + '/assets/img/morebugs-purple.png') no-repeat);
 }
 
 .content-wrapper { // Wraps around content
