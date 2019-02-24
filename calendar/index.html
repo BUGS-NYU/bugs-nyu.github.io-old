@@ -3,13 +3,10 @@
 {% include plugins/fullcalendar.html %}
 
 <script>
-const props = { events:'{{ site.baseurl }}/calendar/data/' }
-
+const props = { events: '{{ site.baseurl }}/calendar/data/' };
 $(document).ready(function() {
-    $('#calendar').fullCalendar(props)
+  $('#calendar').fullCalendar(props);
 });
 </script>
 
-<div class="container">
-  <div id="calendar"></div>
-</div>
+<div id="calendar"></div>
