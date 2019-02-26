@@ -32,7 +32,9 @@ $.getJSON("../../calendar/data/", (events) => {
   }
 
   if (final_event) {
-    formatted_date =  `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][final_date.getMonth()]} ${final_date.getDate() + 1}, ${final_date.getFullYear()}`;
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
+    let options = {year: 'numeric', month: 'long', day: 'numeric' };
+    formatted_date =  new Intl.DateTimeFormat('en-US', options).format(final_date);
   }
   // add the event to the top of the index.html page
   document.getElementById("important").innerHTML = (final_event ? `Upcoming: <a href="${final_event.url}">${final_event.title}</a> on ${formatted_date} in ${final_event.location} at ${final_event.time}` : "No events upcoming, keep being awesome!");
