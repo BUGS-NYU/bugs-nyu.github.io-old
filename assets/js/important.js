@@ -4,7 +4,7 @@
 const today = Date.now();
 const FOUR_WEEKS = 2419200000;
 // https://stackoverflow.com/questions/7346563/loading-local-json-file
-$.getJSON("../../calendar/data/", (events) => {
+$.getJSON("{{ site.baseurl }}/../../calendar/data/", (events) => {
   let final_date = today;
   let final_event, date, temp, formatted_date;
 
@@ -27,6 +27,7 @@ $.getJSON("../../calendar/data/", (events) => {
     if (date >= final_date) {
       final_event = events[i];
       final_date = temp;
+      final_date.setDate(final_date.getDate() + 1);
       break;
     }
   }
