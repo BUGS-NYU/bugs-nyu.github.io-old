@@ -1,0 +1,51 @@
+// Everything here is based on https://www.nyu.edu/employees/resources-and-services/media-and-communications/styleguide/website/graphic-visual-design.html
+
+$nyu-purple: #57068c;
+$nyu-main-theme-violet: #8900e1;
+$nyu-main-theme-main-purple: $nyu-purple;
+$nyu-main-theme-dark-purple-1: #330662;
+$nyu-main-theme-dark-purple-2: #220337;
+$nyu-main-theme-black: #000000;
+$nyu-main-theme-grey-1: #d6d6d6;
+$nyu-main-theme-grey-2: #b8b8b8;
+$nyu-main-theme-grey-3: #6d6d6d;
+$nyu-main-theme-white: #f2f2f2;
+
+$nyu-alert-red: #cb0200;
+$nyu-alert-orange: #e86c00;
+$nyu-alert-green: #489141;
+
+$nyu-tertiary-blue: #28619e;
+$nyu-tertiary-azure: #edbbdb;
+$nyu-tertiary-turquoise: #007c70;
+$nyu-tertiary-magenta: #d71e5e;
+$nyu-tertiary-orange: #e86c00;
+$nyu-tertiary-yellow: #ffc107;
+
+// Eventually should fix these to Gotham Bold and Gotham
+$header-font: Arial;
+$text-font: Arial;
+
+// These follow NYU's system, assuming root font size is 10px
+h1 { font-size: 4.8rem;   } // 48
+h2 { font-size: 4.0rem;   } // 40
+h3 { font-size: 3.0rem; } // 30
+h4 { font-size: 2.2rem;  } // 22
+h5 { font-size: 1.8rem; } // 18
+
+html,body {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100%;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+#header-nav > h4 > a {
+  color: $nyu-main-theme-black;
+  text-decoration: none;
+}
+

@@ -5,7 +5,8 @@ description: >-
   through collaborative projects, hosting industry professions, and running open
   source workshops.
 url: "https://bugs-nyu.github.io"
-repository_url: https://github.com/BUGS-NYU/
+repository_url: https://github.com/BUGS-NYU/bugs-nyu.github.io
+org_url: https://github.com/BUGS-NYU/
 markdown: kramdown
 
 # Edit this if you'd like to check out the site on your own fork

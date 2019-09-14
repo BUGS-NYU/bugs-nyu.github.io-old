@@ -1,8 +1,38 @@
 <html>
   {% include head.html %}
 
-  <body>
-    {{ content }}
+  {% if page.invert %}
+  <body class="invert-text-color">
+  {% else %}
+  <body class="normal-text-color">
+  {% endif %}
+
+    <div class="container-fluid" id="page-wrapper">
+
+      <div id="header">
+        <h3><a id="header-logo" href="{{ site.baseurl }}/">
+          BUGS
+        </a></h3>
+
+        <div id="header-nav">
+          <h4><a href="{{ site.baseurl }}/">
+            Home
+          </a></h4>
+          <h4><a href="{{ site.baseurl }}/team">
+            Our Team
+          </a></h4>
+          <h4><a href="{{ site.baseurl }}/events">
+            Events
+          </a></h4>
+          <h4><a href="{{ site.org_url }}">
+            Github
+          </a></h4>
+        </div>
+      </div>
+
+      {{ content }}
+    </div>
+
   </body>
 
 </html>
