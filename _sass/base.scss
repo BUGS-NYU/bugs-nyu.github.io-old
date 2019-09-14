@@ -1,9 +1,0 @@
-/*  Functions, global variables, etc. */
-/* No actual CSS styling should be included here */
-@import "lib/lib";
-
-/* Global public namespaces and default tag styles */
-@import "base/base";
-
-/* Styles specific to certain pages, scope-limited using classes */
-@import "pages/pages";

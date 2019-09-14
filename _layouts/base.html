@@ -1,21 +1,8 @@
-{% include head.html %}
-<body>
-  <div class="container-fluid">
-    <div class="page-wrapper row">
-      <div class="col-xs-12 col-lg-9 offset-lg-3 content-wrapper">
-        <div class="row">
-          <div class="col">
-            {% include navbutton.html %}
-          </div>
-        </div>
+<html>
+  {% include head.html %}
 
-        <div class="row">
-          <div class="col">
-            {{ content }}
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-{% include footer.html %}
-</body>
+  <body>
+    {{ content }}
+  </body>
+
+</html>
