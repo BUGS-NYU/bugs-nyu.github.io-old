@@ -27,15 +27,17 @@ $header-font: Arial;
 $text-font: Arial;
 
 // These follow NYU's system, assuming root font size is 10px
-h1 { font-size: 4.8rem;   } // 48
-h2 { font-size: 4.0rem;   } // 40
+h1 { font-size: 4.8rem; } // 48
+h2 { font-size: 4.0rem; } // 40
 h3 { font-size: 3.0rem; } // 30
-h4 { font-size: 2.2rem;  } // 22
+h4 { font-size: 2.2rem; } // 22
 h5 { font-size: 1.8rem; } // 18
 
+html {
+  font-size: 62.5%;
+}
 html,body {
   height: 100%;
-  font-size: 62.5%;
 }
 
 body {
@@ -44,8 +46,13 @@ body {
   font-weight: 400;
 }
 
-#header-nav > h4 > a {
+#header a {
   color: $nyu-main-theme-black;
   text-decoration: none;
+  padding-right: 1rem;
+}
+
+#header-nav-content {
+  float: right;
 }
 

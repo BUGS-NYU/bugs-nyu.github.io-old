@@ -7,31 +7,26 @@
   <body class="normal-text-color">
   {% endif %}
 
-    <div class="container-fluid" id="page-wrapper">
+    <nav class="nav navbar-expand-sm justify-content-between" id="header">
+      <a class="navbar-brand" href="{{ site.baseurl }}/">BUGS</a>
 
-      <div id="header">
-        <h3><a id="header-logo" href="{{ site.baseurl }}/">
-          BUGS
-        </a></h3>
-
-        <div id="header-nav">
-          <h4><a href="{{ site.baseurl }}/">
-            Home
-          </a></h4>
-          <h4><a href="{{ site.baseurl }}/team">
-            Our Team
-          </a></h4>
-          <h4><a href="{{ site.baseurl }}/events">
-            Events
-          </a></h4>
-          <h4><a href="{{ site.org_url }}">
-            Github
-          </a></h4>
-        </div>
+      <div class="">
+        <a href="{{ site.baseurl }}/">
+          Home
+        </a>
+        <a href="{{ site.baseurl }}/team">
+          Our Team
+        </a>
+        <a href="{{ site.baseurl }}/events">
+          Events
+        </a>
+        <a href="{{ site.org_url }}">
+          Github
+        </a>
       </div>
+    </nav>
 
-      {{ content }}
-    </div>
+    {{ content }}
 
   </body>
 
