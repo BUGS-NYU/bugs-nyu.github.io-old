@@ -22,6 +22,12 @@ $nyu-tertiary-magenta: #d71e5e;
 $nyu-tertiary-orange: #e86c00;
 $nyu-tertiary-yellow: #ffc107;
 
+.invert-color { color: $nyu-main-theme-white; }
+.invert-bg { background: $nyu-main-theme-black; }
+.no-invert-color { color: $nyu-main-theme-black; }
+.no-invert-bg { background: $nyu-main-theme-white; }
+.bg-magenta { background: $nyu-tertiary-magenta; }
+
 // Eventually should fix these to Gotham Bold and Gotham
 $header-font: Arial;
 $text-font: Arial;
@@ -39,18 +45,56 @@ h5 { font-size: px_to_rem(18); } // 18
 
 html,body {
   height: 100%;
+  max-width: 100vw;
 }
 
 body {
   min-height: 100%;
   font-weight: 400;
-  color: $nyu-main-theme-black;
-  background: $nyu-main-theme-white;
 }
 
-body.inverted-color {
-  color: $nyu-main-theme-white;
-  background: $nyu-main-theme-black;
+.main-page-element {
+  min-height: 20vh;
 }
+
+.gutter-padding {
+  padding: .5rem 1rem;
+}
+
+#bugs-logo-img {
+  height: px_to_rem(100);
+}
+
+/*
+      <div class="bugs-logo">
+        <span class="bugs-logo-antennae">\ /</span>
+        <br />
+        <span class="bugs-logo-left-wing">&lt;</span>
+        <span class="bugs-logo-left-body">{</span>
+        <span class="bugs-logo-middle-body">(((()</span>
+        <span class="bugs-logo-right-body">}</span>
+        <span class="bugs-logo-right-wing">&gt;</span>
+      </div>
+*/
+
+.bugs-logo {
+
+  font-size: px_to_rem(40);
+  color: $nyu-purple;
+
+  > span {
+    width: 0;
+    height: 0;
+  }
+
+  > .bugs-logo-antennae {
+    transform: rotate(90deg);
+  }
+
+  > .bugs-logo-middle-body {
+    transform: rotate(90deg);
+  }
+}
+
 
 

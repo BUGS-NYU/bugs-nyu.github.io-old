@@ -1,0 +1,9 @@
+//Transform mixin to for compatibility
+@mixin transform($transforms) {//mixin takes a transformation as an arg
+    -moz-transform: $transforms;// and makes it a bunch of transformations that
+    -o-transform: $transforms;// work for different browsers
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
