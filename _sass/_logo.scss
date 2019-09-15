@@ -1,0 +1,37 @@
+/*
+      <div class="bugs-logo">
+        <span class="bugs-logo-antennae">\ /</span>
+        <br />
+        <span class="bugs-logo-left-wing">&lt;</span>
+        <span class="bugs-logo-left-body">{</span>
+        <span class="bugs-logo-middle-body">(((()</span>
+        <span class="bugs-logo-right-body">}</span>
+        <span class="bugs-logo-right-wing">&gt;</span>
+      </div>
+*/
+
+.bugs-logo {
+
+  width: 6rem;
+  height: 6rem;
+  color: $nyu-purple;
+  transform: translate(6rem);
+
+  > div {
+    width: 0;
+    height: 0;
+    float: left;
+  }
+
+  > .bugs-logo-left-antennae,> .bugs-logo-left-antennae,> .bugs-logo-middle-body {
+    font-size: px_to_rem(40);
+  }
+
+  > .bugs-logo-left-antennae {
+    transform: translate(1rem) translate(px_to_rem(40));
+  }
+
+  > .bugs-logo-middle-body {
+    transform: rotate(90deg) translate(1rem);
+  }
+}
