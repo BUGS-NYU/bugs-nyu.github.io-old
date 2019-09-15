@@ -22,4 +22,4 @@ defaults:
     scope:
       type: "pages"
     values:
-      layout: "default"
+      layout: "base"
