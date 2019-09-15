@@ -39,6 +39,11 @@ Element attributes, like `id` and `class`, should always be enclosed in double q
 <div id="example" class="my-example-class"></div>
 ```
 
+#### Follow `col-xs-12 col-sm-10 col-md-8` For all Root Elements
+That is to say, for the `xs` bootstrap class, there should be no extra border space,
+for `sm` there should be 2 columns (one left and one right), and for `md` and
+above there should be 4 columns (2 left and 2 right).
+
 #### Names Use Hyphens to Denote Spacing
 Names for classes, id's, etc. should be written using **all lowercase characters**,
 and using **hyphens** to denote whitespace between words in the same namespace. For example,
