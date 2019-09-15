@@ -26,33 +26,31 @@ $nyu-tertiary-yellow: #ffc107;
 $header-font: Arial;
 $text-font: Arial;
 
-// These follow NYU's system, assuming root font size is 10px
-h1 { font-size: 4.8rem; } // 48
-h2 { font-size: 4.0rem; } // 40
-h3 { font-size: 3.0rem; } // 30
-h4 { font-size: 2.2rem; } // 22
-h5 { font-size: 1.8rem; } // 18
-
-html {
-  font-size: 62.5%;
+@function px_to_rem($pixels, $reference: 16) {
+  @return ($pixels / $reference) + rem;
 }
+
+// These follow NYU's system, assuming root font size is 10px
+h1 { font-size: px_to_rem(48); } // 48
+h2 { font-size: px_to_rem(40); } // 40
+h3 { font-size: px_to_rem(30); } // 30
+h4 { font-size: px_to_rem(22); } // 22
+h5 { font-size: px_to_rem(18); } // 18
+
 html,body {
   height: 100%;
 }
 
 body {
   min-height: 100%;
-  font-size: 1.6rem;
   font-weight: 400;
-}
-
-#header a {
   color: $nyu-main-theme-black;
-  text-decoration: none;
-  padding-right: 1rem;
+  background: $nyu-main-theme-white;
 }
 
-#header-nav-content {
-  float: right;
+body.inverted-color {
+  color: $nyu-main-theme-white;
+  background: $nyu-main-theme-black;
 }
+
 

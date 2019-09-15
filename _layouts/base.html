@@ -2,29 +2,22 @@
   {% include head.html %}
 
   {% if page.invert %}
-  <body class="invert-text-color">
+  <body class="inverted-color">
   {% else %}
-  <body class="normal-text-color">
+  <body>
   {% endif %}
 
-    <nav class="nav navbar-expand-sm justify-content-between" id="header">
-      <a class="navbar-brand" href="{{ site.baseurl }}/">BUGS</a>
+  <div class="row justify-content-center align-content-center">
+  <div class="col-xs-12 col-sm-10 col-md-8">
 
-      <div class="">
-        <a href="{{ site.baseurl }}/">
-          Home
-        </a>
-        <a href="{{ site.baseurl }}/team">
-          Our Team
-        </a>
-        <a href="{{ site.baseurl }}/events">
-          Events
-        </a>
-        <a href="{{ site.org_url }}">
-          Github
-        </a>
-      </div>
-    </nav>
+  {% if page.invert %}
+    {% include navbar.html color='dark' %}
+  {% else %}
+    {% include navbar.html color='light' %}
+  {% endif %}
+
+  </div>
+  </div>
 
     {{ content }}
 
