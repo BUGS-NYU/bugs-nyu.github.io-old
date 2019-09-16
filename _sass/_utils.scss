@@ -2,6 +2,10 @@
   @return ($pixels / $reference) + rem;
 }
 
+@function px_to_em($pixels, $reference: 16) {
+  @return ($pixels / $reference) + em;
+}
+
 //Transform mixin to for compatibility
 @mixin transform($transforms) {//mixin takes a transformation as an arg
     -moz-transform: $transforms;// and makes it a bunch of transformations that
