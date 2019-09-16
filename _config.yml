@@ -10,7 +10,7 @@ org_url: https://github.com/BUGS-NYU/
 markdown: kramdown
 
 # Edit this if you'd like to check out the site on your own fork
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/bugs-nyu.github.io" # the subpath of your site, e.g. /blog
 
 future: true
 
