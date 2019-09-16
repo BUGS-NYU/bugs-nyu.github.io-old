@@ -36,6 +36,7 @@ invert: true
 {% assign events = site.events | reverse %}
 {% assign pink = false %}
 {% for event in events %}
+
 {% if pink %}
 <div class="row justify-content-center no-invert-color bg-pink">
 {% assign pink = false %}
@@ -43,6 +44,7 @@ invert: true
 <div class="row justify-content-center no-invert-color no-invert-bg">
 {% assign pink = true %}
 {% endif %}
+
 <div class="col-xs-12 col-sm-10 col-md-8">
 
   <div class="row align-content-center main-page-element">

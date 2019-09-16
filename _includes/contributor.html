@@ -1,16 +1,6 @@
 {% assign prsn = include.contributor %} <!-- fren? -->
-<div class="contributor">
-	<div class="profile-img-container">
-		<img class="profile-img" src="{{ site.baseurl }}/assets/img/profiles/{{prsn.img_path}}"
-			onerror="this.src='{{ site.baseurl }}/assets/img/profile_onerror.jpg'" alt="Generic placeholder image">
-	</div>
-	<div class="profile-text">
-		<div class="profile-title">
-			<h4>{{prsn.name}}</h4>
-			{% if prsn.position %}
-			<h5>{{prsn.position}}</h5>
-			{% endif %}
-		</div>
-			{{ prsn.content | markdownify }}
-	</div>
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+  <h5>{{ prsn.name }}</h5>
+  <i>{{ prsn.position }}</i>
+  {{ prsn.content }}
 </div>

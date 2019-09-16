@@ -17,6 +17,7 @@ future: true
 # -- Collection settings --
 collections: # ~ sign in yaml means null
   events: ~
+  contributors: ~
 
 defaults:
   -
