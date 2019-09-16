@@ -12,3 +12,5 @@ The following people are members of BUGS:
 - Brian Shih
 - Aaditya Mehta
 - Samuel Lin
+- Evan Silverman
+- Adam Moritz
