@@ -1,40 +1,25 @@
 title: BUGS - NYU
 email: bugscommunicationsteam@gmail.com
-description: ...
+description: >-
+  NYU BUGS is the open source club at NYU. We promote open source by engaging students
+  through collaborative projects, hosting industry professions, and running open
+  source workshops.
 url: "https://bugs-nyu.github.io"
-repository_url: https://github.com/BUGS-NYU/
+repository_url: https://github.com/BUGS-NYU/bugs-nyu.github.io
+org_url: https://github.com/BUGS-NYU/
 markdown: kramdown
-plugins: [jekyll-paginate]
 
 # Edit this if you'd like to check out the site on your own fork
 baseurl: "" # the subpath of your site, e.g. /blog
 
-paginate: 6
-paginate_path: "/news/page:num/"
-
 future: true
 
 # -- Collection settings --
-collections: # ~ sign in yaml means null
-  projects: ~
-  contributors: ~
-  events:
-    output: true
-    permalink: /calendar/:path/
+# collections: ~ # ~ sign in yaml means null
 
 defaults:
   -
     scope:
       type: "pages"
     values:
-      layout: "default"
-  -
-    scope:
-      type: "posts"
-    values:
-      layout: "post"
-  -
-    scope:
-      type: "events"
-    values:
-      layout: "event"
+      layout: "base"

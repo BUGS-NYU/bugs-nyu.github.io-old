@@ -1,61 +1,105 @@
 ---
-title: BUGS
-layout: null
+invert: true
 ---
+<div class="row justify-content-center">
+<div class="col-xs-12 col-sm-10 col-md-8">
 
-<html>
-  {% include head.html %}
+  <div class="row main-page-element justify-content-between align-content-start">
 
-  <body>
-    <div class="container-fluid p-0">
-
-      <div id="home-header" class="row no-gutters">
-        <div class="header col-12 p-0">
-          <!-- The content of this div is populated by the important.js file. The script tag is at the bottom of the page -->
-          <div id="important"></div>
-          <div class="header-content">
-
-            <h1 class="brand">BUGS_</h1>
-            <span class="home-navbar">
-              <a href="{{ site.baseurl }}/projects">Projects</a>
-              <a href="{{ site.baseurl }}/news">News</a>
-              <br />
-              <a href="https://github.com/BUGS-NYU/" target="_blank">Github</a>
-              <a href="{{ site.baseurl }}/calendar">Calendar</a>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="row no-gutters justify-content-lg-center content-wrapper">
-        <div class="col-xs-12 col-lg-9 p-0">
-
-          <div id="about">
-            <h2 class="text-center">NYU's Open Source Club</h2>
-
-            <p>
-              Open source represents a form of licensing that encourages collaboration and transparency. Although open source licenses may take a number of forms, essential features include being able to freely study, change, and distribute the source code.
-            </p>
-            <p>
-              BUGS is focused on the promotion of open source by engaging students in open source projects on the local and global scale, hosting speakers who work with open source in industry and philanthropy, and running events to advocate for open standards in subjects such as data and innovation.
-            </p>
-            <p>
-              BUGS is a member of the Mozilla-led Open Source Student Network (OSSN), a network of university students and clubs who share the belief that open source software – technology built with code that is open for view, use, and modification – is the engine that powers innovation. Mozilla's goal is to support, empower and help Clubs and their members towards getting more skills and contributing to Open Source Projects through this network of Clubs.
-            </p>
-          </div>
-
-        <div id="sponsor">
-          <a href="{{ site.baseurl }}/about">About</a>
-          <a href="https://opensource.mozilla.community/" target="_blank">Mozilla_Affiliation</a>
-          <a href="{{ site.baseurl }}/connect">Connect</a>
-        </div>
-
-        <div id="featured-image">
-          <img src="{{ site.baseurl }}/assets/img/bugs_logo_animation.gif" />
-        </div>
-        </div>
+    <div class="col-7 col-sm-5 col-md-6">
+      <div class="gutter-padding">
+      <h3>
+      NYU's Open Source Club
+      </h3>
       </div>
     </div>
-    <script src="{{ site.baseurl }}/assets/js/important.js"></script>
-  </body>
-</html>
+
+    <div class="col-5 col-sm-7 col-md-6" style="height: 0">
+      <img src="{{ site.baseurl }}/assets/img/logo_black_bg.png" id="bugs-logo-img"/>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="row justify-content-center no-invert-color bg-pink">
+<div class="col-xs-12 col-sm-10 col-md-8">
+
+  <div class="row align-content-center main-page-element">
+
+    <div class="col-12 col-sm-5 col-md-6">
+      <div class="gutter-padding">
+      <h3>
+        About Us
+      </h3>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-7 col-md-6">
+      <div class="gutter-padding">
+      <p>
+        {{ site.description }}
+      </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="row justify-content-center no-invert-color no-invert-bg">
+<div class="col-xs-12 col-sm-10 col-md-8">
+
+  <div class="row align-content-center main-page-element">
+
+    <div class="col-12 col-sm-5 col-md-6">
+      <div class="gutter-padding">
+      <h3>
+        What's Open Source?
+      </h3>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-7 col-md-6">
+      <div class="gutter-padding">
+      <p>
+        {{ site.description }}
+      </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="row justify-content-center no-invert-color bg-pink">
+<div class="col-xs-12 col-sm-10 col-md-8">
+
+  <div class="row align-content-center main-page-element">
+
+    <div class="col-12 col-sm-5 col-md-6">
+      <div class="gutter-padding">
+      <h3>
+        Mozilla Partnership
+      </h3>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-7 col-md-6">
+      <div class="gutter-padding">
+      <p>
+        BUGS is a member of the Open Source Student Network, a network of university
+        clubs and students that share the belief that open source software is the
+        engine that powers innovation.
+      </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+{% include contact.html %}

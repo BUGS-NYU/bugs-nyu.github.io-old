@@ -8,7 +8,7 @@ This is the website for BUGS, NYU's premier open source club
 
 
 ## How to Contribute
-### For adding markdown Events
+### For adding Markdown Events
 1. Fork this repository
 2. Make a new markdown (filename ending with .md) document in the "\_events" folder of your fork
 3. Follow [the template event](_events/template_event.md) by including this at the top with the correct information:
@@ -25,24 +25,10 @@ location: "Event Location"
 4. Then include the entire event description in markdown using [this guide][md-guide] for help. No need to write your title, date, time, or location, they're automatically added to the event page for you
 5. Make a pull request to the original repository
 
-### For adding markdown News posts
-1. Fork this repository
-2. Make a new markdown (filename ending with .md) document in the "\_posts" folder of your fork
-3. Follow [the template post](_posts/template_post.md) by including this at the top with the correct information:
-
-```yaml
----
-layout: post
-title: "Your Post Title"
-date: 2017-12-31
----
-```
-4. Then include the entire news post description in markdown using [this guide][md-guide] for help. No need to write your title or date, they're automatically added to the news post page for you. Add a time and location if applicable
-5. Make a pull request to the original repository
-
 [md-guide]: https://guides.github.com/features/mastering-markdown/
 
 ### For larger Contributions
+
 1. Fork this repository
 2. Make your fork live through your GitHub Pages domain
   * If you don't already have GitHub Pages, set it up by following [this guide][gh-pages]
@@ -63,11 +49,6 @@ date: 2017-12-31
 - Make markdown files for upcoming BUGS events, including:
   - General club meetings
   - Small group project meetings
-- Make markdown files for news stories related to open source, including:
-  - General news about BUGS
-  - Interesting open source projects outside of BUGS
-  - Interesting tech news related to open source
-  - Etc
 
 ### Planned Features
 - Display all student contributors
@@ -75,9 +56,6 @@ date: 2017-12-31
   - Display To Do's
   - Display student contributors
   - IRC/Discord
-- Add IRC Client
-  - Link to Discord
-  - Info on how to setup your own client
 
 ## How to use Jekyll
 ### Installing Jekyll
@@ -97,7 +75,7 @@ https://jekyllrb.com/docs/windows/#installation
 ### Using Jekyll
 To start a development server run `jekyll serve` in the project source folder. The the server will run at `http://localhost:4000`
 
-Resources for Jekyll syntax and usage:  
+Resources for Jekyll syntax and usage:
 
 - [Jekyll Docs](https://jekyllrb.com/docs/) for a in-depth guide on Jekyll
 - [Liquid Docs](https://shopify.github.io/liquid/) for a guide on the syntax used by Jekyll
