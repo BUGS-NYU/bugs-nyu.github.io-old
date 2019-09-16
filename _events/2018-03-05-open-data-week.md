@@ -1,5 +1,4 @@
 ---
-layout: event
 title: "Open Data Week Event"
 event_date: 2018-03-05
 ---

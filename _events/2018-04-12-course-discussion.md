@@ -1,5 +1,4 @@
 ---
-layout: event
 title: "Course Discussion"
 event_date: 2018-04-12
 ---

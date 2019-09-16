@@ -33,7 +33,16 @@ invert: true
 </div>
 </div>
 
+{% assign events = site.events | reverse %}
+{% assign pink = false %}
+{% for event in events %}
+{% if pink %}
+<div class="row justify-content-center no-invert-color bg-pink">
+{% assign pink = false %}
+{% else %}
 <div class="row justify-content-center no-invert-color no-invert-bg">
+{% assign pink = true %}
+{% endif %}
 <div class="col-xs-12 col-sm-10 col-md-8">
 
   <div class="row align-content-center main-page-element">
@@ -41,7 +50,7 @@ invert: true
   <div class="col-12 col-sm-5 col-md-6">
     <div class="gutter-padding">
     <h4>
-      Event1
+       {{ event.title }}
     </h4>
     </div>
   </div>
@@ -49,7 +58,7 @@ invert: true
   <div class="col-12 col-sm-7 col-md-6">
     <div class="gutter-padding">
     <p>
-      Event description
+       {{ event.content }}
     </p>
     </div>
   </div>
@@ -58,4 +67,5 @@ invert: true
 
 </div>
 </div>
+{% endfor %}
 

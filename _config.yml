@@ -15,7 +15,8 @@ baseurl: "/bugs-nyu.github.io" # the subpath of your site, e.g. /blog
 future: true
 
 # -- Collection settings --
-# collections: ~ # ~ sign in yaml means null
+collections: # ~ sign in yaml means null
+  events: ~
 
 defaults:
   -

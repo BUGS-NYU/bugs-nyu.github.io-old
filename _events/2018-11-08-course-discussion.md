@@ -1,5 +1,4 @@
 ---
-layout: event
 title: "Course Discussion"
 event_date: 2018-11-08
 time: "7:15pm"

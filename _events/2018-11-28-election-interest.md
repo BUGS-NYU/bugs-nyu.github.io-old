@@ -1,5 +1,4 @@
 ---
-layout: event
 title: "Elections Interest Meeting"
 event_date: 2018-11-28
 time: "5:30pm"

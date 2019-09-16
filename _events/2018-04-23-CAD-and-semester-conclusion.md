@@ -1,5 +1,4 @@
 ---
-layout: event
 title: "Computer-aided Design and Semester Conclusion"
 event_date: 2018-04-23
 ---

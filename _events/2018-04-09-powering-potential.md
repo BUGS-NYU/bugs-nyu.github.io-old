@@ -1,5 +1,4 @@
 ---
-layout: event
 title: "Powering Potential speaker"
 event_date: 2018-04-09
 ---
