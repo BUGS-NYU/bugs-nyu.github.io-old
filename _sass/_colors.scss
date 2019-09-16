@@ -22,6 +22,8 @@ $nyu-tertiary-magenta: #d71e5e;
 $nyu-tertiary-orange: #e86c00;
 $nyu-tertiary-yellow: #ffc107;
 
+$bugs-pink: #ffccff;
+
 .invert-color { color: $nyu-main-theme-white; }
 .invert-bg { background: $nyu-main-theme-black; }
 .no-invert-color { color: $nyu-main-theme-black; }
@@ -47,3 +49,5 @@ $nyu-tertiary-yellow: #ffc107;
 .bg-magenta { background: $nyu-tertiary-magenta; }
 .bg-orange { background: $nyu-tertiary-orange; }
 .bg-yellow { background: $nyu-tertiary-yellow; }
+.bg-pink { background: $bugs-pink; }
+

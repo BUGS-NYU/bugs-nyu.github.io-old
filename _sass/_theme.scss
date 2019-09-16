@@ -11,25 +11,3 @@ h3 { font-size: px_to_rem(30); } // 30
 h4 { font-size: px_to_rem(22); } // 22
 h5 { font-size: px_to_rem(18); } // 18
 
-html,body {
-  height: 100%;
-  max-width: 100vw;
-}
-
-body {
-  min-height: 100%;
-  font-weight: 400;
-}
-
-.main-page-element {
-  min-height: 20vh;
-}
-
-.gutter-padding {
-  padding: .5rem 1rem;
-}
-
-#bugs-logo-img {
-  height: px_to_rem(100);
-}
-
