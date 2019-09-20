@@ -19,14 +19,20 @@ body {
   padding: .5rem 1rem;
 }
 
+.contributor {
+  > .contributor-title {
+  }
+
+  > .contributor-description {
+    font-size: 0.8rem;
+  }
+}
+
 #bugs-logo-img {
   height: px_to_rem(100);
 }
 
 #footer {
   bottom: 0;
-}
-
-#contact-info {
-  white-space: nowrap;
+  padding-bottom: 2rem;
 }
