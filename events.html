@@ -49,7 +49,7 @@ invert: true
 
   <div class="row align-content-center main-page-element">
 
-  <div class="col-12 col-sm-5 col-md-6">
+  <div class="col-12 col-lg-4">
     <div class="gutter-padding">
     <h4>
        {{ event.title }}
@@ -57,10 +57,10 @@ invert: true
     </div>
   </div>
 
-  <div class="col-12 col-sm-7 col-md-6">
+  <div class="col-12 col-lg-8">
     <div class="gutter-padding">
     <p>
-       {{ event.content }}
+       {{ event.excerpt | markdownify }}
     </p>
     </div>
   </div>

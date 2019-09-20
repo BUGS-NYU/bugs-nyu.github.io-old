@@ -1,6 +1,11 @@
 ---
 title: "Powering Potential speaker"
 event_date: 2018-04-09
+excerpt: >-
+   **Mission**: Use technology (solar power, servers, Raspberry Pi's, etc) to enhance education and stimulate imaginations of students in underdeveloped countries while respecting and incorporating values of the local culture.
+
+
+   **Open Source**: Operating system of Raspberry Pi, Debian Linux version, along with open source software including Scratch, Python, and LibreOffice.
 ---
 
 # [RSVP on the Event Page](https://orgsync.com/170073/events/2357076/occurrences/5627360)
