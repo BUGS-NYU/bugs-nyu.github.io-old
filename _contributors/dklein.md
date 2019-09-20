@@ -1,6 +1,7 @@
 ---
 name: David Klein
-type: founder
+type: alum
+position: Founder
 meta_order: 2
 img_path: dklein-f2018.jpg
 ---
