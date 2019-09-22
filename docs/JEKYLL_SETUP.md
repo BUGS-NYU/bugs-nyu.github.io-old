@@ -33,7 +33,7 @@ rbenv init
 rbenv install 2.5.3; rbenv global 2.5.3
 
 # Install
-gem install jekyll bundler
+gem install --user-install jekyll bundler
 ```
 
 More detailed instructions can be found [here][install-rbenv].
