@@ -56,5 +56,5 @@ For the sake of completeness though, if you choose to avoid package managers, yo
 * Change the ownership of the folders that contain Ruby and RubyGems (probably not recommended)
 
   ```shell
-  sudo chown "$(whoami)" /path/that/you/down/have/permission/for
+  sudo chown "$(whoami)" /path/that/you/dont/have/permission/for
   ```
