@@ -3,10 +3,9 @@
 <div class="row justify-content-center">
 <div class="col-xs-12 col-sm-10 col-md-8">
 
-    <div class="gutter-padding">
-    <h2>E-Board</h2>
-    </br>
-    </div>
+    <div class="gutter-padding"><h2>
+      E-Board
+    </h2></br></div>
 
     <div class="row gutter-padding">
     {% assign eboard = site.contributors | where: "type","eboard" | sort:'meta_order' %}
@@ -15,10 +14,9 @@
     {% endfor %}
     </div>
 
-    <div class="gutter-padding">
-    <h2>Founders and Alumni</h2>
-    </br>
-    </div>
+    <div class="gutter-padding"><h2>
+      Founders and Alumni
+    </h2></br></div>
 
     <div class="row gutter-padding">
     {% assign founders = site.contributors | where: "type","alum" | sort:'meta_order' %}
@@ -27,10 +25,9 @@
     {% endfor %}
     </div>
 
-    <div class="gutter-padding">
-    <h2>Faculty Mentor</h2>
-    </br>
-    </div>
+    <div class="gutter-padding"><h2>
+      Faculty Mentor
+    </h2></br></div>
 
     <div class="row gutter-padding">
     {% assign mentors = site.contributors | where:"type","mentor" %}
