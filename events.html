@@ -1,7 +1,6 @@
 ---
 invert: true
 ---
-
 <div class="row justify-content-center">
 <div class="col-xs-12 col-sm-10 col-md-8">
 
@@ -33,6 +32,41 @@ invert: true
 </div>
 </div>
 
+<div class="row justify-content-center no-invert-color no-invert-bg">
+<div class="col-xs-12 col-sm-10 col-md-8">
+
+  <div class="row align-content-center justify-content-center main-page-element">
+
+    <div class="col-12 col-sm-5 col-lg-12 d-none d-lg-block">
+      <div class="gutter-padding embedded-calendar">
+        <iframe id="cal-lg" src="{{ site.calendar_embed.lg }}"
+            frameborder="0" scrolling="no">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="col-12 d-none d-sm-block d-lg-none">
+      <div class="gutter-padding embedded-calendar">
+        <iframe id="cal-sm" src="{{ site.calendar_embed.sm }}"
+            frameborder="0" scrolling="no">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="col-12 d-block d-sm-none">
+      <div class="gutter-padding embedded-calendar">
+        <iframe id="cal-xs" src="{{ site.calendar_embed.xs }}"
+            frameborder="0" scrolling="no">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<!-- 
 {% assign events = site.events | reverse %}
 {% assign pink = false %}
 {% for event in events %}
@@ -70,4 +104,5 @@ invert: true
 </div>
 </div>
 {% endfor %}
+-->
 

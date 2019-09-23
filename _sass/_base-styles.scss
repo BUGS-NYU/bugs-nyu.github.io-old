@@ -28,6 +28,26 @@ body {
   }
 }
 
+.embedded-calendar {
+  > iframe {
+    display: block;
+    width: 100%;
+    border-width: 0;
+  }
+
+  > #cal-lg {
+    height: 500px;
+  }
+
+  > #cal-sm {
+    height: 500px;
+  }
+
+  > #cal-xs {
+    height: 400px;
+  }
+}
+
 #bugs-logo-img {
   height: px_to_rem(100);
 }
