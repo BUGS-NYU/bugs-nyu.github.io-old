@@ -19,7 +19,7 @@
     </h2></br></div>
 
     <div class="row gutter-padding">
-    {% assign founders = site.contributors | where: "type","alum" | sort:'meta_order' %}
+    {% assign founders = site.contributors | where: "type","alum" | sort:'meta_order' | reverse %}
     {% for person in founders %}
         {% include contributor.html contributor = person %}
     {% endfor %}
