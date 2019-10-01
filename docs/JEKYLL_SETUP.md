@@ -33,7 +33,7 @@ rbenv init
 rbenv install 2.5.3; rbenv global 2.5.3
 
 # Install
-gem install jekyll bundler
+gem install --user-install jekyll bundler
 ```
 
 More detailed instructions can be found [here][install-rbenv].
@@ -56,5 +56,5 @@ For the sake of completeness though, if you choose to avoid package managers, yo
 * Change the ownership of the folders that contain Ruby and RubyGems (probably not recommended)
 
   ```shell
-  sudo chown "$(whoami)" /path/that/you/down/have/permission/for
+  sudo chown "$(whoami)" /path/that/you/dont/have/permission/for
   ```
