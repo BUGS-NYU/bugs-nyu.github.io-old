@@ -22,11 +22,26 @@ future: true
 # -- Collection settings --
 collections: # ~ sign in yaml means null
   events: ~
-  contributors: ~
+  contributors:
+    order:
+      - varvind.md
+      - anachiappan.md
+      - jklukowska.md
+      - araghunath.md
+      - dklein.md
+      - ndewji.md
+  debug:
+    output: true
+    permalink: /debug/:slug
 
 defaults:
   -
     scope:
+      type: "debug"
+    values:
+      layout: "debug"
+  -
+    scope:
       type: "pages"
     values:
-      layout: "base"
+      layout: "page"
