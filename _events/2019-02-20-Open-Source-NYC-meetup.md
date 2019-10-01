@@ -1,5 +1,4 @@
 ---
-layout: event
 title: "Open Source NYC February - Mentorship!"
 event_date: 2019-02-20
 time: "6:00pm"

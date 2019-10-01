@@ -1,7 +1,8 @@
 ---
 name: David Klein
-type: founder
-meta_order: 2
+type: alum
+position: Founder
+meta_order: 6
 img_path: dklein-f2018.jpg
 ---
 Alumni from California who studied Biology with three minors,

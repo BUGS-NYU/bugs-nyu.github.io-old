@@ -1,5 +1,0 @@
-
-@function rem($pixels) {
-  $base-font-size: 16;
-  @return #{$pixels/$base-font-size}rem;
-}

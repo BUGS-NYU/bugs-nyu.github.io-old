@@ -1,11 +1,16 @@
 ---
-layout: event
 title: "Open Data Week Event"
 event_date: 2018-03-05
+excerpt: >-
+   The goal of this event is to engage the different campuses, schools and
+   departments of the NYU community in a discussion about the topics of NYC
+   Open Data and open data in general. Many courses, research groups and
+   other organizations use open data. We want to see what these different
+   groups are doing and to open avenues for collaborations.
 ---
 
-# NYC Open Data Week @ NYU
-## Hosted by [BUGS Open Source Club](https://bugs-nyu.github.io/)
+### NYC Open Data Week @ NYU
+#### Hosted by [BUGS Open Source Club](https://bugs-nyu.github.io/)
 
 --------------------------------------------------------------
 

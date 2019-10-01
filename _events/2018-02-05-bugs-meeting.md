@@ -1,5 +1,4 @@
 ---
-layout: event
 title: "BUGS Meeting"
 event_date: 2018-02-05
 ---
