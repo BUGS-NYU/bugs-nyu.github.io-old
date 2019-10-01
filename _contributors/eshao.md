@@ -2,7 +2,7 @@
 name: Edmond Shao
 position: Secretary
 type: eboard
-meta_order: 3
+meta_order: 5
 img_path: eshao-s2019.jpg
 ---
 Edmond is a Junior at CAS studying Computer Science and minoring in Business Studies.

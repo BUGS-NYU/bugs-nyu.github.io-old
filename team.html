@@ -9,7 +9,7 @@ layout: base
     </h2></br></div>
 
     <div class="row gutter-padding">
-    {% assign eboard = site.contributors | where: "type","eboard" | sort:'meta_order' %}
+    {% assign eboard = site.contributors | where: "type","eboard" | sort:'meta_order' | reverse %}
     {% for person in eboard %}
         {% include contributor.html contributor = person %}
     {% endfor %}
@@ -31,7 +31,7 @@ layout: base
     </h2></br></div>
 
     <div class="row gutter-padding">
-    {% assign mentors = site.contributors | where:"type","mentor" %}
+      {% assign mentors = site.contributors | where:"type","mentor" %}
     {% for person in mentors %}
         {% include contributor.html contributor = person %}
     {% endfor %}

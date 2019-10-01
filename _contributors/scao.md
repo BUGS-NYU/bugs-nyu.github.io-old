@@ -2,7 +2,7 @@
 name: Shelly Cao
 position: Director Of Outreach
 type: eboard
-meta_order: 8
+meta_order: 5
 img_path: scao-s2019.png
 ---
 Shelly is a Junior majoring in Computer Science with minors in Math and Business Study.

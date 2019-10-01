@@ -1,7 +1,6 @@
 ---
 name: Julie Cestaro
-type: eboard-alumni
-meta_order: 2
+type: alum
 img_path: jcestaro-f2018.jpg
 ---
 Alumni from Connecticut majoring in Computer Science and minoring in Business

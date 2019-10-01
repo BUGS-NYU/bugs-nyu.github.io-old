@@ -2,7 +2,7 @@
 name: Veena Arvind
 position: President
 type: eboard
-meta_order: 1
+meta_order: 9
 img_path: varvind-f2018.jpg
 ---
 Junior studying Computer Science in CAS. She loves to talk about code with

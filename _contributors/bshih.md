@@ -2,7 +2,7 @@
 name: Brian Shih
 position: Vice Director of Outreach
 type: eboard
-meta_order: 9
+meta_order: 5
 img_path: bshih-s2019.jpg
 ---
 Brian is a Senior at CAS Majoring in Computer Science and Minoring in Cyber Security
