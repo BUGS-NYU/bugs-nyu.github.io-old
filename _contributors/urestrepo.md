@@ -1,6 +1,5 @@
 ---
 name: Uriel Restrepo
-position: NULL
 type: member
 ---
 Salutaions All,
