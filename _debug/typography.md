@@ -3,7 +3,6 @@ layout: debug
 ---
 #### Logo
 
-
 <div class="bugs-logo">
   <div class="bugs-logo-left-antennae">\</div>
   <div class="bugs-logo-right-antennae">/</div>

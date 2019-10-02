@@ -10,18 +10,23 @@
       </div>
 */
 
+#logo-test {
+  font-size: 3rem;
+}
+
 .bugs-logo {
 
-  width: 6rem;
-  height: 6rem;
+  width: 6em;
+  height: 6em;
   color: $nyu-purple;
   border: 1px solid black;
-  transform: translate(10rem);
+  // transform: translate(10rem) rotate(-45deg);
 
   > div {
     width: 0;
     height: 0;
     float: left;
+    // transform: rotate(90deg);
   }
 
   > .bugs-logo-left-antennae,> .bugs-logo-right-antennae,
@@ -30,15 +35,15 @@
   }
 
   > .bugs-logo-middle-body {
-    transform: translate(2.5em, .75em) rotate(90deg);
+    transform: translate(2.5em, 1em) rotate(90deg);
   }
 
   > .bugs-logo-left-antennae {
-    transform: translate(1em, -.375em);
+    transform: translate(1em, -.125em);
   }
 
   > .bugs-logo-right-antennae {
-    transform: translate(1.875em, -.375em);
+    transform: translate(1.95em, -.125em);
   }
 
   > .bugs-logo-right-body,> .bugs-logo-left-body
@@ -47,11 +52,11 @@
   }
 
   > .bugs-logo-left-body {
-    transform: translate(.5625em, .325em);
+    transform: translate(.5625em, .500em);
   }
 
   > .bugs-logo-right-body {
-    transform: translate(1.5625em, .325em);
+    transform: translate(1.58em, .500em);
   }
 
   > .bugs-logo-right-wing,> .bugs-logo-left-wing {
@@ -59,10 +64,10 @@
   }
 
   > .bugs-logo-left-wing {
-    transform: translate(.625em, .875em);
+    transform: translate(.625em, 1.125em);
   }
 
   > .bugs-logo-right-wing {
-    transform: translate(3.1875em, .875em);
+    transform: translate(3.25em, 1.125em);
   }
 }
