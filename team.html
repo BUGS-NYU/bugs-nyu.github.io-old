@@ -1,5 +1,6 @@
 ---
 layout: base
+invert: true
 ---
 <div class="row justify-content-center">
 <div class="col-xs-12 col-sm-10 col-md-8">
@@ -15,16 +16,11 @@ layout: base
     {% endfor %}
     </div>
 
-    <div class="gutter-padding"><h2>
-      Founders and Alumni
-    </h2></br></div>
+</div>
+</div>
 
-    <div class="row gutter-padding">
-    {% assign founders = site.contributors | where: "type","alum" | sort:'meta_order' | reverse %}
-    {% for person in founders %}
-        {% include contributor.html contributor = person %}
-    {% endfor %}
-    </div>
+<div class="row justify-content-center no-invert-bg no-invert-color">
+<div class="col-xs-12 col-sm-10 col-md-8">
 
     <div class="gutter-padding"><h2>
       Faculty Mentor
@@ -40,6 +36,19 @@ layout: base
 </div>
 </div>
 
-<div class="invert-color invert-bg">
-  {% include contact.html %}
+<div class="row justify-content-center">
+<div class="col-xs-12 col-sm-10 col-md-8">
+
+    <div class="gutter-padding"><h2>
+      Founders and Alumni
+    </h2></br></div>
+
+    <div class="row gutter-padding">
+    {% assign founders = site.contributors | where: "type","alum" | sort:'meta_order' | reverse %}
+    {% for person in founders %}
+        {% include contributor.html contributor = person %}
+    {% endfor %}
+    </div>
+
+</div>
 </div>

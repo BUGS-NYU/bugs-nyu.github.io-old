@@ -2,26 +2,32 @@
   {% include head.html %}
 
   {% if page.invert %}
-  <body class="invert-color invert-bg">
+  <body class="no-invert-color no-invert-bg">
   {% else %}
-  <body>
+  <body class="invert-color invert-bg">
   {% endif %}
 
   <div class="row justify-content-center align-content-center">
   <div class="col-xs-12 col-sm-10 col-md-8">
 
     {% if page.invert %}
-      {% include navbar.html color='dark' %}
-    {% else %}
       {% include navbar.html color='light' %}
+    {% else %}
+      {% include navbar.html color='dark' %}
     {% endif %}
 
   </div>
   </div>
 
-  <div id="page-{{ page.slug }}">
+  {% if page.invert %}
+  <div class="invert-color invert-bg" id="page-{{ page.slug }}">
+  {% else %}
+  <div class="no-invert-color no-invert-bg" id="page-{{ page.slug }}">
+  {% endif %}
     {{ content }}
   </div>
+
+  {% include contact.html %}
 
   <div class="row justify-content-center" id="footer">
   <div class="col-xs-12 col-sm-10 col-md-8">
