@@ -7,35 +7,12 @@ This is the website for BUGS, NYU's premier open source club
 - [How to use Jekyll](#using-jekyll)
 
 ## How to Contribute
-### Adding Markdown Events
-1. Fork this repository
-2. Make a new markdown (filename ending with .md) document in the `/_events` folder
-   of your fork
-3. Follow [the template event](_events/template_event.md) by including this at the top
-   with the correct information:
-
-   ```yaml
-   ---
-   layout: event
-   title: "Your Event Title"
-   event_date: 2017-12-31
-   time: "Event Time"
-   location: "Event Location"
-   ---
-   ```
-
-4. Then include the entire event description in markdown using [this guide][md-guide]
-   for help. No need to write your title, date, time, or location, they're automatically
-   added to the event page for you
-5. Make a pull request to this repository
-
-[md-guide]: https://guides.github.com/features/mastering-markdown/
 
 ### Adding Yourself as a Contributor
 1. Fork this repository
 2. Make a new markdown (filename ending with .md) document in the `/_contributors`
    folder of your fork
-3. Follow [the template event](_events/template_event.md) by including this at the top
+3. Follow [the template file](_contributors/.template.md) by including this at the top
    with the correct information:
 
    ```yaml
