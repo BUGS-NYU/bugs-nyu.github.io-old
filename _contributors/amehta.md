@@ -1,8 +1,8 @@
 ---
 name: Aaditya Mehta
-position: Project Lead
+position: Treasurer
 type: eboard
-meta_order: 5
+meta_order: 7
 img_path: amehta-s2019.png
 ---
 A Junior studying Economics and Mathematics, Aaditya spends way too much time

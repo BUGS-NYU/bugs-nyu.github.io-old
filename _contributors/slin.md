@@ -2,7 +2,7 @@
 name: Samuel Lin
 position: Vice Project Lead
 type: eboard
-meta_order: 5
+meta_order: 9
 img_path: slin-s2019.JPG
 ---
 Samuel is a Junior at CAS majoring in Computer Science and Minoring in Web Design
