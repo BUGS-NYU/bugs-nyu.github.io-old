@@ -1,6 +1,6 @@
 ---
 name: Edmond Shao
-position: Secretary
+position: Co-Webmaster
 type: eboard
 meta_order: 5
 img_path: eshao-s2019.jpg

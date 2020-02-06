@@ -1,9 +1,9 @@
 ---
 name: Ami Nachiappan
-position: Vice President
+position: Event Coordinator
 type: eboard
-meta_order: 8
+meta_order: 6
 img_path: anachiappan-f2018.jpg
 ---
-Junior from California studying Computer Science and Economics. In her free
+Junior from California studying Computer Science and minoring in Web Design. In her free
 time, she loves spending time with family, running, and of course, coding!

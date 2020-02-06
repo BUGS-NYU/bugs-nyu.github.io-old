@@ -1,7 +1,7 @@
 ---
 name: Deanna Tran
 position: Director of Communications
-type: eboard
+type: alum
 meta_order: 5
 img_path: dtran-s2019.jpg
 ---
