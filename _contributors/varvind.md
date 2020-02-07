@@ -1,7 +1,7 @@
 ---
 name: Veena Arvind
 position: President
-type: eboard
+type: alum
 meta_order: 9
 img_path: varvind-f2018.jpg
 ---

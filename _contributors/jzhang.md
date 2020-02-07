@@ -1,6 +1,6 @@
 ---
 name: Jiayue(Joanna) Zhang # Name of person
-position: Directory of Marketing # Position, only displayed if in eboard
+position: Director of Marketing # Position, only displayed if in eboard
 type: eboard # Can be one of [ eboard, alum, founder, mentor ]
 meta_order: 6 # integer used to set order in display, higher value means higher up
 ---

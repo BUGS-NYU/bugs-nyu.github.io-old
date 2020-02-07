@@ -1,7 +1,7 @@
 ---
 name: Shelly Cao
 position: Director Of Outreach
-type: eboard
+type: alum
 meta_order: 5
 img_path: scao-s2019.png
 ---
