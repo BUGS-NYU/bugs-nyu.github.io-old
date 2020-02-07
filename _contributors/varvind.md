@@ -1,7 +1,6 @@
 ---
 name: Veena Arvind
 type: alum
-meta_order: 9
 img_path: varvind-f2018.jpg
 ---
 Junior studying Computer Science in CAS. She loves to talk about code with
