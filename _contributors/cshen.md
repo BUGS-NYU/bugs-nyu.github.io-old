@@ -1,8 +1,6 @@
 ---
 name: Candice Shen
-position: Director of Marketing
 type: alum
-meta_order: 5
 img_path: cshen-s2019.jpg
 ---
 Candice is a Senior at Steinhardt majoring in Media, Culture, and Communication

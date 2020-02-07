@@ -1,8 +1,6 @@
 ---
 name: Deanna Tran
-position: Director of Communications
 type: alum
-meta_order: 5
 img_path: dtran-s2019.jpg
 ---
 Senior in CAS studying Computer Science with minors in Web Design and Linguistics.

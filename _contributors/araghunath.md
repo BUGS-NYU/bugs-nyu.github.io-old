@@ -1,6 +1,5 @@
 ---
 name: Ananditha Raghunath
-meta_order: 6
 type: alum
 position: Founder
 img_path: araghunath-f2018.jpg
