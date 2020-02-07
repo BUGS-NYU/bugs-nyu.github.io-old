@@ -1,8 +1,6 @@
 ---
 name: Shelly Cao
-position: Director Of Outreach
 type: alum
-meta_order: 5
 img_path: scao-s2019.png
 ---
 Shelly is a Junior majoring in Computer Science with minors in Math and Business Study.
