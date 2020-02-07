@@ -2,6 +2,7 @@
 name: Ananditha Raghunath
 type: alum
 position: Founder
+meta_order: 6
 img_path: araghunath-f2018.jpg
 ---
 Alunmi who studied Math and CS at Courant. Having started to code only after

@@ -1,7 +1,7 @@
 ---
-name: Khanh Nguyen # Name of person
-position: Director of Communications # Position, only displayed if in eboard
-type: eboard # Can be one of [ eboard, alum, founder, mentor ]
-meta_order: 6 # integer used to set order in display, higher value means higher up
+name: Khanh Nguyen
+position: Director of Communications 
+type: eboard
+meta_order: 6 
 ---
 Sophomore from Vietnam studying Computer Science. BROCKHAMPTON is my all-time favorite boyband. Food and coding also fuels my existence. Outside of school, find me at Hanoi House
