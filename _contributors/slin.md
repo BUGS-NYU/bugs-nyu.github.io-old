@@ -1,6 +1,6 @@
 ---
 name: Samuel Lin
-position: Vice Project Lead
+position: Vice President
 type: eboard
 meta_order: 9
 img_path: slin-s2019.JPG
