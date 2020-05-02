@@ -1,9 +1,0 @@
----
-name: Uriel Restrepo
-type: member
----
-Salutaions All,
-
-My name is Uriel. I am a student here at NYU, and I love coding that can automate one's tasks in life.
-
-Rule of 3 in automating: if you have done the task at least 3 times, write a program to do it for you.
