@@ -4,8 +4,8 @@ description: >-
   NYU BUGS is the open source club at NYU. We promote open source by engaging students
   through collaborative projects, hosting industry professions, and running open
   source workshops.
-url: "https://bugs-nyu.github.io"
-repository_url: https://github.com/BUGS-NYU/bugs-nyu.github.io
+url: "https://sntdrr.github.io/bugs-nyu.github.io/"
+repository_url: https://sntdrr.github.io/bugs-nyu.github.io/
 org_url: https://github.com/BUGS-NYU/
 markdown: kramdown
 
