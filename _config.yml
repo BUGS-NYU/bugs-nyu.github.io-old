@@ -23,16 +23,8 @@ future: true
 collections: # ~ sign in yaml means null
   events: ~
   contributors: ~
-  debug:
-    output: true
-    permalink: /debug/:slug
 
 defaults:
-  -
-    scope:
-      type: "debug"
-    values:
-      layout: "debug"
   -
     scope:
       type: "pages"
