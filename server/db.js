@@ -1,10 +1,18 @@
 const mongoose = require('mongoose')
+const config = require('./utils/config')
 
 const Profile = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+    },
     type: String,
     position: String,
-    description: String,
+    description: {
+        type: String,
+        minlength: 10,
+        required: true
+    },
     links: {
         github: String,
         facebook: String,
@@ -14,8 +22,15 @@ const Profile = new mongoose.Schema({
 })
 
 const Event = new mongoose.Schema({
-    name: String,
-    date: Date,
+    name: {
+        type: String,
+        minlength: 5,
+        required: true
+    },
+    date: {
+        type: Date,
+        required: true
+    },
     location: {
         building: String,
         room: String
@@ -27,13 +42,18 @@ const Event = new mongoose.Schema({
 })
 
 const Project = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true
+    },
     link: {
         github: String,
         website: String
     },
     mentors: String //change this later,
 })
+
+mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 module.exports = mongoose.model('Profile', Profile)
 module.exports = mongoose.model('Event', Event)
