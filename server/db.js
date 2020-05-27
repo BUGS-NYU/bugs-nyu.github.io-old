@@ -59,16 +59,17 @@
 // module.exports = mongoose.model('Event', Event)
 // module.exports = mongoose.model('Project', Project)
 
+require('dotenv').config()
 const firebase = require('firebase')
 const config = {
-    apiKey: jsonContent.apiKey,
-    authDomain: jsonContent.authDomain,
-    databaseURL: jsonContent.databaseURL,
-    projectId: jsonContent.projectId,
-    storageBucket: jsonContent.storageBucket,
-    messagingSenderId: jsonContent.messagingSenderId,
-    appId: jsonContent.appId,
-    measurementId: jsonContent.measurementId
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId
 }
 
 firebase.initializeApp(config);
