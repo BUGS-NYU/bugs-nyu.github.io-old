@@ -1,25 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Team from './components/Team';
+import Events from './components/Events'
 
-function App() {
+const App = () => {
+  const [profiles, setProfile] = useState([])
+  const [events, setEvent] = useState([])
+
+  const getProfiles = (e) => {
+    e.preventDefault();
+    fetch('http://localhost:3001/api/profiles')
+    .then(results => results.json())
+    .then(data => 
+      {
+        const values = []
+        Object.keys(data).forEach(member => {
+          values.push(data[member])
+        })
+        setProfile(profiles.concat(values))
+      }
+    )
+  }
+
+  const getEvents = (e) => {
+    e.preventDefault();
+    fetch('http://localhost:3001/api/events')
+    .then(results => results.json())
+    .then(data => 
+      {
+        const values = []
+        Object.keys(data).forEach(member => {
+          values.push(data[member])
+        })
+        setEvent(profiles.concat(values))
+      }
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+     <button onClick = {getProfiles}>
+       Get Profiles
+     </button>
+     <Team eboard = {profiles} >
+
+     </Team>
+     <p />
+     <button onClick = {getEvents}>
+       Get Events
+     </button>
+     <Events events = {events} />
+   </div>
   );
 }
 
