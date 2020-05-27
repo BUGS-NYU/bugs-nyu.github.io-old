@@ -3,9 +3,12 @@ const PORT = process.env.PORT
 const express = require('express')
 const app = express()
 const apiRouter = require('./router/api')
+const bodyParser = require('body-parser')
 const cors = require('cors')
 
 app.use(cors())
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 app.use('/api', apiRouter)
 
 app.get('/', (req, res) => {

@@ -33,7 +33,8 @@ router.get('/events', (req, res) => {
 
 
 router.post('/profiles/:profile', (req, res) => {
-    const profile = req.body
+    const profile = req.params.body
+    console.log(profile)
     const eboard = {
         name: profile.name,
         position: profile.position,
