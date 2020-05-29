@@ -1,43 +1,29 @@
 import React, { useState } from 'react';
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  font-size: 2.5em;
+  text-align: center;
+  color: darkviolet;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: black;
+`;
+
 
 const HomePage = () => {
   const [profiles, setProfile] = useState([])
   const [events, setEvent] = useState([])
 
-  const getProfiles = (e) => {
-    e.preventDefault();
-    fetch('http://localhost:3001/api/profiles')
-    .then(results => results.json())
-    .then(data => 
-      {
-        const values = []
-        Object.keys(data).forEach(member => {
-          values.push(data[member])
-        })
-        setProfile(profiles.concat(values))
-      }
-    )
-  }
-
-  const getEvents = (e) => {
-    e.preventDefault();
-    fetch('http://localhost:3001/api/events')
-    .then(results => results.json())
-    .then(data => 
-      {
-        const values = []
-        Object.keys(data).forEach(member => {
-          values.push(data[member])
-        })
-        setEvent(events.concat(values))
-      }
-    )
-  }
   return (
    <div>
-     <h1>
-       BUGS@NYU - The Open Source Club at NYU
-     </h1>
+     <Wrapper>
+      <Title>
+        BUGS@NYU - The Open Source Club at NYU
+      </Title>
+     </Wrapper>
      <h2> About Us </h2>
      <div>
       NYU BUGS is the open source club at NYU. 
