@@ -24,7 +24,6 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-left: 5vw;
   margin-top: 35vh;
   width: 50vw;
   height: 60vh;
@@ -46,12 +45,14 @@ const SubTitle = styled.div`
   color: white;
 `;
 
+// Making text responsive
 const Description = styled.p`
-    font-family: Source Sans Pro;
+    font-family: Lato;
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 20px;
     color: black;
+    margin: auto;
 `;
 
 const Button = styled.button`
@@ -66,6 +67,16 @@ const Button = styled.button`
   font-weight: 500;
   border: none;
 `;
+
+const SlantedContainer = styled.div`
+    display: flex;
+    background-color: #EEEEEE;
+    border-radius: 160px;
+    width: 50vw;
+    height: 40vh;
+    word-wrap: break-word;
+    padding: 30px;
+`
 const HomePage = () => {
   const handleOnClick = (event) => {
     event.preventDefault();
@@ -78,11 +89,13 @@ const HomePage = () => {
         <Button onClick={handleOnClick}>Join Us</Button>
       </TitleContainer>
       <DescriptionContainer>
-        <Description>
-          We created and contributed to Open Source projects. We engaged
-          students through collaborative projects, hosting industry professions,
-          and running open source workshops
-        </Description>
+        <SlantedContainer>
+            {/* <Description>
+            We created and contributed to Open Source projects. We engaged
+            students through collaborative projects, hosting industry professions,
+            and running open source workshops
+            </Description> */}
+        </SlantedContainer>
       </DescriptionContainer>
     </ContentContainer>
   );
