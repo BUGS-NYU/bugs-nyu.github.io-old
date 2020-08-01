@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import HomePage from './HomePage'
 import styled from 'styled-components'
-import bugs from './bugs.png'
+import ProjectPage from './ProjectPage';
+import TeamPage from './TeamPage';
 
 const NavBarContainer = styled.div`
     display: flex;
@@ -21,6 +22,16 @@ const RightContainer = styled.div`
   margin-left: auto;
 `
 
+const ListElement = styled.ul`
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  max-height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 300ms ease;
+`
+
 const RightElement = styled.div`
   font-family: Source Sans Pro;
   font-style: normal;
@@ -30,6 +41,10 @@ const RightElement = styled.div`
   margin: auto;
   padding-left: 1vw;
   padding-right: 1vw;
+  &:hover ${ListElement} {
+    max-height: inherit;
+    opacity: 1;
+  }
 `
 const Container = styled.div``
 
@@ -46,12 +61,6 @@ const HomeContainer = styled.div`
   margin-bottom: auto;
   padding-left: 1vw;
   padding-right: 1vw;
-  opacity:0;
-  &:hover {
-    opacity:1;
-    -webkit-transition: opacity .25s ease-in-out .0s;
-    transition: opacity .25s ease-in-out .0s;
-  }
 `
 
 const App = () => {
@@ -60,12 +69,21 @@ const App = () => {
       <NavBarContainer>
         <HomeContainer> BUGS@NYU </HomeContainer>
         <RightContainer>
-          <RightElement> Our Team </RightElement>
+          <RightElement> 
+            Our Team 
+            <ListElement>
+              <li> Eboard </li>
+              <li> Alumni </li>
+              <li> Faculty </li>
+            </ListElement>
+          </RightElement>
           <RightElement> Projects </RightElement>
           <RightElement> Events </RightElement>
         </RightContainer>
       </NavBarContainer>
-      <HomePage />
+      {/* <HomePage /> */}
+      <ProjectPage />
+      {/* <TeamPage /> */}
     </Container>
   );
 }
