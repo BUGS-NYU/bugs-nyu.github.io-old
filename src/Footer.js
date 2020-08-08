@@ -25,7 +25,6 @@ const FooterSectionContainer = styled.section`
 const FirstItem = styled.a`
   padding-top: 10px;
   padding-bottom: 7px;
-  color: black;
 `;
 
 const OtherItem = styled.a`

@@ -14,9 +14,9 @@ const MainDescriptionContainer = styled.section`
   padding-top: 10%;
   align-items: center;
   min-height: 66vh;
-  padding-right: 3vw;
-  padding-bottom: 3vw;
-  padding-left: 3vw;
+  padding-right: 15vw;
+  padding-bottom: 5vw;
+  padding-left: 15vw;
   display: flex;
   flex-direction: column;
 `;
@@ -83,13 +83,11 @@ const Image = styled.img`
 `;
 
 const ContentContainer = styled.div`
-  background-color: black;
-  height: 100vh;
-  width: 90%;
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0 0 100px 0;
-  padding: 5px 5px 5px 5px;
+  margin: 0 0 5px 0;
+  padding: 0 5px 20px 5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2);
@@ -99,11 +97,11 @@ const ContentContainer = styled.div`
 
 const FirstContentBox = styled.div`
   background-color: #d6d6d6;
-  height: 40vh;
-  width: 40vw%;
+  min-height: 100%;
+  min-width: 80%;
   grid-column: 1;
   position: relative;
-  margin: 0 0 0 5px;
+  margin: 0 0 0 2px;
   border: 1px solid;
   border-radius: 3px 3px 3px 3px;
   box-shadow: 0 4px 6px 0;
@@ -114,8 +112,8 @@ const FirstContentBox = styled.div`
 
 const SecondContentBox = styled.div`
   background-color: #d6d6d6;
-  height: 40vh;
-  width: 40vw%;
+  min-height: 100%;
+  min-width: 80%;
   grid-column: 2;
   position: relative;
   margin: 0 0 0 5px;
@@ -129,8 +127,8 @@ const SecondContentBox = styled.div`
 
 const ThirdContentBox = styled.div`
   background-color: #d6d6d6;
-  height: 40vh;
-  width: 40vw%;
+  min-height: 100%;
+  min-width: 80%;
   grid-column: 3;
   position: relative;
   margin: 0 5px 0 5px;
@@ -161,10 +159,6 @@ const DescriptionText = styled.p`
 
 const FourthContentBox = styled.div`
   background-color: #d6d6d6;
-  height: 30vh;
-  width: 95%;
-  grid-column: 1 / 4;
-  grid-row: 4;
   position: relative;
   border: 1px solid;
   border-radius: 3px 3px 3px 3px;
@@ -172,7 +166,8 @@ const FourthContentBox = styled.div`
   text-align: center;
   justify-content: center;
   align-items: center;
-`
+  margin: 20px 5px 5% 5px;
+`;
 
 const HomePage = () => {
   const handleOnClick = (event) => {
@@ -185,10 +180,10 @@ const HomePage = () => {
           <ContentWrapper>
             <Wrapper>
               <DescriptionContainer>
-                {/* <ImageContainer>
+                <ImageContainer>
                   <Image src={bugslogo} />
-                </ImageContainer> */}
-                <Description>The Open Source Club at NYU</Description>
+                </ImageContainer>
+                <Description>NYU Open Source Club</Description>
               </DescriptionContainer>
             </Wrapper>
           </ContentWrapper>
@@ -209,7 +204,7 @@ const HomePage = () => {
                 those majoring in Computer Science to exchange ideas, code and
                 have fun. We are also experimenting with a mentorship program
                 this summer, which helps students learn the basics of web
-                development in React.
+                development in React
               </DescriptionText>
             </SecondContentBox>
             <ThirdContentBox>
@@ -225,19 +220,20 @@ const HomePage = () => {
                 are working on maintaining an NYU course API schedge
               </DescriptionText>
             </ThirdContentBox>
-            <FourthContentBox>
-            </FourthContentBox>
           </ContentContainer>
-          {/* <ContentContainer>
-              <FirstBox>
-                <FirstContentBox />
-                <SecondContentBox />
-                <ThirdContentBox />
-              </FirstBox>
-              <SecondBox>
-
-              </SecondBox>
-          </ContentContainer> */}
+          <FourthContentBox>
+            <Title>Mozilla Partnership</Title>
+            <DescriptionText>
+              BUGS is a member of the Open Source Student Network, a network of
+              university clubs and students that share the belief that open
+              source software is the engine that powers innovation
+            </DescriptionText>
+            <DescriptionText>
+              NYU BUGS is the open source club at NYU. We promote open source by
+              engaging students through collaborative projects, hosting industry
+              professions, and running open source workshops
+            </DescriptionText>
+          </FourthContentBox>
         </MainDescriptionContainer>
       </PageContainer>
     </MainContainer>
