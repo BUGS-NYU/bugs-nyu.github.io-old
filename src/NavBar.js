@@ -155,6 +155,7 @@ const NavBar = () => {
                             <HeaderNavWrapper>
                                 <NavList>
                                 <FirstNavItem>
+                                {/* Change to use react router Link instead */}
                                 <Link href="/teams">
                                 Teams
                                 </Link>
