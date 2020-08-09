@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import githublogo from "./GitHub-Mark-32px.png";
 
 const ProjectContainer = styled.div`
   margin: 1vw;
@@ -12,23 +13,25 @@ const ProjectContainer = styled.div`
   border-raidus: 3px 3px 3px 3px;
   box-shadow: 0 4px 6px 0;
   align-items: center;
+  padding: 5px 10px 10px 10px;
 `;
 
 const SubTitle = styled.h2`
   font-family: var(--normal-font);
   text-align: center;
   font-weight: lighter;
+  width: 100%;
   border-bottom: 1px solid rgb(117, 117, 116);
   color: rgb(117, 117, 116);
 `;
 
 const LinkContainer = styled.div`
-    text-align: center;
-`
+  text-align: center;
+`;
 
 const Link = styled.a`
-    font-size: small;
-`
+  font-size: small;
+`;
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
@@ -128,38 +131,39 @@ const FirstContentBox = styled.div`
   text-align: center;
 `;
 
-const Title = styled.h4`
+const Title = styled.h1`
   font-family: Poppins;
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
-  line-height: 1.2;
+  line-height: 0.5;
   font-size: calc(0vw + 2rem);
   color: #330662;
   animation: ${fadein} 2s;
 `;
 
-const Project = (props) => {
-  const {title, subtitle, description, link} = props
+const Logo = styled.img`
+  margin: 0px 5px 0px 0px;
+`;
 
-  return(
+const Project = (props) => {
+  const { title, subtitle, description, link } = props;
+
+  return (
     <ProjectContainer>
-          <Title> {title} </Title>
-          <SubTitle>{subtitle}</SubTitle>
-          <DescriptionContainer>
-            <Description>
-              {description}
-            </Description>
-          </DescriptionContainer>
-          <LinkContainer>
-            <Link href={`https://${link}`}>
-              {link}
-            </Link>
-          </LinkContainer>
-      </ProjectContainer>
-  )
-}
+      <Title> {title} </Title>
+      <SubTitle>{subtitle}</SubTitle>
+      <DescriptionContainer>
+        <Description>{description}</Description>
+      </DescriptionContainer>
+      <LinkContainer>
+        <Logo src={githublogo} />
+        <Link href={`https://${link}`}>{link}</Link>
+      </LinkContainer>
+    </ProjectContainer>
+  );
+};
 
 const ProjectsPage = () => {
   return (
@@ -240,34 +244,41 @@ const ProjectsPage = () => {
       <PageContainer>
         <MainDescriptionContainer>
           {/* Change description and title */}
-          <Project title="Schedge API"
-          subtitle = "Course API for NYU"
-          description="The website is built from scratch, using basic HTML, CSS, and
-          JavaScript, to be a one-stop-shop for information about the Open
-          Source Club. It's provides information about what the club is,
-          the projects we work on, and upcoming events."
-          link="github.com/BUGS-NYU/schedge" />
-          <Project title="BUGS website"
-          subtitle="Website for the club"
-          description="The website is built from scratch, using basic HTML, CSS, and
-          JavaScript, to be a one-stop-shop for information about the Open
-          Source Club. It's provides information about what the club is,
-          the projects we work on, and upcoming events."
-          link="github.com/BUGS-NYU"/>
-          <Project title="Spark"
-          subtitle="Website for the club"
-          description="The website is built from scratch, using basic HTML, CSS, and
-          JavaScript, to be a one-stop-shop for information about the Open
-          Source Club. It's provides information about what the club is,
-          the projects we work on, and upcoming events."
-          link="github.com/BUGS-NYU"/>
-          <Project title="NYU data hubs"
-          subtitle="Website for the club"
-          description="The website is built from scratch, using basic HTML, CSS, and
-          JavaScript, to be a one-stop-shop for information about the Open
-          Source Club. It's provides information about what the club is,
-          the projects we work on, and upcoming events."
-          link="github.com/BUGS-NYU"/>
+          <Project
+            title="Schedge API"
+            subtitle="Course API for NYU"
+            description="Schedge is an open source API to NYU's course catalog, geared at 
+            eventually helping NYU students plan their courses easier and faster.
+            Our goal with this API is to make it easier for 
+            students to plan out their schedules, and eventually to also do some of that for them"
+            link="github.com/BUGS-NYU/schedge"
+          />
+          <Project
+            title="BUGS website"
+            subtitle="Website For The Club"
+            description="The website is built from scratch, using basic React, 
+            to be a one-stop-shop for information about the Open
+            Source Club. It's provides information about what the club is,
+            the projects we work on, and upcoming events."
+            link="github.com/BUGS-NYU/bugs-nyu.github.io"
+          />
+          <Project
+            title="Spark"
+            subtitle="Mentorship Program"
+            description="Spark is a mentorship program run by TorchNYU, an organization dedicated towards improving NYU CS, and BUGS, NYU's open source development club.
+
+            We teach students practical and pragmatic software development through working on and shipping projects."
+            link="github.com/torchnyu/spark"
+          />
+          <Project
+            title="NYU data hubs"
+            subtitle="NYU Data Hub"
+            description="The data hub is an open source one stop shop for course API
+            at NYU, collected using Schedge API. The data hub contains course API
+            since fall 2019 to current semester. In the future, we would like to extend the project
+            into a website with helpful advice about CS classes at NYU"
+            link="github.com/BUGS-NYU/bugs-data-hub"
+          />
         </MainDescriptionContainer>
       </PageContainer>
     </MainContainer>
