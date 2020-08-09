@@ -117,7 +117,7 @@ const ProjectContainer = styled.div`
   grid-column: 1
   min-height: 40vh;
   height: 100%;
-  background-color: #FFEEDD;
+  background-color: #d6d6d6;
   display: flex;
   flex-direction: column;
   border: 0.5px solid;

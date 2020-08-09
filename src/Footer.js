@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import githublogo from "./GitHub-Mark-32px.png";
 import maillogo from "./mail_icon.png";
+import bugsgif from './bugs.gif';
 
 const FooterContainer = styled.footer`
   margin-top: auto;
@@ -12,7 +13,7 @@ const FooterSectionContainer = styled.section`
   align-items: center;
   min-height: 12vh;
   display: flex;
-  background-color: #311432;
+  background-color: #57068c;
   justify-content: center;
   border-top: 1px solid;
   flex-wrap: wrap;
@@ -43,6 +44,10 @@ const FooterText = styled.p`
   font-size: 13px;
 `;
 
+const Image = styled.img`
+  width: 2%;
+`
+
 const Footer = () => {
   return (
     <FooterContainer>
@@ -55,7 +60,7 @@ const Footer = () => {
         </OtherItem>
         <FooterText>
           {/* Style this */}
-          Made with love from BUGS
+          Made with love from <Image src={bugsgif} />
         </FooterText>
       </FooterSectionContainer>
     </FooterContainer>
