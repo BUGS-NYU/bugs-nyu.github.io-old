@@ -6,6 +6,7 @@ import ProjectsPage from "./ProjectsPage";
 import TeamPage from "./TeamPage";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import AlumniPage from './AlumniPage';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const Container = styled.div`
@@ -24,6 +25,7 @@ const App = () => {
           <Route exact path="/" component={HomePage} />
           <Route path="/projects" component={ProjectsPage} />
           <Route path="/teams" component={TeamPage} />
+          <Route path="/alumni" component={AlumniPage} />
         </Switch>
       </Router>
       <Footer />
