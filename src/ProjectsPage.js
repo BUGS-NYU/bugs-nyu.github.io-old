@@ -167,79 +167,6 @@ const Project = (props) => {
 
 const ProjectsPage = () => {
   return (
-    // <ContentContainer>
-    //   <ProjectContainer>
-    //     <Title> Schedge API </Title>
-    //     <SubTitle>A course API for NYU students</SubTitle>
-    //     <DescriptionContainer>
-    //         <Description>
-    //         The website is built from scratch, using basic HTML, CSS, and
-    //         JavaScript, to be a one-stop-shop for information about the Open
-    //         Source Club. It's provides information about what the club is, the
-    //         projects we work on, and upcoming events.
-    //         </Description>
-    //     </DescriptionContainer>
-    //     <LinkContainer>
-    //         <Link href="https://github.com/BUGS-NYU/schedge">
-    //             github.com/BUGS-NYU/schedge
-    //         </Link>
-    //     </LinkContainer>
-    //   </ProjectContainer>
-    //   <ProjectContainer>
-    //   <Title> BUGS webste </Title>
-    //     <SubTitle> The thing you are on right now</SubTitle>
-    //     <DescriptionContainer>
-    //         <Description>
-    //         The website is built from scratch, using basic HTML, CSS, and
-    //         JavaScript, to be a one-stop-shop for information about the Open
-    //         Source Club. It's provides information about what the club is, the
-    //         projects we work on, and upcoming events.
-    //         </Description>
-    //     </DescriptionContainer>
-    //     <LinkContainer>
-    //         <Link href="https://github.com/BUGS-NYU/bugs-nyu.github.io">
-    //             github.com/BUGS-NYU/bugs-nyu.github.io
-    //         </Link>
-    //     </LinkContainer>
-    //   </ProjectContainer>
-    //   <ProjectContainer>
-    //   <Title> BUGS webste </Title>
-    //     <SubTitle> The thing you are on right now</SubTitle>
-    //     <DescriptionContainer>
-    //         <Description>
-    //         The website is built from scratch, using basic HTML, CSS, and
-    //         JavaScript, to be a one-stop-shop for information about the Open
-    //         Source Club. It's provides information about what the club is, the
-    //         projects we work on, and upcoming events.
-    //         </Description>
-    //     </DescriptionContainer>
-    //     <LinkContainer>
-    //         <Link href="https://github.com/BUGS-NYU/bugs-nyu.github.io">
-    //             github.com/BUGS-NYU/bugs-nyu.github.io
-    //         </Link>
-    //     </LinkContainer>
-    //   </ProjectContainer>
-    //   <ProjectContainer>
-    //   <Title> BUGS webste </Title>
-    //     <SubTitle> The thing you are on right now</SubTitle>
-    //     <DescriptionContainer>
-    //         <Description>
-    //         The website is built from scratch, using basic HTML, CSS, and
-    //         JavaScript, to be a one-stop-shop for information about the Open
-    //         Source Club. It's provides information about what the club is, the
-    //         projects we work on, and upcoming events.
-    //         </Description>
-    //     </DescriptionContainer>
-    //     <LinkContainer>
-    //         <Link href="https://github.com/BUGS-NYU/bugs-nyu.github.io">
-    //             github.com/BUGS-NYU/bugs-nyu.github.io
-    //         </Link>
-    //     </LinkContainer>
-    //   </ProjectContainer>
-    //   <ProjectContainer />
-    //   <ProjectContainer />
-    //   <ProjectContainer />
-    // </ContentContainer>
     <MainContainer>
       <PageContainer>
         <MainDescriptionContainer>
@@ -256,10 +183,11 @@ const ProjectsPage = () => {
           <Project
             title="BUGS website"
             subtitle="Website For The Club"
-            description="The website is built from scratch, using basic React, 
+            description="The website is built from scratch, using React, 
             to be a one-stop-shop for information about the Open
             Source Club. It's provides information about what the club is,
-            the projects we work on, and upcoming events."
+            the projects we work on, and upcoming events. We hope to constantly update
+            the website with features"
             link="github.com/BUGS-NYU/bugs-nyu.github.io"
           />
           <Project

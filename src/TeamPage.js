@@ -1,127 +1,228 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import aliu from "./aliu.jpg";
+import amehta from "./amehta.png";
+import ana from "./anachiappan.jpg";
+import eshao from "./eshao.jpg";
+import khanhng from "./khanhng.jpg";
+import slin from "./slin.jpg";
+import eriche from "./eriche.jpg";
 
-const ContentContainer = styled.div`
-  background-color: #74a4bc;
+const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
 `;
 
-const TeamContainer = styled.div`
+const PageContainer = styled.article`
+  display: block;
+`;
+
+const MainDescriptionContainer = styled.section`
+  margin-top: 10%;
+  align-items: center;
+  min-height: 100vh;
+  padding-right: 15vw;
+  padding-bottom: 5vw;
+  padding-left: 15vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 20px;
+  justify-items: stretch;
+  margin-bottom: 5%;
+`;
+
+const ContentWrapper = styled.div`
+  padding-top: 6.6vmax;
+  padding-bottom: 6.6vmax;
+  margin: 0 auto;
+  box-sizing: content-box;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+`;
+
+const Wrapper = styled.div`
+  width: 80%;
+`;
+
+const DescriptionContainer = styled.div`
+  width: 100%;
+  text-align: center;
+  white-space: pre-wrap;
   display: flex;
   flex-direction: row;
-  width: 80vw;
-  min-height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
 `;
 
-const SectionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 20vw;
-  min-height: 100vh;
-  margin-left: 100px;
-  margin-right: 50px;
+const fadein = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 `;
 
-const Section = styled.h1`
-  position: relative;
-  font-family: proxima-nova;
-  line-height: 0.25em;
+const Description = styled.h4`
+  font-family: Poppins;
+  font-weight: 500;
   font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  color: black;
+  letter-spacing: 0em;
+  text-transform: none;
+  line-height: 1.2;
+  font-size: calc(0vw + 1.2rem);
+  color: #330662;
+  animation: ${fadein} 2s;
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  height: auto;
+  padding: 17px 0px 5px 0px;
+  margin: 50px 0px 5px 0px;
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
+  animation: ${fadein} 2s;
+`;
+
+const FirstContentBox = styled.div`
+  background-color: #d6d6d6;
+  min-height: 100%;
+  min-width: 80%;
+  grid-column: 1;
+  position: relative;
+  margin: 0 0 0 2px;
+  border: 1px solid;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 4px 6px 0;
+  justify-content: flex-start;
+  padding: 10px;
   text-align: center;
 `;
 
-const BiosContainer = styled.div`
-  width: 70vw;
-  min-height: 100vh;
+const Title = styled.h1`
+  font-family: Poppins;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0em;
+  text-transform: none;
+  line-height: 0.5;
+  font-size: calc(0vw + 2rem);
+  color: #330662;
+  animation: ${fadein} 2s;
 `;
 
-const BioContainer = styled.div`
+const ProjectContainer = styled.div`
+  margin: 1vw;
+  grid-column: 1
+  min-height: 40vh;
+  height: 100%;
+  background-color: #FFEEDD;
   display: flex;
-  flex-direction: row;
-  width: 50vw;
-  height: 20vh;
-  margin: 20px auto 10px auto;
+  flex-direction: column;
+  border: 0.5px solid;
+  border-raidus: 3px 3px 3px 3px;
+  box-shadow: 0 4px 6px 0;
+  align-items: center;
+  padding: 5px 5px 0px 5px;
 `;
 
-const Name = styled.div`
-  width: 20vw;
-  text-align: left;
+const SubTitle = styled.h2`
+  font-family: var(--normal-font);
+  text-align: center;
+  font-weight: lighter;
+  width: 100%;
+  border-bottom: 1px solid rgb(117, 117, 116);
+  color: rgb(117, 117, 116);
 `;
 
-const Description = styled.div`
-  width: 60vw;
-  text-align: left;
+const Image = styled.img`
+  width: 70%;
+  object-fit: contain;
 `;
 
 const eboards = {
-    "Albert Liu": {
-        role: "President",
-        description: "Albert enjoys python scripting and long walks in Central Park. In his work time he majors in Computer Science at CAS."
-    },
-    "Samuel Lin": {
-        role: "Vice President",
-        description: "Samuel is a Junior at CAS majoring in Computer Science and Minoring in Web Design and Game Design. He was born and raised in Taiwan, but studied in Singapore for high school before coming to New York. He is a big foodie and enjoys trying foods from different cultures."
-    },
-    "Eric He": {
-        role: "Secretary",
-        description: "Hi, this is Eric. I am currently a junior studying computer science and mathematics. I like to play basketball and listen to music and read about philosophy."
-    },
-    "Aaditya Mehta": {
-        role: "Treasurer",
-        description: "A Junior studying Economics and Mathematics, Aaditya spends way too much time in Stern (#IAmStern). In his free time he likes to listen to music, take long walks, and read Econ papers, sometimes simultaneously."
-    },
-    "Khanh Nguyen": {
-        role: "Director of Communications",
-        description: "Sophomore from Vietnam studying Computer Science. BROCKHAMPTON is my all-time favorite boyband. Food and coding also fuels my existence. Outside of school, find me at Hanoi House"
-    },
-    "Jiayue(Joanna) Zhang": {
-        role: "Director of Marketing",
-        description: "Jiayue (Joanna) Zhang is a Junior majoring in Mathematics and Computer Science in CAS. Intellectual challenges of her school work bring her either joy or existential crises; in most cases math the latter and CS the former. One thing she loves about NYC is that performances of her favorite artists are usually only a subway ride away from school. Her guilty pleasure is taking mahjong breaks at Bobst."
-    },
-    "Ami Nachiappan": {
-        role: "Event Coordinator",
-        description: "Junior from California studying Computer Science and minoring in Web Design. In her free time, she loves spending time with family, running, and of course, coding!"
-    },
-    "Edmond Shao": {
-        role: "Webmaster",
-        description: "Edmond is a Junior at CAS studying Computer Science and minoring in Business Studies. Aside from class, he likes cars, being a foodie and traveling."
-    }
-}
+  "Albert Liu": {
+    image: aliu,
+    role: "President",
+    description:
+      "Albert enjoys python scripting and long walks in Central Park. In his work time he majors in Computer Science at CAS.",
+  },
+  "Samuel Lin": {
+    image: slin,
+    role: "Vice President",
+    description:
+      "Samuel is a Junior at CAS majoring in Computer Science and Minoring in Web Design and Game Design. He was born and raised in Taiwan, but studied in Singapore for high school before coming to New York. He is a big foodie and enjoys trying foods from different cultures.",
+  },
+  "Edmond Shao": {
+    image: eshao,
+    role: "Webmaster",
+    description:
+      "Edmond is a Junior at CAS studying Computer Science and minoring in Business Studies. Aside from class, he likes cars, being a foodie and traveling.",
+  },
+  "Eric He": {
+    image: eriche,
+    role: "Secretary",
+    description:
+      "Hi, this is Eric. I am currently a junior studying computer science and mathematics. I like to play basketball and listen to music and read about philosophy.",
+  },
+  "Khanh Nguyen": {
+    image: khanhng,
+    role: "Director of Communications",
+    description:
+      "Sophomore from Vietnam studying Computer Science. BROCKHAMPTON is my all-time favorite boyband. Food and coding also fuels my existence. Outside of school, find me at Hanoi House",
+  },
+  "Ami Nachiappan": {
+    image: ana,
+    role: "Event Coordinator",
+    description:
+      "Junior from California studying Computer Science and minoring in Web Design. In her free time, she loves spending time with family, running, and of course, coding!",
+  },
+  "Aaditya Mehta": {
+    image: amehta,
+    role: "Treasurer",
+    description:
+      "A Junior studying Economics and Mathematics, Aaditya spends way too much time in Stern (#IAmStern). In his free time he likes to listen to music, take long walks, and read Econ papers, sometimes simultaneously.",
+  },
+  "Jiayue(Joanna) Zhang": {
+    role: "Director of Marketing",
+    description:
+      "Jiayue (Joanna) Zhang is a Junior majoring in Mathematics and Computer Science in CAS. Intellectual challenges of her school work bring her either joy or existential crises; in most cases math the latter and CS the former. One thing she loves about NYC is that performances of her favorite artists are usually only a subway ride away from school. Her guilty pleasure is taking mahjong breaks at Bobst.",
+  },
+};
+
+const Member = (props) => {
+  const { name, role, image, description } = props;
+  return (
+    <ProjectContainer>
+      <Title> {name} </Title>
+      <SubTitle> {role} </SubTitle>
+      <Image src={image} />
+      <DescriptionContainer>
+        <Description>{description}</Description>
+      </DescriptionContainer>
+    </ProjectContainer>
+  );
+};
 
 const TeamPage = () => {
   return (
-    <ContentContainer>
-      <TeamContainer>
-        <SectionContainer>
-          <Section> Eboard </Section>
-          <Section> Alumni </Section>
-          <Section> Faculty </Section>
-        </SectionContainer>
-        <BiosContainer>
-            {Object.entries(eboards).map(([name, value]) => {
-                return(
-                    <BioContainer>
-                        <Name>
-                            <h2> {name} </h2>
-                            <h3> {value.role} </h3>
-                        </Name>
-                        <Description>
-                            <p>
-                                {value.description}
-                            </p>
-                        </Description>
-                    </BioContainer>
-                )
-            })}
-            </BiosContainer>
-      </TeamContainer>
-    </ContentContainer>
+    <MainContainer>
+      <PageContainer>
+        <MainDescriptionContainer>
+          {Object.entries(eboards).map(([name, values]) => {
+            return (
+              <Member
+                name={name}
+                role={values.role}
+                description={values.description}
+                image={values.image}
+              />
+            );
+          })}
+        </MainDescriptionContainer>
+      </PageContainer>
+    </MainContainer>
   );
 };
 
