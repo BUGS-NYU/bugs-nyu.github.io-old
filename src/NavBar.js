@@ -97,6 +97,7 @@ const OtherNavItem = styled.div`
 `;
 
 const Link = styled.a`
+  color:rgb(51, 6, 98);
   text-decoration: none;
 `;
 

@@ -49,26 +49,28 @@ const fadein = keyframes`
   }
 `;
 
-const Description = styled.h4`
+const Description = styled.p`
+  text-align: center;
   font-family: Poppins;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
   line-height: 1.2;
-  font-size: calc(0vw + 1.2rem);
+  font-size: calc(0vw + 1rem);
   color: #330662;
   animation: ${fadein} 2s;
 `;
 
-const Title = styled.h1`
+const Title = styled.p`
   font-family: Poppins;
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
+  text-align: center;
   line-height: 0.5;
-  font-size: calc(0vw + 2rem);
+  font-size: calc(0vw + 1.5rem);
   color: #330662;
   animation: ${fadein} 2s;
 `;
@@ -78,29 +80,45 @@ const ProjectContainer = styled.div`
   grid-column: 1
   min-height: 40vh;
   height: 100%;
-  background-color: #d6d6d6;
+  background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
-  border: 0.5px solid;
-  border-raidus: 3px 3px 3px 3px;
-  box-shadow: 0 4px 6px 0;
   align-items: center;
-  padding: 5px 5px 0px 5px;
+  padding: 5px 60px 0px 60px;
+  animation: ${fadein} 2s;
 `;
 
-const SubTitle = styled.h2`
+const SubTitle = styled.p`
   font-family: var(--normal-font);
   text-align: center;
   font-weight: lighter;
-  width: 100%;
-  border-bottom: 1px solid rgb(117, 117, 116);
   color: rgb(117, 117, 116);
+  margin-bottom: 0;
+  padding-bottom: 0;
 `;
 
 const Image = styled.img`
   width: 70%;
   object-fit: contain;
 `;
+
+const EboardTitleContainer = styled.div`
+  margin-top: 15%;
+  text-align: center;
+`
+
+const EboardTitle = styled.h1`
+  font-family: Poppins;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0em;
+  text-transform: none;
+  text-align: center;
+  line-height: 0.5;
+  font-size: calc(0vw + 4.5rem);
+  color: #330662;
+  animation: ${fadein} 2s;
+`
 
 const eboards = {
   "Albert Liu": {
@@ -156,9 +174,10 @@ const Member = (props) => {
   const { name, role, image, description } = props;
   return (
     <ProjectContainer>
-      <Title> {name} </Title>
-      <SubTitle> {role} </SubTitle>
       <Image src={image} />
+      <Title> {name}
+      <SubTitle> {role} </SubTitle>
+       </Title>
       <DescriptionContainer>
         <Description>{description}</Description>
       </DescriptionContainer>
@@ -170,6 +189,11 @@ const TeamPage = () => {
   return (
     <MainContainer>
       <PageContainer>
+        <EboardTitleContainer>
+          <EboardTitle>
+          Meet Our Executive Board
+          </EboardTitle>
+        </EboardTitleContainer>
         <MainDescriptionContainer>
           {Object.entries(eboards).map(([name, values]) => {
             return (
