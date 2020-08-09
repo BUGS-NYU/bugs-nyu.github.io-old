@@ -170,9 +170,6 @@ const FourthContentBox = styled.div`
 `;
 
 const HomePage = () => {
-  const handleOnClick = (event) => {
-    event.preventDefault();
-  };
   return (
     <MainContainer>
       <PageContainer>

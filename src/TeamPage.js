@@ -31,20 +31,6 @@ const MainDescriptionContainer = styled.section`
   margin-bottom: 5%;
 `;
 
-const ContentWrapper = styled.div`
-  padding-top: 6.6vmax;
-  padding-bottom: 6.6vmax;
-  margin: 0 auto;
-  box-sizing: content-box;
-  justify-content: center;
-  display: flex;
-  width: 100%;
-`;
-
-const Wrapper = styled.div`
-  width: 80%;
-`;
-
 const DescriptionContainer = styled.div`
   width: 100%;
   text-align: center;
@@ -73,31 +59,6 @@ const Description = styled.h4`
   font-size: calc(0vw + 1.2rem);
   color: #330662;
   animation: ${fadein} 2s;
-`;
-
-const ImageContainer = styled.div`
-  position: relative;
-  height: auto;
-  padding: 17px 0px 5px 0px;
-  margin: 50px 0px 5px 0px;
-  outline: none;
-  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
-  animation: ${fadein} 2s;
-`;
-
-const FirstContentBox = styled.div`
-  background-color: #d6d6d6;
-  min-height: 100%;
-  min-width: 80%;
-  grid-column: 1;
-  position: relative;
-  margin: 0 0 0 2px;
-  border: 1px solid;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 4px 6px 0;
-  justify-content: flex-start;
-  padding: 10px;
-  text-align: center;
 `;
 
 const Title = styled.h1`

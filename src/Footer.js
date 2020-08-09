@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import githublogo from "./GitHub-Mark-32px.png";
 import maillogo from "./mail_icon.png";
-import bugsgif from './bugs.gif';
+import bugsgif from "./bugs.gif";
 
 const FooterContainer = styled.footer`
   margin-top: auto;
@@ -46,7 +46,7 @@ const FooterText = styled.p`
 
 const Image = styled.img`
   width: 2%;
-`
+`;
 
 const Footer = () => {
   return (
