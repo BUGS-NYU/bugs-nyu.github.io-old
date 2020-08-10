@@ -42,6 +42,11 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const fadein = keyframes`
@@ -73,6 +78,9 @@ const ImageContainer = styled.div`
   outline: none;
   box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
   animation: ${fadein} 2s;
+  @media screen and (max-width: 700px) {
+    margin: 0px 0px 0px 0px;
+  }
 `;
 
 const Image = styled.img`
@@ -84,8 +92,6 @@ const Image = styled.img`
 
 const ContentContainer = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
   margin: 0 0 5px 0;
   padding: 0 5px 20px 5px;
   display: grid;
@@ -93,6 +99,10 @@ const ContentContainer = styled.div`
   grid-template-rows: repeat(2);
   grid-auto-rows: min-content;
   grid-gap: 20px;
+  @media screen and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const FirstContentBox = styled.div`
@@ -167,6 +177,13 @@ const FourthContentBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 20px 5px 5% 5px;
+  @media screen and (max-width: 1000px) {
+    margin: 5px 5px 10vh 5px;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 5px 5px 30% 5px;
+  }
 `;
 
 const HomePage = () => {

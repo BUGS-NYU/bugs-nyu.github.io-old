@@ -79,6 +79,11 @@ const ProjectContainer = styled.div`
   align-items: center;
   padding: 5px 60px 0px 60px;
   animation: ${fadein} 2s;
+  @media screen and (max-width: 500px) {
+    padding: 0px 0px 0px 0px;
+    margin: 0 0 25px 0;
+    width: 70vw;
+  }
 `;
 
 const SubTitle = styled.p`
@@ -93,6 +98,9 @@ const SubTitle = styled.p`
 const EboardTitleContainer = styled.div`
   margin-top: 15%;
   text-align: center;
+  @media screen and (max-width: 650px) {
+    margin-top: 20vh;
+  }
 `;
 
 const EboardTitle = styled.h1`
@@ -106,6 +114,13 @@ const EboardTitle = styled.h1`
   font-size: calc(0vw + 4.5rem);
   color: #330662;
   animation: ${fadein} 2s;
+  @media screen and (max-width: 1000px) {
+    font-size: calc(0vw + 3rem);
+  }
+
+  @media screen and (max-width: 750px) {
+    font-size: calc(0vw + 1.5rem);
+  }
 `;
 
 const eboards = {

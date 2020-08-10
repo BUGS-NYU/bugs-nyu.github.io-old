@@ -14,6 +14,11 @@ const ProjectContainer = styled.div`
   box-shadow: 0 4px 6px 0;
   align-items: center;
   padding: 5px 10px 10px 10px;
+  @media screen and (max-width: 500px) {
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0 0px 0;
+    width: 70vw;
+  }
 `;
 
 const SubTitle = styled.h2`
@@ -53,6 +58,11 @@ const MainDescriptionContainer = styled.section`
   grid-gap: 20px;
   justify-items: stretch;
   margin-bottom: 5%;
+
+  @media screen and (max-width: 900px) {
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+  }
 `;
 
 const DescriptionContainer = styled.div`
@@ -124,7 +134,6 @@ const ProjectsPage = () => {
     <MainContainer>
       <PageContainer>
         <MainDescriptionContainer>
-          {/* Change description and title */}
           <Project
             title="Schedge API"
             subtitle="Course API for NYU"

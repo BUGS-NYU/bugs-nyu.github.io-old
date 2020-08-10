@@ -137,6 +137,9 @@ const JoinUsContainer = styled.div`
   align-items: center;
   line-height: 1;
   font-size: calc(0vw + 1rem);
+  @media screen and (max-width: 1310px) {
+    width: 33vw;
+  }
 `;
 
 const JoinUsButtonContainer = styled.div`
@@ -158,6 +161,10 @@ const JoinUs = styled.a`
   transition: 0.3s;
   &:hover {
     opacity: 0.6;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: 1em 0.75em;
   }
 `;
 

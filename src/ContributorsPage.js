@@ -21,6 +21,10 @@ const MainDescriptionContainer = styled.section`
   justify-items: stretch;
   align-items: baseline;
   margin-bottom: 5%;
+  @media screen and (max-width: 900px) {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
 `;
 
 const TableContainer = styled.div`
