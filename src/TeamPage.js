@@ -62,7 +62,7 @@ const Description = styled.p`
   animation: ${fadein} 2s;
 `;
 
-const Title = styled.p`
+const Title = styled.h2`
   font-family: Poppins;
   font-weight: 300;
   font-style: normal;
@@ -217,6 +217,7 @@ const TeamPage = () => {
                 role={values.role}
                 description={values.description}
                 image={values.image}
+                key={name}
               />
             );
           })}

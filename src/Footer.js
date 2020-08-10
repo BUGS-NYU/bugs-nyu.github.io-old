@@ -7,14 +7,11 @@ import bugsgif from "./bugs.gif";
 const FooterContainer = styled.footer`
   margin-top: auto;
   position: relative;
-  @media screen and (max-width: 900px) {
-    margin-top: 10px;
-  }
 `;
 
 const FooterSectionContainer = styled.section`
   align-items: center;
-  min-height: 12vh;
+  min-height: 10vh;
   display: flex;
   background-color: #57068c;
   justify-content: center;

@@ -22,8 +22,10 @@ const MainDescriptionContainer = styled.section`
   align-items: baseline;
   margin-bottom: 5%;
   @media screen and (max-width: 900px) {
-    padding-top: 10vh;
     padding-bottom: 10vh;
+    padding-top: 5vh;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -31,6 +33,10 @@ const TableContainer = styled.div`
   height: 100vh;
   width: 30%;
   display: table;
+  @media screen and (max-width: 900px) {
+    padding: 0px 5px 0px 5px;
+    height: 20vh;
+  }
 `;
 
 const Title = styled.h1`
@@ -60,6 +66,9 @@ const Name = styled.h4`
 const TimelineContainer = styled.div`
   min-height: 100vh;
   width: 70%;
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 const Timeline = styled.div`

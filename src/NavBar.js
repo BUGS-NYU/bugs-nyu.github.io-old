@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-
+import Burger from './Burger';
+import Menu from './Menu';
 const Header = styled.header`
   z-index: 10;
   position: absolute;
@@ -14,6 +15,8 @@ const Header = styled.header`
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
+  padding: ${({ open }) => open ? '0 0 50px 0' : '0'};
+  padding: ${({ open }) => open ? '0 0 50px 0' : '0'};
 `;
 
 const HeaderWrapper = styled.div`
@@ -86,6 +89,10 @@ const NavList = styled.nav`
   line-height: 1.4em;
   font-size: calc(0vw + 1.2rem);
   color: #330662;
+
+  @media screen and (max-width: 500px) {
+
+  }
 `;
 
 const Dropdown = styled.div`
@@ -138,7 +145,7 @@ const JoinUsContainer = styled.div`
   line-height: 1;
   font-size: calc(0vw + 1rem);
   @media screen and (max-width: 1310px) {
-    width: 33vw;
+    width: 30vw;
   }
 `;
 
@@ -164,7 +171,7 @@ const JoinUs = styled.a`
   }
 
   @media screen and (max-width: 420px) {
-    padding: 1em 0.75em;
+    padding: 0.5em 0.5em;
   }
 `;
 
@@ -176,31 +183,35 @@ const DropdownContent = styled.a`
 `;
 
 const NavBar = () => {
+  const width = window.innerWidth;
+  const [open, setOpen] = useState(false)
   return (
-    <Header>
+    <Header open={open}>
+      <Menu open={open}/>
       <HeaderWrapper>
         <ContentContainer>
           <Content>
             <LeftContentContainer>
               <HeaderNavWrapper>
+                {width <= 700 ? <Burger open={open} setOpen={setOpen} /> :
                 <NavList>
-                  <FirstNavItem>
-                    {/* Change to use react router Link instead */}
-                    <Link href="/teams">Teams</Link>
-                    <Dropdown>
-                      <DropdownContent href="/contributors">
-                        Contributors
-                      </DropdownContent>
-                      <DropdownContent href="/alumni">Alumni</DropdownContent>
-                    </Dropdown>
-                  </FirstNavItem>
-                  <OtherNavItem>
-                    <Link href="/projects">Projects</Link>
-                  </OtherNavItem>
-                  <OtherNavItem>
-                    <Link href="/events">Events</Link>
-                  </OtherNavItem>
-                </NavList>
+                <FirstNavItem>
+                  {/* Change to use react router Link instead */}
+                  <Link href="/teams">Teams</Link>
+                  <Dropdown>
+                    <DropdownContent href="/contributors">
+                      Contributors
+                    </DropdownContent>
+                    <DropdownContent href="/alumni">Alumni</DropdownContent>
+                  </Dropdown>
+                </FirstNavItem>
+                <OtherNavItem>
+                  <Link href="/projects">Projects</Link>
+                </OtherNavItem>
+                <OtherNavItem>
+                  <Link href="/events">Events</Link>
+                </OtherNavItem>
+              </NavList>}
               </HeaderNavWrapper>
               <TitleContainer>
                 <Title href="/">BUGS@NYU</Title>
