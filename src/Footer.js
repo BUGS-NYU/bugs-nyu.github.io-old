@@ -46,6 +46,10 @@ const FooterText = styled.p`
 
 const Image = styled.img`
   width: 2%;
+
+  @media screen and (max-width: 700px) {
+    width: 5%;
+  }
 `;
 
 const Footer = () => {

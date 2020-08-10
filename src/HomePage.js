@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import bugslogo from "./bugs.png";
-import Menu from './Menu';
+
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;

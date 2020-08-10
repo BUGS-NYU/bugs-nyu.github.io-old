@@ -9,7 +9,7 @@ import Footer from "./Footer";
 import AlumniPage from './AlumniPage';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ContributorsPage from "./ContributorsPage";
-import Menu from './Menu';
+
 const Container = styled.div`
   min-height: 100vh;
   background-color: #f2f2f2;

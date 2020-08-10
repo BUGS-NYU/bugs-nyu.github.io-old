@@ -80,8 +80,8 @@ const Timeline = styled.div`
   min-height: 100vh;
   max-height: 100vh;
   border: 0.05px solid;
-  border-radius: 15px;
-  box-shadow: 0 4px 5px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px 0;
   padding: 20px 0px 20px 0px;
 `;
 
@@ -109,12 +109,17 @@ const Left = styled.div`
   width: 40%;
   height: 100%;
   border: 0.05px solid;
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  padding: 0px 5px 0px 5px;
   transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.1);
+    color: #d4ebf2;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 0.75rem;
   }
 `;
 
@@ -123,22 +128,33 @@ const Right = styled.div`
   width: 40%;
   height: 100%;
   border: 0.05px solid;
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  padding: 0px 5px 0px 5px;
   transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.1);
+    color: #d4ebf2
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.75rem;
   }
 `;
 
 const Time = styled.p`
   font-weight: 500;
   color: #999;
+  margin: 0;
+  padding: 0;
 `;
 
 const Description = styled.p`
   font-weight: 500;
+  &:hover {
+    color: #57068c;
+  }
 `;
 
 const DescriptionContainer = styled.a`
@@ -192,6 +208,7 @@ const ContributorsPage = () => {
               url: url,
               timestamp: parseDate(createdTime),
               name: "Schedge",
+              text: `${user} made a Pull Request to Schedge!`
             });
           });
           webJSON.forEach((webPR) => {
@@ -203,6 +220,7 @@ const ContributorsPage = () => {
               url: url,
               timestamp: parseDate(createdTime),
               name: "BUGS website",
+              text: `${user} made a Pull Request to BUGS website!`
             });
           });
           const sortedPRList = PRList.sort((a, b) => {
@@ -210,6 +228,12 @@ const ContributorsPage = () => {
             let dateB = new Date(b.timestamp);
             return dateB - dateA;
           });
+          sortedPRList.unshift({
+            timestamp: "NOW",
+            url: "https://github.com/BUGS-NYU",
+            user: "",
+            text: `Make this your contribution!`
+          })
           setPRList(sortedPRList);
       } catch(error) {
           console.log(error)
@@ -239,7 +263,7 @@ const ContributorsPage = () => {
                           <Time>{PR.timestamp}</Time>
                           <DescriptionContainer href={PR.url}>
                             <Description>
-                              {PR.user} made a pull request to {PR.name}
+                              {PR.text}
                             </Description>
                           </DescriptionContainer>
                         </Left>
@@ -252,7 +276,7 @@ const ContributorsPage = () => {
                           <Time>{PR.timestamp}</Time>
                           <DescriptionContainer href={PR.url}>
                             <Description>
-                              {PR.user} made a pull request to {PR.name}
+                              {PR.text}
                             </Description>
                           </DescriptionContainer>
                         </Right>

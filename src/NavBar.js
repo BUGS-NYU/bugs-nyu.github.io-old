@@ -15,8 +15,7 @@ const Header = styled.header`
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
-  padding: ${({ open }) => open ? '0 0 50px 0' : '0'};
-  padding: ${({ open }) => open ? '0 0 50px 0' : '0'};
+  padding: 10px 10px 0px 10px;
 `;
 
 const HeaderWrapper = styled.div`
@@ -32,6 +31,7 @@ const HeaderWrapper = styled.div`
   transition: background 300ms ease-in-out 0s, padding 140ms ease-in-out,
     transform 140ms ease-in-out 140ms;
   background-color: transparent !important;
+  padding: ${({ open }) => open ? '0 0 50px 0' : '0'};
 `;
 
 const ContentContainer = styled.div`
@@ -170,7 +170,7 @@ const JoinUs = styled.a`
     opacity: 0.6;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 450px) {
     padding: 0.5em 0.5em;
   }
 `;
@@ -186,9 +186,9 @@ const NavBar = () => {
   const width = window.innerWidth;
   const [open, setOpen] = useState(false)
   return (
-    <Header open={open}>
-      <Menu open={open}/>
-      <HeaderWrapper>
+    <Header>
+      <HeaderWrapper open={open}>
+        <Menu open={open}/>
         <ContentContainer>
           <Content>
             <LeftContentContainer>
