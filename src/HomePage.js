@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import bugslogo from "./bugs.png";
+import bugslogo from "./logo/bugs.png";
 
 const MainContainer = styled.div`
   min-height: 100vh;

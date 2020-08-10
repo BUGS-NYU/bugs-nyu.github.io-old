@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import HomePage from "./HomePage";
 import styled from "styled-components";
 import ProjectsPage from "./ProjectsPage";
@@ -14,7 +13,6 @@ const Container = styled.div`
   min-height: 100vh;
   background-color: #f2f2f2;
   display: grid;
-  min-height: 100vh;
 `;
 
 const App = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import githublogo from "./GitHub-Mark-32px.png";
+import githublogo from "./logo/GitHub-Mark-32px.png";
 
 const ProjectContainer = styled.div`
   margin: 1vw;

@@ -1,12 +1,12 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import aliu from "./aliu.jpg";
-import amehta from "./amehta.png";
-import ana from "./anachiappan.jpg";
-import eshao from "./eshao.jpg";
-import khanhng from "./khanhng.jpg";
-import slin from "./slin.jpg";
-import eriche from "./eriche.jpg";
+import aliu from "./profiles/aliu.jpg";
+import amehta from "./profiles/amehta.png";
+import ana from "./profiles/anachiappan.jpg";
+import eshao from "./profiles/eshao.jpg";
+import khanhng from "./profiles/khanhng.jpg";
+import slin from "./profiles/slin.jpg";
+import eriche from "./profiles/eriche.jpg";
 
 const MainContainer = styled.div`
   min-height: 100vh;
