@@ -42,7 +42,7 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  
+
   @media screen and (max-width: 700px) {
     flex-direction: column;
     align-items: center;
