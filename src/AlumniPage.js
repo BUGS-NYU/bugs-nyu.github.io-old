@@ -90,15 +90,10 @@ const SubTitle = styled.p`
   padding-bottom: 0;
 `;
 
-const Image = styled.img`
-  width: 70%;
-  object-fit: contain;
-`;
-
 const EboardTitleContainer = styled.div`
   margin-top: 15%;
   text-align: center;
-`
+`;
 
 const EboardTitle = styled.h1`
   font-family: Poppins;
@@ -111,7 +106,7 @@ const EboardTitle = styled.h1`
   font-size: calc(0vw + 4.5rem);
   color: #330662;
   animation: ${fadein} 2s;
-`
+`;
 
 const eboards = {
   "Nadira Dewji": {
@@ -155,26 +150,28 @@ const eboards = {
       "Senior in CAS studying Computer Science with minors in Web Design and Linguistics. Outside of school, Deanna can be found at a local restaurant or art museum.",
   },
   "Candice Shen": {
-      role: "",
-      description:
-      "Candice is a Senior at Steinhardt majoring in Media, Culture, and Communication and minoring in Web Design. If you cannot find her outside of class, Candice is traveling or planning for her 23rd country to visit."
+    role: "",
+    description:
+      "Candice is a Senior at Steinhardt majoring in Media, Culture, and Communication and minoring in Web Design. If you cannot find her outside of class, Candice is traveling or planning for her 23rd country to visit.",
   },
   "Bradley Brecher": {
-      role: "",
-      description:
-      "Alumni from Woodmere, New York studying Computer Science. Outside of BUGS, you can find him coaching hockey at a local high school."
-  }
+    role: "",
+    description:
+      "Alumni from Woodmere, New York studying Computer Science. Outside of BUGS, you can find him coaching hockey at a local high school.",
+  },
 };
 
 const Alumni = (props) => {
-  const { name, role, image, description } = props;
+  const { name, description } = props;
   return (
     <ProjectContainer>
-      <Title> {name}
-      <DescriptionContainer>
-        <Description>{description}</Description>
-      </DescriptionContainer>
-       </Title>
+      <Title>
+        {" "}
+        {name}
+        <DescriptionContainer>
+          <Description>{description}</Description>
+        </DescriptionContainer>
+      </Title>
     </ProjectContainer>
   );
 };
@@ -184,9 +181,7 @@ const AlumniPage = () => {
     <MainContainer>
       <PageContainer>
         <EboardTitleContainer>
-          <EboardTitle>
-          Meet Our Alumni
-          </EboardTitle>
+          <EboardTitle>Meet Our Alumni</EboardTitle>
         </EboardTitleContainer>
         <MainDescriptionContainer>
           {Object.entries(eboards).map(([name, values]) => {

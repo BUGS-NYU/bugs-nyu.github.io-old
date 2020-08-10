@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const MainContainer = styled.div`
   min-height: 100vh;
@@ -49,7 +49,7 @@ const Name = styled.h4`
   letter-spacing: 0em;
   text-transform: none;
   line-height: 0.5;
-  font-size: calc(0vw + 1rem);
+  font-size: calc(0vw + 1.05rem);
   color: #330662;
 `;
 
@@ -64,10 +64,12 @@ const Timeline = styled.div`
   align-items: center;
   overflow: scroll;
   width: 100%;
+  min-height: 100vh;
   max-height: 100vh;
   border: 0.05px solid;
   border-radius: 15px;
   box-shadow: 0 4px 5px 0;
+  padding: 20px 0px 20px 0px;
 `;
 
 const RightContainer = styled.div`
@@ -158,43 +160,47 @@ const ContributorsPage = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const webresp = await fetch(
-        "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=closed"
-      );
-      const schedgeresp = await fetch(
-        "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=closed"
-      );
-      const webJSON = await webresp.json();
-      const schedgeJSON = await schedgeresp.json();
-      const PRList = [];
-      schedgeJSON.forEach((schedgePR) => {
-        const createdTime = schedgePR.created_at;
-        const url = schedgePR["html_url"];
-        const user = schedgePR.user.login;
-        PRList.push({
-          user: user,
-          url: url,
-          timestamp: parseDate(createdTime),
-          name: "Schedge",
-        });
-      });
-      webJSON.forEach((webPR) => {
-        const createdTime = webPR.created_at;
-        const url = webPR["html_url"];
-        const user = webPR.user.login;
-        PRList.push({
-          user: user,
-          url: url,
-          timestamp: parseDate(createdTime),
-          name: "BUGS website",
-        });
-      });
-      const sortedPRList = PRList.sort((a, b) => {
-        let dateA = new Date(a.timestamp);
-        let dateB = new Date(b.timestamp);
-        return dateB - dateA;
-      });
-      setPRList(sortedPRList);
+      try {
+        const webresp = await fetch(
+            "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=closed"
+          );
+          const schedgeresp = await fetch(
+            "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=closed"
+          );
+          const webJSON = await webresp.json();
+          const schedgeJSON = await schedgeresp.json();
+          const PRList = [];
+          schedgeJSON.forEach((schedgePR) => {
+            const createdTime = schedgePR.created_at;
+            const url = schedgePR["html_url"];
+            const user = schedgePR.user.login;
+            PRList.push({
+              user: user,
+              url: url,
+              timestamp: parseDate(createdTime),
+              name: "Schedge",
+            });
+          });
+          webJSON.forEach((webPR) => {
+            const createdTime = webPR.created_at;
+            const url = webPR["html_url"];
+            const user = webPR.user.login;
+            PRList.push({
+              user: user,
+              url: url,
+              timestamp: parseDate(createdTime),
+              name: "BUGS website",
+            });
+          });
+          const sortedPRList = PRList.sort((a, b) => {
+            let dateA = new Date(a.timestamp);
+            let dateB = new Date(b.timestamp);
+            return dateB - dateA;
+          });
+          setPRList(sortedPRList);
+      } catch(error) {
+          console.log(error)
+      }
     }
     fetchData();
   }, []);
@@ -205,7 +211,7 @@ const ContributorsPage = () => {
           <TableContainer>
             <Title>Contributors</Title>
             {Object.keys(contributors).map((name) => {
-              return <Name>{name}</Name>;
+              return <Name key={name}>{name}</Name>;
             })}
           </TableContainer>
           <TimelineContainer>
@@ -215,7 +221,7 @@ const ContributorsPage = () => {
                 Object.entries(PRList).map(([index, PR]) => {
                   if (index % 2 === 0) {
                     return (
-                      <LeftContainer>
+                      <LeftContainer key={PR.url}>
                         <Left>
                           <Time>{PR.timestamp}</Time>
                           <DescriptionContainer href={PR.url}>
@@ -228,7 +234,7 @@ const ContributorsPage = () => {
                     );
                   } else {
                     return (
-                      <RightContainer>
+                      <RightContainer key={PR.url}>
                         <Right>
                           <Time>{PR.timestamp}</Time>
                           <DescriptionContainer href={PR.url}>

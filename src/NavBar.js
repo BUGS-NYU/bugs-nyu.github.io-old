@@ -88,8 +88,23 @@ const NavList = styled.nav`
   color: #330662;
 `;
 
+const Dropdown = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  max-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+`;
+
 const FirstNavItem = styled.div`
   margin-right: 2.2vw;
+  position: relative;
+  display: inline-block;
+  &:hover ${Dropdown} {
+    display: block;
+  }
 `;
 
 const OtherNavItem = styled.div`
@@ -97,7 +112,7 @@ const OtherNavItem = styled.div`
 `;
 
 const Link = styled.a`
-  color:rgb(51, 6, 98);
+  color: rgb(51, 6, 98);
   text-decoration: none;
 `;
 
@@ -146,6 +161,13 @@ const JoinUs = styled.a`
   }
 `;
 
+const DropdownContent = styled.a`
+  color: rgb(51, 6, 98);
+  text-decoration: none;
+  display: block;
+  text-align: left;
+`;
+
 const NavBar = () => {
   return (
     <Header>
@@ -158,6 +180,12 @@ const NavBar = () => {
                   <FirstNavItem>
                     {/* Change to use react router Link instead */}
                     <Link href="/teams">Teams</Link>
+                    <Dropdown>
+                      <DropdownContent href="/contributors">
+                        Contributors
+                      </DropdownContent>
+                      <DropdownContent href="/alumni">Alumni</DropdownContent>
+                    </Dropdown>
                   </FirstNavItem>
                   <OtherNavItem>
                     <Link href="/projects">Projects</Link>
