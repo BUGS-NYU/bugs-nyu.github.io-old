@@ -13,8 +13,8 @@ import ContributorsPage from "./ContributorsPage";
 const Container = styled.div`
   min-height: 100vh;
   background-color: #f2f2f2;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  min-height: 100vh;
 `;
 
 const App = () => {
