@@ -8,6 +8,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import AlumniPage from './AlumniPage';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ContributorsPage from "./ContributorsPage";
 
 const Container = styled.div`
   min-height: 100vh;
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/projects" component={ProjectsPage} />
           <Route path="/teams" component={TeamPage} />
           <Route path="/alumni" component={AlumniPage} />
+          <Route path="/contributors" component={ContributorsPage} />
         </Switch>
       </Router>
       <Footer />

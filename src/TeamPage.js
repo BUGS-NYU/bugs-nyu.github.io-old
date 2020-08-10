@@ -105,7 +105,7 @@ const Image = styled.img`
 const EboardTitleContainer = styled.div`
   margin-top: 15%;
   text-align: center;
-`
+`;
 
 const EboardTitle = styled.h1`
   font-family: Poppins;
@@ -118,7 +118,7 @@ const EboardTitle = styled.h1`
   font-size: calc(0vw + 4.5rem);
   color: #330662;
   animation: ${fadein} 2s;
-`
+`;
 
 const eboards = {
   "Albert Liu": {
@@ -175,9 +175,11 @@ const Member = (props) => {
   return (
     <ProjectContainer>
       <Image src={image} />
-      <Title> {name}
-      <SubTitle> {role} </SubTitle>
-       </Title>
+      <Title>
+        {" "}
+        {name}
+        <SubTitle> {role} </SubTitle>
+      </Title>
       <DescriptionContainer>
         <Description>{description}</Description>
       </DescriptionContainer>
@@ -190,9 +192,7 @@ const TeamPage = () => {
     <MainContainer>
       <PageContainer>
         <EboardTitleContainer>
-          <EboardTitle>
-          Meet Our Executive Board
-          </EboardTitle>
+          <EboardTitle>Meet Our Executive Board</EboardTitle>
         </EboardTitleContainer>
         <MainDescriptionContainer>
           {Object.entries(eboards).map(([name, values]) => {
