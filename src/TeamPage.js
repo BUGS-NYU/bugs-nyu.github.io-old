@@ -100,6 +100,9 @@ const SubTitle = styled.p`
   color: rgb(117, 117, 116);
   margin-bottom: 0;
   padding-bottom: 0;
+  @media screen and (max-width: 500px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const Image = styled.img`
@@ -111,7 +114,7 @@ const EboardTitleContainer = styled.div`
   margin-top: 15%;
   text-align: center;
   @media screen and (max-width: 650px) {
-    margin-top: 20vh;
+    margin-top: 15vh;
   }
 `;
 

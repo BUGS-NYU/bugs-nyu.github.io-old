@@ -13,6 +13,7 @@ const Container = styled.div`
   min-height: 100vh;
   background-color: #f2f2f2;
   display: grid;
+  family-font: Nunito;
 `;
 
 const App = () => {

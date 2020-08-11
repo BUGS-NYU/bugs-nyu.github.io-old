@@ -79,9 +79,8 @@ const Timeline = styled.div`
   width: 100%;
   min-height: 100vh;
   max-height: 100vh;
-  border: 0.05px solid;
   border-radius: 10px;
-  box-shadow: 0 2px 2px 0;
+  box-shadow: 2px 4px 6px 0px;
   padding: 20px 0px 20px 0px;
 `;
 

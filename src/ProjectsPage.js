@@ -9,7 +9,6 @@ const ProjectContainer = styled.div`
   background-color: #d6d6d6;
   display: flex;
   flex-direction: column;
-  border: 1px solid;
   border-raidus: 3px 3px 3px 3px;
   box-shadow: 0 4px 6px 0;
   align-items: center;

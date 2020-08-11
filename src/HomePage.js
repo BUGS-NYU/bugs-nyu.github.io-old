@@ -100,7 +100,7 @@ const ContentContainer = styled.div`
   grid-template-rows: repeat(2);
   grid-auto-rows: min-content;
   grid-gap: 20px;
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
   }
@@ -113,12 +113,14 @@ const FirstContentBox = styled.div`
   grid-column: 1;
   position: relative;
   margin: 0 0 0 2px;
-  border: 1px solid;
   border-radius: 3px 3px 3px 3px;
   box-shadow: 0 4px 6px 0;
   justify-content: flex-start;
   padding: 10px;
   text-align: center;
+  @media screen and (max-width: 800px) {
+    margin: 0 0 20px 0;
+  }
 `;
 
 const SecondContentBox = styled.div`
@@ -128,12 +130,14 @@ const SecondContentBox = styled.div`
   grid-column: 2;
   position: relative;
   margin: 0 0 0 5px;
-  border: 1px solid;
   border-radius: 3px 3px 3px 3px;
   box-shadow: 0 4px 6px 0;
   justify-content: flex-start;
   padding: 10px;
   text-align: center;
+  @media screen and (max-width: 800px) {
+    margin: 0 0 20px 0;
+  }
 `;
 
 const ThirdContentBox = styled.div`
@@ -143,12 +147,14 @@ const ThirdContentBox = styled.div`
   grid-column: 3;
   position: relative;
   margin: 0 5px 0 5px;
-  border: 1px solid;
   border-radius: 3px 3px 3px 3px;
   box-shadow: 0 4px 6px 0;
   justify-content: flex-start;
   padding: 10px;
   text-align: center;
+  @media screen and (max-width: 800px) {
+    margin: 0 0 0 0;
+  }
 `;
 
 const Title = styled.h1`
@@ -183,7 +189,7 @@ const FourthContentBox = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    margin: 5px 5px 30% 5px;
+    margin: 0px 5px 30% 5px;
   }
 `;
 
