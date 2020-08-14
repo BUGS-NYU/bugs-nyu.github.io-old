@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled, {keyframes} from "styled-components";
 import Burger from './Burger';
 import Menu from './Menu';
+import bugslogo from './logo/bugs.png';
 
 const scalein = keyframes`
   from {
@@ -63,7 +64,7 @@ const Content = styled.div`
 const LeftContentContainer = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  flex: 1 0 67%;
+  flex: 1 0 70%;
   align-items: center;
 `;
 
@@ -83,12 +84,13 @@ const TitleContainer = styled.div`
 `;
 
 const HeaderNavWrapper = styled.div`
-  width: 33%;
-  flex: 1 1 33%;
+  width: 100%;
 `;
 
 const NavList = styled.nav`
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
   font-weight: 500;
   font-style: normal;
@@ -114,18 +116,52 @@ const FirstNavItem = styled.div`
   position: relative;
   display: inline-block;
   animation: ${scalein} 1s;
-  &:hover ${Dropdown} {
-    display: block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: purple;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
   }
 `;
 
 const OtherNavItem = styled.div`
   animation: ${scalein} 1s;
   margin-right: 2.2vw;
+  position: relative;
+  display: inline-block;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: purple;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
 `;
 
 const Link = styled.a`
-  color: rgb(51, 6, 98);
+  color: white;
   text-decoration: none;
 `;
 
@@ -186,6 +222,25 @@ const DropdownContent = styled.a`
   text-align: left;
 `;
 
+const ImageContainer = styled.div`
+  position: relative;
+  height: auto;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
+  @media screen and (max-width: 768px) {
+    margin: 0px 0px 0px 0px;
+  }
+`;
+
+const Image = styled.img`
+  float: left;
+  width: 100px;
+  height: 100px;
+  border: 0;
+`;
+
 const NavBar = () => {
   const width = window.innerWidth;
   const [open, setOpen] = useState(false)
@@ -196,30 +251,40 @@ const NavBar = () => {
         <ContentContainer>
           <Content>
             <LeftContentContainer>
+            {/* <TitleContainer>
+                <Title href="/">BUGS@NYU</Title>
+              </TitleContainer> */}
+              <ImageContainer>
+                <a href="/">
+                <Image src={bugslogo} />
+                </a>
+              </ImageContainer>
               <HeaderNavWrapper>
-                {width <= 700 ? <Burger open={open} setOpen={setOpen} /> :
+                {width <= 768 ? <Burger open={open} setOpen={setOpen} /> :
                 <NavList>
                 <FirstNavItem>
                   {/* Change to use react router Link instead */}
                   <Link href="/teams">Teams</Link>
-                  <Dropdown>
-                    <DropdownContent href="/contributors">
-                      Contributors
-                    </DropdownContent>
-                    <DropdownContent href="/alumni">Alumni</DropdownContent>
-                  </Dropdown>
                 </FirstNavItem>
                 <OtherNavItem>
-                  <Link href="/projects">Projects</Link>
+                  <Link href="/contributors">
+                  Contributors
+                  </Link>
+                </OtherNavItem>
+                <OtherNavItem>
+                  <Link href="/alumni">
+                  Alumni
+                  </Link>
+                </OtherNavItem>
+                <OtherNavItem>
+                  <Link href="/projects">
+                    Projects</Link>
                 </OtherNavItem>
                 <OtherNavItem>
                   <Link href="/events">Events</Link>
                 </OtherNavItem>
               </NavList>}
               </HeaderNavWrapper>
-              <TitleContainer>
-                <Title href="/">BUGS@NYU</Title>
-              </TitleContainer>
             </LeftContentContainer>
             <RightContentContainer>
               <JoinUsContainer>

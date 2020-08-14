@@ -71,13 +71,16 @@ const fadein = keyframes`
 const Description = styled.h1`
   font-weight: 500;
   font-style: normal;
-  letter-spacing: 0em;
   text-transform: none;
   line-height: 1.2;
-  font-size: calc(3.6vw + 1rem);
-  color: #330662;
+  font-size: calc(3vw + 1rem);
+  color: rgba(255,255,255,.7);
   animation: ${fadein} 2s;
 `;
+
+const BoldText = styled.strong`
+  color: white;
+`
 
 const ImageContainer = styled.div`
   position: relative;
@@ -115,7 +118,7 @@ const ContentContainer = styled.div`
 `;
 
 const FirstContentBox = styled.div`
-  background-color: #d6d6d6;
+  background-color: white;
   min-height: 100%;
   min-width: 80%;
   grid-column: 1;
@@ -133,7 +136,7 @@ const FirstContentBox = styled.div`
 `;
 
 const SecondContentBox = styled.div`
-  background-color: #d6d6d6;
+  background-color: white;
   min-height: 100%;
   min-width: 80%;
   grid-column: 2;
@@ -151,7 +154,7 @@ const SecondContentBox = styled.div`
 `;
 
 const ThirdContentBox = styled.div`
-  background-color: #d6d6d6;
+  background-color: white;  
   min-height: 100%;
   min-width: 80%;
   grid-column: 3;
@@ -169,13 +172,13 @@ const ThirdContentBox = styled.div`
 `;
 
 const Title = styled.h1`
-  font-weight: 300;
+  font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
   line-height: 1.2;
   font-size: calc(0vw + 2rem);
-  color: #330662;
+  color: black;
   animation: ${fadein} 2s;
 `;
 
@@ -185,11 +188,9 @@ const DescriptionText = styled.p`
 `;
 
 const FourthContentBox = styled.div`
-  background-color: #d6d6d6;
+  background-color: white;
   position: relative;
-  border: 1px solid;
   border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 4px 6px 0;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -200,23 +201,6 @@ const FourthContentBox = styled.div`
   }
 `;
 
-const slideleft = keyframes`
-  100%{
-    transform: translateY(0%) rotate(720deg);
-  }
-`
-
-
-const RotatedBlock = styled.div`
-  z-index: -1;
-  width: 50px;
-  height: 50px;
-  background-color: black;
-  transform: translateY(1000%);
-  // animation: ${slideleft} 7s forwards linear infinite;
-  // animation-delay: 2s;
-`
-
 const HomePage = () => {
   return (
     <MainContainer>
@@ -225,10 +209,9 @@ const HomePage = () => {
           <ContentWrapper>
             <Wrapper>
               <DescriptionContainer>
-                <ImageContainer>
-                  <Image src={bugslogo} />
-                </ImageContainer>
-                <Description>NYU Open Source Club</Description>
+                <Description>NYU <BoldText>
+                  Open Source  
+                </BoldText> Club</Description>
               </DescriptionContainer>
             </Wrapper>
           </ContentWrapper>

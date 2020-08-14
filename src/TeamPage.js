@@ -51,7 +51,6 @@ const fadein = keyframes`
 
 const Description = styled.p`
   text-align: center;
-  font-family: Poppins;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
@@ -63,7 +62,6 @@ const Description = styled.p`
 `;
 
 const Title = styled.h2`
-  font-family: Poppins;
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0em;
@@ -119,7 +117,6 @@ const EboardTitleContainer = styled.div`
 `;
 
 const EboardTitle = styled.h1`
-  font-family: Poppins;
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0em;

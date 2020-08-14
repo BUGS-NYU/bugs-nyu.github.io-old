@@ -40,7 +40,6 @@ const TableContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: Poppins;
   text-align: center;
   font-weight: 200;
   font-style: normal;
@@ -52,7 +51,6 @@ const Title = styled.h1`
 `;
 
 const Name = styled.h4`
-  font-family: Poppins;
   font-weight: 200;
   font-style: normal;
   text-align: center;
