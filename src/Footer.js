@@ -47,7 +47,7 @@ const FooterText = styled.p`
 const Image = styled.img`
   width: 2%;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     width: 5%;
   }
 `;

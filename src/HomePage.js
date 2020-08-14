@@ -2,6 +2,15 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import bugslogo from "./logo/bugs.png";
 
+const scalein = keyframes`
+  from {
+    transform: scale(0.9)
+  },
+  to {
+    transform: scale(1)
+  }
+`
+
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
@@ -12,7 +21,7 @@ const PageContainer = styled.article`
 `;
 
 const MainDescriptionContainer = styled.section`
-  padding-top: 10%;
+  padding-top: 2%;
   align-items: center;
   min-height: 66vh;
   padding-right: 15vw;
@@ -44,7 +53,7 @@ const DescriptionContainer = styled.div`
   flex-direction: row;
   justify-content: center;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }
@@ -60,7 +69,6 @@ const fadein = keyframes`
 `;
 
 const Description = styled.h1`
-  font-family: Poppins;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
@@ -79,7 +87,7 @@ const ImageContainer = styled.div`
   outline: none;
   box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
   animation: ${fadein} 2s;
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     margin: 0px 0px 0px 0px;
   }
 `;
@@ -100,7 +108,7 @@ const ContentContainer = styled.div`
   grid-template-rows: repeat(2);
   grid-auto-rows: min-content;
   grid-gap: 20px;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
   }
@@ -118,7 +126,8 @@ const FirstContentBox = styled.div`
   justify-content: flex-start;
   padding: 10px;
   text-align: center;
-  @media screen and (max-width: 800px) {
+  animation :${scalein} 1s;
+  @media screen and (max-width: 768px) {
     margin: 0 0 20px 0;
   }
 `;
@@ -135,7 +144,8 @@ const SecondContentBox = styled.div`
   justify-content: flex-start;
   padding: 10px;
   text-align: center;
-  @media screen and (max-width: 800px) {
+  animation :${scalein} 1s;
+  @media screen and (max-width: 768px) {
     margin: 0 0 20px 0;
   }
 `;
@@ -152,13 +162,13 @@ const ThirdContentBox = styled.div`
   justify-content: flex-start;
   padding: 10px;
   text-align: center;
-  @media screen and (max-width: 800px) {
+  animation :${scalein} 1s;
+  @media screen and (max-width: 768px) {
     margin: 0 0 0 0;
   }
 `;
 
 const Title = styled.h1`
-  font-family: Poppins;
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0em;
@@ -184,14 +194,28 @@ const FourthContentBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 20px 5px 5% 5px;
-  @media screen and (max-width: 1000px) {
+  animation :${scalein} 1s;
+  @media screen and (max-width: 768px) {
     margin: 5px 5px 10vh 5px;
   }
-
-  @media screen and (max-width: 600px) {
-    margin: 0px 5px 30% 5px;
-  }
 `;
+
+const slideleft = keyframes`
+  100%{
+    transform: translateY(0%) rotate(720deg);
+  }
+`
+
+
+const RotatedBlock = styled.div`
+  z-index: -1;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  transform: translateY(1000%);
+  // animation: ${slideleft} 7s forwards linear infinite;
+  // animation-delay: 2s;
+`
 
 const HomePage = () => {
   return (

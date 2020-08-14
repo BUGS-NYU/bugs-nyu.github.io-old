@@ -1,7 +1,17 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import Burger from './Burger';
 import Menu from './Menu';
+
+const scalein = keyframes`
+  from {
+    transform: scale(0.9)
+  },
+  to {
+    transform: scale(1)
+  }
+`
+
 const Header = styled.header`
   z-index: 10;
   position: absolute;
@@ -10,7 +20,6 @@ const Header = styled.header`
   left: 0;
   line-height: 1;
   pointer-events: none;
-  font-family: Poppins;
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0em;
@@ -81,7 +90,6 @@ const HeaderNavWrapper = styled.div`
 const NavList = styled.nav`
   display: inline-flex;
   flex-wrap: wrap;
-  font-family: Poppins;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
@@ -89,10 +97,6 @@ const NavList = styled.nav`
   line-height: 1.4em;
   font-size: calc(0vw + 1.2rem);
   color: #330662;
-
-  @media screen and (max-width: 500px) {
-
-  }
 `;
 
 const Dropdown = styled.div`
@@ -109,12 +113,14 @@ const FirstNavItem = styled.div`
   margin-right: 2.2vw;
   position: relative;
   display: inline-block;
+  animation: ${scalein} 1s;
   &:hover ${Dropdown} {
     display: block;
   }
 `;
 
 const OtherNavItem = styled.div`
+  animation: ${scalein} 1s;
   margin-right: 2.2vw;
 `;
 
@@ -126,7 +132,6 @@ const Link = styled.a`
 const Title = styled.a`
   color: #330662;
   text-decoration: None;
-  font-family: Poppins;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
@@ -144,7 +149,7 @@ const JoinUsContainer = styled.div`
   align-items: center;
   line-height: 1;
   font-size: calc(0vw + 1rem);
-  @media screen and (max-width: 1310px) {
+  @media screen and (max-width: 768px) {
     width: 30vw;
   }
 `;
@@ -158,7 +163,6 @@ const JoinUs = styled.a`
   background-color: #311432;
   border-color: #311432;
   text-decoration: None;
-  font-family: Poppins;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.02em;
@@ -170,7 +174,7 @@ const JoinUs = styled.a`
     opacity: 0.6;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     padding: 0.5em 0.5em;
   }
 `;

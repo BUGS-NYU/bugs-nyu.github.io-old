@@ -117,7 +117,7 @@ const Left = styled.div`
     transform: scale(1.1);
     color: #d4ebf2;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 768px) {
     font-size: 0.75rem;
   }
 `;
@@ -137,7 +137,7 @@ const Right = styled.div`
     color: #d4ebf2
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 768px) {
     font-size: 0.75rem;
   }
 `;

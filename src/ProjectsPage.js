@@ -2,6 +2,19 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import githublogo from "./logo/GitHub-Mark-32px.png";
 
+const scalein = keyframes`
+  from {
+    transform: scale(0.9)
+  },
+  to {
+    transform: scale(1)
+  }
+`
+
+const slideleft = keyframes`
+100%{transform: translateX(0%);}
+`
+
 const ProjectContainer = styled.div`
   margin: 1vw;
   grid-column: 1
@@ -13,7 +26,9 @@ const ProjectContainer = styled.div`
   box-shadow: 0 4px 6px 0;
   align-items: center;
   padding: 5px 10px 10px 10px;
-  @media screen and (max-width: 500px) {
+  transform: ${({ odd }) => odd ? "translateX(-100%)" : "translateX(100%)"};
+  animation: ${slideleft} 1s forwards;
+  @media screen and (max-width: 768px) {
     padding: 5px 5px 5px 5px;
     margin: 0px 0 0px 0;
     width: 70vw;
@@ -58,7 +73,7 @@ const MainDescriptionContainer = styled.section`
   justify-items: stretch;
   margin-bottom: 5%;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 768px) {
     padding-top: 10vh;
     padding-bottom: 20vh;
   }
@@ -83,7 +98,6 @@ const fadein = keyframes`
 `;
 
 const Description = styled.h4`
-  font-family: Poppins;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
@@ -91,11 +105,9 @@ const Description = styled.h4`
   line-height: 1.2;
   font-size: calc(0vw + 1.2rem);
   color: #330662;
-  animation: ${fadein} 2s;
 `;
 
 const Title = styled.h1`
-  font-family: Poppins;
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0em;
@@ -103,7 +115,6 @@ const Title = styled.h1`
   line-height: 0.5;
   font-size: calc(0vw + 2rem);
   color: #330662;
-  animation: ${fadein} 2s;
 `;
 
 const Logo = styled.img`
@@ -111,10 +122,10 @@ const Logo = styled.img`
 `;
 
 const Project = (props) => {
-  const { title, subtitle, description, link } = props;
+  const { title, subtitle, description, link, odd } = props;
 
   return (
-    <ProjectContainer>
+    <ProjectContainer odd={odd}>
       <Title> {title} </Title>
       <SubTitle>{subtitle}</SubTitle>
       <DescriptionContainer>
@@ -141,6 +152,7 @@ const ProjectsPage = () => {
             Our goal with this API is to make it easier for 
             students to plan out their schedules, and eventually to also do some of that for them"
             link="github.com/BUGS-NYU/schedge"
+            odd={true}
           />
           <Project
             title="BUGS website"
@@ -151,6 +163,7 @@ const ProjectsPage = () => {
             the projects we work on, and upcoming events. We hope to constantly update
             the website with features"
             link="github.com/BUGS-NYU/bugs-nyu.github.io"
+            odd={false}
           />
           <Project
             title="Spark"
@@ -159,6 +172,7 @@ const ProjectsPage = () => {
 
             We teach students practical and pragmatic software development through working on and shipping projects."
             link="github.com/torchnyu/spark"
+            odd={true}
           />
           <Project
             title="NYU data hubs"
@@ -168,6 +182,7 @@ const ProjectsPage = () => {
             since fall 2019 to current semester. In the future, we would like to extend the project
             into a website with helpful advice about CS classes at NYU"
             link="github.com/BUGS-NYU/bugs-data-hub"
+            odd={false}
           />
         </MainDescriptionContainer>
       </PageContainer>
