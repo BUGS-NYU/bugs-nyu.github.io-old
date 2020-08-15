@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled, { keyframes } from "styled-components";
-import bugslogo from "./logo/bugs.png";
 
 const scalein = keyframes`
   from {
@@ -82,25 +81,6 @@ const BoldText = styled.strong`
   color: white;
 `;
 
-const ImageContainer = styled.div`
-  position: relative;
-  height: auto;
-  padding: 17px 0px 5px 0px;
-  margin: 50px 0px 5px 0px;
-  outline: none;
-  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
-  animation: ${fadein} 2s;
-  @media screen and (max-width: 768px) {
-    margin: 0px 0px 0px 0px;
-  }
-`;
-
-const Image = styled.img`
-  float: left;
-  width: 100px;
-  height: 100px;
-  border: 0;
-`;
 
 const ContentContainer = styled.div`
   position: relative;
@@ -129,6 +109,7 @@ const FirstContentBox = styled.div`
   padding: 10px;
   text-align: center;
   animation: ${scalein} 1s;
+  cursor: pointer;
   box-shadow: 0px 0px 0px 3px white;
   transition: all 0.2s linear;
 
@@ -153,6 +134,7 @@ const SecondContentBox = styled.div`
   padding: 10px;
   text-align: center;
   animation: ${scalein} 1s;
+  cursor: pointer;
   box-shadow: 0px 0px 0px 3px white;
   transition: all 0.2s linear;
 
@@ -177,6 +159,7 @@ const ThirdContentBox = styled.div`
   padding: 10px;
   text-align: center;
   animation: ${scalein} 1s;
+  cursor: pointer;
   box-shadow: 0px 0px 0px 3px white;
   transition: all 0.2s linear;
 
@@ -218,7 +201,7 @@ const FourthContentBox = styled.div`
   animation: ${scalein} 1s;
   box-shadow: 0px 0px 0px 3px white;
   transition: all 0.2s linear;
-
+  cursor: pointer;
   &:hover {
     box-shadow: 0px 0px 0px 10px #57068c;
     transform: scale(1.05);

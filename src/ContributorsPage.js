@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-// import "./stuff.css";
+import styled, {keyframes} from "styled-components";
+
+const scalein = keyframes`
+  from {
+    transform: scale(0.9)
+  },
+  to {
+    transform: scale(1)
+  }
+`;
+
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
@@ -48,6 +57,7 @@ const Title = styled.h1`
   line-height: 0.5;
   font-size: calc(1vw + 1.5rem);
   color: rgba(255, 255, 255, 0.7);
+  animation: ${scalein} 1s;
 `;
 
 const Name = styled.h4`
@@ -57,15 +67,20 @@ const Name = styled.h4`
   letter-spacing: 0em;
   text-transform: none;
   line-height: 0.5;
-  font-size: calc(0vw + 1.5rem);
+  font-size: calc(0vw + 1.2rem);
   color: white;
+  cursor: pointer;
+  &:hover {
+    color: purple;
+  }
 `;
 
 const TimelineContainer = styled.div`
-  min-height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 0px 0px 0px 100px;
+  flex-direction: column;
   @media screen and (max-width: 900px) {
     width: 100%;
   }
@@ -108,7 +123,7 @@ const LeftContainer = styled.div`
     height: 25px;
     right: -17px;
     background-color: white;
-    border: 4px solid #ff9f55;
+    border: 4px solid purple;
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -141,7 +156,7 @@ const RightContainer = styled.div`
     height: 25px;
     right: -17px;
     background-color: white;
-    border: 4px solid #ff9f55;
+    border: 4px solid purple;
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -247,7 +262,7 @@ const ContributorsPage = () => {
             });
           }
         });
-        console.log(takenUsers)
+
         webJSON.forEach((webPR) => {
           const createdTime = webPR.created_at;
           const url = webPR["html_url"];
@@ -290,11 +305,18 @@ const ContributorsPage = () => {
       <PageContainer>
         <MainDescriptionContainer>
           <TableContainer>
-            <Title>Contributors</Title>
+            <Title><BoldText>
+            Contributors
+            </BoldText></Title>
             {Object.keys(contributors).map((name) => {
               return <Name key={name}>{name}</Name>;
             })}
           </TableContainer>
+          <TimelineContainer>
+          <Title>
+            Our <BoldText>
+            Open Source </BoldText> Timeline
+          </Title>
             <Timeline>
             {PRList.length !== 0 &&
                 Object.entries(PRList).map(([index, PR]) => {
@@ -323,7 +345,8 @@ const ContributorsPage = () => {
                   }
                 })}
             </Timeline>
-        </MainDescriptionContainer>
+
+            </TimelineContainer>        </MainDescriptionContainer>
       </PageContainer>
     </MainContainer>
   );

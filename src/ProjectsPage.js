@@ -2,14 +2,6 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import githublogo from "./logo/GitHub-Mark-32px.png";
 
-const scalein = keyframes`
-  from {
-    transform: scale(0.9)
-  },
-  to {
-    transform: scale(1)
-  }
-`
 
 const slideleft = keyframes`
 100%{transform: translateX(0%);}

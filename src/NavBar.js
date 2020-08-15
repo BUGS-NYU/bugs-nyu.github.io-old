@@ -77,12 +77,6 @@ const RightContentContainer = styled.div`
   align-items: center;
 `;
 
-const TitleContainer = styled.div`
-  width: 34%;
-  text-align: center;
-  flex: 1 1 34%;
-`;
-
 const HeaderNavWrapper = styled.div`
   width: 100%;
 `;
@@ -99,16 +93,6 @@ const NavList = styled.nav`
   line-height: 1.4em;
   font-size: calc(0vw + 1.2rem);
   color: #330662;
-`;
-
-const Dropdown = styled.div`
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  max-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
-  z-index: 1;
 `;
 
 const FirstNavItem = styled.div`
@@ -165,16 +149,6 @@ const Link = styled.a`
   text-decoration: none;
 `;
 
-const Title = styled.a`
-  color: #330662;
-  text-decoration: None;
-  font-weight: 500;
-  font-style: normal;
-  letter-spacing: 0em;
-  text-transform: none;
-  line-height: 1.4em;
-  font-size: calc(1.2vw + 1rem);
-`;
 
 const JoinUsContainer = styled.div`
   width: 33%;
@@ -215,12 +189,6 @@ const JoinUs = styled.a`
   }
 `;
 
-const DropdownContent = styled.a`
-  color: rgb(51, 6, 98);
-  text-decoration: none;
-  display: block;
-  text-align: left;
-`;
 
 const ImageContainer = styled.div`
   position: relative;
@@ -251,9 +219,6 @@ const NavBar = () => {
         <ContentContainer>
           <Content>
             <LeftContentContainer>
-            {/* <TitleContainer>
-                <Title href="/">BUGS@NYU</Title>
-              </TitleContainer> */}
               <ImageContainer>
                 <a href="/">
                 <Image src={bugslogo} />

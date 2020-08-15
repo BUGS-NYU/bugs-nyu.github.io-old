@@ -32,21 +32,6 @@ const Container = styled.div`
   overflow-x: hidden;
 `;
 
-const slideleft = keyframes`
-  100%{
-    transform: translateY(2000%) rotate(720deg);
-  }
-`
-
-
-const RotatedBlock = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: black;
-  transform: translateY(0%);
-  animation: ${slideleft} 7s forwards linear infinite;
-`
-
 const App = () => {
   return (
     <Container>
