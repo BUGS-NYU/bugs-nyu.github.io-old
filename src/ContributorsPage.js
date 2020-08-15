@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+// import "./stuff.css";
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
@@ -41,122 +41,156 @@ const TableContainer = styled.div`
 
 const Title = styled.h1`
   text-align: center;
-  font-weight: 200;
+  font-weight: 400;
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
   line-height: 0.5;
-  font-size: calc(0vw + 1.5rem);
-  color: #330662;
+  font-size: calc(1vw + 1.5rem);
+  color: rgba(255, 255, 255, 0.7);
 `;
 
 const Name = styled.h4`
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
   text-align: center;
   letter-spacing: 0em;
   text-transform: none;
   line-height: 0.5;
-  font-size: calc(0vw + 1.05rem);
-  color: #330662;
+  font-size: calc(0vw + 1.5rem);
+  color: white;
 `;
 
 const TimelineContainer = styled.div`
   min-height: 100vh;
-  width: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   @media screen and (max-width: 900px) {
     width: 100%;
   }
 `;
 
 const Timeline = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: scroll;
-  width: 100%;
-  min-height: 100vh;
-  max-height: 100vh;
-  border-radius: 10px;
-  box-shadow: 2px 4px 6px 0px;
-  padding: 20px 0px 20px 0px;
-`;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 
-const RightContainer = styled.div`
-  width: 80%;
-  min-height: 15vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: right;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &::after {
+      left: 31px;
+    }
+  }
 `;
 
 const LeftContainer = styled.div`
-  width: 80%;
-  min-height: 15vh;
-  display: flex;
-  justify-content: flex-start;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-`;
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  left: -16%;
 
-const Left = styled.div`
-  text-align: center;
-  width: 40%;
-  height: 100%;
-  border: 0.05px solid;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 0px 5px 0px 5px;
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    transform: scale(1.1);
-    color: #d4ebf2;
-  }
-  @media screen and (max-width: 768px) {
-    font-size: 0.75rem;
-  }
-`;
-
-const Right = styled.div`
-  text-align: center;
-  width: 40%;
-  height: 100%;
-  border: 0.05px solid;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 0px 5px 0px 5px;
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    transform: scale(1.1);
-    color: #d4ebf2
+  &::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #ff9f55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 0.75rem;
+    width: 60%;
+    padding-left: 70px;
+    padding-right: 25px;
+    left: 0%;
+    
+    &::after {
+      left: 15px;
+    }
+  }
+
+`;
+
+const RightContainer = styled.div`
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  left: 50%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #ff9f55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &::after {
+    left: -16px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    padding-left: 70px;
+    padding-right: 25px;
+    left: 0%;
+    
+    &::after {
+      left: 15px;
+    }
   }
 `;
 
 const Time = styled.p`
+  text-align: center;
   font-weight: 500;
-  color: #999;
+  color: white;
   margin: 0;
-  padding: 0;
+  padding: 2px 0px 0px 0px;
 `;
 
-const Description = styled.p`
-  font-weight: 500;
-  &:hover {
-    color: #57068c;
-  }
-`;
-
-const DescriptionContainer = styled.a`
+const ContentURL = styled.a`
   text-decoration: none;
-  color: black;
+`
+
+const Content = styled.p`
+  padding: 20px 30px;
+  position: relative;
+  border-radius: 6px;
+  color: white;
+  box-shadow: 0px 0px 0px 3px white;
+  transition: all 0.2s linear;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 0px 10px #57068c;
+    color: purple;
+  }
+`
+
+const BoldText = styled.strong`
+  color: white;
 `;
 
 const contributors = {
@@ -188,56 +222,69 @@ const ContributorsPage = () => {
     async function fetchData() {
       try {
         const webresp = await fetch(
-            "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=closed"
-          );
-          const schedgeresp = await fetch(
-            "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=closed"
-          );
-          const webJSON = await webresp.json();
-          const schedgeJSON = await schedgeresp.json();
-          const PRList = [];
-          schedgeJSON.forEach((schedgePR) => {
-            const createdTime = schedgePR.created_at;
-            const url = schedgePR["html_url"];
-            const user = schedgePR.user.login;
-            PRList.push({
+          "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=closed"
+        );
+        const schedgeresp = await fetch(
+          "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=closed"
+        );
+        const webJSON = await webresp.json();
+        const schedgeJSON = await schedgeresp.json();
+        const pullRequests = [];
+        const takenUsers = {};
+        //change this to be unique
+        schedgeJSON.forEach((schedgePR) => {
+          const createdTime = schedgePR.created_at;
+          const url = schedgePR["html_url"];
+          const user = schedgePR.user.login;
+          if(!(`${user}-Schedge` in takenUsers)) {
+            takenUsers[`${user}-Schedge`] = {}
+            pullRequests.push({
               user: user,
               url: url,
               timestamp: parseDate(createdTime),
               name: "Schedge",
-              text: `${user} made a Pull Request to Schedge!`
+              text: `${user} made a Pull Request to Schedge!`,
             });
-          });
-          webJSON.forEach((webPR) => {
-            const createdTime = webPR.created_at;
-            const url = webPR["html_url"];
-            const user = webPR.user.login;
-            PRList.push({
+          }
+        });
+        console.log(takenUsers)
+        webJSON.forEach((webPR) => {
+          const createdTime = webPR.created_at;
+          const url = webPR["html_url"];
+          const user = webPR.user.login;
+          if(!(`${user}-BUGSWebsite` in takenUsers)) {
+            takenUsers[`${user}-BUGSWebsite`] = {}
+            pullRequests.push({
               user: user,
               url: url,
               timestamp: parseDate(createdTime),
               name: "BUGS website",
-              text: `${user} made a Pull Request to BUGS website!`
+              text: `${user} made a Pull Request to BUGS website!`,
             });
-          });
-          const sortedPRList = PRList.sort((a, b) => {
-            let dateA = new Date(a.timestamp);
-            let dateB = new Date(b.timestamp);
-            return dateB - dateA;
-          });
-          sortedPRList.unshift({
-            timestamp: "NOW",
-            url: "https://github.com/BUGS-NYU",
-            user: "",
-            text: `Make this your contribution!`
-          })
-          setPRList(sortedPRList);
-      } catch(error) {
-          console.log(error)
+          }
+        });
+        const sortedPullRequests = pullRequests.sort((a, b) => {
+          let dateA = new Date(a.timestamp);
+          let dateB = new Date(b.timestamp);
+          return dateB - dateA;
+        });
+        
+        sortedPullRequests.unshift({
+          timestamp: "NOW",
+          url: "https://github.com/BUGS-NYU",
+          user: "",
+          text: `Make this your contribution!`,
+        });
+
+        setPRList(sortedPullRequests);
+      } catch (error) {
+        console.log(error);
+        setPRList([])
       }
     }
     fetchData();
   }, []);
+
   return (
     <MainContainer>
       <PageContainer>
@@ -248,41 +295,34 @@ const ContributorsPage = () => {
               return <Name key={name}>{name}</Name>;
             })}
           </TableContainer>
-          <TimelineContainer>
-            <Title>Timeline</Title>
             <Timeline>
-              {PRList.length !== 0 &&
+            {PRList.length !== 0 &&
                 Object.entries(PRList).map(([index, PR]) => {
                   if (index % 2 === 0) {
                     return (
                       <LeftContainer key={PR.url}>
-                        <Left>
                           <Time>{PR.timestamp}</Time>
-                          <DescriptionContainer href={PR.url}>
-                            <Description>
-                              {PR.text}
-                            </Description>
-                          </DescriptionContainer>
-                        </Left>
+                          <ContentURL href={PR.url}>
+                          <Content>
+                            {PR.text}
+                          </Content>
+                          </ContentURL>
                       </LeftContainer>
                     );
                   } else {
                     return (
                       <RightContainer key={PR.url}>
-                        <Right>
                           <Time>{PR.timestamp}</Time>
-                          <DescriptionContainer href={PR.url}>
-                            <Description>
-                              {PR.text}
-                            </Description>
-                          </DescriptionContainer>
-                        </Right>
+                          <ContentURL href={PR.url}>
+                          <Content>
+                            {PR.text}
+                          </Content>
+                          </ContentURL>
                       </RightContainer>
                     );
                   }
                 })}
             </Timeline>
-          </TimelineContainer>
         </MainDescriptionContainer>
       </PageContainer>
     </MainContainer>

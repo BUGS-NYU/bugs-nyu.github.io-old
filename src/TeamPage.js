@@ -8,6 +8,24 @@ import khanhng from "./profiles/khanhng.jpg";
 import slin from "./profiles/slin.jpg";
 import eriche from "./profiles/eriche.jpg";
 
+const fadein = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const scalein = keyframes`
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+`;
+
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
@@ -40,25 +58,17 @@ const DescriptionContainer = styled.div`
   justify-content: center;
 `;
 
-const fadein = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
 
 const Description = styled.p`
-  text-align: center;
+  text-align: left;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
   line-height: 1.2;
   font-size: calc(0vw + 1rem);
-  color: #330662;
-  animation: ${fadein} 2s;
+  color: white;
+  animation: ${scalein} 1s;
 `;
 
 const Title = styled.h2`
@@ -69,8 +79,8 @@ const Title = styled.h2`
   text-align: center;
   line-height: 0.5;
   font-size: calc(0vw + 1.5rem);
-  color: #330662;
-  animation: ${fadein} 2s;
+  color: white;
+  animation: ${scalein} 0.9s;
 `;
 
 const ProjectContainer = styled.div`
@@ -78,12 +88,12 @@ const ProjectContainer = styled.div`
   grid-column: 1
   min-height: 40vh;
   height: 100%;
-  background-color: #f2f2f2;
+  background-color: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5px 60px 0px 60px;
-  animation: ${fadein} 2s;
+  animation: ${fadein} 1.5s;
   @media screen and (max-width: 768px) {
     padding: 0px 0px 0px 0px;
     margin: 0 0 25px 0;
@@ -95,9 +105,10 @@ const SubTitle = styled.p`
   font-family: var(--normal-font);
   text-align: center;
   font-weight: lighter;
-  color: rgb(117, 117, 116);
+  color: white;
   margin-bottom: 0;
   padding-bottom: 0;
+  animation: ${scalein} 0.9s;
   @media screen and (max-width: 768px) {
     font-size: 1.25rem;
   }
@@ -106,6 +117,7 @@ const SubTitle = styled.p`
 const Image = styled.img`
   width: 70%;
   object-fit: contain;
+  animation: ${fadein} 1.5s;
 `;
 
 const EboardTitleContainer = styled.div`
@@ -124,11 +136,15 @@ const EboardTitle = styled.h1`
   text-align: center;
   line-height: 0.5;
   font-size: calc(0vw + 4.5rem);
-  color: #330662;
-  animation: ${fadein} 2s;
+  color: rgba(255, 255, 255, 0.7);
+  animation: ${scalein} 0.9s;
   @media screen and (max-width: 768px) {
     font-size: calc(0vw + 1.5rem);
   }
+`;
+
+const BoldText = styled.strong`
+  color: white;
 `;
 
 const eboards = {
@@ -203,7 +219,9 @@ const TeamPage = () => {
     <MainContainer>
       <PageContainer>
         <EboardTitleContainer>
-          <EboardTitle>Meet Our Executive Board</EboardTitle>
+          <EboardTitle>Meet Our <BoldText>
+          Executive Board
+          </BoldText></EboardTitle>
         </EboardTitleContainer>
         <MainDescriptionContainer>
           {Object.entries(eboards).map(([name, values]) => {

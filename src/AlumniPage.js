@@ -50,7 +50,7 @@ const Description = styled.p`
   text-transform: none;
   line-height: 1.2;
   font-size: calc(0vw + 1rem);
-  color: #330662;
+  color: white;
   animation: ${fadein} 2s;
 `;
 
@@ -62,7 +62,7 @@ const Title = styled.p`
   text-align: center;
   line-height: 0.5;
   font-size: calc(0vw + 1.5rem);
-  color: #330662;
+  color: white;
   animation: ${fadein} 2s;
 `;
 
@@ -71,7 +71,7 @@ const ProjectContainer = styled.div`
   grid-column: 1
   min-height: 40vh;
   height: 100%;
-  background-color: #f2f2f2;
+  background-color: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,15 +82,6 @@ const ProjectContainer = styled.div`
     margin: 0 0 25px 0;
     width: 70vw;
   }
-`;
-
-const SubTitle = styled.p`
-  font-family: var(--normal-font);
-  text-align: center;
-  font-weight: lighter;
-  color: rgb(117, 117, 116);
-  margin-bottom: 0;
-  padding-bottom: 0;
 `;
 
 const EboardTitleContainer = styled.div`
@@ -119,6 +110,10 @@ const EboardTitle = styled.h1`
     font-size: calc(0vw + 1.5rem);
   }
 `;
+
+const BoldText = styled.strong`
+  color: #220337;
+`
 
 const eboards = {
   "Nadira Dewji": {
@@ -193,7 +188,8 @@ const AlumniPage = () => {
     <MainContainer>
       <PageContainer>
         <EboardTitleContainer>
-          <EboardTitle>Meet Our Alumni</EboardTitle>
+          <EboardTitle>Meet Our <BoldText>
+          Alumni</BoldText></EboardTitle>
         </EboardTitleContainer>
         <MainDescriptionContainer>
           {Object.entries(eboards).map(([name, values]) => {

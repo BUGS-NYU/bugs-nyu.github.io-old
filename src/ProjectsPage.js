@@ -19,15 +19,21 @@ const ProjectContainer = styled.div`
   margin: 1vw;
   grid-column: 1
   min-height: 40vh;
-  background-color: #d6d6d6;
+  background-color: none;
   display: flex;
   flex-direction: column;
-  border-raidus: 3px 3px 3px 3px;
-  box-shadow: 0 4px 6px 0;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px 3px #330662;
   align-items: center;
   padding: 5px 10px 10px 10px;
   transform: ${({ odd }) => odd ? "translateX(-100%)" : "translateX(100%)"};
   animation: ${slideleft} 1s forwards;
+  transition: all 0.2s linear;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 10px #330662;
+  }
+
   @media screen and (max-width: 768px) {
     padding: 5px 5px 5px 5px;
     margin: 0px 0 0px 0;
@@ -40,17 +46,28 @@ const SubTitle = styled.h2`
   text-align: center;
   font-weight: lighter;
   width: 100%;
-  border-bottom: 1px solid rgb(117, 117, 116);
-  color: rgb(117, 117, 116);
+  border-bottom: 1px solid white;
+  color: white;
+
+
 `;
 
 const LinkContainer = styled.div`
   text-align: center;
+  transition: all 0.3s linear;
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
-const Link = styled.a`
+const URLLink = styled.a`
   font-size: small;
+  text-decoration: none;
+  &:hover {
+    color: white;
+  }
 `;
+
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
@@ -88,33 +105,28 @@ const DescriptionContainer = styled.div`
   justify-content: center;
 `;
 
-const fadein = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-
 const Description = styled.h4`
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
   line-height: 1.2;
   font-size: calc(0vw + 1.2rem);
-  color: #330662;
+  color: white;
 `;
 
 const Title = styled.h1`
-  font-weight: 300;
+  font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
   line-height: 0.5;
   font-size: calc(0vw + 2rem);
-  color: #330662;
+  color: white;
+
+  &:hover {
+    color: purple
+  }
 `;
 
 const Logo = styled.img`
@@ -122,18 +134,26 @@ const Logo = styled.img`
 `;
 
 const Project = (props) => {
-  const { title, subtitle, description, link, odd } = props;
+  const { title, subtitle, description, link, urlLink, odd } = props;
 
   return (
     <ProjectContainer odd={odd}>
-      <Title> {title} </Title>
+      {/* <Title> 
+        <Link href="spark.torchnyu.com/">
+        </Link> 
+        </Title> */}
+      <URLLink href={urlLink}>
+      <Title>
+        {title}
+      </Title>
+      </URLLink>
       <SubTitle>{subtitle}</SubTitle>
       <DescriptionContainer>
         <Description>{description}</Description>
       </DescriptionContainer>
       <LinkContainer>
         <Logo src={githublogo} />
-        <Link href={`https://${link}`}>{link}</Link>
+        <URLLink href={`https://${link}`}>{link}</URLLink>
       </LinkContainer>
     </ProjectContainer>
   );
@@ -152,6 +172,7 @@ const ProjectsPage = () => {
             Our goal with this API is to make it easier for 
             students to plan out their schedules, and eventually to also do some of that for them"
             link="github.com/BUGS-NYU/schedge"
+            urlLink = "https://schedge.a1liu.com/"
             odd={true}
           />
           <Project
@@ -163,6 +184,7 @@ const ProjectsPage = () => {
             the projects we work on, and upcoming events. We hope to constantly update
             the website with features"
             link="github.com/BUGS-NYU/bugs-nyu.github.io"
+            urlLink="https://bugs-nyu.github.io/"
             odd={false}
           />
           <Project
@@ -172,6 +194,7 @@ const ProjectsPage = () => {
 
             We teach students practical and pragmatic software development through working on and shipping projects."
             link="github.com/torchnyu/spark"
+            urlLink="https://spark.torchnyu.com/"
             odd={true}
           />
           <Project
@@ -182,6 +205,7 @@ const ProjectsPage = () => {
             since fall 2019 to current semester. In the future, we would like to extend the project
             into a website with helpful advice about CS classes at NYU"
             link="github.com/BUGS-NYU/bugs-data-hub"
+            urlLink=""
             odd={false}
           />
         </MainDescriptionContainer>

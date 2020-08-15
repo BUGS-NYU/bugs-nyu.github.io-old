@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import bugslogo from "./logo/bugs.png";
 
@@ -9,7 +9,7 @@ const scalein = keyframes`
   to {
     transform: scale(1)
   }
-`
+`;
 
 const MainContainer = styled.div`
   min-height: 100vh;
@@ -74,13 +74,13 @@ const Description = styled.h1`
   text-transform: none;
   line-height: 1.2;
   font-size: calc(3vw + 1rem);
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, 0.7);
   animation: ${fadein} 2s;
 `;
 
 const BoldText = styled.strong`
   color: white;
-`
+`;
 
 const ImageContainer = styled.div`
   position: relative;
@@ -118,54 +118,73 @@ const ContentContainer = styled.div`
 `;
 
 const FirstContentBox = styled.div`
-  background-color: white;
+  background-color: none;
   min-height: 100%;
   min-width: 80%;
   grid-column: 1;
   position: relative;
   margin: 0 0 0 2px;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 4px 6px 0;
+  border-radius: 15px;
   justify-content: flex-start;
   padding: 10px;
   text-align: center;
-  animation :${scalein} 1s;
+  animation: ${scalein} 1s;
+  box-shadow: 0px 0px 0px 3px white;
+  transition: all 0.2s linear;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 10px #57068c;
+    transform: scale(1.05);
+  }
   @media screen and (max-width: 768px) {
     margin: 0 0 20px 0;
   }
 `;
 
 const SecondContentBox = styled.div`
-  background-color: white;
+  background-color: none;
   min-height: 100%;
   min-width: 80%;
   grid-column: 2;
   position: relative;
   margin: 0 0 0 5px;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 4px 6px 0;
+  border-radius: 15px;
   justify-content: flex-start;
   padding: 10px;
   text-align: center;
-  animation :${scalein} 1s;
+  animation: ${scalein} 1s;
+  box-shadow: 0px 0px 0px 3px white;
+  transition: all 0.2s linear;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 10px #57068c;
+    transform: scale(1.05);
+  }
   @media screen and (max-width: 768px) {
     margin: 0 0 20px 0;
   }
 `;
 
 const ThirdContentBox = styled.div`
-  background-color: white;  
+  background-color: none;
   min-height: 100%;
   min-width: 80%;
   grid-column: 3;
   position: relative;
   margin: 0 5px 0 5px;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 4px 6px 0;
+  border-radius: 15px;
   justify-content: flex-start;
   padding: 10px;
   text-align: center;
-  animation :${scalein} 1s;
+  animation: ${scalein} 1s;
+  box-shadow: 0px 0px 0px 3px white;
+  transition: all 0.2s linear;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 10px #57068c;
+    transform: scale(1.05);
+  }
+
   @media screen and (max-width: 768px) {
     margin: 0 0 0 0;
   }
@@ -185,23 +204,35 @@ const Title = styled.h1`
 const DescriptionText = styled.p`
   position: relative;
   text-align: center;
+  color: white;
 `;
 
 const FourthContentBox = styled.div`
-  background-color: white;
+  background-color: none;
   position: relative;
-  border-radius: 3px 3px 3px 3px;
+  border-radius: 15px;
   text-align: center;
   justify-content: center;
   align-items: center;
   margin: 20px 5px 5% 5px;
-  animation :${scalein} 1s;
+  animation: ${scalein} 1s;
+  box-shadow: 0px 0px 0px 3px white;
+  transition: all 0.2s linear;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 10px #57068c;
+    transform: scale(1.05);
+  }
+
   @media screen and (max-width: 768px) {
     margin: 5px 5px 10vh 5px;
   }
 `;
 
+
+
 const HomePage = () => {
+
   return (
     <MainContainer>
       <PageContainer>
@@ -209,9 +240,9 @@ const HomePage = () => {
           <ContentWrapper>
             <Wrapper>
               <DescriptionContainer>
-                <Description>NYU <BoldText>
-                  Open Source  
-                </BoldText> Club</Description>
+                <Description>
+                  NYU <BoldText>Open Source</BoldText> Club
+                </Description>
               </DescriptionContainer>
             </Wrapper>
           </ContentWrapper>

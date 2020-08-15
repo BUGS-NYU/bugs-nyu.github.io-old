@@ -28,7 +28,8 @@ const Container = styled.div`
   display: grid;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
-	animation: ${gradient} 15s ease infinite;
+  animation: ${gradient} 25s ease infinite;
+  overflow-x: hidden;
 `;
 
 const slideleft = keyframes`
@@ -50,11 +51,6 @@ const App = () => {
   return (
     <Container>
       <NavBar />
-      {/* <RotatedBlock />
-      <RotatedBlock />
-      <RotatedBlock />
-      <RotatedBlock />
-      <RotatedBlock /> */}
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
