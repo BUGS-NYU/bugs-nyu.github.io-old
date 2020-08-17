@@ -118,11 +118,15 @@ const Image = styled.img`
   width: 70%;
   object-fit: contain;
   animation: ${fadein} 1.5s;
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const EboardTitleContainer = styled.div`
   margin-top: 15%;
   text-align: center;
+  margin-bottom: 50px;
   @media screen and (max-width: 768px) {
     margin-top: 15vh;
   }

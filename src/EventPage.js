@@ -29,12 +29,12 @@ const CalendarContainer = styled.div`
 
 const Calendar = styled.iframe`
     height: 500px;
-    width: 60vw;
+    width: 70vw;
     margin: 0px 30px 5px 5px;
     display: block;
     border: 0px;
     @media screen and (max-width: 768px) {
-        margin: 35px 0px 5px 5px;
+        margin: 10vh 0px 5px 5px;
         height: 400px;
         width: 70vw;
     }

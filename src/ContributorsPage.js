@@ -30,7 +30,7 @@ const MainDescriptionContainer = styled.section`
   justify-items: stretch;
   align-items: baseline;
   margin-bottom: 5%;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1300px) {
     padding-bottom: 10vh;
     padding-top: 5vh;
     flex-direction: column;
@@ -42,7 +42,7 @@ const TableContainer = styled.div`
   height: 100vh;
   width: 30%;
   display: table;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1300px) {
     padding: 0px 5px 0px 5px;
     height: 20vh;
   }
@@ -54,7 +54,7 @@ const Title = styled.h1`
   font-style: normal;
   letter-spacing: 0em;
   text-transform: none;
-  line-height: 0.5;
+  line-height: 1.2;
   font-size: calc(1vw + 1.5rem);
   color: rgba(255, 255, 255, 0.7);
   animation: ${scalein} 1s;
@@ -81,8 +81,9 @@ const TimelineContainer = styled.div`
   align-items: center;
   margin: 0px 0px 0px 100px;
   flex-direction: column;
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1300px) {
     width: 100%;
+    margin: 0px 0px 0px 0px;
   }
 `;
 
@@ -102,7 +103,7 @@ const Timeline = styled.div`
     margin-left: -3px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1300px) {
     &::after {
       left: 31px;
     }
@@ -129,7 +130,7 @@ const LeftContainer = styled.div`
     z-index: 1;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1300px) {
     width: 60%;
     padding-left: 70px;
     padding-right: 25px;
@@ -166,7 +167,7 @@ const RightContainer = styled.div`
     left: -16px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1300px) {
     width: 60%;
     padding-left: 70px;
     padding-right: 25px;

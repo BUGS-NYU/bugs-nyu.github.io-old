@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BurgerButton = styled.div`
-position: absolute;
 top: 5%;
 left: 0.5rem;
 display: flex;
@@ -22,8 +21,7 @@ span {
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
-    background-color: #330662;
-
+    background-color: ${({ open }) => open ? 'white' : '#330662'};
     :first-child {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
     }

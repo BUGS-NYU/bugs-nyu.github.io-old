@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styled, {keyframes} from "styled-components";
-import Burger from './Burger';
-import Menu from './Menu';
-import bugslogo from './logo/bugs.png';
+import styled, { keyframes } from "styled-components";
+import Burger from "./Burger";
+import Menu from "./Menu";
+import bugslogo from "./logo/bugs.png";
 
 const scalein = keyframes`
   from {
@@ -11,7 +11,7 @@ const scalein = keyframes`
   to {
     transform: scale(1)
   }
-`
+`;
 
 const Header = styled.header`
   z-index: 10;
@@ -41,7 +41,7 @@ const HeaderWrapper = styled.div`
   transition: background 300ms ease-in-out 0s, padding 140ms ease-in-out,
     transform 140ms ease-in-out 140ms;
   background-color: transparent !important;
-  padding: ${({ open }) => open ? '0 0 50px 0' : '0'};
+  padding: ${({ open }) => (open ? "0 0 50px 0" : "0")};
 `;
 
 const ContentContainer = styled.div`
@@ -149,7 +149,6 @@ const Link = styled.a`
   text-decoration: none;
 `;
 
-
 const JoinUsContainer = styled.div`
   width: 25%;
   justify-content: flex-end;
@@ -190,7 +189,6 @@ const JoinUs = styled.a`
   }
 `;
 
-
 const ImageContainer = styled.div`
   position: relative;
   height: auto;
@@ -198,6 +196,31 @@ const ImageContainer = styled.div`
   margin: 0px 0px 0px 0px;
   outline: none;
   box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out 0s;
+
+  &::before {
+    position:absolute; 
+    background-color:#D4D37F; 
+    opacity:0.5; 
+    content:''; 
+    width:0rem; 
+    height:0rem; 
+    left:50%; 
+    margin-left:0; 
+    bottom:0rem; 
+    border-radius: 50%; 
+    transition: all .2s ease-in-out;
+    z-index:-1;
+  }
+
+  &:hover::before {
+    width:15rem; 
+    height:15rem; 
+    margin-left:-7.5rem; 
+    bottom:-2.5rem; 
+  }
+
   @media screen and (max-width: 768px) {
     margin: 0px 0px 0px 0px;
   }
@@ -208,61 +231,73 @@ const Image = styled.img`
   width: 100px;
   height: 100px;
   border: 0;
+  @media screen and (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 const NavBar = () => {
   const width = window.innerWidth;
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   return (
-    <Header>
+    <div>
+      <Header>
       <HeaderWrapper open={open}>
-        <Menu open={open}/>
         <ContentContainer>
           <Content>
             <LeftContentContainer>
               <ImageContainer>
                 <a href="/">
-                <Image src={bugslogo} />
+                  <Image src={bugslogo} />
                 </a>
               </ImageContainer>
-                        </LeftContentContainer>
+            </LeftContentContainer>
             <RightContentContainer>
-            <HeaderNavWrapper>
-                {width <= 768 ? <Burger open={open} setOpen={setOpen} /> :
-                <NavList>
-                <FirstNavItem>
-                  {/* Change to use react router Link instead */}
-                  <Link href="/teams">Teams</Link>
-                </FirstNavItem>
-                <OtherNavItem>
-                  <Link href="/contributors">
-                  Contributors
-                  </Link>
-                </OtherNavItem>
-                <OtherNavItem>
-                  <Link href="/alumni">
-                  Alumni
-                  </Link>
-                </OtherNavItem>
-                <OtherNavItem>
-                  <Link href="/projects">
-                    Projects</Link>
-                </OtherNavItem>
-                <OtherNavItem>
-                  <Link href="/events">Events</Link>
-                </OtherNavItem>
-              </NavList>}
-              </HeaderNavWrapper>
-              <JoinUsContainer>
-                <JoinUsButtonContainer>
-                  <JoinUs href="http://bit.ly/bugsnewsletter">JOIN US</JoinUs>
-                </JoinUsButtonContainer>
-              </JoinUsContainer>
+              {width <= 768 ? (
+                <Burger open={open} setOpen={setOpen} />
+              ) : (
+                <>
+                  <HeaderNavWrapper>
+                    {width <= 768 ? (
+                      <Burger open={open} setOpen={setOpen} />
+                    ) : (
+                      <NavList>
+                        <FirstNavItem>
+                          {/* Change to use react router Link instead */}
+                          <Link href="/teams">Teams</Link>
+                        </FirstNavItem>
+                        <OtherNavItem>
+                          <Link href="/contributors">Contributors</Link>
+                        </OtherNavItem>
+                        <OtherNavItem>
+                          <Link href="/alumni">Alumni</Link>
+                        </OtherNavItem>
+                        <OtherNavItem>
+                          <Link href="/projects">Projects</Link>
+                        </OtherNavItem>
+                        <OtherNavItem>
+                          <Link href="/events">Events</Link>
+                        </OtherNavItem>
+                      </NavList>
+                    )}
+                  </HeaderNavWrapper>
+                  <JoinUsContainer>
+                    <JoinUsButtonContainer>
+                      <JoinUs href="http://bit.ly/bugsnewsletter">
+                        JOIN US
+                      </JoinUs>
+                    </JoinUsButtonContainer>
+                  </JoinUsContainer>
+                </>
+              )}
             </RightContentContainer>
           </Content>
         </ContentContainer>
       </HeaderWrapper>
     </Header>
+    <Menu open={open} />
+    </div>
   );
 };
 
