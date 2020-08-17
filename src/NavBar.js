@@ -3,6 +3,8 @@ import styled, { keyframes } from "styled-components";
 import Burger from "./Burger";
 import Menu from "./Menu";
 import bugslogo from "./logo/bugs.png";
+import githublogo from "./logo/GitHub-Mark-Light-32px.png";
+import maillogo from "./logo/mail-32.png";
 
 const scalein = keyframes`
   from {
@@ -64,12 +66,12 @@ const Content = styled.div`
 const LeftContentContainer = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  flex: 1 0 20%;
+  flex: 1 0 13%;
   align-items: center;
 `;
 
 const RightContentContainer = styled.div`
-  width: 80%;
+  width: 90%;
   justify-content: flex-end;
   flex-grow: 0;
   flex-shrink: 1;
@@ -93,6 +95,7 @@ const NavList = styled.nav`
   line-height: 1.4em;
   font-size: calc(0vw + 1.2rem);
   color: #330662;
+  padding: 0px 0px 0px 20px;
 `;
 
 const FirstNavItem = styled.div`
@@ -108,7 +111,7 @@ const FirstNavItem = styled.div`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: purple;
+    background-color: ${({ light }) => (light ? "purple" : "#330662")};
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
@@ -132,7 +135,7 @@ const OtherNavItem = styled.div`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: purple;
+    background-color: ${({ light }) => (light ? "purple" : "#330662")};
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
@@ -149,14 +152,13 @@ const Link = styled.a`
   text-decoration: none;
 `;
 
-const JoinUsContainer = styled.div`
-  width: 25%;
+const LogosContainer = styled.div`
+  width: 15%;
+  display: flex;
   justify-content: flex-end;
+  align-items: center;
   flex-grow: 0;
   flex-shrink: 1;
-  display: inline-flex;
-  margin: 0 5px 0 0;
-  align-items: center;
   line-height: 1;
   font-size: calc(0vw + 0.9rem);
   @media screen and (max-width: 768px) {
@@ -164,28 +166,14 @@ const JoinUsContainer = styled.div`
   }
 `;
 
-const JoinUsButtonContainer = styled.div`
-  margin: 0 0 0 0;
-`;
-
-const JoinUs = styled.a`
-  color: #fff;
-  background-color: #311432;
-  border-color: #311432;
-  text-decoration: None;
-  font-weight: 450;
-  font-style: normal;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  line-height: 1.2em;
-  padding: 1.12em 1.8704em;
-  transition: 0.3s;
+const Logo = styled.a`
+  margin: 0 15px 0 0;
+  display: block;
+  padding: 5px 5px 5px 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out 0s;
   &:hover {
-    opacity: 0.6;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 0.5em 0.5em;
+    background-color: ${({ light }) => (light ? "#57068c" : "#330662")};
   }
 `;
 
@@ -200,25 +188,25 @@ const ImageContainer = styled.div`
   transition: all 0.3s ease-in-out 0s;
 
   &::before {
-    position:absolute; 
-    background-color:#D4D37F; 
-    opacity:0.5; 
-    content:''; 
-    width:0rem; 
-    height:0rem; 
-    left:50%; 
-    margin-left:0; 
-    bottom:0rem; 
-    border-radius: 50%; 
-    transition: all .2s ease-in-out;
-    z-index:-1;
+    position: absolute;
+    background-color: white;
+    opacity: 0.5;
+    content: "";
+    width: 0rem;
+    height: 0rem;
+    left: 50%;
+    margin-left: 0;
+    bottom: 0rem;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    z-index: -1;
   }
 
   &:hover::before {
-    width:15rem; 
-    height:15rem; 
-    margin-left:-7.5rem; 
-    bottom:-2.5rem; 
+    width: 15rem;
+    height: 15rem;
+    margin-left: -7.5rem;
+    bottom: -2.5rem;
   }
 
   @media screen and (max-width: 768px) {
@@ -237,66 +225,74 @@ const Image = styled.img`
   }
 `;
 
-const NavBar = () => {
-  const width = window.innerWidth;
+const NavBar = (props) => {
+  const {theme} = props
   const [open, setOpen] = useState(false);
+  const width = window.innerWidth;
+  const light = theme === 'light'
   return (
     <div>
       <Header>
-      <HeaderWrapper open={open}>
-        <ContentContainer>
-          <Content>
-            <LeftContentContainer>
-              <ImageContainer>
-                <a href="/">
-                  <Image src={bugslogo} />
-                </a>
-              </ImageContainer>
-            </LeftContentContainer>
-            <RightContentContainer>
-              {width <= 768 ? (
-                <Burger open={open} setOpen={setOpen} />
-              ) : (
-                <>
-                  <HeaderNavWrapper>
-                    {width <= 768 ? (
-                      <Burger open={open} setOpen={setOpen} />
-                    ) : (
-                      <NavList>
-                        <FirstNavItem>
-                          {/* Change to use react router Link instead */}
-                          <Link href="/teams">Teams</Link>
-                        </FirstNavItem>
-                        <OtherNavItem>
-                          <Link href="/contributors">Contributors</Link>
-                        </OtherNavItem>
-                        <OtherNavItem>
-                          <Link href="/alumni">Alumni</Link>
-                        </OtherNavItem>
-                        <OtherNavItem>
-                          <Link href="/projects">Projects</Link>
-                        </OtherNavItem>
-                        <OtherNavItem>
-                          <Link href="/events">Events</Link>
-                        </OtherNavItem>
-                      </NavList>
-                    )}
-                  </HeaderNavWrapper>
-                  <JoinUsContainer>
-                    <JoinUsButtonContainer>
-                      <JoinUs href="http://bit.ly/bugsnewsletter">
-                        JOIN US
-                      </JoinUs>
-                    </JoinUsButtonContainer>
-                  </JoinUsContainer>
-                </>
-              )}
-            </RightContentContainer>
-          </Content>
-        </ContentContainer>
-      </HeaderWrapper>
-    </Header>
-    <Menu open={open} />
+        <HeaderWrapper open={open}>
+          <ContentContainer>
+            <Content>
+              <LeftContentContainer>
+                <ImageContainer>
+                  <a href="/">
+                    <Image src={bugslogo} />
+                  </a>
+                </ImageContainer>
+              </LeftContentContainer>
+              <RightContentContainer>
+                {width <= 768 ? (
+                  <Burger open={open} setOpen={setOpen} />
+                ) : (
+                  <>
+                    <HeaderNavWrapper>
+                      {width <= 768 ? (
+                        <Burger open={open} setOpen={setOpen} light={light}/>
+                      ) : (
+                        <NavList>
+                          <FirstNavItem light={light}>
+                            {/* Change to use react router Link instead */}
+                            <Link href="/teams">Teams</Link>
+                          </FirstNavItem>
+                          <OtherNavItem light={light}>
+                            <Link href="/contributors">Contributors</Link>
+                          </OtherNavItem>
+                          <OtherNavItem light={light}>
+                            <Link href="/alumni">Alumni</Link>
+                          </OtherNavItem>
+                          <OtherNavItem light={light}>
+                            <Link href="/projects">Projects</Link>
+                          </OtherNavItem>
+                          <OtherNavItem light={light}>
+                            <Link href="/events">Events</Link>
+                          </OtherNavItem>
+                          <OtherNavItem light={light}>
+                            <Link href="http://bit.ly/bugsnewsletter">
+                              Join Us
+                            </Link>
+                          </OtherNavItem>
+                        </NavList>
+                      )}
+                    </HeaderNavWrapper>
+                    <LogosContainer>
+                      <Logo href="https://github.com/BUGS-NYU" light={light}>
+                        <img src={githublogo} alt="github logo"></img>
+                      </Logo>
+                      <Logo href="mailto:bugsnyu@gmail.com" light={light}>
+                        <img src={maillogo} alt="mail logo" />
+                      </Logo>
+                    </LogosContainer>
+                  </>
+                )}
+              </RightContentContainer>
+            </Content>
+          </ContentContainer>
+        </HeaderWrapper>
+      </Header>
+      <Menu open={open} />
     </div>
   );
 };

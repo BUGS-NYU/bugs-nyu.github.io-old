@@ -100,7 +100,7 @@ const EboardTitle = styled.h1`
   text-align: center;
   line-height: 0.5;
   font-size: calc(0vw + 4.5rem);
-  color: #330662;
+  color: rgba(255, 255, 255, 0.7);
   animation: ${fadein} 2s;
   @media screen and (max-width: 1000px) {
     font-size: calc(0vw + 3rem);
@@ -112,7 +112,7 @@ const EboardTitle = styled.h1`
 `;
 
 const BoldText = styled.strong`
-  color: #220337;
+  color: white;
 `
 
 const eboards = {
@@ -175,10 +175,10 @@ const Alumni = (props) => {
       <Title>
         {" "}
         {name}
-        <DescriptionContainer>
+      </Title>
+      <DescriptionContainer>
           <Description>{description}</Description>
         </DescriptionContainer>
-      </Title>
     </ProjectContainer>
   );
 };
@@ -198,6 +198,7 @@ const AlumniPage = () => {
                 name={name}
                 role={values.role}
                 description={values.description}
+                key={name}
               />
             );
           })}

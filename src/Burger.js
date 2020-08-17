@@ -21,7 +21,7 @@ span {
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
-    background-color: ${({ open }) => open ? 'white' : '#330662'};
+    background-color: white;
     :first-child {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
     }
@@ -37,10 +37,10 @@ span {
 `
 const Burger = (props) => {
 
-    const {open, setOpen} = props
+    const {open, setOpen, light} = props
     return(
         <div>
-          <BurgerButton onClick={() => setOpen(!open)} open={open}>
+          <BurgerButton onClick={() => setOpen(!open)} open={open} light={light}>
             <span />
             <span />
             <span />

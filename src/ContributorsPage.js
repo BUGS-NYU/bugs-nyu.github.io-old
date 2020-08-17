@@ -71,7 +71,7 @@ const Name = styled.h4`
   color: white;
   cursor: pointer;
   &:hover {
-    color: purple;
+    color: ${({ light }) => (light ? "purple" : "white")};
   }
 `;
 
@@ -124,7 +124,7 @@ const LeftContainer = styled.div`
     height: 25px;
     right: -17px;
     background-color: white;
-    border: 4px solid purple;
+    border: ${({ light }) => (light ? "4px solid purple" : "4px solid #121212")};
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -157,7 +157,7 @@ const RightContainer = styled.div`
     height: 25px;
     right: -17px;
     background-color: white;
-    border: 4px solid purple;
+    border: ${({ light }) => (light ? "4px solid purple" : "4px solid #121212")};
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -196,12 +196,12 @@ const Content = styled.p`
   position: relative;
   border-radius: 6px;
   color: white;
-  box-shadow: 0px 0px 0px 3px white;
+  box-shadow: 0px 0px 0px 3px #121212;
   transition: all 0.2s linear;
   &:hover {
     transform: scale(1.1);
-    box-shadow: 0px 0px 0px 10px #57068c;
-    color: purple;
+    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
+    color: ${({ light }) => (light ? "purple" : "")};
   }
 `
 
@@ -231,8 +231,10 @@ function parseDate(timestamp) {
   return `${month}/${day}/${year} ${hour}:${minute}`;
 }
 
-const ContributorsPage = () => {
+const ContributorsPage = (props) => {
   const [PRList, setPRList] = useState([]);
+  const {theme} = props
+  const light = theme === 'light'
 
   useEffect(() => {
     async function fetchData() {
@@ -323,10 +325,10 @@ const ContributorsPage = () => {
                 Object.entries(PRList).map(([index, PR]) => {
                   if (index % 2 === 0) {
                     return (
-                      <LeftContainer key={PR.url}>
+                      <LeftContainer key={PR.url} light={light}>
                           <Time>{PR.timestamp}</Time>
                           <ContentURL href={PR.url}>
-                          <Content>
+                          <Content light={light}>
                             {PR.text}
                           </Content>
                           </ContentURL>
@@ -334,10 +336,10 @@ const ContributorsPage = () => {
                     );
                   } else {
                     return (
-                      <RightContainer key={PR.url}>
+                      <RightContainer key={PR.url} light={light}>
                           <Time>{PR.timestamp}</Time>
                           <ContentURL href={PR.url}>
-                          <Content>
+                          <Content light={light}>
                             {PR.text}
                           </Content>
                           </ContentURL>

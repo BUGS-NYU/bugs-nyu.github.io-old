@@ -55,6 +55,7 @@ const LinkContainer = styled.div`
 const URLLink = styled.a`
   font-size: small;
   text-decoration: none;
+  color: ${({ light }) => (light ? "" : "white")};
   &:hover {
     color: white;
   }
@@ -117,7 +118,7 @@ const Title = styled.h1`
   color: white;
 
   &:hover {
-    color: purple
+    color: ${({ light }) => (light ? "purple" : "")};
   }
 `;
 
@@ -126,16 +127,12 @@ const Logo = styled.img`
 `;
 
 const Project = (props) => {
-  const { title, subtitle, description, link, urlLink, odd } = props;
+  const { title, subtitle, description, link, urlLink, odd, light } = props;
 
   return (
     <ProjectContainer odd={odd}>
-      {/* <Title> 
-        <Link href="spark.torchnyu.com/">
-        </Link> 
-        </Title> */}
       <URLLink href={urlLink}>
-      <Title>
+      <Title light={light}>
         {title}
       </Title>
       </URLLink>
@@ -145,13 +142,15 @@ const Project = (props) => {
       </DescriptionContainer>
       <LinkContainer>
         <Logo src={githublogo} />
-        <URLLink href={`https://${link}`}>{link}</URLLink>
+        <URLLink href={`https://${link}`} light={light}>{link}</URLLink>
       </LinkContainer>
     </ProjectContainer>
   );
 };
 
-const ProjectsPage = () => {
+const ProjectsPage = (props) => {
+  const {theme} = props
+  const light = theme === 'light'
   return (
     <MainContainer>
       <PageContainer>
@@ -166,6 +165,7 @@ const ProjectsPage = () => {
             link="github.com/BUGS-NYU/schedge"
             urlLink = "https://schedge.a1liu.com/"
             odd={true}
+            light={light}
           />
           <Project
             title="BUGS website"
@@ -178,6 +178,7 @@ const ProjectsPage = () => {
             link="github.com/BUGS-NYU/bugs-nyu.github.io"
             urlLink="https://bugs-nyu.github.io/"
             odd={false}
+            light={light}
           />
           <Project
             title="Spark"
@@ -188,6 +189,7 @@ const ProjectsPage = () => {
             link="github.com/torchnyu/spark"
             urlLink="https://spark.torchnyu.com/"
             odd={true}
+            light={light}
           />
           <Project
             title="NYU data hubs"
@@ -199,6 +201,7 @@ const ProjectsPage = () => {
             link="github.com/BUGS-NYU/bugs-data-hub"
             urlLink=""
             odd={false}
+            light={light}
           />
         </MainDescriptionContainer>
       </PageContainer>

@@ -110,11 +110,11 @@ const FirstContentBox = styled.div`
   text-align: center;
   animation: ${scalein} 1s;
   cursor: pointer;
-  box-shadow: 0px 0px 0px 3px white;
+  box-shadow: ${({ light }) => (light ? "0px 0px 0px 3px white" : "0px 0px 0px 3px #121212")};
   transition: all 0.2s linear;
 
   &:hover {
-    box-shadow: 0px 0px 0px 10px #57068c;
+    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
     transform: scale(1.05);
   }
   @media screen and (max-width: 768px) {
@@ -135,11 +135,11 @@ const SecondContentBox = styled.div`
   text-align: center;
   animation: ${scalein} 1s;
   cursor: pointer;
-  box-shadow: 0px 0px 0px 3px white;
+  box-shadow: ${({ light }) => (light ? "0px 0px 0px 3px white" : "0px 0px 0px 3px #121212")};
   transition: all 0.2s linear;
 
   &:hover {
-    box-shadow: 0px 0px 0px 10px #57068c;
+    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
     transform: scale(1.05);
   }
   @media screen and (max-width: 768px) {
@@ -160,11 +160,11 @@ const ThirdContentBox = styled.div`
   text-align: center;
   animation: ${scalein} 1s;
   cursor: pointer;
-  box-shadow: 0px 0px 0px 3px white;
+  box-shadow: ${({ light }) => (light ? "0px 0px 0px 3px white" : "0px 0px 0px 3px #121212")};
   transition: all 0.2s linear;
 
   &:hover {
-    box-shadow: 0px 0px 0px 10px #57068c;
+    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
     transform: scale(1.05);
   }
 
@@ -180,7 +180,7 @@ const Title = styled.h1`
   text-transform: none;
   line-height: 1.2;
   font-size: calc(0vw + 2rem);
-  color: black;
+  color: ${({ light }) => (light ? "black" : "#f5f5f5")};
   animation: ${fadein} 2s;
 `;
 
@@ -199,11 +199,11 @@ const FourthContentBox = styled.div`
   align-items: center;
   margin: 20px 5px 5% 5px;
   animation: ${scalein} 1s;
-  box-shadow: 0px 0px 0px 3px white;
+  box-shadow: ${({ light }) => (light ? "0px 0px 0px 3px white" : "0px 0px 0px 3px #121212")};
   transition: all 0.2s linear;
   cursor: pointer;
   &:hover {
-    box-shadow: 0px 0px 0px 10px #57068c;
+    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
     transform: scale(1.05);
   }
 
@@ -214,8 +214,9 @@ const FourthContentBox = styled.div`
 
 
 
-const HomePage = () => {
-
+const HomePage = (props) => {
+  const {theme} = props
+  const light = theme === 'light'
   return (
     <MainContainer>
       <PageContainer>
@@ -230,15 +231,15 @@ const HomePage = () => {
             </Wrapper>
           </ContentWrapper>
           <ContentContainer>
-            <FirstContentBox>
-              <Title>What's Open Source?</Title>
+            <FirstContentBox light={light}>
+              <Title light={light}>What's Open Source?</Title>
               <DescriptionText>
                 Open source represents a form of licensing that encourages
                 collaboration and transparency. Look more on Open Source Guide
               </DescriptionText>
             </FirstContentBox>
-            <SecondContentBox>
-              <Title>What We Offer?</Title>
+            <SecondContentBox light={light}>
+              <Title light={light}>What We Offer?</Title>
               <DescriptionText>
                 Other than maintaining open source projects such as Schedge,
                 BUGS also co-hosts project nights weekly on Friday. The event
@@ -249,8 +250,8 @@ const HomePage = () => {
                 development in React
               </DescriptionText>
             </SecondContentBox>
-            <ThirdContentBox>
-              <Title>How to Contribute?</Title>
+            <ThirdContentBox light={light}>
+              <Title light={light}>How to Contribute?</Title>
               <DescriptionText>
                 If this is your first time contributing, take a look at first
                 contributions. Awesome for beginers is a repository containing
@@ -263,8 +264,8 @@ const HomePage = () => {
               </DescriptionText>
             </ThirdContentBox>
           </ContentContainer>
-          <FourthContentBox>
-            <Title>Mozilla Partnership</Title>
+          <FourthContentBox light={light}>
+            <Title light={light}>Mozilla Partnership</Title>
             <DescriptionText>
               BUGS is a member of the Open Source Student Network, a network of
               university clubs and students that share the belief that open
