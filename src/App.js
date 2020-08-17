@@ -46,7 +46,6 @@ const App = () => {
           <Route path="/events" component={EventPage} />
         </Switch>
       </Router>
-      <Footer />
     </Container>
   );
 };

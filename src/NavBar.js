@@ -64,12 +64,12 @@ const Content = styled.div`
 const LeftContentContainer = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  flex: 1 0 70%;
+  flex: 1 0 20%;
   align-items: center;
 `;
 
 const RightContentContainer = styled.div`
-  width: 33%;
+  width: 80%;
   justify-content: flex-end;
   flex-grow: 0;
   flex-shrink: 1;
@@ -84,7 +84,7 @@ const HeaderNavWrapper = styled.div`
 const NavList = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex-wrap: wrap;
   font-weight: 500;
   font-style: normal;
@@ -151,21 +151,22 @@ const Link = styled.a`
 
 
 const JoinUsContainer = styled.div`
-  width: 33%;
+  width: 25%;
   justify-content: flex-end;
   flex-grow: 0;
   flex-shrink: 1;
   display: inline-flex;
+  margin: 0 5px 0 0;
   align-items: center;
   line-height: 1;
-  font-size: calc(0vw + 1rem);
+  font-size: calc(0vw + 0.9rem);
   @media screen and (max-width: 768px) {
     width: 30vw;
   }
 `;
 
 const JoinUsButtonContainer = styled.div`
-  margin: 0 0 0 1vw;
+  margin: 0 0 0 0;
 `;
 
 const JoinUs = styled.a`
@@ -173,7 +174,7 @@ const JoinUs = styled.a`
   background-color: #311432;
   border-color: #311432;
   text-decoration: None;
-  font-weight: 500;
+  font-weight: 450;
   font-style: normal;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -224,7 +225,9 @@ const NavBar = () => {
                 <Image src={bugslogo} />
                 </a>
               </ImageContainer>
-              <HeaderNavWrapper>
+                        </LeftContentContainer>
+            <RightContentContainer>
+            <HeaderNavWrapper>
                 {width <= 768 ? <Burger open={open} setOpen={setOpen} /> :
                 <NavList>
                 <FirstNavItem>
@@ -250,8 +253,6 @@ const NavBar = () => {
                 </OtherNavItem>
               </NavList>}
               </HeaderNavWrapper>
-            </LeftContentContainer>
-            <RightContentContainer>
               <JoinUsContainer>
                 <JoinUsButtonContainer>
                   <JoinUs href="http://bit.ly/bugsnewsletter">JOIN US</JoinUs>
