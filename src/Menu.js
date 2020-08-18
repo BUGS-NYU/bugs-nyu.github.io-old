@@ -15,6 +15,7 @@ const StyledMenu = styled.nav`
     transition: transform 0.3s ease-in-out;
     background-color: #121212;
     z-index: 2;
+    padding-top: 40px;
 `
 
 
@@ -49,6 +50,7 @@ const LogoContainer = styled.div`
     justify-content: center;
     width: 100%;
     line-height: 1.6em;
+    padding: 2vw 0 0 0 ;
 `
 
 const Logo = styled.a`

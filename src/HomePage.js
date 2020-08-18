@@ -254,7 +254,7 @@ const HomePage = (props) => {
               <Title light={light}>How to Contribute?</Title>
               <DescriptionText>
                 If this is your first time contributing, take a look at first
-                contributions. Awesome for beginers is a repository containing
+                contributions. Awesome for beginners is a repository containing
                 Github projects that have good first issue for new open source
                 contributors. It is sorted by language so choose your language
                 and PR-away. We also currently have our own open source

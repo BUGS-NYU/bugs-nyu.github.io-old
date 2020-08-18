@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const scalein = keyframes`
   from {
@@ -87,11 +87,20 @@ const TimelineContainer = styled.div`
   }
 `;
 
+const slideLeft = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
 const Timeline = styled.div`
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-
+  animation: 1.25s ease-in-out 0s 1 ${slideLeft};
   &::after {
     content: "";
     position: absolute;
@@ -124,7 +133,8 @@ const LeftContainer = styled.div`
     height: 25px;
     right: -17px;
     background-color: white;
-    border: ${({ light }) => (light ? "4px solid purple" : "4px solid #121212")};
+    border: ${({ light }) =>
+      light ? "4px solid purple" : "4px solid #121212"};
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -135,12 +145,11 @@ const LeftContainer = styled.div`
     padding-left: 70px;
     padding-right: 25px;
     left: 0%;
-    
+
     &::after {
       left: 15px;
     }
   }
-
 `;
 
 const RightContainer = styled.div`
@@ -157,7 +166,8 @@ const RightContainer = styled.div`
     height: 25px;
     right: -17px;
     background-color: white;
-    border: ${({ light }) => (light ? "4px solid purple" : "4px solid #121212")};
+    border: ${({ light }) =>
+      light ? "4px solid purple" : "4px solid #121212"};
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -172,7 +182,7 @@ const RightContainer = styled.div`
     padding-left: 70px;
     padding-right: 25px;
     left: 0%;
-    
+
     &::after {
       left: 15px;
     }
@@ -189,7 +199,7 @@ const Time = styled.p`
 
 const ContentURL = styled.a`
   text-decoration: none;
-`
+`;
 
 const Content = styled.p`
   padding: 20px 30px;
@@ -200,13 +210,37 @@ const Content = styled.p`
   transition: all 0.2s linear;
   &:hover {
     transform: scale(1.1);
-    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
+    box-shadow: ${({ light }) =>
+      light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662"};
     color: ${({ light }) => (light ? "purple" : "")};
   }
-`
+`;
 
 const BoldText = styled.strong`
   color: white;
+`;
+
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+const Loading = styled.div`
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  border: 10px solid #f5f5f5;
+  border-radius: 50%;
+  border-top: 10px solid purple;
+  width: 80px;
+  height: 80px;
+  animation: ${spin} 2s linear infinite;
+  @media screen and (max-width: 1300px) {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #f5f5f5;
+    border-top: 5px solid purple;
+  }
 `;
 
 const contributors = {
@@ -233,8 +267,8 @@ function parseDate(timestamp) {
 
 const ContributorsPage = (props) => {
   const [PRList, setPRList] = useState([]);
-  const {theme} = props
-  const light = theme === 'light'
+  const { theme } = props;
+  const light = theme === "light";
 
   useEffect(() => {
     async function fetchData() {
@@ -254,8 +288,8 @@ const ContributorsPage = (props) => {
           const createdTime = schedgePR.created_at;
           const url = schedgePR["html_url"];
           const user = schedgePR.user.login;
-          if(!(`${user}-Schedge` in takenUsers)) {
-            takenUsers[`${user}-Schedge`] = {}
+          if (!(`${user}-Schedge` in takenUsers)) {
+            takenUsers[`${user}-Schedge`] = {};
             pullRequests.push({
               user: user,
               url: url,
@@ -270,8 +304,8 @@ const ContributorsPage = (props) => {
           const createdTime = webPR.created_at;
           const url = webPR["html_url"];
           const user = webPR.user.login;
-          if(!(`${user}-BUGSWebsite` in takenUsers)) {
-            takenUsers[`${user}-BUGSWebsite`] = {}
+          if (!(`${user}-BUGSWebsite` in takenUsers)) {
+            takenUsers[`${user}-BUGSWebsite`] = {};
             pullRequests.push({
               user: user,
               url: url,
@@ -286,7 +320,7 @@ const ContributorsPage = (props) => {
           let dateB = new Date(b.timestamp);
           return dateB - dateA;
         });
-        
+
         sortedPullRequests.unshift({
           timestamp: "NOW",
           url: "https://github.com/BUGS-NYU",
@@ -297,7 +331,7 @@ const ContributorsPage = (props) => {
         setPRList(sortedPullRequests);
       } catch (error) {
         console.log(error);
-        setPRList([])
+        setPRList([]);
       }
     }
     fetchData();
@@ -308,48 +342,47 @@ const ContributorsPage = (props) => {
       <PageContainer>
         <MainDescriptionContainer>
           <TableContainer>
-            <Title><BoldText>
-            Contributors
-            </BoldText></Title>
+            <Title>
+              <BoldText>Contributors</BoldText>
+            </Title>
             {Object.keys(contributors).map((name) => {
               return <Name key={name}>{name}</Name>;
             })}
           </TableContainer>
           <TimelineContainer>
-          <Title>
-            Our <BoldText>
-            Open Source </BoldText> Timeline
-          </Title>
-            <Timeline>
-            {PRList.length !== 0 &&
-                Object.entries(PRList).map(([index, PR]) => {
+            <Title>
+              Our <BoldText>Open Source </BoldText> Timeline
+            </Title>
+            {PRList.length !== 0 ? (
+              <Timeline>
+                {Object.entries(PRList).map(([index, PR]) => {
                   if (index % 2 === 0) {
                     return (
                       <LeftContainer key={PR.url} light={light}>
-                          <Time>{PR.timestamp}</Time>
-                          <ContentURL href={PR.url}>
-                          <Content light={light}>
-                            {PR.text}
-                          </Content>
-                          </ContentURL>
+                        <Time>{PR.timestamp}</Time>
+                        <ContentURL href={PR.url}>
+                          <Content light={light}>{PR.text}</Content>
+                        </ContentURL>
                       </LeftContainer>
                     );
                   } else {
                     return (
                       <RightContainer key={PR.url} light={light}>
-                          <Time>{PR.timestamp}</Time>
-                          <ContentURL href={PR.url}>
-                          <Content light={light}>
-                            {PR.text}
-                          </Content>
-                          </ContentURL>
+                        <Time>{PR.timestamp}</Time>
+                        <ContentURL href={PR.url}>
+                          <Content light={light}>{PR.text}</Content>
+                        </ContentURL>
                       </RightContainer>
                     );
                   }
                 })}
-            </Timeline>
-
-            </TimelineContainer>        </MainDescriptionContainer>
+                }
+              </Timeline>
+            ) : (
+              <Loading />
+            )}
+          </TimelineContainer>{" "}
+        </MainDescriptionContainer>
       </PageContainer>
     </MainContainer>
   );

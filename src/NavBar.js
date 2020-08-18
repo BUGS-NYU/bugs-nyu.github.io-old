@@ -254,7 +254,6 @@ const NavBar = (props) => {
                       ) : (
                         <NavList>
                           <FirstNavItem light={light}>
-                            {/* Change to use react router Link instead */}
                             <Link href="/teams">Teams</Link>
                           </FirstNavItem>
                           <OtherNavItem light={light}>
