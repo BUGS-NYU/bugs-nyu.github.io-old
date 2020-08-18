@@ -10,6 +10,11 @@ const scalein = keyframes`
   }
 `;
 
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
@@ -19,7 +24,7 @@ const PageContainer = styled.article`
   display: block;
 `;
 
-const MainDescriptionContainer = styled.section`
+const MainPage = styled.section`
   margin-top: 10%;
   align-items: center;
   min-height: 100vh;
@@ -218,11 +223,6 @@ const BoldText = styled.strong`
   color: white;
 `;
 
-const spin = keyframes`
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-`;
-
 const Loading = styled.div`
   z-index: 1;
   width: 150px;
@@ -249,6 +249,7 @@ const contributors = {
   "Santiago Darre": {},
   "Uriel Restrepo": {},
   "Yuchen Liu": {},
+  "Marissa Shey": {}
 };
 
 function parseDate(timestamp) {
@@ -260,7 +261,7 @@ function parseDate(timestamp) {
   const times = timestr.split(" ");
   const hour = times[0];
   const minute = times[1];
-  return `${month}/${day}/${year} ${hour}:${minute}`;
+  return `${month}/${day}/${year} ${hour} ${minute}`;
 }
 
 const ContributorsPage = (props) => {
@@ -274,13 +275,37 @@ const ContributorsPage = (props) => {
         const webresp = await fetch(
           "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=closed"
         );
+        const openWebResp = await fetch(
+          "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=open"
+        );
         const schedgeresp = await fetch(
           "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=closed"
         );
+        const openSchedgeResp = await fetch(
+          "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=open"
+        );
         const webJSON = await webresp.json();
         const schedgeJSON = await schedgeresp.json();
+        const openWebJSON = await openWebResp.json();
+        const openSchedgeJSON = await openSchedgeResp.json();
         const pullRequests = [];
         const takenUsers = {};
+        openSchedgeJSON.forEach((schedgePR) => {
+          const createdTime = schedgePR.created_at;
+          const url = schedgePR["html_url"];
+          const user = schedgePR.user.login;
+          if (!(`${user}-Schedge` in takenUsers)) {
+            takenUsers[`${user}-Schedge`] = {};
+            pullRequests.push({
+              user: user,
+              url: url,
+              timestamp: parseDate(createdTime),
+              name: "Schedge",
+              text: `${user} made a Pull Request to Schedge!`,
+            });
+          }
+        });
+
         schedgeJSON.forEach((schedgePR) => {
           const createdTime = schedgePR.created_at;
           const url = schedgePR["html_url"];
@@ -293,6 +318,22 @@ const ContributorsPage = (props) => {
               timestamp: parseDate(createdTime),
               name: "Schedge",
               text: `${user} made a Pull Request to Schedge!`,
+            });
+          }
+        });
+
+        openWebJSON.forEach((webPR) => {
+          const createdTime = webPR.created_at;
+          const url = webPR["html_url"];
+          const user = webPR.user.login;
+          if (!(`${user}-BUGSWebsite` in takenUsers)) {
+            takenUsers[`${user}-BUGSWebsite`] = {};
+            pullRequests.push({
+              user: user,
+              url: url,
+              timestamp: parseDate(createdTime),
+              name: "BUGS website",
+              text: `${user} made a Pull Request to BUGS website!`,
             });
           }
         });
@@ -312,6 +353,7 @@ const ContributorsPage = (props) => {
             });
           }
         });
+
         const sortedPullRequests = pullRequests.sort((a, b) => {
           let dateA = new Date(a.timestamp);
           let dateB = new Date(b.timestamp);
@@ -337,7 +379,7 @@ const ContributorsPage = (props) => {
   return (
     <MainContainer>
       <PageContainer>
-        <MainDescriptionContainer>
+        <MainPage>
           <TableContainer>
             <Title>
               <BoldText>Contributors</BoldText>
@@ -378,7 +420,7 @@ const ContributorsPage = (props) => {
               <Loading />
             )}
           </TimelineContainer>{" "}
-        </MainDescriptionContainer>
+        </MainPage>
       </PageContainer>
     </MainContainer>
   );

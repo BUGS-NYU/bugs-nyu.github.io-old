@@ -98,38 +98,13 @@ const NavList = styled.nav`
   padding: 0px 0px 0px 20px;
 `;
 
-const FirstNavItem = styled.div`
+const NavItem = styled.div`
   margin-right: 2.2vw;
   position: relative;
   display: inline-block;
   animation: ${scalein} 1s;
   font-weight: ${({ current }) => (current ? "900" : "")};
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: ${({ light }) => (light ? "purple" : "white")};
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
-  }
-
-  &:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-  }
-`;
-
-const OtherNavItem = styled.div`
-  animation: ${scalein} 1s;
-  margin-right: 2.2vw;
-  position: relative;
-  display: inline-block;
-  font-weight: ${({ current }) => (current ? "900" : "")};
   &::before {
     content: "";
     position: absolute;
@@ -252,32 +227,28 @@ const NavBar = (props) => {
                 ) : (
                   <>
                     <HeaderNavWrapper>
-                      {width <= 768 ? (
-                        <Burger open={open} setOpen={setOpen} light={light}/>
-                      ) : (
                         <NavList>
-                          <FirstNavItem light={light} current={currentPage==="/teams"}>
+                          <NavItem light={light} current={currentPage==="/teams"}>
                             <Link href="/teams">Teams</Link>
-                          </FirstNavItem>
-                          <OtherNavItem light={light} current={currentPage==="/contributors"}>
+                          </NavItem>
+                          <NavItem light={light} current={currentPage==="/contributors"}>
                             <Link href="/contributors">Contributors</Link>
-                          </OtherNavItem>
-                          <OtherNavItem light={light} current={currentPage==="/alumni"}>
+                          </NavItem>
+                          <NavItem light={light} current={currentPage==="/alumni"}>
                             <Link href="/alumni">Alumni</Link>
-                          </OtherNavItem>
-                          <OtherNavItem light={light} current={currentPage==="/projects"}>
+                          </NavItem>
+                          <NavItem light={light} current={currentPage==="/projects"}>
                             <Link href="/projects">Projects</Link>
-                          </OtherNavItem>
-                          <OtherNavItem light={light} current={currentPage==="/events"}>
+                          </NavItem>
+                          <NavItem light={light} current={currentPage==="/events"}>
                             <Link href="/events">Events</Link>
-                          </OtherNavItem>
-                          <OtherNavItem light={light}>
+                          </NavItem>
+                          <NavItem light={light}>
                             <Link href="http://bit.ly/bugsnewsletter">
                               Join Us
                             </Link>
-                          </OtherNavItem>
+                          </NavItem>
                         </NavList>
-                      )}
                     </HeaderNavWrapper>
                     <LogosContainer>
                       <Logo href="https://github.com/BUGS-NYU" light={light}>

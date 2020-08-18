@@ -10,6 +10,16 @@ const scalein = keyframes`
   }
 `;
 
+
+const fadein = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
@@ -19,7 +29,7 @@ const PageContainer = styled.article`
   display: block;
 `;
 
-const MainDescriptionContainer = styled.section`
+const MainPage = styled.section`
   padding-top: 2%;
   align-items: center;
   min-height: 66vh;
@@ -30,7 +40,6 @@ const MainDescriptionContainer = styled.section`
   flex-direction: column;
   z-index: 2;
 `;
-
 
 const ContentWrapper = styled.div`
   padding-top: 6.6vmax;
@@ -46,7 +55,7 @@ const Wrapper = styled.div`
   width: 80%;
 `;
 
-const DescriptionContainer = styled.div`
+const TitleContainer = styled.div`
   width: 100%;
   text-align: center;
   white-space: pre-wrap;
@@ -60,16 +69,7 @@ const DescriptionContainer = styled.div`
   }
 `;
 
-const fadein = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-
-const Description = styled.h1`
+const Title = styled.h1`
   font-weight: 500;
   font-style: normal;
   text-transform: none;
@@ -83,8 +83,7 @@ const BoldText = styled.strong`
   color: white;
 `;
 
-
-const ContentContainer = styled.div`
+const TileContainer = styled.div`
   position: relative;
   margin: 0 0 5px 0;
   padding: 0 5px 20px 5px;
@@ -93,73 +92,56 @@ const ContentContainer = styled.div`
   grid-template-rows: repeat(2);
   grid-auto-rows: min-content;
   grid-gap: 20px;
+
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
   }
-`;
 
-const FirstContentBox = styled.div`
-  background-color: none;
-  min-height: 100%;
-  min-width: 80%;
-  grid-column: 1;
-  position: relative;
-  margin: 0 0 0 2px;
-  border-radius: 15px;
-  justify-content: flex-start;
-  text-align: center;
-  animation: ${scalein} 1s;
-  padding: 10px 20px 10px 20px;
-  box-shadow: ${({ light }) => (light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212")};
-  transition: all 0.2s linear;
+  div {
+    min-height: 100%;
+    min-width: 80%;
+    position: relative;
+    margin: 0 0 0 2px;
+    border-radius: 15px;
+    justify-content: flex-start;
+    text-align: center;
+    animation: ${scalein} 1s;
+    padding: 10px 20px 10px 20px;
+    box-shadow: ${({ light }) =>
+      light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212"};
+    transition: all 0.2s linear;
 
-  @media screen and (max-width: 768px) {
-    margin: 0 0 20px 0;
+    :first-child {
+      grid-column: 1;
+      margin: 0 0 0 2px;
+      padding: 10px 20px 10px 20px;
+      @media screen and (max-width: 768px) {
+        margin: 0 0 20px 0;
+      }
+    }
+
+    :nth-child(2) {
+      grid-column: 2;
+      margin: 0 0 5px;
+      padding: 10px 20px 10px 20px;
+      @media screen and (max-width: 768px) {
+        margin: 0 0 20px 0;
+      }
+    }
+
+    :nth-child(3) {
+      grid-column: 3;
+      margin: 0 5px 0 5px;
+      padding: 10px 15px 10px 15px;
+      @media screen and (max-width: 768px) {
+        margin: 0 0 0 0;
+      }
+    }
   }
 `;
 
-const SecondContentBox = styled.div`
-  background-color: none;
-  min-height: 100%;
-  min-width: 80%;
-  grid-column: 2;
-  position: relative;
-  margin: 0 0 0 5px;
-  border-radius: 15px;
-  justify-content: flex-start;
-  padding: 10px 20px 10px 20px;
-  text-align: center;
-  animation: ${scalein} 1s;
-  box-shadow: ${({ light }) => (light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212")};
-  transition: all 0.2s linear;
-
-  @media screen and (max-width: 768px) {
-    margin: 0 0 20px 0;
-  }
-`;
-
-const ThirdContentBox = styled.div`
-  background-color: none;
-  min-height: 100%;
-  min-width: 80%;
-  grid-column: 3;
-  position: relative;
-  margin: 0 5px 0 5px;
-  border-radius: 15px;
-  justify-content: flex-start;
-  padding: 10px 15px 10px 15px;
-  text-align: left;
-  animation: ${scalein} 1s;
-  box-shadow: ${({ light }) => (light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212")};
-  transition: all 0.2s linear;
-
-  @media screen and (max-width: 768px) {
-    margin: 0 0 0 0;
-  }
-`;
-
-const Title = styled.h1`
+const TileTitle = styled.h1`
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0em;
@@ -171,13 +153,13 @@ const Title = styled.h1`
   animation: ${fadein} 2s;
 `;
 
-const DescriptionText = styled.p`
+const TileDescription = styled.p`
   position: relative;
   text-align: center;
   color: white;
 `;
 
-const FourthContentBox = styled.div`
+const RectangleTile = styled.div`
   background-color: none;
   position: relative;
   border-radius: 15px;
@@ -187,7 +169,8 @@ const FourthContentBox = styled.div`
   margin: 20px 5px 5px 5px;
   animation: ${scalein} 1s;
   padding: 10px 50px 15px 50px;
-  box-shadow: ${({ light }) => (light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212")};
+  box-shadow: ${({ light }) =>
+    light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212"};
   transition: all 0.2s linear;
 
   @media screen and (max-width: 768px) {
@@ -195,35 +178,33 @@ const FourthContentBox = styled.div`
   }
 `;
 
-
-
 const HomePage = (props) => {
-  const {theme} = props
-  const light = theme === 'light'
+  const { theme } = props;
+  const light = theme === "light";
   return (
     <MainContainer>
       <PageContainer>
-        <MainDescriptionContainer>
+        <MainPage>
           <ContentWrapper>
             <Wrapper>
-              <DescriptionContainer>
-                <Description>
+              <TitleContainer>
+                <Title>
                   NYU <BoldText>Open Source</BoldText> Club
-                </Description>
-              </DescriptionContainer>
+                </Title>
+              </TitleContainer>
             </Wrapper>
           </ContentWrapper>
-          <ContentContainer>
-            <FirstContentBox light={light}>
-              <Title light={light}>What's Open Source?</Title>
-              <DescriptionText>
+          <TileContainer light={light}>
+            <div >
+              <TileTitle>What's Open Source?</TileTitle>
+              <TileDescription>
                 Open source represents a form of licensing that encourages
                 collaboration and transparency. Look more on Open Source Guide
-              </DescriptionText>
-            </FirstContentBox>
-            <SecondContentBox light={light}>
-              <Title light={light}>What We Offer?</Title>
-              <DescriptionText>
+              </TileDescription>
+            </div>
+            <div >
+              <TileTitle >What We Offer?</TileTitle>
+              <TileDescription>
                 Other than maintaining open source projects such as Schedge,
                 BUGS also co-hosts project nights weekly on Friday. The event
                 serves as a friendly community for NYU students, specifically
@@ -231,11 +212,11 @@ const HomePage = (props) => {
                 have fun. We are also experimenting with a mentorship program
                 this summer, which helps students learn the basics of web
                 development in React
-              </DescriptionText>
-            </SecondContentBox>
-            <ThirdContentBox light={light}>
-              <Title light={light}>How to Contribute?</Title>
-              <DescriptionText>
+              </TileDescription>
+            </div>
+            <div >
+              <TileTitle>How to Contribute?</TileTitle>
+              <TileDescription>
                 If this is your first time contributing, take a look at first
                 contributions. Awesome for beginners is a repository containing
                 Github projects that have good first issue for new open source
@@ -244,23 +225,23 @@ const HomePage = (props) => {
                 projects. The site you are currently on is open source. So feel
                 free to make contribution to the repository . Additionally, we
                 are working on maintaining an NYU course API schedge
-              </DescriptionText>
-            </ThirdContentBox>
-          </ContentContainer>
-          <FourthContentBox light={light}>
-            <Title light={light}>Mozilla Partnership</Title>
-            <DescriptionText>
+              </TileDescription>
+            </div>
+          </TileContainer>
+          <RectangleTile light={light}>
+            <TileTitle>Mozilla Partnership</TileTitle>
+            <TileDescription>
               BUGS is a member of the Open Source Student Network, a network of
               university clubs and students that share the belief that open
               source software is the engine that powers innovation
-            </DescriptionText>
-            <DescriptionText>
+            </TileDescription>
+            <TileDescription>
               NYU BUGS is the open source club at NYU. We promote open source by
               engaging students through collaborative projects, hosting industry
               professions, and running open source workshops
-            </DescriptionText>
-          </FourthContentBox>
-        </MainDescriptionContainer>
+            </TileDescription>
+          </RectangleTile>
+        </MainPage>
       </PageContainer>
     </MainContainer>
   );

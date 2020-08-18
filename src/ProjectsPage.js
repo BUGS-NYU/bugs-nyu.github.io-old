@@ -27,7 +27,7 @@ const ProjectContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     padding: 5px 5px 5px 5px;
-    margin: 0px 0 0px 0;
+    margin: 0;
     width: 70vw;
   }
 `;
