@@ -2,10 +2,9 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import githublogo from "./logo/GitHub-Mark-32px.png";
 
-
 const slideleft = keyframes`
 100%{transform: translateX(0%);}
-`
+`;
 
 const ProjectContainer = styled.div`
   margin: 1vw;
@@ -18,7 +17,7 @@ const ProjectContainer = styled.div`
   box-shadow: 0px 0px 0px 3px #330662;
   align-items: center;
   padding: 5px 10px 10px 10px;
-  transform: ${({ odd }) => odd ? "translateX(-100%)" : "translateX(100%)"};
+  transform: ${({ odd }) => (odd ? "translateX(-100%)" : "translateX(100%)")};
   animation: ${slideleft} 1s forwards;
   transition: all 0.2s linear;
 
@@ -40,25 +39,17 @@ const SubTitle = styled.h2`
   width: 100%;
   border-bottom: 1px solid white;
   color: white;
-
-
 `;
 
 const LinkContainer = styled.div`
   text-align: center;
   transition: all 0.3s linear;
-  &:hover {
-    transform: scale(1.2);
-  }
 `;
 
 const URLLink = styled.a`
   font-size: small;
   text-decoration: none;
-  color: ${({ light }) => (light ? "" : "white")};
-  &:hover {
-    color: white;
-  }
+  color: white;
 `;
 
 const MainContainer = styled.div`
@@ -116,10 +107,6 @@ const Title = styled.h1`
   line-height: 0.5;
   font-size: calc(0vw + 2rem);
   color: white;
-
-  &:hover {
-    color: ${({ light }) => (light ? "purple" : "")};
-  }
 `;
 
 const Logo = styled.img`
@@ -132,9 +119,7 @@ const Project = (props) => {
   return (
     <ProjectContainer odd={odd}>
       <URLLink href={urlLink}>
-      <Title light={light}>
-        {title}
-      </Title>
+        <Title light={light}>{title}</Title>
       </URLLink>
       <SubTitle>{subtitle}</SubTitle>
       <DescriptionContainer>
@@ -142,15 +127,17 @@ const Project = (props) => {
       </DescriptionContainer>
       <LinkContainer>
         <Logo src={githublogo} />
-        <URLLink href={`https://${link}`} light={light}>{link}</URLLink>
+        <URLLink href={`https://${link}`} light={light}>
+          {link}
+        </URLLink>
       </LinkContainer>
     </ProjectContainer>
   );
 };
 
 const ProjectsPage = (props) => {
-  const {theme} = props
-  const light = theme === 'light'
+  const { theme } = props;
+  const light = theme === "light";
   return (
     <MainContainer>
       <PageContainer>
@@ -163,7 +150,7 @@ const ProjectsPage = (props) => {
             Our goal with this API is to make it easier for 
             students to plan out their schedules, and eventually to also do some of that for them"
             link="github.com/BUGS-NYU/schedge"
-            urlLink = "https://schedge.a1liu.com/"
+            urlLink="https://schedge.a1liu.com/"
             odd={true}
             light={light}
           />

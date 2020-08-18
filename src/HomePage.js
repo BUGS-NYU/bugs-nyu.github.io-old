@@ -28,7 +28,9 @@ const MainDescriptionContainer = styled.section`
   padding-left: 15vw;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 `;
+
 
 const ContentWrapper = styled.div`
   padding-top: 6.6vmax;
@@ -164,6 +166,7 @@ const Title = styled.h1`
   text-transform: none;
   line-height: 1.2;
   font-size: calc(0vw + 2rem);
+  text-align: center;
   color: #f5f5f5;
   animation: ${fadein} 2s;
 `;
@@ -181,9 +184,9 @@ const FourthContentBox = styled.div`
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: 20px 5px 5% 5px;
+  margin: 20px 5px 5px 5px;
   animation: ${scalein} 1s;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 50px 15px 50px;
   box-shadow: ${({ light }) => (light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212")};
   transition: all 0.2s linear;
 

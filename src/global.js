@@ -21,4 +21,5 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     background-size: 400% 400%;
     animation: ${gradient} 25s ease infinite;
+    overflow-x: hidden;
   }`

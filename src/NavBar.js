@@ -112,7 +112,7 @@ const FirstNavItem = styled.div`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: ${({ light }) => (light ? "purple" : "#330662")};
+    background-color: ${({ light }) => (light ? "purple" : "white")};
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
@@ -137,7 +137,7 @@ const OtherNavItem = styled.div`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: ${({ light }) => (light ? "purple" : "#330662")};
+    background-color: ${({ light }) => (light ? "purple" : "white")};
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;

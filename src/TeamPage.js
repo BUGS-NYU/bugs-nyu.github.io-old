@@ -56,6 +56,7 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 5px 20px 20px 20px;
 `;
 
 
@@ -77,7 +78,8 @@ const Title = styled.h2`
   letter-spacing: 0em;
   text-transform: none;
   text-align: center;
-  line-height: 0.5;
+  line-height: 1;
+  margin-bottom: 0;
   font-size: calc(0vw + 1.5rem);
   color: white;
   animation: ${scalein} 0.9s;
@@ -106,8 +108,7 @@ const SubTitle = styled.p`
   text-align: center;
   font-weight: lighter;
   color: white;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin: 10px 0 0 0;
   animation: ${scalein} 0.9s;
   @media screen and (max-width: 768px) {
     font-size: 1.25rem;

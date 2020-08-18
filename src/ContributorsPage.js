@@ -99,7 +99,7 @@ const Timeline = styled.div`
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  animation: 1.25s ease-in-out 0s 1 ${slideLeft};
+  animation: 1s ease-in-out 0s 1 ${slideLeft};
   &::after {
     content: "";
     position: absolute;
@@ -210,8 +210,7 @@ const Content = styled.p`
   &:hover {
     transform: scale(1.1);
     box-shadow: ${({ light }) =>
-      light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662"};
-    color: ${({ light }) => (light ? "purple" : "")};
+      light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px white"};
   }
 `;
 
@@ -254,7 +253,7 @@ const contributors = {
 
 function parseDate(timestamp) {
   const date = new Date(timestamp);
-  const month = date.getMonth();
+  const month = date.getMonth() + 1;
   const day = date.getDate();
   const year = date.getFullYear();
   const timestr = new Date(date.setSeconds(0, 0)).toLocaleTimeString();
@@ -282,7 +281,6 @@ const ContributorsPage = (props) => {
         const schedgeJSON = await schedgeresp.json();
         const pullRequests = [];
         const takenUsers = {};
-        //change this to be unique
         schedgeJSON.forEach((schedgePR) => {
           const createdTime = schedgePR.created_at;
           const url = schedgePR["html_url"];

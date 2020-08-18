@@ -113,7 +113,7 @@ const EboardTitle = styled.h1`
 
 const BoldText = styled.strong`
   color: white;
-`
+`;
 
 const eboards = {
   "Nadira Dewji": {
@@ -172,13 +172,10 @@ const Alumni = (props) => {
   const { name, description } = props;
   return (
     <ProjectContainer>
-      <Title>
-        {" "}
-        {name}
-      </Title>
+      <Title> {name}</Title>
       <DescriptionContainer>
-          <Description>{description}</Description>
-        </DescriptionContainer>
+        <Description>{description}</Description>
+      </DescriptionContainer>
     </ProjectContainer>
   );
 };
@@ -188,8 +185,9 @@ const AlumniPage = () => {
     <MainContainer>
       <PageContainer>
         <EboardTitleContainer>
-          <EboardTitle>Meet Our <BoldText>
-          Alumni</BoldText></EboardTitle>
+          <EboardTitle>
+            Meet Our <BoldText>Alumni</BoldText>
+          </EboardTitle>
         </EboardTitleContainer>
         <MainDescriptionContainer>
           {Object.entries(eboards).map(([name, values]) => {
