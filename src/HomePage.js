@@ -106,17 +106,12 @@ const FirstContentBox = styled.div`
   margin: 0 0 0 2px;
   border-radius: 15px;
   justify-content: flex-start;
-  padding: 10px;
   text-align: center;
   animation: ${scalein} 1s;
-  cursor: pointer;
-  box-shadow: ${({ light }) => (light ? "0px 0px 0px 3px white" : "0px 0px 0px 3px #121212")};
+  padding: 10px 20px 10px 20px;
+  box-shadow: ${({ light }) => (light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212")};
   transition: all 0.2s linear;
 
-  &:hover {
-    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
-    transform: scale(1.05);
-  }
   @media screen and (max-width: 768px) {
     margin: 0 0 20px 0;
   }
@@ -131,17 +126,12 @@ const SecondContentBox = styled.div`
   margin: 0 0 0 5px;
   border-radius: 15px;
   justify-content: flex-start;
-  padding: 10px;
+  padding: 10px 20px 10px 20px;
   text-align: center;
   animation: ${scalein} 1s;
-  cursor: pointer;
-  box-shadow: ${({ light }) => (light ? "0px 0px 0px 3px white" : "0px 0px 0px 3px #121212")};
+  box-shadow: ${({ light }) => (light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212")};
   transition: all 0.2s linear;
 
-  &:hover {
-    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
-    transform: scale(1.05);
-  }
   @media screen and (max-width: 768px) {
     margin: 0 0 20px 0;
   }
@@ -156,17 +146,11 @@ const ThirdContentBox = styled.div`
   margin: 0 5px 0 5px;
   border-radius: 15px;
   justify-content: flex-start;
-  padding: 10px;
-  text-align: center;
+  padding: 10px 15px 10px 15px;
+  text-align: left;
   animation: ${scalein} 1s;
-  cursor: pointer;
-  box-shadow: ${({ light }) => (light ? "0px 0px 0px 3px white" : "0px 0px 0px 3px #121212")};
+  box-shadow: ${({ light }) => (light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212")};
   transition: all 0.2s linear;
-
-  &:hover {
-    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
-    transform: scale(1.05);
-  }
 
   @media screen and (max-width: 768px) {
     margin: 0 0 0 0;
@@ -180,7 +164,7 @@ const Title = styled.h1`
   text-transform: none;
   line-height: 1.2;
   font-size: calc(0vw + 2rem);
-  color: ${({ light }) => (light ? "black" : "#f5f5f5")};
+  color: #f5f5f5;
   animation: ${fadein} 2s;
 `;
 
@@ -199,13 +183,9 @@ const FourthContentBox = styled.div`
   align-items: center;
   margin: 20px 5px 5% 5px;
   animation: ${scalein} 1s;
-  box-shadow: ${({ light }) => (light ? "0px 0px 0px 3px white" : "0px 0px 0px 3px #121212")};
+  padding: 10px 20px 10px 20px;
+  box-shadow: ${({ light }) => (light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212")};
   transition: all 0.2s linear;
-  cursor: pointer;
-  &:hover {
-    box-shadow: ${({ light }) => (light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px #330662")};
-    transform: scale(1.05);
-  }
 
   @media screen and (max-width: 768px) {
     margin: 5px 5px 10vh 5px;

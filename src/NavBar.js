@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import bugslogo from "./logo/bugs.png";
 import githublogo from "./logo/GitHub-Mark-Light-32px.png";
 import maillogo from "./logo/mail-32.png";
-
+import { useLocation } from 'react-router-dom'
 const scalein = keyframes`
   from {
     transform: scale(0.9)
@@ -103,6 +103,7 @@ const FirstNavItem = styled.div`
   position: relative;
   display: inline-block;
   animation: ${scalein} 1s;
+  font-weight: ${({ current }) => (current ? "900" : "")};
 
   &::before {
     content: "";
@@ -128,6 +129,7 @@ const OtherNavItem = styled.div`
   margin-right: 2.2vw;
   position: relative;
   display: inline-block;
+  font-weight: ${({ current }) => (current ? "900" : "")};
   &::before {
     content: "";
     position: absolute;
@@ -230,6 +232,7 @@ const NavBar = (props) => {
   const [open, setOpen] = useState(false);
   const width = window.innerWidth;
   const light = theme === 'light'
+  const currentPage = useLocation().pathname
   return (
     <div>
       <Header>
@@ -253,19 +256,19 @@ const NavBar = (props) => {
                         <Burger open={open} setOpen={setOpen} light={light}/>
                       ) : (
                         <NavList>
-                          <FirstNavItem light={light}>
+                          <FirstNavItem light={light} current={currentPage==="/teams"}>
                             <Link href="/teams">Teams</Link>
                           </FirstNavItem>
-                          <OtherNavItem light={light}>
+                          <OtherNavItem light={light} current={currentPage==="/contributors"}>
                             <Link href="/contributors">Contributors</Link>
                           </OtherNavItem>
-                          <OtherNavItem light={light}>
+                          <OtherNavItem light={light} current={currentPage==="/alumni"}>
                             <Link href="/alumni">Alumni</Link>
                           </OtherNavItem>
-                          <OtherNavItem light={light}>
+                          <OtherNavItem light={light} current={currentPage==="/projects"}>
                             <Link href="/projects">Projects</Link>
                           </OtherNavItem>
-                          <OtherNavItem light={light}>
+                          <OtherNavItem light={light} current={currentPage==="/events"}>
                             <Link href="/events">Events</Link>
                           </OtherNavItem>
                           <OtherNavItem light={light}>

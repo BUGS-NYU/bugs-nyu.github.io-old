@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import "./stuff.css";
+import "./ToggleButton.css";
 
 const FooterContainer = styled.footer`
   margin-top: auto;

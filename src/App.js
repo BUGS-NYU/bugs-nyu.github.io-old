@@ -26,8 +26,8 @@ const App = () => {
     <ThemeProvider theme={themeMode}>
       <>
         <GlobalStyles />
-        <NavBar theme={theme}/>
         <Router>
+        <NavBar theme={theme}/>
           <Switch>
             <Route exact path="/" component={() => <HomePage theme={theme}/>} />
             <Route path="/projects" component={() => <ProjectsPage theme={theme} />} />
@@ -36,8 +36,8 @@ const App = () => {
             <Route path="/contributors" component={() => <ContributorsPage theme={theme}/>} />
             <Route path="/events" component={EventPage} />
           </Switch>
+          <Footer open={theme} setOpen={toggleTheme} />
         </Router>
-        <Footer open={theme} setOpen={toggleTheme} />
       </>
     </ThemeProvider>
   );

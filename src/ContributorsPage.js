@@ -69,7 +69,6 @@ const Name = styled.h4`
   line-height: 0.5;
   font-size: calc(0vw + 1.2rem);
   color: white;
-  cursor: pointer;
   &:hover {
     color: ${({ light }) => (light ? "purple" : "white")};
   }
@@ -376,7 +375,6 @@ const ContributorsPage = (props) => {
                     );
                   }
                 })}
-                }
               </Timeline>
             ) : (
               <Loading />
