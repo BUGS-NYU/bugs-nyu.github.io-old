@@ -10,7 +10,6 @@ const scalein = keyframes`
   }
 `;
 
-
 const fadein = keyframes`
   from {
     opacity: 0;
@@ -195,36 +194,30 @@ const HomePage = (props) => {
             </Wrapper>
           </ContentWrapper>
           <TileContainer light={light}>
-            <div >
+            <div>
               <TileTitle>What's Open Source?</TileTitle>
               <TileDescription>
                 Open source represents a form of licensing that encourages
-                collaboration and transparency. Look more on Open Source Guide
+                collaboration and transparency.
               </TileDescription>
             </div>
-            <div >
-              <TileTitle >What We Offer?</TileTitle>
+            <div>
+              <TileTitle>What We Offer?</TileTitle>
               <TileDescription>
-                Other than maintaining open source projects such as Schedge,
-                BUGS also co-hosts project nights weekly on Friday. The event
-                serves as a friendly community for NYU students, specifically
-                those majoring in Computer Science to exchange ideas, code and
-                have fun. We are also experimenting with a mentorship program
-                this summer, which helps students learn the basics of web
-                development in React
+                Other than maintaining open source projects, BUGS also co-hosts
+                hack nights on Friday. The event serves as a friendly community
+                for NYU students to exchange ideas, code and have fun. We are
+                also experimenting with a mentorship program this summer, which
+                helps students learn the basics of web development
               </TileDescription>
             </div>
-            <div >
+            <div>
               <TileTitle>How to Contribute?</TileTitle>
               <TileDescription>
-                If this is your first time contributing, take a look at first
-                contributions. Awesome for beginners is a repository containing
-                Github projects that have good first issue for new open source
-                contributors. It is sorted by language so choose your language
-                and PR-away. We also currently have our own open source
-                projects. The site you are currently on is open source. So feel
-                free to make contribution to the repository . Additionally, we
-                are working on maintaining an NYU course API schedge
+                If this is your first time contributing, take a look at the BUGS
+                repository. We currently have our own open source projects. The
+                site you are currently on is also open source. Feel free to make
+                contributions to the repository.
               </TileDescription>
             </div>
           </TileContainer>

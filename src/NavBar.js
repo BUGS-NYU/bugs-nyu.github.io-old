@@ -265,7 +265,7 @@ const NavBar = (props) => {
           </ContentContainer>
         </HeaderWrapper>
       </Header>
-      <Menu open={open} />
+      {width <= 768 ? <Menu open={open} /> : <div />}
     </div>
   );
 };

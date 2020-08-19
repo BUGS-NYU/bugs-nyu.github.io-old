@@ -128,7 +128,7 @@ const LeftContainer = styled.div`
   position: relative;
   background-color: inherit;
   width: 50%;
-  left: -16%;
+  left: -15.5%;
 
   &::after {
     content: "";
