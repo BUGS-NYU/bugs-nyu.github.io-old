@@ -59,7 +59,6 @@ const DescriptionContainer = styled.div`
   padding: 5px 20px 20px 20px;
 `;
 
-
 const Description = styled.p`
   text-align: left;
   font-weight: 500;
@@ -140,7 +139,7 @@ const EboardTitle = styled.h1`
   text-transform: none;
   text-align: center;
   line-height: 0.5;
-  font-size: calc(0vw + 4.5rem);
+  font-size: calc(0vw + 4rem);
   color: rgba(255, 255, 255, 0.7);
   animation: ${scalein} 0.9s;
   @media screen and (max-width: 768px) {
@@ -224,9 +223,9 @@ const TeamPage = () => {
     <MainContainer>
       <PageContainer>
         <EboardTitleContainer>
-          <EboardTitle>Meet Our <BoldText>
-          Executive Board
-          </BoldText></EboardTitle>
+          <EboardTitle>
+            Meet Our <BoldText>Executive Board</BoldText>
+          </EboardTitle>
         </EboardTitleContainer>
         <MainDescriptionContainer>
           {Object.entries(eboards).map(([name, values]) => {

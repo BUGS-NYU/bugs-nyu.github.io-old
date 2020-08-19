@@ -20,6 +20,7 @@ const FooterSectionContainer = styled.section`
   left: 0;
 `;
 
+
 const Footer = (props) => {
   const { open, setOpen } = props;
   const theme = open === "dark";

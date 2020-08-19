@@ -92,7 +92,7 @@ const TileContainer = styled.div`
   grid-auto-rows: min-content;
   grid-gap: 20px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     display: flex;
     flex-direction: column;
   }
@@ -172,7 +172,7 @@ const RectangleTile = styled.div`
     light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212"};
   transition: all 0.2s linear;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     margin: 5px 5px 10vh 5px;
   }
 `;
