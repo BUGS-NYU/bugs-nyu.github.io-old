@@ -107,7 +107,7 @@ const TileContainer = styled.div`
     animation: ${scalein} 1s;
     padding: 10px 20px 10px 20px;
     box-shadow: ${({ light }) =>
-      light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212"};
+      light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px rgba(255, 255, 255, 0.7)"};
     transition: all 0.2s linear;
 
     :first-child {
@@ -167,7 +167,7 @@ const RectangleTile = styled.div`
   animation: ${scalein} 1s;
   padding: 10px 50px 15px 50px;
   box-shadow: ${({ light }) =>
-    light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px #121212"};
+    light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px rgba(255, 255, 255, 0.7)"};
   transition: all 0.2s linear;
 
   @media screen and (max-width: 1000px) {
