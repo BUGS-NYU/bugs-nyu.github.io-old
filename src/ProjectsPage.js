@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import githublogo from "./logo/GitHub-Mark-32px.png";
+import githublogo from "./logo/GitHub-Mark-Light-32px.png";
 
 const slideleft = keyframes`
 100%{transform: translateX(0%);}
@@ -29,6 +29,9 @@ const ProjectContainer = styled.div`
     padding: 5px 5px 5px 5px;
     margin: 0;
     width: 70vw;
+    transform: none;
+    animation: none;
+    transition: none;
   }
 `;
 
@@ -97,6 +100,10 @@ const Description = styled.h4`
   line-height: 1.2;
   font-size: calc(0vw + 1.2rem);
   color: white;
+  padding: 10px;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const Title = styled.h1`

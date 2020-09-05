@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import bugslogo from "./logo/bugs.png";
 import githublogo from "./logo/GitHub-Mark-Light-32px.png";
 import maillogo from "./logo/mail-32.png";
-import { useLocation } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 const scalein = keyframes`
   from {
     transform: scale(0.9)
@@ -66,12 +66,12 @@ const Content = styled.div`
 const LeftContentContainer = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  flex: 1 0 13%;
+  flex: 1
   align-items: center;
 `;
 
 const RightContentContainer = styled.div`
-  width: 90%;
+  width: 100%;
   justify-content: flex-end;
   flex-grow: 0;
   flex-shrink: 1;
@@ -130,7 +130,6 @@ const Link = styled.a`
 `;
 
 const LogosContainer = styled.div`
-  width: 15%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -144,51 +143,19 @@ const LogosContainer = styled.div`
 `;
 
 const Logo = styled.a`
-  margin: 0 15px 0 0;
+  margin: 0 5px 0 0;
   display: block;
-  padding: 5px 5px 5px 5px;
+  padding: 3px;
   border-radius: 50%;
-  transition: all 0.3s ease-in-out 0s;
-  &:hover {
-    background-color: ${({ light }) => (light ? "#57068c" : "#330662")};
-  }
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   height: auto;
-  padding: 0px 0px 0px 0px;
-  margin: 0px 0px 0px 0px;
   outline: none;
   box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
   border-radius: 50px;
   transition: all 0.3s ease-in-out 0s;
-
-  &::before {
-    position: absolute;
-    background-color: white;
-    opacity: 0.5;
-    content: "";
-    width: 0rem;
-    height: 0rem;
-    left: 50%;
-    margin-left: 0;
-    bottom: 0rem;
-    border-radius: 50%;
-    transition: all 0.2s ease-in-out;
-    z-index: -1;
-  }
-
-  &:hover::before {
-    width: 15rem;
-    height: 15rem;
-    margin-left: -7.5rem;
-    bottom: -2.5rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    margin: 0px 0px 0px 0px;
-  }
 `;
 
 const Image = styled.img`
@@ -197,17 +164,17 @@ const Image = styled.img`
   height: 100px;
   border: 0;
   @media screen and (max-width: 768px) {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
 `;
 
 const NavBar = (props) => {
-  const {theme} = props
+  const { theme } = props;
   const [open, setOpen] = useState(false);
   const width = window.innerWidth;
-  const light = theme === 'light'
-  const currentPage = useLocation().pathname
+  const light = theme === "light";
+  const currentPage = useLocation().pathname;
   return (
     <div>
       <Header>
@@ -227,28 +194,43 @@ const NavBar = (props) => {
                 ) : (
                   <>
                     <HeaderNavWrapper>
-                        <NavList>
-                          <NavItem light={light} current={currentPage==="/teams"}>
-                            <Link href="/teams">Teams</Link>
-                          </NavItem>
-                          <NavItem light={light} current={currentPage==="/contributors"}>
-                            <Link href="/contributors">Contributors</Link>
-                          </NavItem>
-                          <NavItem light={light} current={currentPage==="/alumni"}>
-                            <Link href="/alumni">Alumni</Link>
-                          </NavItem>
-                          <NavItem light={light} current={currentPage==="/projects"}>
-                            <Link href="/projects">Projects</Link>
-                          </NavItem>
-                          <NavItem light={light} current={currentPage==="/events"}>
-                            <Link href="/events">Events</Link>
-                          </NavItem>
-                          <NavItem light={light}>
-                            <Link href="http://bit.ly/bugsnewsletter">
-                              Join Us
-                            </Link>
-                          </NavItem>
-                        </NavList>
+                      <NavList>
+                        <NavItem
+                          light={light}
+                          current={currentPage === "/teams"}
+                        >
+                          <Link href="/teams">Teams</Link>
+                        </NavItem>
+                        <NavItem
+                          light={light}
+                          current={currentPage === "/contributors"}
+                        >
+                          <Link href="/contributors">Contributors</Link>
+                        </NavItem>
+                        <NavItem
+                          light={light}
+                          current={currentPage === "/alumni"}
+                        >
+                          <Link href="/alumni">Alumni</Link>
+                        </NavItem>
+                        <NavItem
+                          light={light}
+                          current={currentPage === "/projects"}
+                        >
+                          <Link href="/projects">Projects</Link>
+                        </NavItem>
+                        <NavItem
+                          light={light}
+                          current={currentPage === "/events"}
+                        >
+                          <Link href="/events">Events</Link>
+                        </NavItem>
+                        <NavItem light={light}>
+                          <Link href="http://bit.ly/bugsnewsletter">
+                            Join Us
+                          </Link>
+                        </NavItem>
+                      </NavList>
                     </HeaderNavWrapper>
                     <LogosContainer>
                       <Logo href="https://github.com/BUGS-NYU" light={light}>

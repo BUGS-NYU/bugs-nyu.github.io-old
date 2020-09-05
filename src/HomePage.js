@@ -104,7 +104,6 @@ const TileContainer = styled.div`
     margin: 0 0 0 2px;
     border-radius: 15px;
     justify-content: flex-start;
-    text-align: center;
     animation: ${scalein} 1s;
     padding: 10px 20px 10px 20px;
     box-shadow: ${({ light }) =>
@@ -154,15 +153,14 @@ const TileTitle = styled.h1`
 
 const TileDescription = styled.p`
   position: relative;
-  text-align: center;
   color: white;
+  text-align: center;
 `;
 
 const RectangleTile = styled.div`
   background-color: none;
   position: relative;
   border-radius: 15px;
-  text-align: center;
   justify-content: center;
   align-items: center;
   margin: 20px 5px 5px 5px;
@@ -195,29 +193,28 @@ const HomePage = (props) => {
           </ContentWrapper>
           <TileContainer light={light}>
             <div>
-              <TileTitle>What's Open Source?</TileTitle>
+              <TileTitle>Open Source</TileTitle>
               <TileDescription>
-                Open source represents a form of licensing that encourages
-                collaboration and transparency.
+                A form of licensing that encourages collaboration and
+                transparency. It embraces and celebrates open exchange,
+                collaborative participation, transparency, and
+                community-oriented development.
               </TileDescription>
             </div>
             <div>
-              <TileTitle>What We Offer?</TileTitle>
+              <TileTitle>Create</TileTitle>
               <TileDescription>
-                Other than maintaining open source projects, BUGS also co-hosts
-                hack nights on Friday. The event serves as a friendly community
-                for NYU students to exchange ideas, code and have fun. We are
-                also experimenting with a mentorship program this summer, which
-                helps students learn the basics of web development
+                Build useful and fun projects with other club members to solve
+                problems and learn. Work on existing open source projects and
+                collaborate with other clubs on and off campus
               </TileDescription>
             </div>
             <div>
-              <TileTitle>How to Contribute?</TileTitle>
+              <TileTitle>Contribute</TileTitle>
               <TileDescription>
                 If this is your first time contributing, take a look at the BUGS
-                repository. We currently have our own open source projects. The
-                site you are currently on is also open source. Feel free to make
-                contributions to the repository.
+                repository. Fork it, make pull requests, report issues and git
+                good!!!
               </TileDescription>
             </div>
           </TileContainer>
@@ -226,11 +223,9 @@ const HomePage = (props) => {
             <TileDescription>
               BUGS is a member of the Open Source Student Network, a network of
               university clubs and students that share the belief that open
-              source software is the engine that powers innovation
-            </TileDescription>
-            <TileDescription>
-              NYU BUGS is the open source club at NYU. We promote open source by
-              engaging students through collaborative projects, hosting industry
+              source software is the engine that powers innovation NYU BUGS is
+              the open source club at NYU. We promote open source by engaging
+              students through collaborative projects, hosting industry
               professions, and running open source workshops
             </TileDescription>
           </RectangleTile>
