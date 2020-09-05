@@ -47,7 +47,7 @@ const EboardTitleContainer = styled.div`
   text-align: center;
   margin-bottom: 50px;
   @media screen and (max-width: 768px) {
-    margin-top: 15vh;
+    margin-top: 18vh;
   }
 `;
 

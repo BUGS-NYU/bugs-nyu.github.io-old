@@ -37,6 +37,9 @@ const MainDescriptionContainer = styled.section`
 const AlumniTitleContainer = styled.div`
   margin-top: 15%;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    margin-top: 18vh;
+  }
 `;
 
 const AlumniTitle = styled.h1`

@@ -44,7 +44,13 @@ const EventPage = () => {
       <PageContainer>
         <MainDescriptionContainer>
           <ResponsiveCalc>
-            <Calendar src={width <= 786 ? `${googleCalendar}&mode=AGENDA` :googleCalendar} scrolling="no" frameborder="0" />
+            <Calendar
+              src={
+                width <= 786 ? `${googleCalendar}&mode=AGENDA` : googleCalendar
+              }
+              scrolling="no"
+              frameborder="0"
+            />
           </ResponsiveCalc>
         </MainDescriptionContainer>
       </PageContainer>
