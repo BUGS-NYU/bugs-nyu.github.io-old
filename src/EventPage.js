@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
@@ -21,38 +21,35 @@ const MainDescriptionContainer = styled.section`
   flex-direction: column;
 `;
 
-const CalendarContainer = styled.div`
-    display: block ! important;
-    max-width: 100%;
-    max-height: 100%;
-`
-
 const Calendar = styled.iframe`
-    height: 500px;
-    width: 70vw;
-    margin: 0px 30px 5px 5px;
-    display: block;
-    border: 0px;
-    @media screen and (max-width: 768px) {
-        margin: 10vh 0px 5px 5px;
-        height: 400px;
-        width: 70vw;
-    }
-`
+  height: 80vh;
+  width: 70vw;
+  display: block;
+  border-width: 0;
+  @media screen and (max-width: 768px) {
+    height: 70vh;
+  }
+`;
+
+const ResponsiveCalc = styled.div`
+  margin: 10vh 0 5vh 0;
+`;
+
+const googleCalendar = `https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23f2f2f2&ctz=America%2FNew_York&src=MXJnMXZhOGhpamttNzMydGE0ajQ0bGJjaDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%239E69AF&showTitle=0&showPrint=0&showCalendars=0&showTabs=0&showDate=0`;
 
 const EventPage = () => {
-    return(
-        <MainContainer>
-            <PageContainer>
-                <MainDescriptionContainer>
-                    <CalendarContainer>
-                    <Calendar src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23f2f2f2&ctz=America%2FNew_York&src=MXJnMXZhOGhpamttNzMydGE0ajQ0bGJjaDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%239E69AF&showTitle=0&showPrint=0&showCalendars=0&showTabs=0&showDate=0"
-                    scrolling="no" frameborder="0" title="bugs events"/>
-                    </CalendarContainer>
-                </MainDescriptionContainer>
-            </PageContainer>
-        </MainContainer>
-    )
-}
+  const width = window.innerWidth;
+  return (
+    <MainContainer>
+      <PageContainer>
+        <MainDescriptionContainer>
+          <ResponsiveCalc>
+            <Calendar src={width <= 786 ? `${googleCalendar}&mode=AGENDA` :googleCalendar} scrolling="no" frameborder="0" />
+          </ResponsiveCalc>
+        </MainDescriptionContainer>
+      </PageContainer>
+    </MainContainer>
+  );
+};
 
 export default EventPage;

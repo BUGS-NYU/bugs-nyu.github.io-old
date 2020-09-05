@@ -199,6 +199,9 @@ const Time = styled.p`
   color: white;
   margin: 0;
   padding: 2px 0px 0px 0px;
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const ContentURL = styled.a`
@@ -210,10 +213,10 @@ const Content = styled.p`
   position: relative;
   border-radius: 6px;
   color: white;
-  box-shadow: 0px 0px 0px 3px #121212;
+  box-shadow: 0px 0px 0px 3px white;
   transition: all 0.2s linear;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: ${({ light }) =>
       light ? "0px 0px 0px 10px #57068c" : "0px 0px 0px 10px white"};
   }

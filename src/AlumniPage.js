@@ -1,5 +1,15 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import Alumni from './Alumni';
+
+const fadein = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const MainContainer = styled.div`
   min-height: 100vh;
@@ -24,75 +34,12 @@ const MainDescriptionContainer = styled.section`
   margin-bottom: 5%;
 `;
 
-const DescriptionContainer = styled.div`
-  width: 100%;
-  text-align: center;
-  white-space: pre-wrap;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
-
-const fadein = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-
-const Description = styled.p`
-  text-align: center;
-  font-weight: 500;
-  font-style: normal;
-  letter-spacing: 0em;
-  text-transform: none;
-  line-height: 1.2;
-  font-size: calc(0vw + 1rem);
-  color: white;
-  animation: ${fadein} 2s;
-`;
-
-const Title = styled.p`
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: 0em;
-  text-transform: none;
-  text-align: center;
-  line-height: 0.5;
-  font-size: calc(0vw + 1.5rem);
-  color: white;
-  animation: ${fadein} 2s;
-`;
-
-const ProjectContainer = styled.div`
-  margin: 1vw;
-  grid-column: 1
-  min-height: 40vh;
-  height: 100%;
-  background-color: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px 60px 0px 60px;
-  animation: ${fadein} 2s;
-  @media screen and (max-width: 768px) {
-    padding: 0px 0px 0px 0px;
-    margin: 0 0 25px 0;
-    width: 70vw;
-  }
-`;
-
-const EboardTitleContainer = styled.div`
+const AlumniTitleContainer = styled.div`
   margin-top: 15%;
   text-align: center;
-  @media screen and (max-width: 768px) {
-    margin-top: 15vh;
-  }
 `;
 
-const EboardTitle = styled.h1`
+const AlumniTitle = styled.h1`
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0em;
@@ -111,7 +58,7 @@ const BoldText = styled.strong`
   color: white;
 `;
 
-const eboards = {
+const alumni = {
   "Nadira Dewji": {
     role: "Founder",
     description:
@@ -164,29 +111,19 @@ const eboards = {
   },
 };
 
-const Alumni = (props) => {
-  const { name, description } = props;
-  return (
-    <ProjectContainer>
-      <Title> {name}</Title>
-      <DescriptionContainer>
-        <Description>{description}</Description>
-      </DescriptionContainer>
-    </ProjectContainer>
-  );
-};
+
 
 const AlumniPage = () => {
   return (
     <MainContainer>
       <PageContainer>
-        <EboardTitleContainer>
-          <EboardTitle>
+        <AlumniTitleContainer>
+          <AlumniTitle>
             Meet Our <BoldText>Alumni</BoldText>
-          </EboardTitle>
-        </EboardTitleContainer>
+          </AlumniTitle>
+        </AlumniTitleContainer>
         <MainDescriptionContainer>
-          {Object.entries(eboards).map(([name, values]) => {
+          {Object.entries(alumni).map(([name, values]) => {
             return (
               <Alumni
                 name={name}

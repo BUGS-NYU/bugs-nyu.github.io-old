@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import Burger from "./Burger";
 import Menu from "./Menu";
 import bugslogo from "./logo/bugs.png";
+import bugsLight from "./logo/bugs_light.png";
 import githublogo from "./logo/GitHub-Mark-Light-32px.png";
 import maillogo from "./logo/mail-32.png";
 import { useLocation } from "react-router-dom";
@@ -184,7 +185,7 @@ const NavBar = (props) => {
               <LeftContentContainer>
                 <ImageContainer>
                   <a href="/">
-                    <Image src={bugslogo} />
+                    {light ? <Image src={bugslogo} /> : <Image src={bugsLight} />}
                   </a>
                 </ImageContainer>
               </LeftContentContainer>
