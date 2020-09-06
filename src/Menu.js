@@ -65,27 +65,27 @@ const Menu = (props) => {
         <StyledMenu open={open}>
             <LinksContainer>
               <LinkWrapper>
-              <Link href="/teams">
+              <Link href="/?path=teams">
                 Teams
               </Link>
               </LinkWrapper>
               <LinkWrapper>
-              <Link href="/contributors">
+              <Link href="/?path=contributors">
                 Contributors
               </Link>
               </LinkWrapper>
               <LinkWrapper>
-              <Link href="/alumni">
+              <Link href="/?path=alumni">
                 Alumni
               </Link>
               </LinkWrapper>
               <LinkWrapper>
-              <Link href="/projects">
+              <Link href="/?path=projects">
                 Projects
               </Link>
               </LinkWrapper>
               <LinkWrapper>
-              <Link href="/events">
+              <Link href="/?path=events">
                 Events
               </Link>
               </LinkWrapper>

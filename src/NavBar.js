@@ -175,7 +175,7 @@ const NavBar = (props) => {
   const [open, setOpen] = useState(false);
   const width = window.innerWidth;
   const light = theme === "light";
-  const currentPage = useLocation().pathname;
+  const currentPage = new URLSearchParams(useLocation().search).get("path");
   return (
     <div>
       <Header>
@@ -198,33 +198,33 @@ const NavBar = (props) => {
                       <NavList>
                         <NavItem
                           light={light}
-                          current={currentPage === "/teams"}
+                          current={currentPage === "teams"}
                         >
-                          <Link href="/teams">Teams</Link>
+                          <Link href="/?path=teams">Teams</Link>
                         </NavItem>
                         <NavItem
                           light={light}
-                          current={currentPage === "/contributors"}
+                          current={currentPage === "contributors"}
                         >
-                          <Link href="/contributors">Contributors</Link>
+                          <Link href="/?path=contributors">Contributors</Link>
                         </NavItem>
                         <NavItem
                           light={light}
-                          current={currentPage === "/alumni"}
+                          current={currentPage === "alumni"}
                         >
-                          <Link href="/alumni">Alumni</Link>
+                          <Link href="/?path=alumni">Alumni</Link>
                         </NavItem>
                         <NavItem
                           light={light}
-                          current={currentPage === "/projects"}
+                          current={currentPage === "projects"}
                         >
-                          <Link href="/projects">Projects</Link>
+                          <Link href="/?path=projects">Projects</Link>
                         </NavItem>
                         <NavItem
                           light={light}
-                          current={currentPage === "/events"}
+                          current={currentPage === "events"}
                         >
-                          <Link href="/events">Events</Link>
+                          <Link href="/?path=events">Events</Link>
                         </NavItem>
                         <NavItem light={light}>
                           <Link href="http://bit.ly/bugsnewsletter">
