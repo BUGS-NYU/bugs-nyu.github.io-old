@@ -182,6 +182,7 @@ const HomePage = (props) => {
     <MainContainer>
       <PageContainer>
         <MainPage>
+
           <ContentWrapper>
             <Wrapper>
               <TitleContainer>
@@ -191,6 +192,7 @@ const HomePage = (props) => {
               </TitleContainer>
             </Wrapper>
           </ContentWrapper>
+
           <TileContainer light={light}>
             <div>
               <TileTitle>Open Source</TileTitle>
@@ -201,14 +203,16 @@ const HomePage = (props) => {
                 community-oriented development.
               </TileDescription>
             </div>
+
             <div>
               <TileTitle>Create</TileTitle>
               <TileDescription>
                 Build useful and fun projects with other club members to solve
                 problems and learn. Work on existing open source projects and
-                collaborate with other clubs on and off campus
+                collaborate with other clubs on and off campus.
               </TileDescription>
             </div>
+
             <div>
               <TileTitle>Contribute</TileTitle>
               <TileDescription>
@@ -218,6 +222,7 @@ const HomePage = (props) => {
               </TileDescription>
             </div>
           </TileContainer>
+
           <RectangleTile light={light}>
             <TileTitle>Mozilla Partnership</TileTitle>
             <TileDescription>

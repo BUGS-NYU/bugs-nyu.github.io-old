@@ -4,9 +4,9 @@ import Burger from "./Burger";
 import Menu from "./Menu";
 import bugslogo from "./logo/bugs.png";
 import bugsLight from "./logo/bugs_light.png";
+import { useHistory } from 'react-router-dom';
 import githublogo from "./logo/GitHub-Mark-Light-32px.png";
 import maillogo from "./logo/mail-32.png";
-import { useLocation } from "react-router-dom";
 const scalein = keyframes`
   from {
     transform: scale(0.9)
@@ -172,10 +172,20 @@ const Image = styled.img`
 
 const NavBar = (props) => {
   const { theme } = props;
+  const history = useHistory();
   const [open, setOpen] = useState(false);
+  const [current, setCurrent] = useState("");
   const width = window.innerWidth;
   const light = theme === "light";
-  const currentPage = new URLSearchParams(useLocation().search).get("path");
+
+  const setPath = (param) => {
+    return (e) => {
+      e.preventDefault();
+      history.push(`/${param}`);
+      setCurrent(param);
+    };
+  };
+
   return (
     <div>
       <Header>
@@ -184,9 +194,9 @@ const NavBar = (props) => {
             <Content>
               <LeftContentContainer>
                 <ImageContainer>
-                  <a href="/">
+                  <div onClick={setPath("")}>
                     {light ? <Image src={bugslogo} /> : <Image src={bugsLight} />}
-                  </a>
+                  </div>
                 </ImageContainer>
               </LeftContentContainer>
               <RightContentContainer>
@@ -196,36 +206,27 @@ const NavBar = (props) => {
                   <>
                     <HeaderNavWrapper>
                       <NavList>
-                        <NavItem
-                          light={light}
-                          current={currentPage === "teams"}
-                        >
-                          <Link href="/?path=teams">Teams</Link>
+
+                        <NavItem light={light} current={current === "teams"} >
+                          <Link href="" onClick={setPath("teams")}>Teams</Link>
                         </NavItem>
-                        <NavItem
-                          light={light}
-                          current={currentPage === "contributors"}
-                        >
-                          <Link href="/?path=contributors">Contributors</Link>
+
+                        <NavItem light={light} current={current === "contributors"} >
+                          <Link href="" onClick={setPath("contributors")}>Contributors</Link>
                         </NavItem>
-                        <NavItem
-                          light={light}
-                          current={currentPage === "alumni"}
-                        >
-                          <Link href="/?path=alumni">Alumni</Link>
+
+                        <NavItem light={light} current={current === "alumni"} >
+                          <Link href="" onClick={setPath("alumni")}>Alumni</Link>
                         </NavItem>
-                        <NavItem
-                          light={light}
-                          current={currentPage === "projects"}
-                        >
-                          <Link href="/?path=projects">Projects</Link>
+
+                        <NavItem light={light} current={current === "projects"} >
+                          <Link href="" onClick={setPath("projects")}>Projects</Link>
                         </NavItem>
-                        <NavItem
-                          light={light}
-                          current={currentPage === "events"}
-                        >
-                          <Link href="/?path=events">Events</Link>
+
+                        <NavItem light={light} current={current === "events"} >
+                          <Link href="" onClick={setPath("events")}>Events</Link>
                         </NavItem>
+
                         <NavItem light={light}>
                           <Link href="http://bit.ly/bugsnewsletter">
                             Join Us
