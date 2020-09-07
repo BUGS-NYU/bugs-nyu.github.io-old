@@ -22,27 +22,30 @@ const App = () => {
     return <div />;
   }
 
-
-
   return (
     <ThemeProvider theme={themeMode}>
       <>
         <GlobalStyles />
-
         <Router>
-          <NavBar theme={theme}/>
-
+          <NavBar theme={theme} />
           <Switch>
-            <Route exact path="/" render={() => <HomePage theme={theme}/>} />
-            <Route exact path="/projects" render={() => <ProjectsPage theme={theme} />} />
+            <Route exact path="/" render={() => <HomePage theme={theme} />} />
+            <Route
+              exact
+              path="/projects"
+              render={() => <ProjectsPage theme={theme} />}
+            />
             <Route exact path="/teams" component={TeamPage} />
             <Route exact path="/alumni" component={AlumniPage} />
-            <Route exact path="/contributors" render={() => <ContributorsPage theme={theme}/>} />
+            <Route
+              exact
+              path="/contributors"
+              render={() => <ContributorsPage theme={theme} />}
+            />
             <Route exact path="/events" render={EventPage} />
-            <Route render={() => <HomePage theme={theme}/>} />
+            <Route render={() => <HomePage theme={theme} />} />
           </Switch>
         </Router>
-
         <Footer open={theme} setOpen={toggleTheme} />
       </>
     </ThemeProvider>

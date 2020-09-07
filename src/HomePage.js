@@ -84,15 +84,14 @@ const BoldText = styled.strong`
 
 const TileContainer = styled.div`
   position: relative;
-  margin: 0 0 5px 0;
+  margin: 0 0 10% 0;
   padding: 0 5px 20px 5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2);
   grid-auto-rows: min-content;
   grid-gap: 20px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
   }
@@ -101,19 +100,22 @@ const TileContainer = styled.div`
     min-height: 100%;
     min-width: 80%;
     position: relative;
-    margin: 0 0 0 2px;
     border-radius: 15px;
     justify-content: flex-start;
     animation: ${scalein} 1s;
-    padding: 10px 20px 10px 20px;
     box-shadow: ${({ light }) =>
-      light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px rgba(255, 255, 255, 0.7)"};
+      light
+        ? "0px 0px 0px 5px #57068c"
+        : "0px 0px 0px 5px rgba(255, 255, 255, 0.7)"};
     transition: all 0.2s linear;
+
+    @media screen and (max-width: 768px) {
+      min-height: 100%;
+    }
 
     :first-child {
       grid-column: 1;
-      margin: 0 0 0 2px;
-      padding: 10px 20px 10px 20px;
+      padding: 0 20px 10px 20px;
       @media screen and (max-width: 768px) {
         margin: 0 0 20px 0;
       }
@@ -121,8 +123,7 @@ const TileContainer = styled.div`
 
     :nth-child(2) {
       grid-column: 2;
-      margin: 0 0 5px;
-      padding: 10px 20px 10px 20px;
+      padding: 0 20px 10px 20px;
       @media screen and (max-width: 768px) {
         margin: 0 0 20px 0;
       }
@@ -130,10 +131,9 @@ const TileContainer = styled.div`
 
     :nth-child(3) {
       grid-column: 3;
-      margin: 0 5px 0 5px;
-      padding: 10px 15px 10px 15px;
+      padding: 0 20px 10px 20px;
       @media screen and (max-width: 768px) {
-        margin: 0 0 0 0;
+        margin: 0 0 20px 0;
       }
     }
   }
@@ -155,23 +155,8 @@ const TileDescription = styled.p`
   position: relative;
   color: white;
   text-align: center;
-`;
-
-const RectangleTile = styled.div`
-  background-color: none;
-  position: relative;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 5px 5px 5px;
-  animation: ${scalein} 1s;
-  padding: 10px 50px 15px 50px;
-  box-shadow: ${({ light }) =>
-    light ? "0px 0px 0px 5px #57068c" : "0px 0px 0px 5px rgba(255, 255, 255, 0.7)"};
-  transition: all 0.2s linear;
-
-  @media screen and (max-width: 1000px) {
-    margin: 5px 5px 10vh 5px;
+  @media screen and (max-width: 768px) {
+    padding: 0 10px 5px 10px;
   }
 `;
 
@@ -182,7 +167,6 @@ const HomePage = (props) => {
     <MainContainer>
       <PageContainer>
         <MainPage>
-
           <ContentWrapper>
             <Wrapper>
               <TitleContainer>
@@ -192,27 +176,22 @@ const HomePage = (props) => {
               </TitleContainer>
             </Wrapper>
           </ContentWrapper>
-
           <TileContainer light={light}>
             <div>
               <TileTitle>Open Source</TileTitle>
               <TileDescription>
-                A form of licensing that encourages collaboration and
-                transparency. It embraces and celebrates open exchange,
-                collaborative participation, transparency, and
-                community-oriented development.
+                A form of licensing that celebrates open exchange, collaborative
+                participation, transparency, and community-oriented development.
               </TileDescription>
             </div>
-
             <div>
-              <TileTitle>Create</TileTitle>
+              <TileTitle> Create</TileTitle>
               <TileDescription>
                 Build useful and fun projects with other club members to solve
-                problems and learn. Work on existing open source projects and
-                collaborate with other clubs on and off campus.
+                problems and learn. Collaborate with other clubs on and off
+                campus.
               </TileDescription>
             </div>
-
             <div>
               <TileTitle>Contribute</TileTitle>
               <TileDescription>
@@ -222,18 +201,6 @@ const HomePage = (props) => {
               </TileDescription>
             </div>
           </TileContainer>
-
-          <RectangleTile light={light}>
-            <TileTitle>Mozilla Partnership</TileTitle>
-            <TileDescription>
-              BUGS is a member of the Open Source Student Network, a network of
-              university clubs and students that share the belief that open
-              source software is the engine that powers innovation NYU BUGS is
-              the open source club at NYU. We promote open source by engaging
-              students through collaborative projects, hosting industry
-              professions, and running open source workshops
-            </TileDescription>
-          </RectangleTile>
         </MainPage>
       </PageContainer>
     </MainContainer>
