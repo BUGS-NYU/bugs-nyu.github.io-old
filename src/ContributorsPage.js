@@ -128,7 +128,7 @@ const LeftContainer = styled.div`
   position: relative;
   background-color: inherit;
   width: 50%;
-  left: -15.5%;
+  left: -15%;
 
   &::after {
     content: "";
@@ -263,8 +263,7 @@ function parseDate(timestamp) {
   const timestr = new Date(date.setSeconds(0, 0)).toLocaleTimeString();
   const times = timestr.split(" ");
   const hour = times[0];
-  const minute = times[1];
-  return `${month}/${day}/${year} ${hour} ${minute}`;
+  return `${month}/${day}/${year} ${hour}`;
 }
 
 const ContributorsPage = (props) => {
@@ -313,7 +312,7 @@ const ContributorsPage = (props) => {
           const createdTime = schedgePR.created_at;
           const url = schedgePR["html_url"];
           const user = schedgePR.user.login;
-          if (!(`${user}-Schedge` in takenUsers)) {
+          if (!user.includes('dependabot') && !(`${user}-Schedge` in takenUsers)) {
             takenUsers[`${user}-Schedge`] = {};
             pullRequests.push({
               user: user,
@@ -329,7 +328,7 @@ const ContributorsPage = (props) => {
           const createdTime = webPR.created_at;
           const url = webPR["html_url"];
           const user = webPR.user.login;
-          if (!(`${user}-BUGSWebsite` in takenUsers)) {
+          if (!user.includes('dependabot') && !(`${user}-BUGSWebsite` in takenUsers)) {
             takenUsers[`${user}-BUGSWebsite`] = {};
             pullRequests.push({
               user: user,
@@ -345,7 +344,7 @@ const ContributorsPage = (props) => {
           const createdTime = webPR.created_at;
           const url = webPR["html_url"];
           const user = webPR.user.login;
-          if (!(`${user}-BUGSWebsite` in takenUsers)) {
+          if (!user.includes('dependabot') && !(`${user}-BUGSWebsite` in takenUsers)) {
             takenUsers[`${user}-BUGSWebsite`] = {};
             pullRequests.push({
               user: user,

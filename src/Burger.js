@@ -40,7 +40,7 @@ const Burger = (props) => {
     const {open, setOpen, light} = props
     return(
         <div>
-          <BurgerButton onClick={() => setOpen(!open)} open={open} light={light}>
+          <BurgerButton onClick={() => setOpen(!open)} open={open} setOpen={setOpen} light={light}>
             <span />
             <span />
             <span />

@@ -157,6 +157,7 @@ const ImageContainer = styled.div`
   box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
   border-radius: 50px;
   transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
 `;
 
 const Image = styled.img`
@@ -193,10 +194,8 @@ const NavBar = (props) => {
           <ContentContainer>
             <Content>
               <LeftContentContainer>
-                <ImageContainer>
-                  <div onClick={setPath("")}>
+                <ImageContainer onClick={setPath("")}>
                     {light ? <Image src={bugslogo} /> : <Image src={bugsLight} />}
-                  </div>
                 </ImageContainer>
               </LeftContentContainer>
               <RightContentContainer>

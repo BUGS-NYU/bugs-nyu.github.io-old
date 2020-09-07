@@ -7,8 +7,7 @@ import eshao from "./profiles/eshao.jpg";
 import khanhng from "./profiles/khanhng.jpg";
 import slin from "./profiles/slin.jpg";
 import eriche from "./profiles/eriche.jpg";
-import Eboard from './Eboard';
-
+import Eboard from "./Eboard";
 
 const scalein = keyframes`
   from {
@@ -81,37 +80,37 @@ const eboards = {
     image: slin,
     role: "Vice President",
     description:
-      "Samuel is a Junior at CAS majoring in Computer Science and Minoring in Web Design and Game Design. He was born and raised in Taiwan, but studied in Singapore for high school before coming to New York. He is a big foodie and enjoys trying foods from different cultures.",
+      "Samuel is a Senior at CAS majoring in Computer Science and minoring in Web Design and Game Design. He was born and raised in Taiwan, but studied in Singapore for high school before coming to New York. He is a big foodie and enjoys trying foods from different cultures.",
   },
   "Edmond Shao": {
     image: eshao,
     role: "Webmaster",
     description:
-      "Edmond is a Junior at CAS studying Computer Science and minoring in Business Studies. Aside from class, he likes cars, being a foodie and traveling.",
+      "Edmond is a Senior at CAS studying Computer Science and minoring in Business Studies. Aside from class, he likes cars, being a foodie and traveling.",
   },
   "Eric He": {
     image: eriche,
     role: "Secretary",
     description:
-      "Hi, this is Eric. I am currently a junior studying computer science and mathematics. I like to play basketball and listen to music and read about philosophy.",
+      "Eric is a Senior studying Computer Science and Mathematics. He likes to play basketball, listens to music and read about philosophy.",
   },
   "Khanh Nguyen": {
     image: khanhng,
     role: "Director of Communications",
     description:
-      "Sophomore from Vietnam studying Computer Science. BROCKHAMPTON is my all-time favorite boyband. Food and coding also fuels my existence. Outside of school, find me at Hanoi House",
+      "Khanh is a Junior from Vietnam studying Computer Science. BROCKHAMPTON is his all-time favorite boyband. Outside of school, find him at Hanoi House",
   },
   "Ami Nachiappan": {
     image: ana,
     role: "Event Coordinator",
     description:
-      "Junior from California studying Computer Science and minoring in Web Design. In her free time, she loves spending time with family, running, and of course, coding!",
+      "Ami is a Junior from California studying Computer Science and minoring in Web Design. In her free time, she loves spending time with family, running, and of course, coding!",
   },
   "Aaditya Mehta": {
     image: amehta,
     role: "Treasurer",
     description:
-      "A Junior studying Economics and Mathematics, Aaditya spends way too much time in Stern (#IAmStern). In his free time he likes to listen to music, take long walks, and read Econ papers, sometimes simultaneously.",
+      "Aaditya is a Junior studying Economics and Mathematics, Aaditya spends way too much time in Stern (#IAmStern). In his free time he likes to listen to music, take long walks, and read Econ papers, sometimes simultaneously.",
   },
   "Jiayue(Joanna) Zhang": {
     role: "Director of Marketing",
