@@ -68,7 +68,6 @@ const Menu = (props) => {
       history.push(`/${param}`);
       setOpen(false);
       setCurrent(param);
-      history.go(0);
     };
   };
 
