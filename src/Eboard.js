@@ -95,14 +95,16 @@ const Image = styled.img`
 
 const Eboard = (props) => {
     const { name, role, image, description } = props;
+
     return (
       <EboardContainer>
         <Image src={image} />
+
         <Title>
-          {" "}
           {name}
-          <SubTitle> {role} </SubTitle>
+          <SubTitle>{role}</SubTitle>
         </Title>
+
         <DescriptionContainer>
           <Description>{description}</Description>
         </DescriptionContainer>
