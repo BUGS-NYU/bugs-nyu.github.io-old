@@ -1,7 +1,6 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {useHistory} from 'react-router-dom';
 import styled, {keyframes} from "styled-components";
-
 import Burger from "./Burger";
 import bugslogo from "./logo/bugs.png";
 import bugsLight from "./logo/bugs_light.png";
@@ -215,13 +214,46 @@ const WideNavBar = (props) => {
   </>);
 };
 
+const NavBarWrapper = ({ logo, rightContent, menu, open }) => {
+  return (
+    <div>
+      <Header>
+        <HeaderWrapper open={open}>
+          <ContentContainer>
+            <Content>
+              <LeftContentContainer>
+                {logo}
+              </LeftContentContainer>
+
+              <RightContentContainer>
+                {rightContent}
+              </RightContentContainer>
+            </Content>
+          </ContentContainer>
+        </HeaderWrapper>
+      </Header>
+      {menu}
+    </div>
+  );
+};
+
 const NavBar = (props) => {
   const { theme } = props;
   const history = useHistory();
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState("");
-  const width = window.innerWidth;
+  const [width, setWidth] = useState(window.innerWidth);
   const light = theme === "light";
+  const CUTOFF = 768;
+
+  useEffect(() => {
+     const handleResize = () => { setWidth(window.innerWidth); };
+
+    window.addEventListener('resize', handleResize);
+
+    return (x) => { window.removeEventListener('resize', handleResize); };
+  })
+
 
   const setPath = (param) => {
     return (e) => {
@@ -232,29 +264,21 @@ const NavBar = (props) => {
     };
   };
 
-  return (
-    <div>
-      <Header>
-        <HeaderWrapper open={open}>
-          <ContentContainer>
-            <Content>
-              <LeftContentContainer>
-                <ImageContainer onClick={setPath("")}>
-                    {light ? <Image src={bugslogo} /> : <Image src={bugsLight} />}
-                </ImageContainer>
-              </LeftContentContainer>
-              <RightContentContainer>
-                {width <= 768 ? (
-                  <Burger open={open} setOpen={setOpen} />
-                ) : (<WideNavBar light={light} current={current} setPath={setPath} />)}
-              </RightContentContainer>
-            </Content>
-          </ContentContainer>
-        </HeaderWrapper>
-      </Header>
-      {width <= 768 ? (<Menu open={open} setOpen={setOpen} />) : (<div />)}
-    </div>
+  const logo = (
+    <ImageContainer onClick={setPath("")}>
+      {light ? <Image src={bugslogo} /> : <Image src={bugsLight} />}
+    </ImageContainer>
   );
+
+  const rightContent = width <= CUTOFF ?
+    (<Burger open={open} setOpen={setOpen} />)
+  : (<WideNavBar light={light} current={current} setPath={setPath} />);
+
+  const menu = width <= CUTOFF ?
+    (<Menu open={open} setOpen={setOpen} />)
+  : (<div />);
+
+  return (<NavBarWrapper logo={logo} open={open} rightContent={rightContent} menu={menu} />);
 };
 
 export default NavBar;
