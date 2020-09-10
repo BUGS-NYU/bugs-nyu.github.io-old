@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import React, {useState} from "react";
+import {useHistory} from 'react-router-dom';
+import styled, {keyframes} from "styled-components";
+
 import Burger from "./Burger";
-import Menu from "./Menu";
 import bugslogo from "./logo/bugs.png";
 import bugsLight from "./logo/bugs_light.png";
-import { useHistory } from 'react-router-dom';
 import githublogo from "./logo/GitHub-Mark-Light-32px.png";
 import maillogo from "./logo/mail-32.png";
+import Menu from "./Menu";
+
 const scalein = keyframes`
   from {
     transform: scale(0.9)
@@ -44,7 +46,7 @@ const HeaderWrapper = styled.div`
   transition: background 300ms ease-in-out 0s, padding 140ms ease-in-out,
     transform 140ms ease-in-out 140ms;
   background-color: transparent !important;
-  padding: ${({ open }) => (open ? "0 0 50px 0" : "0")};
+  padding: ${({open}) => (open ? "0 0 50px 0" : "0")};
 `;
 
 const ContentContainer = styled.div`
@@ -104,7 +106,7 @@ const NavItem = styled.div`
   position: relative;
   display: inline-block;
   animation: ${scalein} 1s;
-  font-weight: ${({ current }) => (current ? "900" : "")};
+  font-weight: ${({current}) => (current ? "900" : "")};
 
   &::before {
     content: "";
@@ -113,7 +115,7 @@ const NavItem = styled.div`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: ${({ light }) => (light ? "purple" : "white")};
+    background-color: ${({light}) => (light ? "purple" : "white")};
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
@@ -171,6 +173,48 @@ const Image = styled.img`
   }
 `;
 
+const WideNavBar = (props) => {
+  const { light, current, setPath } = props;
+
+  return (<>
+    <HeaderNavWrapper>
+      <NavList>
+        <NavItem light={light} current={current === "team"} >
+          <Link href="" onClick={setPath("team")}>Team</Link>
+        </NavItem>
+
+        <NavItem light={light} current={current === "contributors"} >
+          <Link href="" onClick={setPath("contributors")}>Contributors</Link>
+        </NavItem>
+
+        <NavItem light={light} current={current === "alumni"} >
+          <Link href="" onClick={setPath("alumni")}>Alumni</Link>
+        </NavItem>
+
+        <NavItem light={light} current={current === "projects"} >
+          <Link href="" onClick={setPath("projects")}>Projects</Link>
+        </NavItem>
+
+        <NavItem light={light} current={current === "events"} >
+          <Link href="" onClick={setPath("events")}>Events</Link>
+        </NavItem>
+
+        <NavItem light={light}>
+          <Link href="http://bit.ly/bugsnewsletter">Join Us</Link>
+        </NavItem>
+      </NavList>
+    </HeaderNavWrapper>
+    <LogosContainer>
+      <Logo href="https://github.com/BUGS-NYU" light={light}>
+        <img src={githublogo} alt="github logo"></img>
+      </Logo>
+      <Logo href="mailto:bugsnyu@gmail.com" light={light}>
+        <img src={maillogo} alt="mail logo" />
+      </Logo>
+    </LogosContainer>
+  </>);
+};
+
 const NavBar = (props) => {
   const { theme } = props;
   const history = useHistory();
@@ -183,6 +227,7 @@ const NavBar = (props) => {
     return (e) => {
       e.preventDefault();
       history.push(`/${param}`);
+      setOpen(false);
       setCurrent(param);
     };
   };
@@ -201,54 +246,13 @@ const NavBar = (props) => {
               <RightContentContainer>
                 {width <= 768 ? (
                   <Burger open={open} setOpen={setOpen} />
-                ) : (
-                  <>
-                    <HeaderNavWrapper>
-                      <NavList>
-
-                        <NavItem light={light} current={current === "teams"} >
-                          <Link href="" onClick={setPath("teams")}>Teams</Link>
-                        </NavItem>
-
-                        <NavItem light={light} current={current === "contributors"} >
-                          <Link href="" onClick={setPath("contributors")}>Contributors</Link>
-                        </NavItem>
-
-                        <NavItem light={light} current={current === "alumni"} >
-                          <Link href="" onClick={setPath("alumni")}>Alumni</Link>
-                        </NavItem>
-
-                        <NavItem light={light} current={current === "projects"} >
-                          <Link href="" onClick={setPath("projects")}>Projects</Link>
-                        </NavItem>
-
-                        <NavItem light={light} current={current === "events"} >
-                          <Link href="" onClick={setPath("events")}>Events</Link>
-                        </NavItem>
-
-                        <NavItem light={light}>
-                          <Link href="http://bit.ly/bugsnewsletter">
-                            Join Us
-                          </Link>
-                        </NavItem>
-                      </NavList>
-                    </HeaderNavWrapper>
-                    <LogosContainer>
-                      <Logo href="https://github.com/BUGS-NYU" light={light}>
-                        <img src={githublogo} alt="github logo"></img>
-                      </Logo>
-                      <Logo href="mailto:bugsnyu@gmail.com" light={light}>
-                        <img src={maillogo} alt="mail logo" />
-                      </Logo>
-                    </LogosContainer>
-                  </>
-                )}
+                ) : (<WideNavBar light={light} current={current} setPath={setPath} />)}
               </RightContentContainer>
             </Content>
           </ContentContainer>
         </HeaderWrapper>
       </Header>
-      {width <= 768 ? <Menu open={open} /> : <div />}
+      {width <= 768 ? (<Menu open={open} setOpen={setOpen} />) : (<div />)}
     </div>
   );
 };

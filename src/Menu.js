@@ -59,13 +59,14 @@ const Logo = styled.a`
 `;
 
 const Menu = (props) => {
-  const { open } = props;
+  const { open, setOpen } = props;
   const [current, setCurrent] = useState("");
   const history = useHistory();
   const setPath = (param) => {
     return (e) => {
       e.preventDefault();
       history.push(`/${param}`);
+      setOpen(false);
       setCurrent(param);
       history.go(0);
     };
@@ -74,31 +75,36 @@ const Menu = (props) => {
   return (
     <StyledMenu open={open}>
       <LinksContainer>
-        <LinkWrapper current={current === "teams"}>
-          <Link href="" onClick={setPath("teams")}>
-            Teams
+        <LinkWrapper current={current === "team"}>
+          <Link href="" onClick={setPath("team")}>
+            Team
           </Link>
         </LinkWrapper>
+
         <LinkWrapper current={current === "contributors"}>
           <Link href="" onClick={setPath("contributors")}>
             Contributors
           </Link>
         </LinkWrapper>
+
         <LinkWrapper current={current === "alumni"}>
           <Link href="" onClick={setPath("alumni")}>
             Alumni
           </Link>
         </LinkWrapper>
+
         <LinkWrapper current={current === "projects"}>
           <Link href="" onClick={setPath("projects")}>
             Projects
           </Link>
         </LinkWrapper>
+
         <LinkWrapper current={current === "events"}>
           <Link href="" onClick={setPath("events")}>
             Events
           </Link>
         </LinkWrapper>
+
         <LogoContainer>
           <Logo href="https://github.com/BUGS-NYU">
             <img src={githublogo} alt="github logo" />

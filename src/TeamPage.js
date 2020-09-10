@@ -74,7 +74,7 @@ const eboards = {
     image: aliu,
     role: "President",
     description:
-      "Albert enjoys python scripting and long walks in Central Park. In his work time he majors in Computer Science at CAS.",
+      "Albert majors in Computer Science at CAS. In the past, he's worked on Schedge, an API for NYU course data, as well as HumanToHuman, an application to help researchers study human interaction patterns. In his free time he enjoys going on long walks and taking longer naps.",
   },
   "Samuel Lin": {
     image: slin,
@@ -104,18 +104,18 @@ const eboards = {
     image: ana,
     role: "Event Coordinator",
     description:
-      "Ami is a Junior from California studying Computer Science and minoring in Web Design. In her free time, she loves spending time with family, running, and of course, coding!",
+      "Ami is a Senior from California studying Computer Science and minoring in Web Design. In her free time, she loves spending time with family, running, and of course, coding!",
   },
   "Aaditya Mehta": {
     image: amehta,
     role: "Treasurer",
     description:
-      "Aaditya is a Junior studying Economics and Mathematics, Aaditya spends way too much time in Stern (#IAmStern). In his free time he likes to listen to music, take long walks, and read Econ papers, sometimes simultaneously.",
+      "Aaditya is a Senior studying Economics and Mathematics, Aaditya spends way too much time in Stern (#IAmStern). In his free time he likes to listen to music, take long walks, and read Econ papers, sometimes simultaneously.",
   },
   "Jiayue(Joanna) Zhang": {
     role: "Director of Marketing",
     description:
-      "Jiayue (Joanna) Zhang is a Junior majoring in Mathematics and Computer Science in CAS. Intellectual challenges of her school work bring her either joy or existential crises; in most cases math the latter and CS the former. One thing she loves about NYC is that performances of her favorite artists are usually only a subway ride away from school. Her guilty pleasure is taking mahjong breaks at Bobst.",
+      "Jiayue (Joanna) Zhang is a Senior majoring in Mathematics and Computer Science in CAS. Intellectual challenges of her school work bring her either joy or existential crises; in most cases math the latter and CS the former. One thing she loves about NYC is that performances of her favorite artists are usually only a subway ride away from school. Her guilty pleasure is taking mahjong breaks at Bobst.",
   },
 };
 

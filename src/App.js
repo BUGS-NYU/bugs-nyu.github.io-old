@@ -19,7 +19,7 @@ const App = () => {
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   if (!componentMounted) {
-    return <div />;
+    return (<div />);
   }
 
   return (
@@ -30,12 +30,8 @@ const App = () => {
           <NavBar theme={theme} />
           <Switch>
             <Route exact path="/" render={() => <HomePage theme={theme} />} />
-            <Route
-              exact
-              path="/projects"
-              render={() => <ProjectsPage theme={theme} />}
-            />
-            <Route exact path="/teams" component={TeamPage} />
+            <Route exact path="/projects" render={() => <ProjectsPage theme={theme} />} />
+            <Route exact path="/team" component={TeamPage} />
             <Route exact path="/alumni" component={AlumniPage} />
             <Route
               exact
