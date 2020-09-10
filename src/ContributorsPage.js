@@ -272,110 +272,72 @@ const ContributorsPage = (props) => {
   const light = theme === "light";
 
   useEffect(() => {
-    async function fetchData() {
+    const pullRequests = [];
+    const takenUsers = {};
+
+    const fetchData = async (url, name) => {
       try {
-        const webresp = await fetch(
-          "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=closed"
-        );
-        const openWebResp = await fetch(
-          "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=open"
-        );
-        const schedgeresp = await fetch(
-          "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=closed"
-        );
-        const openSchedgeResp = await fetch(
-          "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=open"
-        );
-        const webJSON = await webresp.json();
-        const schedgeJSON = await schedgeresp.json();
-        const openWebJSON = await openWebResp.json();
-        const openSchedgeJSON = await openSchedgeResp.json();
-        const pullRequests = [];
-        const takenUsers = {};
-        openSchedgeJSON.forEach((schedgePR) => {
-          const createdTime = schedgePR.created_at;
-          const url = schedgePR["html_url"];
-          const user = schedgePR.user.login;
-          if (!(`${user}-Schedge` in takenUsers)) {
-            takenUsers[`${user}-Schedge`] = {};
-            pullRequests.push({
-              user: user,
-              url: url,
-              timestamp: parseDate(createdTime),
-              name: "Schedge",
-              text: `${user} made a Pull Request to Schedge!`,
-            });
-          }
-        });
+        const data = await fetch(url);
+        const json = await data.json();
 
-        schedgeJSON.forEach((schedgePR) => {
-          const createdTime = schedgePR.created_at;
-          const url = schedgePR["html_url"];
-          const user = schedgePR.user.login;
-          if (!user.includes('dependabot') && !(`${user}-Schedge` in takenUsers)) {
-            takenUsers[`${user}-Schedge`] = {};
-            pullRequests.push({
-              user: user,
-              url: url,
-              timestamp: parseDate(createdTime),
-              name: "Schedge",
-              text: `${user} made a Pull Request to Schedge!`,
-            });
-          }
-        });
+        json.forEach((item) => {
+          const createdTime = item.created_at;
+          const prURL = item["html_url"];
+          const user = item.user.login;
 
-        openWebJSON.forEach((webPR) => {
-          const createdTime = webPR.created_at;
-          const url = webPR["html_url"];
-          const user = webPR.user.login;
-          if (!user.includes('dependabot') && !(`${user}-BUGSWebsite` in takenUsers)) {
-            takenUsers[`${user}-BUGSWebsite`] = {};
-            pullRequests.push({
-              user: user,
-              url: url,
-              timestamp: parseDate(createdTime),
-              name: "BUGS website",
-              text: `${user} made a Pull Request to BUGS website!`,
-            });
-          }
-        });
+          if (user.includes('dependabot'))
+            return;
 
-        webJSON.forEach((webPR) => {
-          const createdTime = webPR.created_at;
-          const url = webPR["html_url"];
-          const user = webPR.user.login;
-          if (!user.includes('dependabot') && !(`${user}-BUGSWebsite` in takenUsers)) {
-            takenUsers[`${user}-BUGSWebsite`] = {};
-            pullRequests.push({
-              user: user,
-              url: url,
-              timestamp: parseDate(createdTime),
-              name: "BUGS website",
-              text: `${user} made a Pull Request to BUGS website!`,
-            });
-          }
-        });
+          const userKey = `${user}-${name}`;
+          if (userKey in takenUsers)
+            return;
 
-        const sortedPullRequests = pullRequests.sort((a, b) => {
-          let dateA = new Date(a.timestamp);
-          let dateB = new Date(b.timestamp);
-          return dateB - dateA;
+          takenUsers[userKey] = true;
+          pullRequests.push({
+            user: user,
+            url: prURL,
+            timestamp: parseDate(createdTime),
+            name: name,
+            text: `${user} made a Pull Request to ${name}!`,
+          });
         });
-
-        sortedPullRequests.unshift({
-          timestamp: "NOW",
-          url: "https://github.com/BUGS-NYU",
-          user: "",
-          text: `Make this your contribution!`,
-        });
-
-        setPRList(sortedPullRequests);
-      } catch (error) {
-        console.log(error);
-        setPRList([]);
+      } catch (e) {
+        console.log(e);
       }
-    }
-    fetchData();
+    };
+
+    const promises = [fetchData(
+      "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=closed", "the BUGS Website"
+    ), fetchData(
+      "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=open", "the BUGS website"
+    ), fetchData(
+      "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=closed", "Schedge"
+    ), fetchData(
+      "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=open", "Schedge"
+    )];
+
+    const finishFetch = async () => {
+      for (let index = 0; index < promises.length; index++) {
+        await promises[index];
+      }
+
+      const sortedPullRequests = pullRequests.sort((a, b) => {
+        let dateA = new Date(a.timestamp);
+        let dateB = new Date(b.timestamp);
+        return dateB - dateA;
+      });
+
+      sortedPullRequests.unshift({
+        timestamp: "NOW",
+        url: "https://github.com/BUGS-NYU",
+        user: "",
+        text: `Make this your contribution!`,
+      });
+
+      setPRList(sortedPullRequests);
+    };
+
+    finishFetch();
   }, []);
 
   return (
