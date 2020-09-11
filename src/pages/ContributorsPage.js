@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
+import { heapNew, heapLength, heapPush, heapPop } from "../utils/heap";
 
 const scalein = keyframes`
   from {
@@ -272,72 +273,84 @@ const ContributorsPage = ({ theme }) => {
 
   // ? Can we fix this. It is a mess... Answer: Maybe???
   useEffect(() => {
-    const pullRequests = [];
-    const takenUsers = {};
-
     const fetchData = async (url, name) => {
-      try {
-        const data = await fetch(url);
-        const json = await data.json();
-
-        json.forEach((item) => {
-          const createdTime = item.created_at;
-          const prURL = item["html_url"];
-          const user = item.user.login;
-
-          if (user.includes("dependabot")) return;
-
-          const userKey = `${user}-${name}`;
-          if (userKey in takenUsers) return;
-
-          takenUsers[userKey] = true;
-          pullRequests.push({
-            user: user,
-            url: prURL,
-            timestamp: parseDate(createdTime),
-            name: name,
-            text: `${user} made a Pull Request to ${name}!`,
-          });
-        });
-      } catch (e) {
-        console.log(e);
-      }
+      const data = await fetch(url);
+      return [await data.json(), name, 0];
     };
 
     const promises = [
       fetchData(
-        "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=closed",
+        "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=closed&sort=created&direction=DESC",
         "the BUGS Website"
       ),
       fetchData(
-        "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/pulls?state=open",
-        "the BUGS website"
-      ),
-      fetchData(
-        "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=closed",
+        "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=closed&sort=created&direction=DESC",
         "Schedge"
       ),
       fetchData(
-        "https://api.github.com/repos/BUGS-NYU/schedge/pulls?state=open",
-        "Schedge"
+        "https://api.github.com/repos/BUGS-NYU/freshman-schedge-generator/pulls?state=closed&sort=created&direction=DESC",
+        "Alberta"
       ),
     ];
 
-    (async () => {
-      await Promise.all(promises);
+    const comp = (a, b) => {
+      /* eslint-disable no-unused-vars */
+      const [aData, _a, aIdx] = a;
+      const [bData, _b, bIdx] = b;
+      /* eslint-enable no-unused-vars */
 
-      const sortedPullRequests = pullRequests.sort(
-        (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+      return (
+        new Date(bData[bIdx].created_at) - new Date(aData[aIdx].created_at)
       );
+    };
 
-      sortedPullRequests.unshift({
+    (async () => {
+      const data = await Promise.all(promises);
+      const heap = heapNew(comp);
+
+      data.forEach((item) => {
+        heapPush(heap, item);
+      });
+
+      const pullRequests = [];
+      while (heapLength(heap) > 0) {
+        const [data, project, idx] = heapPop(heap);
+        const item = data[idx];
+        console.log(item.user);
+
+        if (item.merged_at === undefined) {
+          if (idx + 1 < data.length) heapPush(heap, [data, project, idx + 1]);
+          continue;
+        }
+
+        const user = item.user.login;
+        if (user.includes("dependabot")) {
+          if (idx + 1 < data.length) heapPush(heap, [data, project, idx + 1]);
+          continue;
+        }
+
+        const createdTime = item.created_at;
+        const prURL = item["html_url"];
+
+        pullRequests.push({
+          user: user,
+          url: prURL,
+          timestamp: parseDate(createdTime),
+          name: project,
+          text: `${user} merged a Pull Request into ${project}!`,
+        });
+
+        if (idx + 1 < data.length) heapPush(heap, [data, project, idx + 1]);
+      }
+
+      pullRequests.unshift({
         timestamp: "NOW",
         url: "https://github.com/BUGS-NYU",
         user: "",
         text: "Make this your contribution!",
       });
 
-      setPRList(sortedPullRequests);
+      setPRList(pullRequests);
     })();
   }, []);
 
