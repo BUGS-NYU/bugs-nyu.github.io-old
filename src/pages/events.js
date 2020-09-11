@@ -8,7 +8,8 @@ const googleCalendar =
   "https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23f2f2f2&ctz=America%2FNew_York&src=MXJnMXZhOGhpamttNzMydGE0ajQ0bGJjaDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%239E69AF&showTitle=0&showPrint=0&showCalendars=0&showTabs=0&showDate=0";
 
 const EventPage = () => {
-  const width = window.innerWidth;
+  const isServer = typeof window === "undefined";
+
   return (
     <Layout>
       <SEO title="Events" />
@@ -18,7 +19,9 @@ const EventPage = () => {
             <ResponsiveCalc>
               <Calendar
                 src={
-                  width <= 786
+                  isServer
+                    ? `${googleCalendar}&mode=AGENDA`
+                    : window.innerWidth <= 786
                     ? `${googleCalendar}&mode=AGENDA`
                     : googleCalendar
                 }
