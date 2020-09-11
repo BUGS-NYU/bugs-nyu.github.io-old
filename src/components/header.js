@@ -10,8 +10,9 @@ import githublogo from "../images/logo/GitHub-Mark-Light-32px.png";
 import maillogo from "../images/logo/mail-32.png";
 
 const NavBar = () => {
+  const isServer = typeof window === "undefined";
+  const [width, setWidth] = useState(isServer ? "1080" : window.innerWidth);
   const [open, setOpen] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
 
   const CUTOFF = 768;
 
