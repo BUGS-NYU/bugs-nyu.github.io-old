@@ -16,18 +16,6 @@ import { lightTheme, darkTheme } from "./utils/theme";
 import { GlobalStyles } from "./utils/global";
 import { useDarkMode } from "./utils/useDarkMode";
 
-// const gradient = keyframes`
-//   0% {
-//     background-position: 0% 50%;
-//   }
-//   50% {
-//     background-position: 100% 50%;
-//   }
-//   100% {
-//     background-position: 0% 50%;
-//   }
-// `;
-
 const App = () => {
   const [theme, toggleTheme, componentMounted] = useDarkMode();
 
