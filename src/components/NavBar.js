@@ -250,7 +250,6 @@ const NavBar = ({ theme }) => {
   const history = useHistory();
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState(window.location.hash.substring(2));
-  console.log(current);
   const [width, setWidth] = useState(window.innerWidth);
 
   const light = theme === "light";
