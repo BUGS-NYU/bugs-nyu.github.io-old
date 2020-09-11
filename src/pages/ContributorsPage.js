@@ -294,10 +294,10 @@ const ContributorsPage = ({ theme }) => {
     ];
 
     const comp = (a, b) => {
-      /* eslint-disable no-unused-vars */
-      const [aData, _a, aIdx] = a;
-      const [bData, _b, bIdx] = b;
-      /* eslint-enable no-unused-vars */
+      const aData = a[0],
+        aIdx = a[2];
+      const bData = b[0],
+        bIdx = b[2];
 
       return (
         new Date(bData[bIdx].created_at) - new Date(aData[aIdx].created_at)
@@ -308,23 +308,21 @@ const ContributorsPage = ({ theme }) => {
       const data = await Promise.all(promises);
       const heap = heapNew(comp);
 
-      data.forEach((item) => {
-        heapPush(heap, item);
-      });
+      data.forEach((item) => heapPush(heap, item));
 
       const pullRequests = [];
       while (heapLength(heap) > 0) {
-        const [data, project, idx] = heapPop(heap);
-        const item = data[idx];
+        const [pData, project, idx] = heapPop(heap);
+        const item = pData[idx];
 
         if (item.merged_at === undefined) {
-          if (idx + 1 < data.length) heapPush(heap, [data, project, idx + 1]);
+          if (idx + 1 < pData.length) heapPush(heap, [pData, project, idx + 1]);
           continue;
         }
 
         const user = item.user.login;
         if (user.includes("dependabot")) {
-          if (idx + 1 < data.length) heapPush(heap, [data, project, idx + 1]);
+          if (idx + 1 < pData.length) heapPush(heap, [pData, project, idx + 1]);
           continue;
         }
 
@@ -339,7 +337,7 @@ const ContributorsPage = ({ theme }) => {
           text: `${user} merged a Pull Request into ${project}!`,
         });
 
-        if (idx + 1 < data.length) heapPush(heap, [data, project, idx + 1]);
+        if (idx + 1 < pData.length) heapPush(heap, [pData, project, idx + 1]);
       }
 
       pullRequests.unshift({
@@ -371,7 +369,7 @@ const ContributorsPage = ({ theme }) => {
             </Title>
             {PRList.length !== 0 ? (
               <Timeline>
-                {Object.entries(PRList).map(([index, PR]) => {
+                {PRList.map((PR, index) => {
                   if (index % 2 === 0) {
                     return (
                       <LeftContainer key={PR.url} light={light}>
