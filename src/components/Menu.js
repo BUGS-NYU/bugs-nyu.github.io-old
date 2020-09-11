@@ -1,9 +1,56 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import { Link } from "gatsby";
 
-import githublogo from "../assets/logo/GitHub-Mark-Light-32px.png";
-import maillogo from "../assets/logo/mail-32.png";
+import githublogo from "../images/logo/GitHub-Mark-Light-32px.png";
+import maillogo from "../images/logo/mail-32.png";
+
+const Menu = ({ open }) => {
+  return (
+    <StyledMenu open={open}>
+      <LinksContainer>
+        <LinkWrapper>
+          <MenuLink to="/team" activeClassName="active">
+            Team
+          </MenuLink>
+        </LinkWrapper>
+
+        <LinkWrapper>
+          <MenuLink to="/contributors" activeClassName="active">
+            Contributors
+          </MenuLink>
+        </LinkWrapper>
+
+        <LinkWrapper>
+          <MenuLink to="/alumni" activeClassName="active">
+            Alumni
+          </MenuLink>
+        </LinkWrapper>
+
+        <LinkWrapper>
+          <MenuLink to="/projects" activeClassName="active">
+            Projects
+          </MenuLink>
+        </LinkWrapper>
+
+        <LinkWrapper>
+          <MenuLink to="/events" activeClassName="active">
+            Events
+          </MenuLink>
+        </LinkWrapper>
+
+        <LogoContainer>
+          <Logo href="https://github.com/BUGS-NYU">
+            <img src={githublogo} alt="github logo" />
+          </Logo>
+          <Logo href="mailto:bugsnyu@gmail.com">
+            <img src={maillogo} alt="mail logo" />
+          </Logo>
+        </LogoContainer>
+      </LinksContainer>
+    </StyledMenu>
+  );
+};
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -38,7 +85,7 @@ const LinkWrapper = styled.nav`
   font-size: 1.8rem;
 `;
 
-const Link = styled.a`
+const MenuLink = styled(Link)`
   display: block;
   color: #fff;
   text-decoration: none;
@@ -58,64 +105,5 @@ const Logo = styled.a`
   margin: 0px 10px 0 0;
   display: block;
 `;
-
-const Menu = ({ open, setOpen }) => {
-  const [current, setCurrent] = useState("");
-  const history = useHistory();
-
-  const setPath = (param) => {
-    return (e) => {
-      e.preventDefault();
-      history.push(`/${param}`);
-      setOpen(false);
-      setCurrent(param);
-    };
-  };
-
-  return (
-    <StyledMenu open={open}>
-      <LinksContainer>
-        <LinkWrapper current={current === "team"}>
-          <Link href="" onClick={setPath("team")}>
-            Team
-          </Link>
-        </LinkWrapper>
-
-        <LinkWrapper current={current === "contributors"}>
-          <Link href="" onClick={setPath("contributors")}>
-            Contributors
-          </Link>
-        </LinkWrapper>
-
-        <LinkWrapper current={current === "alumni"}>
-          <Link href="" onClick={setPath("alumni")}>
-            Alumni
-          </Link>
-        </LinkWrapper>
-
-        <LinkWrapper current={current === "projects"}>
-          <Link href="" onClick={setPath("projects")}>
-            Projects
-          </Link>
-        </LinkWrapper>
-
-        <LinkWrapper current={current === "events"}>
-          <Link href="" onClick={setPath("events")}>
-            Events
-          </Link>
-        </LinkWrapper>
-
-        <LogoContainer>
-          <Logo href="https://github.com/BUGS-NYU">
-            <img src={githublogo} alt="github logo" />
-          </Logo>
-          <Logo href="mailto:bugsnyu@gmail.com">
-            <img src={maillogo} alt="mail logo" />
-          </Logo>
-        </LogoContainer>
-      </LinksContainer>
-    </StyledMenu>
-  );
-};
 
 export default Menu;

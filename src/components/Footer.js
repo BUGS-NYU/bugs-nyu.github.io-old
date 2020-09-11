@@ -1,6 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import "../styles/ToggleButton.css";
+
+import { ThemeContext } from "./themeContext";
+import Toggle from "./toggle";
+
+const Footer = () => {
+  const { colorMode, setColorMode } = React.useContext(ThemeContext);
+
+  return (
+    <FooterContainer>
+      <FooterSectionContainer>
+        <Toggle
+          theme={colorMode}
+          onToggle={ev => {
+            setColorMode(ev.target.checked ? "dark" : "light");
+          }}
+        />
+      </FooterSectionContainer>
+    </FooterContainer>
+  );
+};
 
 const FooterContainer = styled.footer`
   margin-top: auto;
@@ -19,22 +38,5 @@ const FooterSectionContainer = styled.section`
   bottom: 0;
   left: 0;
 `;
-
-const Footer = ({ open, setOpen }) => {
-  const theme = open === "dark";
-  return (
-    <FooterContainer>
-      <FooterSectionContainer>
-        <input
-          type="checkbox"
-          id="switch"
-          checked={theme}
-          onChange={() => setOpen(!open)}
-        />
-        <label htmlFor="switch">Toggle</label>
-      </FooterSectionContainer>
-    </FooterContainer>
-  );
-};
 
 export default Footer;

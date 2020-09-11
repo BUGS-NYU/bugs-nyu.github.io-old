@@ -1,5 +1,21 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import Img from "gatsby-image";
+
+const TeamMember = ({ name, role, images, description }) => {
+  return (
+    <EboardContainer>
+      {images && <Image fluid={images.childImageSharp.fluid} />}
+      <Title>
+        {name}
+        <SubTitle> {role} </SubTitle>
+      </Title>
+      <DescriptionContainer>
+        <Description>{description}</Description>
+      </DescriptionContainer>
+    </EboardContainer>
+  );
+};
 
 const fadein = keyframes`
   from {
@@ -56,14 +72,13 @@ const Title = styled.h2`
 
 const EboardContainer = styled.div`
   margin: 1vw;
-  grid-column: 1
   min-height: 40vh;
   height: 100%;
   background-color: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5px 60px 0px 60px;
+  padding: 5px 30px 0px 30px;
   animation: ${fadein} 1.5s;
   @media screen and (max-width: 768px) {
     padding: 0px 0px 0px 0px;
@@ -84,8 +99,8 @@ const SubTitle = styled.p`
   }
 `;
 
-const Image = styled.div`
-  width: 70%;
+const Image = styled(Img)`
+  width: 65%;
   object-fit: contain;
   animation: ${fadein} 1.5s;
 
@@ -98,27 +113,4 @@ const Image = styled.div`
   }
 `;
 
-const Eboard = ({ name, role, images, description }) => {
-  return (
-    <EboardContainer>
-      {images && (
-        <Image>
-          <picture>
-            <source type="image/webp" srcSet={images[1]} />
-            <source type="image/jpeg" srcSet={images[0]} />
-            <img src={images[0]} alt={name} />
-          </picture>
-        </Image>
-      )}
-      <Title>
-        {name}
-        <SubTitle> {role} </SubTitle>
-      </Title>
-      <DescriptionContainer>
-        <Description>{description}</Description>
-      </DescriptionContainer>
-    </EboardContainer>
-  );
-};
-
-export default Eboard;
+export default TeamMember;
