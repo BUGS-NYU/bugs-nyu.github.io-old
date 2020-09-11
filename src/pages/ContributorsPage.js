@@ -316,7 +316,6 @@ const ContributorsPage = ({ theme }) => {
       while (heapLength(heap) > 0) {
         const [data, project, idx] = heapPop(heap);
         const item = data[idx];
-        console.log(item.user);
 
         if (item.merged_at === undefined) {
           if (idx + 1 < data.length) heapPush(heap, [data, project, idx + 1]);
