@@ -1,17 +1,20 @@
 import React from "react";
-import HomePage from "./HomePage";
-import ProjectsPage from "./ProjectsPage";
-import TeamPage from "./TeamPage";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
-import AlumniPage from "./AlumniPage";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import ContributorsPage from "./ContributorsPage";
-import EventPage from "./EventPage";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./theme";
-import { GlobalStyles } from "./global";
-import { useDarkMode } from "./useDarkMode";
+
+import HomePage from "./pages/HomePage";
+import ProjectsPage from "./pages/ProjectsPage";
+import TeamPage from "./pages/TeamPage";
+import AlumniPage from "./pages/AlumniPage";
+import ContributorsPage from "./pages/ContributorsPage";
+import EventPage from "./pages/EventPage";
+
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
+import { lightTheme, darkTheme } from "./utils/theme";
+import { GlobalStyles } from "./utils/global";
+import { useDarkMode } from "./utils/useDarkMode";
 
 const App = () => {
   const [theme, toggleTheme, componentMounted] = useDarkMode();
@@ -35,7 +38,7 @@ const App = () => {
               path="/projects"
               render={() => <ProjectsPage theme={theme} />}
             />
-            <Route exact path="/teams" component={TeamPage} />
+            <Route exact path="/team" component={TeamPage} />
             <Route exact path="/alumni" component={AlumniPage} />
             <Route
               exact
