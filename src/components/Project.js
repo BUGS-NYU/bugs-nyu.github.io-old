@@ -1,11 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
-
-const slideleft = keyframes`
-  100% {
-    transform: translateX(0%);
-  }
-`;
+import styled from "styled-components";
 
 const ProjectContainer = styled.div`
   margin: 1vw;
@@ -18,8 +12,6 @@ const ProjectContainer = styled.div`
   box-shadow: 0px 0px 0px 3px #330662;
   align-items: center;
   padding: 5px 10px 10px 10px;
-  transform: ${({ odd }) => (odd ? "translateX(-100%)" : "translateX(100%)")};
-  animation: ${slideleft} 1s forwards;
   transition: all 0.2s linear;
 
   &:hover {
