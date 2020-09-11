@@ -5,13 +5,36 @@ import TeamPage from "./TeamPage";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import AlumniPage from "./AlumniPage";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import ContributorsPage from "./ContributorsPage";
 import EventPage from "./EventPage";
-import { ThemeProvider } from "styled-components";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { createGlobalStyle, keyframes, ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme";
-import { GlobalStyles } from "./global";
 import { useDarkMode } from "./useDarkMode";
+
+const gradient = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  }
+`
+
+export const GlobalStyles = createGlobalStyle`
+  body {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+    display: grid;
+    min-height: 100vh;
+    background-size: 400% 400%;
+    animation: ${gradient} 25s ease infinite;
+    overflow-x: hidden;
+  }`
 
 const App = () => {
   const [theme, toggleTheme, componentMounted] = useDarkMode();
