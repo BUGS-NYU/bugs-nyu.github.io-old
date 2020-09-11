@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-import Eboard from "../components/Eboard";
+import Eboard from "../components/TeamMember";
 
 // TODO: Find a better way to optimize image performance. May need to get rid of react scripts or switch to a ssg
 import aliu from "../assets/profiles/aliu.jpg";

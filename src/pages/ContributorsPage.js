@@ -323,16 +323,12 @@ const ContributorsPage = ({ theme }) => {
       ),
     ];
 
-    const finishFetch = async () => {
-      for (let index = 0; index < promises.length; index++) {
-        await promises[index];
-      }
+    (async () => {
+      await Promise.all(promises);
 
-      const sortedPullRequests = pullRequests.sort((a, b) => {
-        let dateA = new Date(a.timestamp);
-        let dateB = new Date(b.timestamp);
-        return dateB - dateA;
-      });
+      const sortedPullRequests = pullRequests.sort(
+        (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+      );
 
       sortedPullRequests.unshift({
         timestamp: "NOW",
@@ -342,9 +338,7 @@ const ContributorsPage = ({ theme }) => {
       });
 
       setPRList(sortedPullRequests);
-    };
-
-    finishFetch();
+    })();
   }, []);
 
   return (
