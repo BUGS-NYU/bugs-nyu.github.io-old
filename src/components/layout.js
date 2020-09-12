@@ -2,7 +2,7 @@ import React from "react";
 import { createGlobalStyle, keyframes } from "styled-components";
 
 import NavBar from "./header";
-import Footer from "./footer";
+import Footer from "./Footer";
 import { ThemeProvider } from "./themeContext";
 
 const Layout = ({ children }) => {
