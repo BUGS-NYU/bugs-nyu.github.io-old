@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Toggle = ({ theme, onToggle }) => {
+  if (!theme) return null;
+
   return (
     <>
       <Input
