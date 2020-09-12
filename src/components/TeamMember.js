@@ -107,10 +107,6 @@ const Image = styled(Img)`
   & img {
     width: 100%;
   }
-
-  @media screen and (max-width: 768px) {
-    width: 50%;
-  }
 `;
 
 export default TeamMember;
