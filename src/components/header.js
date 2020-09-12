@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import styled, { keyframes } from "styled-components";
 
-import Burger from "./burger";
+import Burger from "./Burger";
 import Menu from "./Menu";
 
 import BugsLogo from "../svgs/bugs.svg";
