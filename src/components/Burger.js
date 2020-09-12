@@ -51,5 +51,9 @@ const BurgerButton = styled.div`
       }
     }
   }
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
 `;
 export default Burger;
