@@ -197,9 +197,11 @@ const MainPage = styled.section`
   justify-items: stretch;
   align-items: baseline;
   margin-bottom: 5%;
+
   @media screen and (max-width: 1300px) {
+    margin-top: 0;
     padding-bottom: 10vh;
-    padding-top: 5vh;
+    padding-top: 12vh;
     flex-direction: column;
     align-items: center;
   }

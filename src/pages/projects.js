@@ -54,7 +54,8 @@ const MainDescriptionContainer = styled.section`
   justify-items: stretch;
 
   @media screen and (max-width: 768px) {
-    padding-top: 10vh;
+    margin-top: 0;
+    padding-top: 17vh;
     padding-bottom: 20vh;
   }
 `;
