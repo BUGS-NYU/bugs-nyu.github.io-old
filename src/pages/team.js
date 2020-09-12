@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import TeamMember from "../components/teamMember";
+import TeamMember from "../components/TeamMember";
 import team_data from "../data/team";
 
 const Team = ({ data }) => {
