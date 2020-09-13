@@ -74,17 +74,3 @@ export function heapPop(heap) {
   heapData.splice(heapData.length - 1, 1);
   return retValue;
 }
-
-// const heap = heapNew((a, b) => a - b);
-
-// heapPush(heap, 12);
-// heapPush(heap, 1);
-// heapPush(heap, -2);
-// heapPush(heap, 30);
-// heapPush(heap, 21);
-
-// console.log(heapPop(heap));
-// console.log(heapPop(heap));
-// console.log(heapPop(heap));
-// console.log(heapPop(heap));
-// console.log(heapPop(heap));

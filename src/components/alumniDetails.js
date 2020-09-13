@@ -1,6 +1,17 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
+const AlumniDetails = ({ name, description }) => {
+  return (
+    <AlumniContainer>
+      <Title> {name}</Title>
+      <DescriptionContainer>
+        <Description>{description}</Description>
+      </DescriptionContainer>
+    </AlumniContainer>
+  );
+};
+
 const DescriptionContainer = styled.div`
   width: 100%;
   text-align: center;
@@ -61,15 +72,4 @@ const AlumniContainer = styled.div`
   }
 `;
 
-const Alumni = ({ name, description }) => {
-  return (
-    <AlumniContainer>
-      <Title> {name}</Title>
-      <DescriptionContainer>
-        <Description>{description}</Description>
-      </DescriptionContainer>
-    </AlumniContainer>
-  );
-};
-
-export default Alumni;
+export default AlumniDetails;

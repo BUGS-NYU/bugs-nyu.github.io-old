@@ -1,68 +1,4 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
-
-import Alumni from "../components/Alumni";
-
-const fadein = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-
-const MainContainer = styled.div`
-  min-height: 100vh;
-  width: 100vw;
-`;
-
-const PageContainer = styled.article`
-  display: block;
-`;
-
-const MainDescriptionContainer = styled.section`
-  margin-top: 10%;
-  align-items: center;
-  min-height: 100vh;
-  padding-right: 15vw;
-  padding-bottom: 5vw;
-  padding-left: 15vw;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-gap: 20px;
-  justify-items: stretch;
-  margin-bottom: 5%;
-`;
-
-const AlumniTitleContainer = styled.div`
-  margin-top: 15%;
-  text-align: center;
-  @media screen and (max-width: 768px) {
-    margin-top: 18vh;
-  }
-`;
-
-const AlumniTitle = styled.h1`
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: 0em;
-  text-transform: none;
-  text-align: center;
-  line-height: 0.5;
-  font-size: calc(0vw + 4rem);
-  color: rgba(255, 255, 255, 0.7);
-  animation: ${fadein} 2s;
-  @media screen and (max-width: 768px) {
-    font-size: calc(1vw + 1.5rem);
-  }
-`;
-
-const BoldText = styled.strong`
-  color: white;
-`;
-
-const alumni = {
+export default {
   "Nadira Dewji": {
     role: "Founder",
     description:
@@ -76,7 +12,7 @@ const alumni = {
   "Ananditha Raghunath": {
     role: "Founder",
     description:
-      "Alunmi who studied Math and CS at Courant. Having started to code only after she arrived at NYU, she’s is excited to mentor new members that may not know how to make their ideas translate into tangible code based projects!",
+      "Alunmi who studied Math and CS at Courant. Having started to code only after she arrived at NYU, she is excited to mentor new members that may not know how to make their ideas translate into tangible code based projects!",
   },
   "Veena Arvind": {
     role: "",
@@ -114,31 +50,3 @@ const alumni = {
       "Alumni from Woodmere, New York studying Computer Science. Outside of BUGS, you can find him coaching hockey at a local high school.",
   },
 };
-
-const AlumniPage = () => {
-  return (
-    <MainContainer>
-      <PageContainer>
-        <AlumniTitleContainer>
-          <AlumniTitle>
-            Meet Our <BoldText>Alumni</BoldText>
-          </AlumniTitle>
-        </AlumniTitleContainer>
-        <MainDescriptionContainer>
-          {Object.entries(alumni).map(([name, values]) => {
-            return (
-              <Alumni
-                name={name}
-                role={values.role}
-                description={values.description}
-                key={name}
-              />
-            );
-          })}
-        </MainDescriptionContainer>
-      </PageContainer>
-    </MainContainer>
-  );
-};
-
-export default AlumniPage;

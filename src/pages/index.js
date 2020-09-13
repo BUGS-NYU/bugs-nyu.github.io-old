@@ -1,6 +1,58 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+
+const IndexPage = () => {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <MainContainer>
+        <PageContainer>
+          <MainPage>
+            <ContentWrapper>
+              <Wrapper>
+                <TitleContainer>
+                  <Title>
+                    NYU <BoldText>Open Source</BoldText> Club
+                  </Title>
+                </TitleContainer>
+              </Wrapper>
+            </ContentWrapper>
+            <TileContainer>
+              <div>
+                <TileTitle>Open Source</TileTitle>
+                <TileDescription>
+                  A form of licensing that celebrates open exchange,
+                  collaborative participation, transparency, and
+                  community-oriented development.
+                </TileDescription>
+              </div>
+              <div>
+                <TileTitle> Create</TileTitle>
+                <TileDescription>
+                  Build useful and fun projects with other club members to solve
+                  problems and learn. Collaborate with other clubs on and off
+                  campus.
+                </TileDescription>
+              </div>
+              <div>
+                <TileTitle>Contribute</TileTitle>
+                <TileDescription>
+                  If this is your first time contributing, take a look at the
+                  BUGS repository. Fork it, make pull requests, report issues
+                  and git good!!!
+                </TileDescription>
+              </div>
+            </TileContainer>
+          </MainPage>
+        </PageContainer>
+      </MainContainer>
+    </Layout>
+  );
+};
+
 const scalein = keyframes`
   from {
     transform: scale(0.9)
@@ -103,38 +155,25 @@ const TileContainer = styled.div`
     border-radius: 15px;
     justify-content: flex-start;
     animation: ${scalein} 1s;
-    box-shadow: ${({ light }) =>
-      light
-        ? "0px 0px 0px 5px #57068c"
-        : "0px 0px 0px 5px rgba(255, 255, 255, 0.7)"};
+    border: 5px solid var(--color-home-border);
     transition: all 0.2s linear;
+    padding: 0 20px 10px 20px;
 
     @media screen and (max-width: 768px) {
+      margin: 0 0 20px 0;
       min-height: 100%;
     }
 
     :first-child {
       grid-column: 1;
-      padding: 0 20px 10px 20px;
-      @media screen and (max-width: 768px) {
-        margin: 0 0 20px 0;
-      }
     }
 
     :nth-child(2) {
       grid-column: 2;
-      padding: 0 20px 10px 20px;
-      @media screen and (max-width: 768px) {
-        margin: 0 0 20px 0;
-      }
     }
 
     :nth-child(3) {
       grid-column: 3;
-      padding: 0 20px 10px 20px;
-      @media screen and (max-width: 768px) {
-        margin: 0 0 20px 0;
-      }
     }
   }
 `;
@@ -160,51 +199,4 @@ const TileDescription = styled.p`
   }
 `;
 
-const HomePage = ({ theme }) => {
-  const light = theme === "light";
-
-  return (
-    <MainContainer>
-      <PageContainer>
-        <MainPage>
-          <ContentWrapper>
-            <Wrapper>
-              <TitleContainer>
-                <Title>
-                  NYU <BoldText>Open Source</BoldText> Club
-                </Title>
-              </TitleContainer>
-            </Wrapper>
-          </ContentWrapper>
-          <TileContainer light={light}>
-            <div>
-              <TileTitle>Open Source</TileTitle>
-              <TileDescription>
-                A form of licensing that celebrates open exchange, collaborative
-                participation, transparency, and community-oriented development.
-              </TileDescription>
-            </div>
-            <div>
-              <TileTitle> Create</TileTitle>
-              <TileDescription>
-                Build useful and fun projects with other club members to solve
-                problems and learn. Collaborate with other clubs on and off
-                campus.
-              </TileDescription>
-            </div>
-            <div>
-              <TileTitle>Contribute</TileTitle>
-              <TileDescription>
-                If this is your first time contributing, take a look at the BUGS
-                repository. Fork it, make pull requests, report issues and git
-                good!!!
-              </TileDescription>
-            </div>
-          </TileContainer>
-        </MainPage>
-      </PageContainer>
-    </MainContainer>
-  );
-};
-
-export default HomePage;
+export default IndexPage;

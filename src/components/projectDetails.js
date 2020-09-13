@@ -1,5 +1,34 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const ProjectDetails = ({
+  title,
+  subtitle,
+  description,
+  link,
+  urlLink = "",
+}) => {
+  return (
+    <ProjectContainer>
+      <URLLink href={urlLink}>
+        <Title>{title}</Title>
+      </URLLink>
+      <SubTitle>{subtitle}</SubTitle>
+      <DescriptionContainer>
+        <Description>{description}</Description>
+      </DescriptionContainer>
+      <LinkContainer>
+        <URLLink href={`https://${link}`}>{link}</URLLink>
+      </LinkContainer>
+    </ProjectContainer>
+  );
+};
+
+const slideleft = keyframes`
+  100% {
+    transform: translateY(0%);
+  }
+`;
 
 const ProjectContainer = styled.div`
   margin: 1vw;
@@ -9,13 +38,15 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  box-shadow: 0px 0px 0px 3px #330662;
+  box-shadow: 0px 0px 0px 3px var(--color-home-border);
   align-items: center;
   padding: 5px 10px 10px 10px;
+  transform: translateY(10%);
+  animation: ${slideleft} 1s forwards;
   transition: all 0.2s linear;
 
   &:hover {
-    box-shadow: 0px 0px 0px 10px #330662;
+    box-shadow: 0px 0px 0px 10px var(--color-home-border);
   }
 
   @media screen and (max-width: 768px) {
@@ -82,31 +113,4 @@ const Title = styled.h1`
   color: white;
 `;
 
-const Project = ({
-  title,
-  subtitle,
-  description,
-  link,
-  urlLink,
-  odd,
-  light,
-}) => {
-  return (
-    <ProjectContainer odd={odd}>
-      <URLLink href={urlLink}>
-        <Title light={light}>{title}</Title>
-      </URLLink>
-      <SubTitle>{subtitle}</SubTitle>
-      <DescriptionContainer>
-        <Description>{description}</Description>
-      </DescriptionContainer>
-      <LinkContainer>
-        <URLLink href={`https://${link}`} light={light}>
-          {link}
-        </URLLink>
-      </LinkContainer>
-    </ProjectContainer>
-  );
-};
-
-export default Project;
+export default ProjectDetails;

@@ -1,114 +1,94 @@
+<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+
+![Bugs Logo](src/images/logo/bugs.gif)
+
 # bugs-nyu.github.io
 
 This is the website for BUGS, NYU's premier open source club
 
-### Contents
+## How to use Gatsby
 
-- [How to Contribute](#how-to-contribute)
+Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
-## How to Contribute
+_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
 
-### Adding Yourself as a Contributor
+### 🚀 Quick start
 
-1. Fork this repository
-2. Make a new markdown (filename ending with .md) document in the `/_contributors`
-   folder of your fork
-3. Follow [the template file](_contributors/.template.md) by including this at the top
-   with the correct information:
+1.  **Create a Gatsby site.**
 
-   ```yaml
-   ---
-   name: John Doe # Name of person
-   position: Really cool person # Position, only displayed if in eboard
-   type: eboard # Can be one of [ eboard, alum, founder, mentor, member ]
-   ---
-   Write something about yourself here.
-   ```
+    Use the Gatsby CLI to create a new site, specifying the default starter.
 
-4. Make a pull request to this repository
+    ```shell
+    # create a new Gatsby site using the default starter
+    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    ```
 
-### Larger Contributions
+1.  **Start developing.**
 
-1. Fork this repository
-2. Make your fork live through your GitHub Pages domain
+    Navigate into your new site’s directory and start it up.
 
-- If you don't already have GitHub Pages, set it up by following [this guide][gh-pages]
-- In your forked repository, go into the Settings > to the GitHub Pages section > and change Source from "None" to "master branch" like so:
-  ![contribute1](assets/img/contribute1.png)
-- Go to the file "\_config.yml"
-  ![contribute2](assets/img/contribute2.png)
-  and change baseurl and url to your GitHub Pages settings like so:
-  ![contribute3](assets/img/contribute3.png)
+    ```shell
+    cd my-default-starter/
+    gatsby develop
+    ```
 
-3. Make any changes you want
-4. When you are ready to make a pull request, you should make a new branch and revert the "\_config.yml" file to its original form in this new branch
-5. Make a pull request from your new branch, while keeping your master branch live on your GitHub Pages for reviewers to study before merging your pull request. In your pull request description, please include a link to the live master branch on your GitHub Pages
+1.  **Open the source code and start editing!**
 
-[gh-pages]: https://guides.github.com/features/pages/
+    Your site is now running at `http://localhost:8000`!
 
-## Available Scripts
+    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
 
-In the project directory, you can run:
+    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-### `yarn start`
+### 🧐 What's inside?
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A quick look at the top-level files and directories you'll see in a Gatsby project.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    .
+    ├── node_modules
+    ├── src
+    ├── .gitignore
+    ├── .prettierrc
+    ├── .eslintrc.js
+    ├── gatsby-browser.js
+    ├── gatsby-config.js
+    ├── gatsby-node.js
+    ├── gatsby-ssr.js
+    ├── LICENSE
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
 
-### `yarn test`
+1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-### `yarn build`
+3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+5.  **`.eslintrc.js`**: This is the configuration file for [eslint](https://eslint.org/). Eslint is a tool to find and fix problems within your code.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-### `yarn eject`
+7.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+8.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+9.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+10. **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+11. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-## Learn More
+12. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+13. **`README.md`**: A text file containing useful reference information about your project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 🎓 Learning Gatsby
 
-### Code Splitting
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
