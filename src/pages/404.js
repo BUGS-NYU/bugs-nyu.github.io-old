@@ -30,6 +30,12 @@ const PageContainer = styled.article`
 const Title = styled.div`
   margin-top: 15%;
   text-align: center;
+  color: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+    padding-top: 20vh;
+  }
 `;
 
 const NotFound = styled.h1`
