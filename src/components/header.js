@@ -5,8 +5,8 @@ import styled, { keyframes } from "styled-components";
 import Burger from "./Burger";
 
 import BugsLogo from "../svgs/bugs.svg";
-import githublogo from "../images/logo/GitHub-Mark-Light-32px.png";
 import maillogo from "../images/logo/mail-32.png";
+import githublogo from "../svgs/github.svg";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -68,7 +68,7 @@ const NavBar = () => {
                   </NavList>
                   <LogosContainer>
                     <Logo href="https://github.com/BUGS-NYU">
-                      <img src={githublogo} alt="github logo" />
+                      <GitHubLogo title="GitHub Logo" />
                     </Logo>
                     <Logo href="mailto:bugsnyu@gmail.com">
                       <img src={maillogo} alt="mail logo" />
@@ -368,6 +368,20 @@ const LogoImage = styled(BugsLogo)`
   @media screen and (max-width: 768px) {
     width: 70px;
     height: 70px;
+  }
+`;
+
+const GitHubLogo = styled(githublogo)`
+  float: right;
+  width: 30px;
+  height: 30px;
+  border: 0;
+
+  fill: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    width: 30px;
+    height: 30px;
   }
 `;
 
