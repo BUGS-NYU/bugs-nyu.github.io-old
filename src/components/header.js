@@ -250,10 +250,11 @@ const NavItem = styled.div`
 `;
 
 const NavLink = styled(Link)`
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 
   &.active {
+    color: white;
     font-weight: 900;
   }
 
@@ -270,7 +271,7 @@ const NavLink = styled(Link)`
 `;
 
 const OffSiteLink = styled.a`
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 
   @media screen and (max-width: 768px) {
