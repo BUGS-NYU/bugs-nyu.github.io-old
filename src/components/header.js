@@ -260,12 +260,12 @@ const NavLink = styled(Link)`
 
   @media screen and (max-width: 768px) {
     display: block;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     padding: 2vw 4vw;
 
     &.active {
-      font-weight: 400;
+      font-weight: 900;
     }
   }
 `;
@@ -276,7 +276,6 @@ const OffSiteLink = styled.a`
 
   @media screen and (max-width: 768px) {
     display: block;
-    color: #fff;
     text-decoration: none;
     padding: 2vw 4vw !important;
   }
