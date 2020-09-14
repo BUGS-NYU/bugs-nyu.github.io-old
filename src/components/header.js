@@ -250,32 +250,32 @@ const NavItem = styled.div`
 `;
 
 const NavLink = styled(Link)`
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 
   &.active {
+    color: white;
     font-weight: 900;
   }
 
   @media screen and (max-width: 768px) {
     display: block;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     padding: 2vw 4vw;
 
     &.active {
-      font-weight: 400;
+      font-weight: 900;
     }
   }
 `;
 
 const OffSiteLink = styled.a`
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 
   @media screen and (max-width: 768px) {
     display: block;
-    color: #fff;
     text-decoration: none;
     padding: 2vw 4vw !important;
   }
