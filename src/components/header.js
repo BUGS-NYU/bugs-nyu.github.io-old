@@ -172,9 +172,7 @@ const HeaderNavWrapper = styled.div`
     transform: ${({ open }) =>
       open ? "translateY(40%)" : "translateY(-100%)"};
     height: 100vh;
-    min-width: 100%;
     position: absolute;
-    display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     transition: transform 0.3s ease-in-out;
@@ -260,13 +258,7 @@ const NavLink = styled(Link)`
 
   @media screen and (max-width: 768px) {
     display: block;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
     padding: 2vw 4vw;
-
-    &.active {
-      font-weight: 900;
-    }
   }
 `;
 
@@ -276,7 +268,6 @@ const OffSiteLink = styled.a`
 
   @media screen and (max-width: 768px) {
     display: block;
-    text-decoration: none;
     padding: 2vw 4vw !important;
   }
 `;
@@ -291,7 +282,6 @@ const LogosContainer = styled.div`
   font-size: calc(0vw + 0.9rem);
 
   @media screen and (max-width: 768px) {
-    display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
@@ -376,12 +366,12 @@ const GitHubLogo = styled(githublogo)`
   width: 30px;
   height: 30px;
   border: 0;
-
+  position: relative;
+  top: -2px;
   fill: #ffffff;
 
   @media screen and (max-width: 768px) {
-    width: 30px;
-    height: 30px;
+    top: -4px;
   }
 `;
 
