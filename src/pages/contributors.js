@@ -16,6 +16,7 @@ const contributors = {
   "Uriel Restrepo": {},
   "Yuchen Liu": {},
   "Yash Bharti" : {},
+  "Eric Wu": {},
 };
 
 function parseDate(timestamp) {
