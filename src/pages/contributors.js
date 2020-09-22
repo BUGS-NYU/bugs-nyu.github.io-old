@@ -18,6 +18,7 @@ const contributors = {
   "Leo Wu": {},
   "Yash Bharti" : {},
   "Eric Wu": {},
+  "Calvin Tian": {},
 };
 
 function parseDate(timestamp) {
