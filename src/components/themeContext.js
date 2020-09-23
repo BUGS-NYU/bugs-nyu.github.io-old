@@ -24,6 +24,7 @@ export const ThemeProvider = ({ children }) => {
       "--color-body",
       newValue === "light" ? lightTheme.body : darkTheme.body
     );
+
     root.style.setProperty(
       "--color-toggleBorder",
       newValue === "light" ? lightTheme.toggleBorder : darkTheme.toggleBorder
@@ -52,6 +53,8 @@ export const ThemeProvider = ({ children }) => {
       "--color-primary",
       newValue === "light" ? lightTheme.gradient : darkTheme.gradient
     );
+
+    root.style.setProperty("--initial-color-mode", newValue);
   };
 
   return (

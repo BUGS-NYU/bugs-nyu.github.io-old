@@ -5,8 +5,8 @@ import styled, { keyframes } from "styled-components";
 import Burger from "./Burger";
 
 import BugsLogo from "../svgs/bugs.svg";
-import githublogo from "../images/logo/GitHub-Mark-Light-32px.png";
 import maillogo from "../images/logo/mail-32.png";
+import githublogo from "../svgs/github.svg";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -68,7 +68,7 @@ const NavBar = () => {
                   </NavList>
                   <LogosContainer>
                     <Logo href="https://github.com/BUGS-NYU">
-                      <img src={githublogo} alt="github logo" />
+                      <GitHubLogo title="GitHub Logo" />
                     </Logo>
                     <Logo href="mailto:bugsnyu@gmail.com">
                       <img src={maillogo} alt="mail logo" />
@@ -172,9 +172,7 @@ const HeaderNavWrapper = styled.div`
     transform: ${({ open }) =>
       open ? "translateY(40%)" : "translateY(-100%)"};
     height: 100vh;
-    min-width: 100%;
     position: absolute;
-    display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     transition: transform 0.3s ease-in-out;
@@ -250,33 +248,26 @@ const NavItem = styled.div`
 `;
 
 const NavLink = styled(Link)`
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 
   &.active {
+    color: white;
     font-weight: 900;
   }
 
   @media screen and (max-width: 768px) {
     display: block;
-    color: #fff;
-    text-decoration: none;
     padding: 2vw 4vw;
-
-    &.active {
-      font-weight: 400;
-    }
   }
 `;
 
 const OffSiteLink = styled.a`
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 
   @media screen and (max-width: 768px) {
     display: block;
-    color: #fff;
-    text-decoration: none;
     padding: 2vw 4vw !important;
   }
 `;
@@ -291,7 +282,6 @@ const LogosContainer = styled.div`
   font-size: calc(0vw + 0.9rem);
 
   @media screen and (max-width: 768px) {
-    display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
@@ -368,6 +358,20 @@ const LogoImage = styled(BugsLogo)`
   @media screen and (max-width: 768px) {
     width: 70px;
     height: 70px;
+  }
+`;
+
+const GitHubLogo = styled(githublogo)`
+  float: right;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  position: relative;
+  top: -2px;
+  fill: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    top: -4px;
   }
 `;
 

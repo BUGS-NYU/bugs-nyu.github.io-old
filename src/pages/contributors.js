@@ -15,6 +15,9 @@ const contributors = {
   "Santiago Darre": {},
   "Uriel Restrepo": {},
   "Yuchen Liu": {},
+  "Leo Wu": {},
+  "Yash Bharti": {},
+  "Eric Wu": {},
   "Khanh Nguyen": {},
 };
 
@@ -214,7 +217,7 @@ const TableContainer = styled.div`
   display: table;
   @media screen and (max-width: 1300px) {
     padding: 0px 5px 0px 5px;
-    height: 20vh;
+    height: auto;
   }
 `;
 
@@ -293,7 +296,7 @@ const LeftContainer = styled.div`
   position: relative;
   background-color: inherit;
   width: 50%;
-  left: -15%;
+  left: -14.5%;
 
   &::after {
     content: "";
