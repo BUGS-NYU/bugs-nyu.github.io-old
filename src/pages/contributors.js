@@ -19,6 +19,9 @@ const contributors = {
   "Yash Bharti" : {},
   "Eric Wu": {},
   "Crystal Chu":{},
+  "Minsu Seo": {},
+  "Calvin Tian": {},
+  "Jiayue (Joanna) Zhang": {},
 };
 
 function parseDate(timestamp) {
