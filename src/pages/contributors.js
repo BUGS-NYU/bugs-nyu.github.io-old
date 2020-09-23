@@ -16,9 +16,9 @@ const contributors = {
   "Uriel Restrepo": {},
   "Yuchen Liu": {},
   "Leo Wu": {},
-  "Yash Bharti" : {},
+  "Yash Bharti": {},
   "Eric Wu": {},
-  "Crystal Chu":{},
+  "Crystal Chu": {},
   "Minsu Seo": {},
   "Calvin Tian": {},
   "Jiayue (Joanna) Zhang": {},
@@ -299,7 +299,7 @@ const LeftContainer = styled.div`
   position: relative;
   background-color: inherit;
   width: 50%;
-  left: -14.5%;
+  left: -13.5%;
 
   &::after {
     content: "";

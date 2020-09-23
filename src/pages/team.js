@@ -150,5 +150,12 @@ export const query = graphql`
         }
       }
     }
+    joannazh: file(relativePath: { eq: "profiles/joannazh.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;
