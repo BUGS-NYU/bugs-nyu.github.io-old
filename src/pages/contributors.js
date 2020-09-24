@@ -18,6 +18,7 @@ const contributors = {
   "Leo Wu": {},
   "Yash Bharti": {},
   "Eric Wu": {},
+  "Jonason Wu": {},
   "Crystal Chu": {},
   "Minsu Seo": {},
   "Calvin Tian": {},
