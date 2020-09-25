@@ -90,6 +90,7 @@ const EboardTitle = styled.h1`
   animation: ${scalein} 0.9s;
   @media screen and (max-width: 768px) {
     font-size: calc(0.5vw + 1.5rem);
+    margin-bottom: 3em;
   }
 `;
 
