@@ -100,7 +100,10 @@ const SubTitle = styled.p`
 `;
 
 const Image = styled(Img)`
-  width: 65%;
+  width: 20em;
+  height: 20em;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
   object-fit: contain;
   animation: ${fadein} 1.5s;
 
