@@ -23,6 +23,7 @@ const contributors = {
   "Minsu Seo": {},
   "Calvin Tian": {},
   "Jiayue (Joanna) Zhang": {},
+  "Matthew Apuya": {},
 };
 
 function parseDate(timestamp) {
