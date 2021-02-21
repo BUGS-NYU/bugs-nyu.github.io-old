@@ -158,5 +158,19 @@ export const query = graphql`
         }
       }
     }
+    yliu: file(relativePath: { eq: "profiles/yliu.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    lxiang: file(relativePath: { eq: "profiles/lxiang.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;
