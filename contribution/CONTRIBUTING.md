@@ -24,6 +24,7 @@ Once you've decided on an issue to fix or an improvement to add, you'll need to 
 
 You'll first need to [create a Github account][sign-up-gh] and [download Git][git-desktop]. If you're new to either of these two systems, here's a few good resources to get you started:
 
+- [CS61 Git][cs61-git] - Git introduction by CS61 professor at Harvard
 - [How to Contribute][open-source-guide] - This guide by Alaina Kafkes describes how to contribute to projects on Github; if you're completely lost, or just need a refresher on the basics, this is a good place to start
 - [Git Basics][git-basics] - A more technical look at the basics of Git itself
 - [Git Cheatsheet][git-cheats] - Github's Git cheat sheet
@@ -38,6 +39,10 @@ You'll first need to [create a Github account][sign-up-gh] and [download Git][gi
 [git-desktop-guide]: https://help.github.com/desktop/guides/getting-started-with-github-desktop/
 [curious-git]: https://matthew-brett.github.io/curious-git/curious_intro.html
 [git-parable]: http://practical-neuroimaging.github.io/git_parable.html
+[issues]: https://github.com/BUGS-NYU/bugs-nyu.github.io/issues
+[git-desktop]: https://git-scm.com/downloads
+[sign-up-gh]: https://github.com/join
+[cs61-git]: https://cs61.seas.harvard.edu/site/ref/git/
 
 In general, you'll need to first fork the repository to your own account, then clone it to your own computer with
 
