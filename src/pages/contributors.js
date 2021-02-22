@@ -5,26 +5,26 @@ import { heapNew, heapLength, heapPush, heapPop } from "../utils/heap";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const contributors = {
-  "Ameya Shere": {},
-  "Andy Huang": {},
-  "Anupam Sushil": {},
-  "Carol Long": {},
-  "Evan Silverman": {},
-  "Marissa Shey": {},
-  "Santiago Darre": {},
-  "Uriel Restrepo": {},
-  "Yuchen Liu": {},
-  "Leo Wu": {},
-  "Yash Bharti": {},
-  "Eric Wu": {},
-  "Jonason Wu": {},
-  "Crystal Chu": {},
-  "Minsu Seo": {},
-  "Calvin Tian": {},
-  "Jiayue (Joanna) Zhang": {},
-  "Matthew Apuya": {},
-};
+const contributors = [
+  "Ameya Shere",
+  "Andy Huang",
+  "Anupam Sushil",
+  "Carol Long",
+  "Evan Silverman",
+  "Marissa Shey",
+  "Santiago Darre",
+  "Uriel Restrepo",
+  "Yuchen Liu",
+  "Leo Wu",
+  "Yash Bharti",
+  "Eric Wu",
+  "Jonason Wu",
+  "Crystal Chu",
+  "Minsu Seo",
+  "Calvin Tian",
+  "Jiayue (Joanna) Zhang",
+  "Matthew Apuya",
+];
 
 function parseDate(timestamp) {
   const date = new Date(timestamp);
@@ -129,7 +129,7 @@ const Contributors = () => {
               <Title>
                 <BoldText>Contributors</BoldText>
               </Title>
-              {Object.keys(contributors).map(name => {
+              {contributors.map(name => {
                 return <Name key={name}>{name}</Name>;
               })}
             </TableContainer>
