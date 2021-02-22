@@ -15,6 +15,15 @@ const contributors = {
   "Santiago Darre": {},
   "Uriel Restrepo": {},
   "Yuchen Liu": {},
+  "Leo Wu": {},
+  "Yash Bharti": {},
+  "Eric Wu": {},
+  "Jonason Wu": {},
+  "Crystal Chu": {},
+  "Minsu Seo": {},
+  "Calvin Tian": {},
+  "Jiayue (Joanna) Zhang": {},
+  "Matthew Apuya": {},
 };
 
 function parseDate(timestamp) {
@@ -292,7 +301,7 @@ const LeftContainer = styled.div`
   position: relative;
   background-color: inherit;
   width: 50%;
-  left: -14.5%;
+  left: -13.5%;
 
   &::after {
     content: "";
