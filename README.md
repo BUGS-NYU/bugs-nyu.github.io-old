@@ -4,7 +4,8 @@
 
 # bugs-nyu.github.io
 
-This is the website for BUGS, NYU's premier open source club
+This is the website for BUGS, NYU's premier open source club.
+Please take a look at our `contribution` directory.
 
 ## How to use Gatsby
 
