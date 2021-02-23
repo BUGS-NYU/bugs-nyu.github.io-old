@@ -6,6 +6,7 @@ export const lightTheme = {
   contributionCircle: "purple",
   contributionContent: "#57068c",
   logoFill: "#410092",
+  primaryColor: "#9148C9",
 };
 
 export const darkTheme = {
@@ -16,4 +17,5 @@ export const darkTheme = {
   contributionCircle: "#121212",
   contributionContent: "white",
   logoFill: "#fefafa",
+  primaryColor: "#000000",
 };

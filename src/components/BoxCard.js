@@ -48,7 +48,7 @@ const ButtonWrapper = styled.div`
     margin-left: 10px;
     width: 150px;
     height: 40px;
-    background: #9148c9;
+    background: var(--color-primary-button);
     border-radius: 5px;
     border: none;
 
