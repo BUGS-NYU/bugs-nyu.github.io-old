@@ -85,7 +85,7 @@ const Card = styled.div`
 
   h1 {
     font-weight: bold;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 20px;
     color: #ffffff;
     margin-block-start: 0.1em;
@@ -95,7 +95,7 @@ const Card = styled.div`
   #subtitle {
     font-style: normal;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 37px;
     margin-block-start: 0.1em;
     margin-block-end: 0.1em;
@@ -104,7 +104,7 @@ const Card = styled.div`
   }
 
   #description {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 const GitHubLogo = styled(githublogo)`

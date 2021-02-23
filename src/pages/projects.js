@@ -16,14 +16,6 @@ const Projects = () => {
             <ProjectsWrapper>
               {project_data.map(
                 ({ title, subtitle, description, link, urlLink }) => (
-                  // <ProjectDetails
-                  //   title={title}
-                  //   subtitle={subtitle}
-                  //   description={description}
-                  //   link={link}
-                  //   urlLink={urlLink || ""}
-                  //   key={title}
-                  // />
                   <BoxCard
                     title={title}
                     subtitle={subtitle}
@@ -45,30 +37,14 @@ const Projects = () => {
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
+  @media screen and (max-width: 1100px) {
+    padding-top: 200px;
+  }
 `;
 
 const PageContainer = styled.article`
   display: block;
 `;
-
-// const MainDescriptionContainer = styled.section`
-//   margin-top: 10%;
-//   align-items: center;
-//   min-height: 100vh;
-//   padding-right: 15vw;
-//   padding-bottom: 5vw;
-//   padding-left: 15vw;
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-//   grid-gap: 20px;
-//   justify-items: stretch;
-
-//   @media screen and (max-width: 768px) {
-//     margin-top: 0;
-//     padding-top: 17vh;
-//     padding-bottom: 20vh;
-//   }
-// `;
 
 const CardContainer = styled.div`
   min-width: 100vw;
@@ -82,11 +58,17 @@ const ProjectsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   max-width: 1200px;
-  max-height: 600px;
   grid-auto-rows: 1fr;
   grid-column-gap: 32px;
   grid-row-gap: 32px;
   align-items: center;
   height: max-content;
+
+  @media screen and (max-width: 1100px) {
+    grid-template-columns: repeat(6, 1fr);
+    max-width: 600px;
+    max-height: 1200px;
+    padding-bottom: 100px;
+  }
 `;
 export default Projects;
