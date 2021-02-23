@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -23,6 +23,7 @@ const Projects = () => {
                     link={link}
                     urlLink={urlLink || ""}
                     key={title}
+                    contentType="project"
                   />
                 )
               )}
@@ -53,8 +54,17 @@ const CardContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+const scalein = keyframes`
+  from {
+    transform: scale(0.9)
+  },
+  to {
+    transform: scale(1)
+  }
+`;
 
 const ProjectsWrapper = styled.div`
+  animation: ${scalein} 1s;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   max-width: 1200px;

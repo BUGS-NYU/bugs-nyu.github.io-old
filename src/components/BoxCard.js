@@ -1,22 +1,41 @@
 import React from "react";
 import styled from "styled-components";
 import githublogo from "../svgs/github.svg";
+import gradientCircle from "../svgs/gradientCircle.svg";
 
-const BoxCard = ({ title, subtitle, description, link, urlLink }) => {
+const BoxCard = ({
+  contentType,
+  title,
+  subtitle,
+  description,
+  link,
+  urlLink,
+  step,
+}) => {
+  const cols = contentType == "project" ? 6 : 4;
+
   return (
-    <Card>
+    <Card style={{ gridColumn: `auto/span ${cols}` }}>
+      {step && (
+        <>
+          <StepCircle></StepCircle>
+          <Step>{step}</Step>
+        </>
+      )}
       <h1> {title}</h1>
-      <p id={`subtitle`}>{subtitle}</p>
+      {contentType == "project" && <p id={`subtitle`}>{subtitle}</p>}
       <p id={`description`}>{description}</p>
-      <ButtonWrapper>
-        <button id={`projectButton`}>
-          <a href={urlLink}>View Project</a>
-        </button>
-        <button id={`githubButton`}>
-          <GitHubLogo></GitHubLogo>
-          <a href={link}>Github</a>
-        </button>
-      </ButtonWrapper>
+      {contentType == "project" && (
+        <ButtonWrapper>
+          <button id={`projectButton`}>
+            <a href={urlLink}>View Project</a>
+          </button>
+          <button id={`githubButton`}>
+            <GitHubLogo></GitHubLogo>
+            <a href={link}>Github</a>
+          </button>
+        </ButtonWrapper>
+      )}
     </Card>
   );
 };
@@ -48,7 +67,7 @@ const ButtonWrapper = styled.div`
     margin-left: 10px;
     width: 150px;
     height: 40px;
-    background: var(--color-primary-button);
+    background: #9148c9;
     border-radius: 5px;
     border: none;
 
@@ -67,12 +86,12 @@ const ButtonWrapper = styled.div`
   }
 `;
 const Card = styled.div`
-  grid-column: auto/span 6;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  min-height: 140px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.58) 0%,
@@ -115,6 +134,22 @@ const GitHubLogo = styled(githublogo)`
   position: absolute;
   left: 45px;
   fill: #ffffff;
+`;
+
+const StepCircle = styled(gradientCircle)`
+  width: 50px;
+  height: 50px;
+  border: 0;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+`;
+
+const Step = styled.p`
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  font-weight: bold;
 `;
 
 export default BoxCard;
