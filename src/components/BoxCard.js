@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import githublogo from "../svgs/github.svg";
 import gradientCircle from "../svgs/gradientCircle.svg";
+import githubStar from "../svgs/githubStar.svg";
 
 const BoxCard = ({
   contentType,
@@ -11,8 +12,23 @@ const BoxCard = ({
   link,
   urlLink,
   step,
+  githubRepo,
+  githubOrg,
 }) => {
   const cols = contentType == "project" ? 6 : 4;
+  const [stars, setStars] = useState(0);
+
+  useEffect(() => {
+    if (githubRepo && githubOrg) {
+      fetch(`https://api.github.com/repos/${githubOrg}/${githubRepo}`, {
+        method: "GET",
+      })
+        .then(results => results.json())
+        .then(data => {
+          setStars(data.stargazers_count);
+        });
+    }
+  }, [githubRepo]);
 
   return (
     <Card style={{ gridColumn: `auto/span ${cols}` }}>
@@ -20,6 +36,15 @@ const BoxCard = ({
         <>
           <StepCircle></StepCircle>
           <Step>{step}</Step>
+        </>
+      )}
+      {stars != 0 && (
+        <>
+          <StepCircle></StepCircle>
+          <Star>
+            {stars}
+            <GitHubStar />
+          </Star>
         </>
       )}
       <h1> {title}</h1>
@@ -94,8 +119,8 @@ const Card = styled.div`
   min-height: 140px;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.58) 0%,
-    rgba(226, 226, 226, 0.56) 100%
+    rgba(255, 255, 255, 0.48) 0%,
+    rgba(226, 226, 226, 0.46) 100%
   );
   box-shadow: 0px 4.49006px 22.4503px 11.2251px rgba(0, 0, 0, 0.1);
   border-radius: 22.4503px;
@@ -119,7 +144,7 @@ const Card = styled.div`
     margin-block-start: 0.1em;
     margin-block-end: 0.1em;
 
-    color: #e6e6e6;
+    color: #ffffff;
   }
 
   #description {
@@ -132,7 +157,15 @@ const GitHubLogo = styled(githublogo)`
   height: 15px;
   border: 0;
   position: absolute;
+  top: 11px;
   left: 45px;
+  fill: #ffffff;
+`;
+const GitHubStar = styled(githubStar)`
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 2px;
   fill: #ffffff;
 `;
 
@@ -149,6 +182,12 @@ const Step = styled.p`
   position: absolute;
   top: -20px;
   right: 0px;
+  font-weight: bold;
+`;
+const Star = styled.p`
+  position: absolute;
+  top: -20px;
+  right: 4px;
   font-weight: bold;
 `;
 

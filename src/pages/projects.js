@@ -15,7 +15,15 @@ const Projects = () => {
           <CardContainer>
             <ProjectsWrapper>
               {project_data.map(
-                ({ title, subtitle, description, link, urlLink }) => (
+                ({
+                  title,
+                  subtitle,
+                  description,
+                  link,
+                  urlLink,
+                  githubRepo,
+                  githubOrg,
+                }) => (
                   <BoxCard
                     title={title}
                     subtitle={subtitle}
@@ -24,6 +32,8 @@ const Projects = () => {
                     urlLink={urlLink || ""}
                     key={title}
                     contentType="project"
+                    githubRepo={githubRepo}
+                    githubOrg={githubOrg}
                   />
                 )
               )}
