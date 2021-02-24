@@ -172,5 +172,33 @@ export const query = graphql`
         }
       }
     }
+    esilverman: file(relativePath: { eq: "profiles/esilverman.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    vvanam: file(relativePath: { eq: "profiles/vvanam.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    bjiang: file(relativePath: { eq: "profiles/bjiang.JPG" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    sjain: file(relativePath: { eq: "profiles/sjain.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;

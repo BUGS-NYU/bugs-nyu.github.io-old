@@ -43,9 +43,10 @@ export default [
   },
   {
     name: "Sonia Jain",
-    image: "",
+    image: "sjain",
     role: "Director of Marketing & Communications",
-    description: "",
+    description:
+      "I'm Sonia and I'm a junior at New York University double majoring in Computer Science and Media, Culture, and Communications. I am interested in game design, art, and I love animals. In my free time, I work with a variety of organizations to help find dogs and cats' homes. I also love painting and digital art so when I'm not working with animals, I am creating.",
   },
   {
     name: "Eric He",
@@ -56,15 +57,17 @@ export default [
   },
   {
     name: "Bruce Jiang",
-    image: "",
+    image: "bjiang",
     role: "Secretary",
-    description: "",
+    description:
+      "Bruce is a junior from China studying Computer Science and Mathematics. Outside of class, he is crazy in soccer (especially in Chelsea) and basketball. He spends tons of time playing FIFA (most of the time playing Chelsea). Besides, he likes listening to music, reading about history, and travelling.",
   },
   {
     name: "Evan Silverman",
-    image: "",
+    image: "esilverman",
     role: "Webmaster",
-    description: "",
+    description:
+      "Evan is a Junior studying CS at CAS. In his free time he enjoys working on too many side projects, expanding his record collection, and making memes for @nyumsfbt",
   },
   {
     name: "Yuchen Liu",
@@ -81,9 +84,10 @@ export default [
       "Samuel is a Senior at CAS majoring in Computer Science and minoring in Web Design and Game Design. He was born and raised in Taiwan, but studied in Singapore for high school before coming to New York. He is a big foodie and enjoys trying foods from different cultures.",
   },
   {
-    name: "Vishal",
-    image: "",
+    name: "Vishal Vanam",
+    image: "vvanam",
     role: "Event Coordinator",
-    description: "",
+    description:
+      "I am a Graduate Student in Information Systems at GSAS. I hail from Hyderabad(India) and love travelling and exploring new places. Usually spotted listening to music and engaging in debates with friends.",
   },
 ];
