@@ -1,57 +1,53 @@
 export default {
   "Nadira Dewji": {
-    role: "Founder",
     description:
-      "Alumni who studied Computer Science in CAS. Originally from Tanzania, Nadira loves travelling, scuba diving and wildlife. She’s excited about open source principles and making impactful contributions.",
+      "Nadira was one of the Founders of BUGS. An alumni studied Computer Science in CAS. Originally from Tanzania, Nadira loves travelling, scuba diving and wildlife. She’s excited about open source principles and making impactful contributions.",
   },
   "David Klein": {
-    role: "Founder",
     description:
-      "Alumni from California who studied Biology with three minors, and loves both carbon based life and silicon based life to equal extents.",
+      "David was one of the Founders of BUGS. Alumni from California who studied Biology with three minors, and loves both carbon based life and silicon based life to equal extents.",
   },
   "Ananditha Raghunath": {
     role: "Founder",
     description:
-      "Alunmi who studied Math and CS at Courant. Having started to code only after she arrived at NYU, she is excited to mentor new members that may not know how to make their ideas translate into tangible code based projects!",
+      "Ananditha was one of the Founders of BUGS. Alunmi who studied Math and CS at Courant. Having started to code only after she arrived at NYU, she is excited to mentor new members that may not know how to make their ideas translate into tangible code based projects!",
   },
   "Veena Arvind": {
     role: "President",
     description:
-      "Alumni who studied Computer Science in CAS. She loves to talk about code with other people. In her free time, Veena goes to the gym, makes jewelry, and plays card games.",
+      "Veena was BUGS's predident from 2018 to 2020. Alumni who studied Computer Science in CAS. She loves to talk about code with other people. In her free time, Veena goes to the gym, makes jewelry, and plays card games. She's a SWE at Google.",
   },
   "Shelly Cao": {
-    role: "Director of Outreach",
     description:
-      "Alumni who majored in Computer Science with minors in Math and Business Study. She comes from a small city in China called Jingzhou and even her Chinese friends are clueless as to where it is. In her free time, she loves to explore the different boroughs in the city and try food from different cultures.",
+      "Shelly Cao was BUGS's Director of Outreach in 2019. Alumni who majored in Computer Science with minors in Math and Business Study. She comes from a small city in China called Jingzhou and even her Chinese friends are clueless as to where it is. In her free time, she loves to explore the different boroughs in the city and try food from different cultures.",
   },
   "Julie Cestaro": {
-    role: "",
     description:
       "Alumni from Connecticut who majored in Computer Science and minored in Business Studies and Math. You may also find her on campus doing work for CAS Student Council.",
   },
   "George Ma": {
-    role: "",
     description:
       "Alumni from Singapore who majored in Computer Science and Business. He likes reading, writing, coding, and gaming.",
   },
   "Deanna Tran": {
     role: "Director of Communication",
     description:
-      "Alumni from CAS who studied Computer Science with minors in Web Design and Linguistics. Outside of school, Deanna can be found at a local restaurant or art museum.",
+      "Deanna was BUGS's Director of Communication in 2019. Alumni from CAS who studied Computer Science with minors in Web Design and Linguistics. Outside of school, Deanna can be found at a local restaurant or art museum. She's a SWE at Ellevest.",
   },
   "Candice Shen": {
-    role: "Marketing",
     description:
-      "Alumni from Steinhardt who majored in Media, Culture, and Communication and minored in Web Design. If you cannot find her outside of class, Candice is traveling or planning for her 23rd country to visit.",
+      "Candice Shen was BUGS's Director of Communications in 2019. Alumni from Steinhardt who majored in Media, Culture, and Communication and minored in Web Design. If you cannot find her outside of class, Candice is traveling or planning for her 23rd country to visit.",
   },
   "Bradley Brecher": {
-    role: "",
     description:
-      "Alumni from Woodmere, New York who studied Computer Science. Outside of BUGS, you can find him coaching hockey at a local high school.",
+      "Alumni from Woodmere, New York who studied Computer Science. Outside of BUGS, you can find him coaching hockey at a local high school. He's a Backend Programmer at SomethingDigital",
   },
   "Ami Nachiappan": {
-    role: "Event Coordinator",
     description:
-      "Alumni from California who studied Computer Science and minored in Web Design. In her free time, she loves spending time with family, running, and of course, coding!",
+      "Ami was BUGS's Event Coordinator from 2018 to 2020. Alumni from California who studied Computer Science and minored in Web Design. In her free time, she loves spending time with family, running, and of course, coding!",
+  },
+  "Brian Shih": {
+    description:
+      "Brian was BUGS's webmaster from 2018 to 2020. Alumni from CAS who majored in Computer Science and minored in Cyber Security, Web Development, & Studio Art. Outside of class you can find him working a variety of things including custom IOT devices, simple CNN for puzzle solving, home automation programs, and building mobile/web apps. He's a SWE at NextJump",
   },
 };
