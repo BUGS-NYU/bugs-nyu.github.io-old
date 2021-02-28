@@ -5,26 +5,14 @@ import { heapNew, heapLength, heapPush, heapPop } from "../utils/heap";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const contributors = [
-  "Ameya Shere",
-  "Andy Huang",
-  "Anupam Sushil",
-  "Carol Long",
-  "Evan Silverman",
-  "Marissa Shey",
-  "Santiago Darre",
-  "Uriel Restrepo",
-  "Yuchen Liu",
-  "Leo Wu",
-  "Yash Bharti",
-  "Eric Wu",
-  "Jonason Wu",
-  "Crystal Chu",
-  "Minsu Seo",
-  "Calvin Tian",
-  "Jiayue (Joanna) Zhang",
-  "Matthew Apuya",
-];
+const ContributorsImage = () => (
+  <a href="https://github.com/BUGS-NYU/bugs-nyu.github.io/graphs/contributors">
+    <Image
+      alt="Bugs website contributors"
+      src="https://contrib.rocks/image?repo=BUGS-NYU/bugs-nyu.github.io"
+    />
+  </a>
+);
 
 function parseDate(timestamp) {
   const date = new Date(timestamp);
@@ -129,9 +117,7 @@ const Contributors = () => {
               <Title>
                 <BoldText>Contributors</BoldText>
               </Title>
-              {contributors.map(name => {
-                return <Name key={name}>{name}</Name>;
-              })}
+              <ContributorsImage />
             </TableContainer>
             <TimelineContainer>
               <Title>
@@ -199,31 +185,22 @@ const MainPage = styled.section`
   margin-top: 10%;
   align-items: center;
   min-height: 100vh;
-  padding-right: 15vw;
-  padding-bottom: 5vw;
-  padding-left: 15vw;
+  padding-right: 3vw;
+  padding-left: 3vw;
   display: flex;
   justify-items: stretch;
-  align-items: baseline;
   margin-bottom: 5%;
-
-  @media screen and (max-width: 1300px) {
-    margin-top: 0;
-    padding-bottom: 10vh;
-    padding-top: 12vh;
-    flex-direction: column;
-    align-items: center;
-  }
+  flex-direction: column;
+  margin-top: 0;
+  padding-bottom: 10vh;
+  padding-top: 12vh;
+  align-items: center;
 `;
 
 const TableContainer = styled.div`
-  height: 100vh;
-  width: 30%;
+  height: auto;
   display: table;
-  @media screen and (max-width: 1300px) {
-    padding: 0px 5px 0px 5px;
-    height: auto;
-  }
+  padding: 0px 5px 0px 5px;
 `;
 
 const Title = styled.h1`
@@ -238,17 +215,12 @@ const Title = styled.h1`
   animation: ${scalein} 1s;
 `;
 
-const Name = styled.h4`
-  font-weight: 300;
-  font-style: normal;
-  text-align: center;
-  letter-spacing: 0em;
-  text-transform: none;
-  line-height: 0.5;
-  font-size: calc(0vw + 1.2rem);
-  color: white;
-  &:hover {
-    // color: var(--color-home-border);
+const Image = styled.img`
+  width: 100%;
+  margin-left: 13%;
+  @media screen and (max-width: 1300px) {
+    width: 125%;
+    margin-left: 0;
   }
 `;
 
