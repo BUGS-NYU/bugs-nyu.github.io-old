@@ -5,26 +5,8 @@ import { heapNew, heapLength, heapPush, heapPop } from "../utils/heap";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const contributors = [
-  "Ameya Shere",
-  "Andy Huang",
-  "Anupam Sushil",
-  "Carol Long",
-  "Evan Silverman",
-  "Marissa Shey",
-  "Santiago Darre",
-  "Uriel Restrepo",
-  "Yuchen Liu",
-  "Leo Wu",
-  "Yash Bharti",
-  "Eric Wu",
-  "Jonason Wu",
-  "Crystal Chu",
-  "Minsu Seo",
-  "Calvin Tian",
-  "Jiayue (Joanna) Zhang",
-  "Matthew Apuya",
-];
+const CONTRIBUTORS_API =
+  "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/contributors";
 
 function parseDate(timestamp) {
   const date = new Date(timestamp);
@@ -39,6 +21,7 @@ function parseDate(timestamp) {
 
 const Contributors = () => {
   const [PRList, setPRList] = useState([]);
+  const [contributors, setContributors] = useState([]);
 
   useEffect(() => {
     const fetchData = async (url, name) => {
@@ -71,6 +54,13 @@ const Contributors = () => {
         new Date(bData[bIdx].created_at) - new Date(aData[aIdx].created_at)
       );
     };
+
+    const contributorObjects = data =>
+      data.map(item => ({
+        image: item["avatar_url"],
+        url: item["html_url"],
+        name: item["login"],
+      }));
 
     (async () => {
       const data = await Promise.all(promises);
@@ -117,7 +107,21 @@ const Contributors = () => {
 
       setPRList(pullRequests);
     })();
+
+    (async () => {
+      const res = await fetch(CONTRIBUTORS_API);
+      const data = await res.json();
+      const contributors = contributorObjects(data);
+      setContributors(contributors);
+    })();
   }, []);
+
+  const ContributorsList = () =>
+    contributors.map(contributor => (
+      <a key={contributor["name"]} href={contributor["url"]}>
+        <Image alt={contributor["name"]} src={contributor["image"]} />
+      </a>
+    ));
 
   return (
     <Layout>
@@ -125,14 +129,18 @@ const Contributors = () => {
       <MainContainer>
         <PageContainer>
           <MainPage>
-            <TableContainer>
+            <ContributorContainer>
               <Title>
                 <BoldText>Contributors</BoldText>
               </Title>
-              {contributors.map(name => {
-                return <Name key={name}>{name}</Name>;
-              })}
-            </TableContainer>
+              {contributors.length !== 0 ? (
+                <ImageContainer>
+                  <ContributorsList />
+                </ImageContainer>
+              ) : (
+                <Loading />
+              )}
+            </ContributorContainer>
             <TimelineContainer>
               <Title>
                 Our <BoldText>Open Source </BoldText> Timeline
@@ -199,31 +207,37 @@ const MainPage = styled.section`
   margin-top: 10%;
   align-items: center;
   min-height: 100vh;
-  padding-right: 15vw;
-  padding-bottom: 5vw;
-  padding-left: 15vw;
+  padding-right: 3vw;
+  padding-left: 3vw;
   display: flex;
   justify-items: stretch;
-  align-items: baseline;
   margin-bottom: 5%;
+  flex-direction: column;
+  margin-top: 0;
+  padding-bottom: 10vh;
+  padding-top: 12vh;
+  align-items: center;
+`;
 
+const ContributorContainer = styled.div`
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 5px 0px 5px;
+  max-width: 1200px;
+  align-items: center;
+  margin: 0px 0px 70px 0px;
   @media screen and (max-width: 1300px) {
-    margin-top: 0;
-    padding-bottom: 10vh;
-    padding-top: 12vh;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    margin: 0px 0px 50px 0px;
   }
 `;
 
-const TableContainer = styled.div`
-  height: 100vh;
-  width: 30%;
-  display: table;
-  @media screen and (max-width: 1300px) {
-    padding: 0px 5px 0px 5px;
-    height: auto;
-  }
+const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-start;
 `;
 
 const Title = styled.h1`
@@ -238,17 +252,14 @@ const Title = styled.h1`
   animation: ${scalein} 1s;
 `;
 
-const Name = styled.h4`
-  font-weight: 300;
-  font-style: normal;
-  text-align: center;
-  letter-spacing: 0em;
-  text-transform: none;
-  line-height: 0.5;
-  font-size: calc(0vw + 1.2rem);
-  color: white;
-  &:hover {
-    // color: var(--color-home-border);
+const Image = styled.img`
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  margin: 0.3em;
+  @media screen and (max-width: 1300px) {
+    width: 4.8em;
+    height: 4.8em;
   }
 `;
 
@@ -256,7 +267,6 @@ const TimelineContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px 0px 0px 100px;
   flex-direction: column;
   @media screen and (max-width: 1300px) {
     width: 100%;
