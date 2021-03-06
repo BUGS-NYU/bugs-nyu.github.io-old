@@ -226,10 +226,10 @@ const ContributorContainer = styled.div`
   padding: 0px 5px 0px 5px;
   max-width: 1200px;
   align-items: center;
-  margin: 0px 0px 0px 100px;
+  margin: 0px 0px 70px 0px;
   @media screen and (max-width: 1300px) {
     width: 100%;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 50px 0px;
   }
 `;
 
@@ -267,7 +267,6 @@ const TimelineContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px 0px 0px 100px;
   flex-direction: column;
   @media screen and (max-width: 1300px) {
     width: 100%;
