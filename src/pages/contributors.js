@@ -5,14 +5,8 @@ import { heapNew, heapLength, heapPush, heapPop } from "../utils/heap";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const ContributorsImage = () => (
-  <a href="https://github.com/BUGS-NYU/bugs-nyu.github.io/graphs/contributors">
-    <Image
-      alt="Bugs website contributors"
-      src="https://contrib.rocks/image?repo=BUGS-NYU/bugs-nyu.github.io"
-    />
-  </a>
-);
+const CONTRIBUTORS_API =
+  "https://api.github.com/repos/BUGS-NYU/bugs-nyu.github.io/contributors";
 
 function parseDate(timestamp) {
   const date = new Date(timestamp);
@@ -27,6 +21,7 @@ function parseDate(timestamp) {
 
 const Contributors = () => {
   const [PRList, setPRList] = useState([]);
+  const [contributors, setContributors] = useState([]);
 
   useEffect(() => {
     const fetchData = async (url, name) => {
@@ -59,6 +54,13 @@ const Contributors = () => {
         new Date(bData[bIdx].created_at) - new Date(aData[aIdx].created_at)
       );
     };
+
+    const contributorObjects = data =>
+      data.map(item => ({
+        image: item["avatar_url"],
+        url: item["html_url"],
+        name: item["login"],
+      }));
 
     (async () => {
       const data = await Promise.all(promises);
@@ -105,7 +107,21 @@ const Contributors = () => {
 
       setPRList(pullRequests);
     })();
+
+    (async () => {
+      const res = await fetch(CONTRIBUTORS_API);
+      const data = await res.json();
+      const contributors = contributorObjects(data);
+      setContributors(contributors);
+    })();
   }, []);
+
+  const ContributorsList = () =>
+    contributors.map(contributor => (
+      <a key={contributor["name"]} href={contributor["url"]}>
+        <Image alt={contributor["name"]} src={contributor["image"]} />
+      </a>
+    ));
 
   return (
     <Layout>
@@ -113,12 +129,18 @@ const Contributors = () => {
       <MainContainer>
         <PageContainer>
           <MainPage>
-            <TableContainer>
+            <ContributorContainer>
               <Title>
                 <BoldText>Contributors</BoldText>
               </Title>
-              <ContributorsImage />
-            </TableContainer>
+              {contributors.length !== 0 ? (
+                <ImageContainer>
+                  <ContributorsList />
+                </ImageContainer>
+              ) : (
+                <Loading />
+              )}
+            </ContributorContainer>
             <TimelineContainer>
               <Title>
                 Our <BoldText>Open Source </BoldText> Timeline
@@ -197,10 +219,25 @@ const MainPage = styled.section`
   align-items: center;
 `;
 
-const TableContainer = styled.div`
+const ContributorContainer = styled.div`
   height: auto;
-  display: table;
+  display: flex;
+  flex-direction: column;
   padding: 0px 5px 0px 5px;
+  max-width: 1200px;
+  align-items: center;
+  margin: 0px 0px 0px 100px;
+  @media screen and (max-width: 1300px) {
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+  }
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-start;
 `;
 
 const Title = styled.h1`
@@ -216,11 +253,13 @@ const Title = styled.h1`
 `;
 
 const Image = styled.img`
-  width: 100%;
-  margin-left: 13%;
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  margin: 0.3em;
   @media screen and (max-width: 1300px) {
-    width: 125%;
-    margin-left: 0;
+    width: 4.8em;
+    height: 4.8em;
   }
 `;
 
