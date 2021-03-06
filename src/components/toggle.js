@@ -39,8 +39,8 @@ const Input = styled.input`
 const Label = styled.label`
   cursor: pointer;
   text-indent: -9999px;
-  width: 80px;
-  height: 40px;
+  width: 60px;
+  height: 30px;
   background: grey;
   display: block;
   border-radius: 100px;
@@ -51,15 +51,15 @@ const Label = styled.label`
     position: absolute;
     top: 5px;
     left: 5px;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background: #fff;
     border-radius: 90px;
     transition: 0.3s;
   }
 
   @media screen and (max-width: 768px) {
-    width: 50px;
+    width: 60px;
     height: 30px;
 
     &::after {
