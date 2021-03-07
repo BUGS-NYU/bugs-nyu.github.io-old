@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+
+import { ThemeContext } from "./themeContext";
 
 import Burger from "./Burger";
 
 import BugsLogo from "../svgs/bugs.svg";
-import maillogo from "../images/logo/mail-32.png";
+import maillogo from "../svgs/mail.svg";
 import githublogo from "../svgs/github.svg";
+import sunlogo from "../svgs/sun.svg";
+import moonlogo from "../svgs/moon.svg";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+  const { colorMode, setColorMode } = React.useContext(ThemeContext);
 
   return (
     <>
@@ -67,11 +72,25 @@ const NavBar = () => {
                     </NavItem>
                   </NavList>
                   <LogosContainer>
+                    <Logo
+                      href="#"
+                      onClick={ev => {
+                        ev.preventDefault();
+                        setColorMode(colorMode === "dark" ? "light" : "dark");
+                        setOpen(!open);
+                      }}
+                    >
+                      {!colorMode || colorMode === "light" ? (
+                        <SunLogo alt="sun logo" />
+                      ) : (
+                        <MoonLogo alt="moon logo" />
+                      )}
+                    </Logo>
                     <Logo href="https://github.com/BUGS-NYU">
                       <GitHubLogo title="GitHub Logo" />
                     </Logo>
                     <Logo href="mailto:bugsnyu@gmail.com">
-                      <img src={maillogo} alt="mail logo" />
+                      <MailLogo title="Mail logo" />
                     </Logo>
                   </LogosContainer>
                 </HeaderNavWrapper>
@@ -83,15 +102,6 @@ const NavBar = () => {
     </>
   );
 };
-
-const scalein = keyframes`
-  from {
-    transform: scale(0.9)
-  }
-  to {
-    transform: scale(1)
-  }
-`;
 
 const Header = styled.header`
   z-index: 10;
@@ -117,10 +127,7 @@ const HeaderWrapper = styled.div`
   z-index: 2;
   width: 100%;
   box-sizing: border-box;
-  padding-top: 3vw;
-  padding-bottom: 3vw;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding: 3vw;
   pointer-events: auto;
   transition: background 300ms ease-in-out 0s, padding 140ms ease-in-out,
     transform 140ms ease-in-out 140ms;
@@ -194,7 +201,7 @@ const NavList = styled.nav`
   line-height: 1.4em;
   font-size: calc(0vw + 1.2rem);
   color: #330662;
-  padding: 0px 0px 0px 20px;
+  padding-left: 5%;
 
   @media screen and (max-width: 768px) {
     flex-wrap: none;
@@ -210,7 +217,6 @@ const NavItem = styled.div`
   margin-right: 2.2vw;
   position: relative;
   display: inline-block;
-  // animation: ${scalein} 1s;
 
   &::before {
     content: "";
@@ -362,6 +368,48 @@ const LogoImage = styled(BugsLogo)`
 `;
 
 const GitHubLogo = styled(githublogo)`
+  float: right;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  position: relative;
+  top: -2px;
+  fill: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    top: -4px;
+  }
+`;
+
+const MailLogo = styled(maillogo)`
+  float: right;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  position: relative;
+  top: -2px;
+  fill: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    top: -4px;
+  }
+`;
+
+const SunLogo = styled(sunlogo)`
+  float: right;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  position: relative;
+  top: -2px;
+  fill: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    top: -4px;
+  }
+`;
+
+const MoonLogo = styled(moonlogo)`
   float: right;
   width: 30px;
   height: 30px;
