@@ -56,11 +56,13 @@ const Contributors = () => {
     };
 
     const contributorObjects = data =>
-      data.map(item => ({
-        image: item["avatar_url"],
-        url: item["html_url"],
-        name: item["login"],
-      }));
+      data
+        .map(item => ({
+          image: item["avatar_url"],
+          url: item["html_url"],
+          name: item["login"],
+        }))
+        .filter(item => item.name !== "dependabot[bot]");
 
     (async () => {
       const data = await Promise.all(promises);
