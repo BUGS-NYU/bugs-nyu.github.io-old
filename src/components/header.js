@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import { ThemeContext } from "./themeContext";
 
@@ -77,6 +77,7 @@ const NavBar = () => {
                       onClick={ev => {
                         ev.preventDefault();
                         setColorMode(colorMode === "dark" ? "light" : "dark");
+                        setOpen(!open);
                       }}
                     >
                       {!colorMode || colorMode === "light" ? (
@@ -102,15 +103,6 @@ const NavBar = () => {
   );
 };
 
-const scalein = keyframes`
-  from {
-    transform: scale(0.9)
-  }
-  to {
-    transform: scale(1)
-  }
-`;
-
 const Header = styled.header`
   z-index: 10;
   position: absolute;
@@ -135,10 +127,7 @@ const HeaderWrapper = styled.div`
   z-index: 2;
   width: 100%;
   box-sizing: border-box;
-  padding-top: 3vw;
-  padding-bottom: 3vw;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding: 3vw;
   pointer-events: auto;
   transition: background 300ms ease-in-out 0s, padding 140ms ease-in-out,
     transform 140ms ease-in-out 140ms;
@@ -212,7 +201,7 @@ const NavList = styled.nav`
   line-height: 1.4em;
   font-size: calc(0vw + 1.2rem);
   color: #330662;
-  padding: 0px 0px 0px 20px;
+  padding-left: 5%;
 
   @media screen and (max-width: 768px) {
     flex-wrap: none;
@@ -228,7 +217,6 @@ const NavItem = styled.div`
   margin-right: 2.2vw;
   position: relative;
   display: inline-block;
-  // animation: ${scalein} 1s;
 
   &::before {
     content: "";
