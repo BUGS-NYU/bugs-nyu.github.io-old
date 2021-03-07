@@ -57,10 +57,10 @@ const Contributors = () => {
 
     const contributorObjects = data =>
       data
-        .map(item => ({
-          image: item["avatar_url"],
-          url: item["html_url"],
-          name: item["login"],
+        .map(({ avatar_url, html_url, login }) => ({
+          image: avatar_url,
+          url: html_url,
+          name: login,
         }))
         .filter(item => item.name !== "dependabot[bot]");
 
@@ -119,9 +119,9 @@ const Contributors = () => {
   }, []);
 
   const ContributorsList = () =>
-    contributors.map(contributor => (
-      <a key={contributor["name"]} href={contributor["url"]}>
-        <Image alt={contributor["name"]} src={contributor["image"]} />
+    contributors.map(({ name, image, url }) => (
+      <a key={name} href={url}>
+        <Image alt={name} src={image} />
       </a>
     ));
 
