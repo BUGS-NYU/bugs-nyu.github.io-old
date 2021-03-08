@@ -37,7 +37,7 @@ const NavBar = () => {
                   <NavList>
                     <NavItem>
                       <NavLink
-                        to="/team"
+                        to="/team/"
                         activeClassName="active"
                         partiallyActive={true}
                       >
@@ -47,7 +47,7 @@ const NavBar = () => {
 
                     <NavItem>
                       <NavLink
-                        to="/contributors"
+                        to="/contributors/"
                         activeClassName="active"
                         partiallyActive={true}
                       >
@@ -57,7 +57,7 @@ const NavBar = () => {
 
                     <NavItem>
                       <NavLink
-                        to="/alumni"
+                        to="/alumni/"
                         activeClassName="active"
                         partiallyActive={true}
                       >
@@ -67,7 +67,7 @@ const NavBar = () => {
 
                     <NavItem>
                       <NavLink
-                        to="/projects"
+                        to="/projects/"
                         activeClassName="active"
                         partiallyActive={true}
                       >
@@ -77,7 +77,7 @@ const NavBar = () => {
 
                     <NavItem>
                       <NavLink
-                        to="/events"
+                        to="/events/"
                         activeClassName="active"
                         partiallyActive={true}
                       >
