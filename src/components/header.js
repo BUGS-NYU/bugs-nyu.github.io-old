@@ -36,31 +36,51 @@ const NavBar = () => {
                   </ImageContainer>
                   <NavList>
                     <NavItem>
-                      <NavLink to="/team" activeClassName="active">
+                      <NavLink
+                        to="/team"
+                        activeClassName="active"
+                        partiallyActive={true}
+                      >
                         Team
                       </NavLink>
                     </NavItem>
 
                     <NavItem>
-                      <NavLink to="/contributors" activeClassName="active">
+                      <NavLink
+                        to="/contributors"
+                        activeClassName="active"
+                        partiallyActive={true}
+                      >
                         Contributors
                       </NavLink>
                     </NavItem>
 
                     <NavItem>
-                      <NavLink to="/alumni" activeClassName="active">
+                      <NavLink
+                        to="/alumni"
+                        activeClassName="active"
+                        partiallyActive={true}
+                      >
                         Alumni
                       </NavLink>
                     </NavItem>
 
                     <NavItem>
-                      <NavLink to="/projects" activeClassName="active">
+                      <NavLink
+                        to="/projects"
+                        activeClassName="active"
+                        partiallyActive={true}
+                      >
                         Projects
                       </NavLink>
                     </NavItem>
 
                     <NavItem>
-                      <NavLink to="/events" activeClassName="active">
+                      <NavLink
+                        to="/events"
+                        activeClassName="active"
+                        partiallyActive={true}
+                      >
                         Events
                       </NavLink>
                     </NavItem>
