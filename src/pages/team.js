@@ -158,5 +158,47 @@ export const query = graphql`
         }
       }
     }
+    yliu: file(relativePath: { eq: "profiles/yliu.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    lxiang: file(relativePath: { eq: "profiles/lxiang.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    esilverman: file(relativePath: { eq: "profiles/esilverman.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    vvanam: file(relativePath: { eq: "profiles/vvanam.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    bjiang: file(relativePath: { eq: "profiles/bjiang.JPG" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    sjain: file(relativePath: { eq: "profiles/sjain.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;
