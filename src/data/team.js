@@ -65,14 +65,14 @@ export default [
   {
     name: "Evan Silverman",
     image: "esilverman",
-    role: "Webmaster",
+    role: "Full Stack Developer",
     description:
       "Evan is a Junior studying CS at CAS. In his free time he enjoys working on too many side projects, expanding his record collection, and making memes for @nyumsfbt",
   },
   {
     name: "Yuchen Liu",
     image: "yliu",
-    role: "Webmaster",
+    role: "Full Stack Developer",
     description:
       "Yuchen is a CS and Data Science major at CAS. He likes to eat ramen, watch movies, meet new people, and work on fun projects.",
   },
