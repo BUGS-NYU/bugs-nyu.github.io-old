@@ -1,6 +1,6 @@
 ---
 name: 💡 Feature Request
-about: Suggest an enhancement to Meshery.
+about: Suggest an enhancement to our website.
 title: ""
 labels: "kind/enhancement"
 assignees: ""
