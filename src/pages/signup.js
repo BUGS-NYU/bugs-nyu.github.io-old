@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 const Form = () => (
   <FormComtainer>
     <link
-      href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css"
+      href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
       rel="stylesheet"
       type="text/css"
     />
@@ -22,15 +22,42 @@ const Form = () => (
         noValidate
       >
         <div id="mc_embed_signup_scroll">
-          <label htmlFor="mce-EMAIL">Subscribe</label>
-          <input
-            type="text"
-            name="EMAIL"
-            className="email"
-            id="mce-EMAIL"
-            placeholder="email address"
-            required
-          />
+          <h2>Subscribe</h2>
+          <div className="indicates-required">
+            <span className="asterisk">*</span> indicates required
+          </div>
+          <div className="mc-field-group">
+            <label htmlFor="mce-EMAIL">
+              Email Address <span className="asterisk">*</span>
+            </label>
+            <input
+              type="email"
+              name="EMAIL"
+              className="required email"
+              id="mce-EMAIL"
+            />
+          </div>
+          <div className="mc-field-group">
+            <label htmlFor="mce-FNAME">First Name </label>
+            <input type="text" name="FNAME" className="" id="mce-FNAME" />
+          </div>
+          <div className="mc-field-group">
+            <label htmlFor="mce-LNAME">Last Name </label>
+            <input type="text" name="LNAME" className="" id="mce-LNAME" />
+          </div>
+          <div id="mce-responses" className="clear">
+            <div
+              className="response"
+              id="mce-error-response"
+              style={{ display: "none" }}
+            ></div>
+            <div
+              className="response"
+              id="mce-success-response"
+              style={{ display: "none" }}
+            ></div>
+          </div>
+          {/*real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
           <div
             style={{ position: "absolute", left: "-5000px" }}
             aria-hidden="true"
@@ -109,11 +136,16 @@ const FormComtainer = styled.div`
     margin: auto;
   }
 
+  #mce-FNAME, #mce-LNAME, #mce-EMAIL {
+    border-radius: 8px;
+  }
+
   @media screen and (max-width: 768px) {
     width: 100%;
     justify-content: center;
     #mc_embed_signup {
-      width 70%;
+      width 85%;
+      padding: .5em;
     }
   }
 `;
