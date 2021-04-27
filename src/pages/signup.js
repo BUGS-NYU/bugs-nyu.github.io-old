@@ -128,7 +128,7 @@ const FormComtainer = styled.div`
     backdrop-filter: blur(5px);
     padding: 2em;
     clear: left;
-    font: 20px Helvetica, rial, sans-serif;
+    font: 20px Helvetica, Arial, sans-serif;
     color: #fff;
     width: 100%;
     height: 100%;
