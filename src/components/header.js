@@ -86,9 +86,13 @@ const NavBar = () => {
                     </NavItem>
 
                     <NavItem>
-                      <OffSiteLink href="http://bit.ly/bugsnewsletter">
+                      <NavLink
+                        to="/signup/"
+                        activeClassName="active"
+                        partiallyActive={true}
+                      >
                         Join Us
-                      </OffSiteLink>
+                      </NavLink>
                     </NavItem>
                   </NavList>
                   <LogosContainer>
@@ -285,16 +289,6 @@ const NavLink = styled(Link)`
   @media screen and (max-width: 768px) {
     display: block;
     padding: 2vw 4vw;
-  }
-`;
-
-const OffSiteLink = styled.a`
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    padding: 2vw 4vw !important;
   }
 `;
 
