@@ -34,6 +34,10 @@ export const ThemeProvider = ({ children }) => {
       "--color-home-border",
       newValue === "light" ? lightTheme.border : darkTheme.border
     );
+    root.style.setProperty(
+      "--color-primary-button",
+      newValue === "light" ? lightTheme.primaryColor : darkTheme.primaryColor
+    );
 
     root.style.setProperty(
       "--color-contributionContent",
