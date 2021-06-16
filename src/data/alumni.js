@@ -50,4 +50,20 @@ export default {
     description:
       "Brian was BUGS's webmaster from 2018 to 2020. Alumni from CAS who majored in Computer Science and minored in Cyber Security, Web Development, & Studio Art. Outside of class you can find him working a variety of things including custom IOT devices, simple CNN for puzzle solving, home automation programs, and building mobile/web apps. He's a SWE at NextJump",
   },
+  "Albert Liu": {
+    description:
+      "Albert was BUGS's Vice President. Alumni from CAS who majored in Computer Science. He has worked on Schedge, an API for NYU course data, as well as HumanToHuman, an application to help researchers study human interaction patterns. In his free time he enjoys going on long walks and taking longer naps.",
+  },
+  "Jiayue(Joanna) Zhang": {
+    description:
+      "Joanna was BUGS's Director of Marketing. Alumni from CAS who majored in Mathematics and Computer Science. She enjoys working on machine learning research, supporting local restaurants, capturing NYC through her lens, and taking a walk at sunset.",
+  },
+  "Edmond Shao": {
+    description:
+      "Edmond was BUGS's Director of Communications. Alumni from CAS who majored in Computer Science and minored in Business Studies. He likes cars, being a foodie and traveling.",
+  },
+  "Eric He": {
+    description:
+      "Eric was BUGS's Secretary. Alumni from Stern who majored in Business and Mathematics and minored in Computer Science. He likes to play basketball, listens to music and read about philosophy.",
+  },
 };
